@@ -1,0 +1,102 @@
+#config_version=6
+
+###############################################################################
+# hardware
+###############################################################################
+# tip: when not connecting to physical hardware, start with mpf -x
+
+# APC example using Lisy
+# TODO: need to update/confirm for time warp
+#hardware:
+#    platform: lisy
+#lisy:
+#    connection: serial
+#    port: com1      # change this for your setup
+#    baud: 115200
+#digital_outputs:
+#    game_over_relay:
+#        number: 1
+#        type: light
+#        enable_events: ball_started
+#        disable_events: ball_will_end
+#segment_displays:
+#    info_display:
+#        number: 0
+#    player1_display:
+#        number: 1
+#    player2_display:
+#        number: 2
+#    player3_display:
+#        number: 3
+#    player4_display:
+#        number: 4
+#hardware_sound_systems:
+#    default:
+#        label: APC
+
+
+# made from https://missionpinball.org/latest/tutorial/
+
+###############################################################################
+# switches
+###############################################################################
+# TODO: need to research APC switch numbers and what to include here. check
+# platform-specific documentation.
+# https://missionpinball.org/latest/hardware/numbers/
+
+switches:
+    s_left_flipper:
+        number: #0-15 or something. can leave blank until connecting to hardware
+        tags: left_flipper
+    s_right_flipper:
+        number: #1-15 or something. can leave blank until connecting to hardware
+        tags: right_flipper
+
+###############################################################################
+# coils
+###############################################################################
+# TODO: need to determine whether coils are dual-wound. single coil has one
+# coil entry per flipper, dual-wound has two
+
+# dual-wound coil example
+coils:
+    c_flipper_left_main:
+        number: #0. platform-specific doc for actual number
+    c_flipper_left_hold:
+        number: #1. platform-specific doc for actual number
+        allow_enable: true
+    c_flipper_right_main:
+        number: #2. platform-specific doc for actual number
+    c_flipper_right_hold:
+        number: #3. platform-specific doc for actual number
+        allow_enable: true
+
+###############################################################################
+# playfields
+###############################################################################
+# TODO: update default_source_device from "None"
+
+playfields:
+    playfield:
+        tags: default
+        default_source_device: None
+
+###############################################################################
+# flipper devices
+###############################################################################
+
+flippers:
+    left_flipper:
+        main_coil: c_flipper_left_main
+        hold_coil: c_flipper_left_hold
+        activation_switch: s_left_flipper
+        enable_events: machine_reset_phase_3 # temporary. enables flippers w/o actual game
+    right_flipper:
+        main_coil: c_flipper_right_main
+        hold_coil: c_flipper_right_hold
+        activation_switch: s_right_flipper
+        enable_events: machine_reset_phase_3 # temporary. enables flippers w/o actual game
+
+
+
+

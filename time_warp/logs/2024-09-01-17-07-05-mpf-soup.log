@@ -1,0 +1,55 @@
+2024-09-01 17:07:05,374 : INFO : root : Loading config.
+2024-09-01 17:07:05,403 : INFO : ConfigProcessor : Config spec file cache created: /tmp/config_spec.mpf_cache
+2024-09-01 17:07:05,404 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2024-09-01 17:07:05,404 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.9.12/envs/mpf8_3912/lib/python3.9/site-packages/mpf/mpfconfig.yaml.
+2024-09-01 17:07:05,410 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.9.12/envs/mpf8_3912/lib/python3.9/site-packages/mpf/mpfconfig.yaml
+2024-09-01 17:07:05,410 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball_soup/time_warp/config/config.yaml.
+2024-09-01 17:07:05,411 : INFO : ConfigProcessor : Config file cache created: /tmp/ec2e4f2a021c696d34f64e0c16ca0cc9.mpf_cache
+2024-09-01 17:07:05,432 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.9.12/envs/mpf8_3912/lib/python3.9/site-packages/mpf/modes/attract/config/attract.yaml.
+2024-09-01 17:07:05,432 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.9.12/envs/mpf8_3912/lib/python3.9/site-packages/mpf/modes/attract/config/attract.yaml
+2024-09-01 17:07:05,432 : INFO : ConfigProcessor : Config file cache created: /tmp/68cf281900adaf0396ffe07568660923.mpf_cache
+2024-09-01 17:07:05,433 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.9.12/envs/mpf8_3912/lib/python3.9/site-packages/mpf/modes/game/config/game.yaml.
+2024-09-01 17:07:05,433 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.9.12/envs/mpf8_3912/lib/python3.9/site-packages/mpf/modes/game/config/game.yaml
+2024-09-01 17:07:05,433 : INFO : ConfigProcessor : Config file cache created: /tmp/1d8e44b963bacb841ec7f0e74b585ef4.mpf_cache
+2024-09-01 17:07:05,434 : INFO : Machine : Mission Pinball Framework Core Engine v0.80.0.dev4
+2024-09-01 17:07:05,434 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': False, 'configfile': ['config.yaml'], 'force_assets_load': False, 'platform_integration_test': False, 'jsonlogging': False, 'logfile': 'logs/2024-09-01-17-07-05-mpf-soup.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': None, 'syslog_address': None, 'mc_file_name': None, 'no_sound': False, 'full_logfile_path': '/home/hotsoup/repos/pinball_soup/time_warp/logs/2024-09-01-17-07-05-mpf-soup.log'}
+2024-09-01 17:07:05,434 : INFO : Machine : MPF path: /home/hotsoup/.pyenv/versions/3.9.12/envs/mpf8_3912/lib/python3.9/site-packages/mpf
+2024-09-01 17:07:05,434 : INFO : Machine : Machine path: /home/hotsoup/repos/pinball_soup/time_warp
+2024-09-01 17:07:05,434 : INFO : Machine : Platform: linux
+2024-09-01 17:07:05,434 : INFO : Machine : Python executable location: /home/hotsoup/.pyenv/versions/3.9.12/envs/mpf8_3912/bin/python
+2024-09-01 17:07:05,434 : INFO : Machine : Python version: 3.9.12 (64-bit)
+2024-09-01 17:07:05,435 : INFO : Machine : Initializing MPF...
+2024-09-01 17:07:05,478 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,485 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,485 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev4', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,485 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev4, Config version:6, Show version: 6, BCP version:1.1', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,485 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.9.12', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,488 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-6.10.7-arch1-1-x86_64-with-glibc2.40', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,488 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,488 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '6.10.7-arch1-1', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,488 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#1 SMP PREEMPT_DYNAMIC Thu, 29 Aug 2024 16:48:57 +0000', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,488 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,488 : INFO : EventManager : Event: ======'machine_var_log_file_path'====== Args={'value': '/home/hotsoup/repos/pinball_soup/time_warp/logs/2024-09-01-17-07-05-mpf-soup.log', 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,488 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2024-09-01 17:07:05,492 : INFO : EventManager : Event: ======'init_phase_2'====== Args={}
+2024-09-01 17:07:05,495 : INFO : EventManager : Event: ======'init_phase_3'====== Args={}
+2024-09-01 17:07:05,496 : INFO : EventManager : Event: ======'init_phase_4'====== Args={}
+2024-09-01 17:07:05,497 : INFO : EventManager : Event: ======'machine_var_audits_events_game_started'====== Args={'value': 0, 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,497 : INFO : EventManager : Event: ======'machine_var_audits_events_game_ended'====== Args={'value': 0, 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,497 : INFO : EventManager : Event: ======'machine_var_audits_player_score'====== Args={'value': {'top': [], 'average': 0, 'total': 0}, 'prev_value': None, 'change': True}
+2024-09-01 17:07:05,498 : INFO : EventManager : Event: ======'init_phase_5'====== Args={}
+2024-09-01 17:07:05,498 : INFO : EventManager : Event: ======'init_done'====== Args={}
+2024-09-01 17:07:05,498 : INFO : EventManager : Event: ======'machine_reset_phase_1'====== Args={}
+2024-09-01 17:07:05,498 : INFO : EventManager : Event: ======'machine_reset_phase_2'====== Args={}
+2024-09-01 17:07:05,498 : INFO : EventManager : Event: ======'machine_reset_phase_3'====== Args={}
+2024-09-01 17:07:05,498 : INFO : EventManager : Event: ======'reset_complete'====== Args={}
+2024-09-01 17:07:05,498 : INFO : EventManager : Event: ======'mode_attract_will_start'====== Args={}
+2024-09-01 17:07:05,499 : INFO : EventManager : Event: ======'mode_attract_starting'====== Args={}
+2024-09-01 17:07:05,499 : INFO : Mode.attract : Started. Priority: 10
+2024-09-01 17:07:05,499 : INFO : EventManager : Event: ======'modes_active_modes_changed'====== Args={}
+2024-09-01 17:07:05,499 : INFO : EventManager : Event: ======'mode_attract_started'====== Args={}
+2024-09-01 17:07:05,499 : INFO : EventManager : Event: ======'collecting_balls_complete'====== Args={}
+2024-09-01 17:07:05,499 : INFO : Machine : Starting the main run loop.
+2024-09-01 17:08:16,256 : INFO : Machine : Shutting down...
+2024-09-01 17:08:16,256 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2024-09-01 17:08:16,258 : INFO : root : MPF run loop ended.
