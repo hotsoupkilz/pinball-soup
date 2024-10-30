@@ -1,0 +1,6 @@
+2024-10-29 22:50:26,037 : INFO : root : Loading config.
+2024-10-29 22:50:26,038 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2024-10-29 22:50:26,038 : INFO : ConfigProcessor : Loading config from cache: /tmp/c2bf13c95cf822ee7aaa93eae13f667f.mpf_cache
+2024-10-29 22:50:26,061 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.11.8/envs/mpfgmc3118_timewarp/lib/python3.11/site-packages/mpf/modes/attract/config/attract.yaml.
+2024-10-29 22:50:26,062 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.11.8/envs/mpfgmc3118_timewarp/lib/python3.11/site-packages/mpf/modes/attract/config/attract.yaml
+2024-10-29 22:50:26,062 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball_soup/time_warped/modes/attract/config/attract.yaml.
