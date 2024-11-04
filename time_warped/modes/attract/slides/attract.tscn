@@ -24,6 +24,6 @@ offset_right = 1149.0
 offset_bottom = 433.0
 theme_override_colors/font_color = Color(0.892801, 0.682874, 0.453073, 1)
 theme_override_font_sizes/font_size = 75
-text = "Time Warp(ed) GMC:
-Attract Slide"
+text = "Time Warped: Attract"
 horizontal_alignment = 1
+autowrap_mode = 3

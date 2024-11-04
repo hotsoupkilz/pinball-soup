@@ -1,1 +1,224 @@
 #config_version=6
+
+###############################################################################
+# hardware
+###############################################################################
+
+hardware:
+    platform: lisy
+
+lisy:
+    connection: serial
+    port: com1 #TODO figure out what to put here
+    baud: 115200
+    # debug: true
+
+
+###############################################################################
+# switches
+###############################################################################
+
+switches:
+    ## admin switches
+    s_tilt_plumb_bob: # switch 1
+        number: #TBD
+        tags: tilt_plumb_bob
+    s_tilt_ball_roll: # switch 2
+        number: #TBD
+        tags: tilt_ball_roll
+    s_tilt_slam: # switch 7
+        number: #TBD
+        tags: tilt_slam
+    s_tilt_lower_playfield: # switch 43
+        number: #TBD
+        tags: tilt_lower_playfield
+    s_start_button: # switch 3
+        number: #TBD
+        tags: start_button
+    s_coin_open_right: # switch 4
+        number: #TBD
+        tags: coin_door_open
+    s_coin_center: # switch 5
+        number: #TBD
+        tags: coin_slot_center
+    s_coin_left: # switch 6
+        number: #TBD
+        tags: coin_slot_right
+    s_high_score_reset: # switch 8
+        number: #TBD
+        tags: high_score_reset
+    s_outhole: # switch 9
+        number: #TBD
+        tags: outhole
+
+    ## playfield switches
+    # upper playfield
+    s_standup_upper_right: # switch 10
+        number: #TBD
+        tags: standup_upper_right
+    s_standup_upper_left: # switch 11
+        number: #TBD
+        tags: standup_upper_left
+    s_rollover_upper_left: # switch 12
+        number: #TBD
+        tags: rollover_upper_left
+    s_rollover_upper_mid: # switch 13
+        number: #TBD
+        tags: rollover_upper_mid
+    s_rollover_upper_right: # switch 14
+        number: #TBD
+        tags: rollover_upper_right
+    s_eject_hole_upper: # switch 15
+        number: #TBD
+        tags: kickout_upper_left
+    s_target_upper_right: # switch 16
+        number: #TBD
+        tags: target_upper_right
+    s_target_upper_left: # switch 17
+        number: #TBD
+        tags: target_upper_left
+    # mid playfield
+    s_jet_bumper_left_top: # switch 19
+        number: #TBD
+        tags: jet_bumper_left_top
+    s_jet_bumper_left_mid: # switch 20
+        number: #TBD
+        tags: jet_bumper_left_mid
+    s_jet_bumper_left_bottom: # switch 21
+        number: #TBD
+        tags: jet_bumper_left_bottom
+    s_jet_bumper_right_mid: # switch 22
+        number: #TBD
+        tags: jet_bumper_right_mid
+    s_jet_bumper_right: # switch 23
+        number: #TBD
+        tags: jet_bumper_right
+    s_eject_hole_mid_right: # switch 24
+        number: #TBD
+        tags: kickout_mid_right
+    s_5bank_drop_target_left: # switch 25
+        number: #TBD
+        tags: fivebank_left
+    s_5bank_drop_target_left_mid: # switch 26
+        number: #TBD
+        tags: fivebank_left_mid
+    s_5bank_drop_target_mid: # switch 27
+        number: #TBD
+        tags: fivebank_mid
+    s_5bank_drop_target_right_mid: # switch 28
+        number: #TBD
+        tags: fivebank_right_mid
+    s_5bank_drop_target_right: # switch 29
+        number: #TBD
+        tags: fivebank_right
+    s_5bank_drop_target_series: # switch 30
+        number: #TBD
+        tags: fivebank_series
+    s_5bank_drop_target_standup: # switch 31
+        number: #TBD
+        tags: fivebank_standup
+    s_3bank_drop_target_left: # switch 33
+        number: #TBD
+        tags: threebank_left
+    s_3bank_drop_target_mid: # switch 34
+        number: #TBD
+        tags: threebank_mid
+    s_3bank_drop_target_right: # switch 35
+        number: #TBD
+        tags: threebank_right
+    s_3bank_drop_target_series: # switch 36
+        number: #TBD
+        tags: threebank_series
+    s_3bank_drop_target_standup: # switch 37
+        number: #TBD
+        tags: threebank_standup
+
+    # lower playfield
+    #s_flipper_left:
+    #    number: #TBD
+    #    tags: flipper_left
+    #s_flipper_right:
+    #    number: #TBD
+    #    tags: flipper_right
+    s_standup_lower_left: # switch 38
+        number: #TBD
+        tags: standup_lower_left
+    s_standup_lower_right: # switch 32
+        number: #TBD
+        tags: standup_lower_right
+    s_rollover_inlane_right: # switch 18
+        number: #TBD
+        tags: inlane_right
+    s_rollover_outlane_right: # switch 39
+        number: #TBD
+        tags: outlane_right
+    s_rollover_inlane_left: # switch 44
+        number: #TBD
+        tags: inlane_left
+    s_rollover_outlane_left: # switch 40
+        number: #TBD
+        tags: outlane_left
+    s_kicker_lower_right: # switch 41
+        number: #TBD
+        tags: kicker_right
+    s_kicker_lower_left: # switch 42
+        number: #TBD
+        tags: kicker_left
+
+
+
+###########################################################################
+# coils/solenoids
+###############################################################################
+
+coils:
+    c_ball_release: # coil 1
+        number: #TBD
+    c_eject_hole_upper: # coil 2
+        number: #TBD
+    c_eject_hole_mid: # coil 3
+        number: #TBD
+    c_3bank_drop_target_standup: # coil 4
+        number: #TBD
+    c_5bank_drop_target_standup: # coil 5
+        number: #TBD
+    c_5bank_drop_target_bottom: # coil 6
+        number: #TBD
+    c_kicker_lower_right: # coil 7
+        number: #TBD
+    c_kicker_lower_left: # coil 8
+        number: #TBD
+    c_sound1: # coil 9
+        number: #TBD
+    c_sound2: # coil 10
+        number: #TBD
+    c_sound3: # coil 11
+        number: #TBD
+    c_sound4: # coil 12
+        number: #TBD
+    c_sound5: # coil 13
+        number: #TBD
+    c_credit_knocker: # coil 14
+        number: #TBD
+    # c_notused: # coil 15
+    #    number: #TBD
+    c_coin_lockout: # coil 16
+        number: #TBD
+    c_jet_bumper_left_top: # coil 17
+        number: #TBD
+    c_jet_bumper_left_mid: # coil 18
+        number: #TBD
+    c_jet_bumper_left_bottom: # coil 19
+        number: #TBD
+    c_jet_bumper_right_mid: # coil 20
+        number: #TBD
+    c_jet_bumper_right: # coil 21
+        number: #TBD
+    # c_notused # coil 22
+    #    number: #TBD
+
+
+
+
+
+
