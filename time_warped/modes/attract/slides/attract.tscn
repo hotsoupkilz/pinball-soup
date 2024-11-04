@@ -1,29 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcwepegrfhdrk"]
+[gd_scene load_steps=3 format=3 uid="uid://dcwepegrfhdrk"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_fxg0e"]
+[ext_resource type="Texture2D" uid="uid://k7pxgb7trerh" path="res://modes/attract/slides/IMG_1474.jpg" id="2_030mk"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fxg0e")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1152.0
+offset_right = 1148.0
 offset_bottom = 648.0
-color = Color(0.410304, 0.530837, 0.40332, 1)
+texture = ExtResource("2_030mk")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.003
 anchor_right = 0.003
-offset_left = 4.0
-offset_top = 152.0
-offset_right = 1149.0
-offset_bottom = 433.0
+offset_left = 595.0
+offset_top = 3.0
+offset_right = 1021.0
+offset_bottom = 169.0
 theme_override_colors/font_color = Color(0.892801, 0.682874, 0.453073, 1)
-theme_override_font_sizes/font_size = 75
-text = "Time Warped: Attract"
+theme_override_font_sizes/font_size = 50
+text = "Time Warped: Attract Mode"
 horizontal_alignment = 1
 autowrap_mode = 3

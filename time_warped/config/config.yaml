@@ -4,6 +4,7 @@
 # hardware
 ###############################################################################
 
+## hardware
 hardware:
     platform: lisy
 
@@ -11,7 +12,7 @@ lisy:
     connection: serial
     port: com1 #TODO figure out what to put here
     baud: 115200
-    # debug: true
+    # debug: true # log leve debug. can make game run slowly
 
 
 ###############################################################################
@@ -134,12 +135,6 @@ switches:
         tags: threebank_standup
 
     # lower playfield
-    #s_flipper_left:
-    #    number: #TBD
-    #    tags: flipper_left
-    #s_flipper_right:
-    #    number: #TBD
-    #    tags: flipper_right
     s_standup_lower_left: # switch 38
         number: #TBD
         tags: standup_lower_left
@@ -164,6 +159,12 @@ switches:
     s_kicker_lower_left: # switch 42
         number: #TBD
         tags: kicker_left
+    s_flipper_left: # switch TBD
+        number: #TBD
+        tags: flipper_left
+    s_flipper_right: # switch TBD
+        number: #TBD
+        tags: flipper_right
 
 
 
@@ -216,6 +217,53 @@ coils:
         number: #TBD
     # c_notused # coil 22
     #    number: #TBD
+    c_flipper_left_main:
+        number: #TBD
+        default_pulse_ms: 30
+        default_hold_power: 0.25
+    # remove hold if single wound coil
+    #c_flipper_left_hold:
+    #    number: #TBD
+    #    allow_enable: true
+    c_flipper_right_main:
+        number: #TBD
+        default_pulse_ms: 30
+        default_hold_power: 0.25
+    # remove hold if single wound coil
+    #c_flipper_right_hold:
+    #    number: #TBD
+    #    allow_enable: true
+
+
+###########################################################################
+# lights
+###############################################################################
+
+
+
+###############################################################################
+# playfield & displays
+###############################################################################
+
+## playfield
+playfields:
+    playfield:
+        tags: default
+        default_source_device: None # TODO replace none with value
+
+flippers:
+  left_flipper:
+      main_coil: c_flipper_left_main
+      #hold_coil: c_flipper_left_hold # remove if single wound coil
+      activation_switch: s_flipper_left
+      enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
+  right_flipper:
+      main_coil: c_flipper_right_main
+      #hold_coil: c_flipper_right_hold # remove if single wound coil
+      activation_switch: s_flipper_right
+      enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
+
+## displays
 
 
 
