@@ -34,9 +34,9 @@
 # https://www.ipdb.org/files/2568/Williams_1979_Time_Warp_English_Manual_no_schematics.pdf
 
 ## admin switches
-s=["switch", "s_start_button"] # switch 3
-j=["switch", "s_flipper_right"]
-k=["switch", "s_flipper_left"]
+a=["switch", "s_flipper_left"]
+l=["switch", "s_flipper_right"]
+enter=["switch", "s_start_button"] # switch 3
 # 1=["switch","s_tilt_plumb_bob"] # switch 1
 # 2=["switch","s_tilt_ball_roll"] # switch 2
 # 4=["switch","s_coin_open_right"] # switch 4
@@ -44,10 +44,10 @@ k=["switch", "s_flipper_left"]
 # 6=["switch","s_coin_left"] # switch 6
 # 7=["switch","s_tilt_slam"] # switch 7
 # 8=["switch","s_high_score_reset"] # switch 8
-o=["switch", "s_outhole","toggle"] # switch 9
+shift+enter=["switch","s_outhole"] # switch 9
 
 ## playfield switches
-b=["switch", "s_standup_upper_right"] # switch 10
+# shift+0=["switch","s_standup_upper_right"] # switch 10
 # shift+1=["switch","s_standup_upper_left"] # switch 11
 # shift+2=["switch","s_rollover_upper_left"] # switch 12
 # shift+3=["switch","s_rollover_upper_mid"] # switch 13
