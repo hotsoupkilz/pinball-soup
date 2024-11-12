@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbusjs8ayfchw"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_j4vpx"]
+[ext_resource type="Texture2D" uid="uid://bqk1qwfgmge7c" path="res://modes/base/slides/IMG_1475.jpg" id="2_ow8f2"]
+
+[node name="Base" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_j4vpx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 654.0
+texture = ExtResource("2_ow8f2")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 12.0
+offset_right = 1069.0
+offset_bottom = 289.0
+theme_override_font_sizes/font_size = 100
+text = "base mode"
+autowrap_mode = 3

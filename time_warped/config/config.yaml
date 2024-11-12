@@ -22,9 +22,9 @@ hardware:
 # game modes
 ###############################################################################
 
-#modes:
+modes:
     #- attract
-    #- base
+    - base
     #- skillshot
 
 ###############################################################################
@@ -350,7 +350,38 @@ drop_target_banks:
         reset_coils: c_3bank_drop_target_reset
         reset_on_complete: 10s
 
+################################################################################
 ## displays
+################################################################################
+# TODO: determine actual display numbers
+segment_displays:
+    info_display:
+        number: 0
+#        platform: lisy
+        size: 6
+    player1_display:
+        number: 1
+#        platform: lisy
+        size: 6
+    player2_display:
+        number: 2
+#        platform: lisy
+        size: 6
+    player3_display:
+        number: 3
+#        platform: lisy
+        size: 6
+    player4_display:
+        number: 4
+#        platform: lisy
+        size: 6
+
+# TODO: make 1st and 4th segment for admin display not show as these are hidden by art
+#segment_display_player:
+#    info_display:
+#        flash_mask: _FF_FF
+
+
 #displays:
 #    window:
 #        width: 800

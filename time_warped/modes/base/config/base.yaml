@@ -1,0 +1,123 @@
+#config_version=6
+mode:
+    start_events: ball_starting
+    #stop_events: 
+    priority: 100
+
+shots:
+    sh_target_left:
+        switch: s_target_upper_left
+#            show_tokens:
+#                light: # TODO
+    sh_target_right:
+        switch: s_target_upper_right
+#            show_tokens:
+#                light: # TODO
+    sh_3bank_drop_target_left:
+        switch: s_3bank_drop_target_left
+        reset_events: ball_will_end
+#            show_tokens:
+#                light: # TODO
+
+#shot_groups:
+#    bumper_shots:
+#        shots: bumper_shot_1, bumper_shot_2
+
+
+#slide_player:
+#    mode_base_started: base
+#    s_start_button_active:
+#        base:
+#            action: method
+#        method: show_text
+#        tokens:
+#            text: "Start Button Was Pressed!"
+#    s_switch_2_active:
+#        base_overlay:
+#            expire: 3s
+
+variable_player:
+    s_standup_upper_right_active:
+        score: 1
+        #bonus_multiplier: 1
+    s_standup_upper_left_active:
+        score: 1
+    s_rollover_upper_left_active:
+        score: 1
+    s_rollover_upper_mid_active:
+        score: 1
+    s_rollover_upper_right_active:
+        score: 1
+    s_eject_hole_upper_active:
+        score: 1
+    s_target_upper_right_active:
+        score: 1
+    s_target_upper_left_active:
+        score: 1
+    s_jet_bumper_left_top_active:
+        score: 1
+    s_jet_bumper_left_mid_active:
+        score: 1
+    s_jet_bumper_left_bottom_active:
+        score: 1
+    s_jet_bumper_right_mid_active:
+        score: 1
+    s_jet_bumper_right_active:
+        score: 1
+    s_eject_hole_mid_active:
+        score: 1
+    s_5bank_drop_target_left_active:
+        score: 1
+    s_5bank_drop_target_left_mid_active:
+        score: 1
+    s_5bank_drop_target_mid_active:
+        score: 1
+    s_5bank_drop_target_right_mid_active:
+        score: 1
+    s_5bank_drop_target_right_active:
+        score: 1
+    s_5bank_drop_target_series_active:
+        score: 1
+    s_5bank_standup_active:
+        score: 1
+    s_standup_lower_right_active:
+        score: 1
+    s_standup_lower_left_active:
+        score: 1
+    s_3bank_drop_target_left_active:
+        score: 1
+    s_3bank_drop_target_mid_active:
+        score: 1
+    s_3bank_drop_target_right_active:
+        score: 1
+    s_3bank_drop_target_series_active:
+        score: 1
+    s_3bank_standup_active:
+        score: 1
+    s_rollover_outlane_right_active:
+        score: 1
+    s_rollover_outlane_left_active:
+        score: 1
+    s_rollover_inlane_left_active:
+        score: 1
+    s_rollover_inlane_right_active:
+        score: 1
+
+widget_player:
+#    slide_base_active:
+#        conditional_child_pools:
+#            slide: base
+#    #s_switch_d_active:
+#    #    conditional_child_pools:
+#    #        action: remove
+#    #        slide: base
+    mode_base_started:
+        overlay_widget:
+            slide: _overlay
+            expire: 5s
+            x: 100
+            y: 500
+
+
+
+
