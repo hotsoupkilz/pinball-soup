@@ -356,27 +356,28 @@ drop_target_banks:
 # TODO: determine actual display numbers
 segment_displays:
     info_display:
-        number: 0
-#        platform: lisy
-        size: 6
-    player1_display:
         number: 1
 #        platform: lisy
         size: 6
-    player2_display:
+    player1_display:
         number: 2
 #        platform: lisy
         size: 6
-    player3_display:
+    player2_display:
         number: 3
 #        platform: lisy
         size: 6
-    player4_display:
+    player3_display:
         number: 4
 #        platform: lisy
         size: 6
+    player4_display:
+        number: 5
+#        platform: lisy
+        size: 6
 
-
+virtual_segment_display_connector:
+    segment_displays: info_display, player1_display, player2_display, player3_display, player4_display
 # make info segment display only show numbers not hidden behind art
 segment_display_player:
     mask_info_display:

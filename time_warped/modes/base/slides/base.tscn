@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbusjs8ayfchw"]
+[gd_scene load_steps=5 format=3 uid="uid://dbusjs8ayfchw"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_j4vpx"]
 [ext_resource type="Texture2D" uid="uid://bqk1qwfgmge7c" path="res://modes/base/slides/IMG_1475.jpg" id="2_ow8f2"]
+[ext_resource type="Theme" uid="uid://di2fb71yonxo" path="res://theme/font_theme.tres" id="3_y3al0"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_y5rut"]
 
 [node name="Base" type="Control"]
@@ -14,14 +15,45 @@ position = Vector2(575, 317.5)
 scale = Vector2(0.561523, 0.401137)
 texture = ExtResource("2_ow8f2")
 
+[node name="ball" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 563.0
+offset_right = 1121.0
+offset_bottom = 618.0
+theme = ExtResource("3_y3al0")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Ball 2"
+script = ExtResource("3_y5rut")
+variable_name = "ball"
+template_string = "Ball %s"
+
+[node name="player" type="Label" parent="."]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 563.0
+offset_right = 805.0
+offset_bottom = 618.0
+theme = ExtResource("3_y3al0")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Player 1"
+script = ExtResource("3_y5rut")
+variable_name = "number"
+template_string = "Player %s"
+min_players = 2
+
 [node name="score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 587.0
 offset_top = 32.0
-offset_right = 1150.0
+offset_right = 1008.0
 offset_bottom = 192.0
+theme = ExtResource("3_y3al0")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 100
-text = "1,000,000"
 horizontal_alignment = 1
 script = ExtResource("3_y5rut")
 variable_name = "score"
