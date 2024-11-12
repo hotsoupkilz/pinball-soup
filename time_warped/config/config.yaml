@@ -289,7 +289,7 @@ lights:
         number: 25
     l_arrow_right_1bottom:
         number: 26
-    l_arrrow_right_2:
+    l_arrow_right_2:
         number: 27
     l_arrow_right_3:
         number: 28
@@ -496,8 +496,6 @@ segment_displays:
 #        platform: lisy
         size: 6
 
-virtual_segment_display_connector:
-    segment_displays: info_display, player1_display, player2_display, player3_display, player4_display
 
 # make info segment display only show numbers not hidden behind art
 segment_display_player:
@@ -532,6 +530,8 @@ segment_display_player:
 
 virtual_platform_start_active_switches: s_outhole
 
+virtual_segment_display_connector:
+    segment_displays: info_display, player1_display, player2_display, player3_display, player4_display
 
 
 

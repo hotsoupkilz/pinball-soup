@@ -8,17 +8,32 @@ mode:
 shots:
     sh_target_left:
         switch: s_target_upper_left
-#            show_tokens:
-#                light: # TODO
+        show_tokens:
+            light: l_X2
     sh_target_right:
         switch: s_target_upper_right
-#            show_tokens:
-#                light: # TODO
+        show_tokens:
+            light: l_bullseye_special
     sh_3bank_drop_target_left:
         switch: s_3bank_drop_target_left
         reset_events: ball_will_end
-#            show_tokens:
-#                light: # TODO
+        show_tokens:
+            light: l_arrow_right_1bottom
+    sh_rollover_upper_left:
+        switch: s_rollover_upper_left
+        reset_events: ball_will_end
+        show_tokens:
+            light: l_rollover_upper_left
+    sh_rollover_upper_mid:
+        switch: s_rollover_upper_mid
+        reset_events: ball_will_end
+        show_tokens:
+            light: l_rollover_upper_mid
+    sh_rollover_upper_right:
+        switch: s_rollover_upper_right
+        reset_events: ball_will_end
+        show_tokens:
+            light: l_rollover_upper_right
 
 #shot_groups:
 #    bumper_shots:
