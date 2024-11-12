@@ -23,7 +23,7 @@ hardware:
 ###############################################################################
 
 modes:
-    #- attract
+    - attract
     - base
     #- bonus
     #- skillshot
@@ -150,16 +150,6 @@ switches:
         number: 44
         tags: playfield_active
 
-#keyboard:
-#    k:
-#        switch: s_flipper_left
-#    l:
-#        switch: s_flipper_right
-#    s:
-#        switch: s_start_button
-#    b:
-#        switch: s_standup_upper_left
-
 
 ################################################################################
 # coils/solenoids
@@ -245,7 +235,136 @@ coils:
 ################################################################################
 # lights
 ################################################################################
-
+#number comes from lamp/matrix table in time warp manual, from top left down
+lights:
+    #l_notused:
+    #    number: 1
+    l_triangle1:
+        number: 2
+    l_triangle2:
+        number: 3
+    l_triangle3:
+        number: 4
+    l_triangle4:
+        number: 5
+    l_triangle5:
+        number: 6
+    l_triangle6:
+        number: 7
+    l_triangle7:
+        number: 8
+    l_triangle8:
+        number: 9
+    l_triangle9:
+        number: 10
+    l_triangle10:
+        number: 11
+    l_triangle11:
+        number: 12
+    l_triangle12:
+        number: 13
+    l_rollover_upper_left:
+        number: 14
+    l_rollover_upper_mid:
+        number: 15
+    l_rollover_upper_right:
+        number: 16
+    l_eject_hole_left_1bottom:
+        number: 17
+    l_eject_hole_left_2:
+        number: 18
+    l_eject_hole_left_3:
+        number: 19
+    l_eject_hole_left_4top:
+        number: 20
+    l_X2:
+        number: 21
+    l_X3:
+        number: 22
+    l_X5:
+        number: 23
+    l_X10:
+        number: 24
+    l_ABC_special:
+        number: 25
+    l_arrow_right_1bottom:
+        number: 26
+    l_arrrow_right_2:
+        number: 27
+    l_arrow_right_3:
+        number: 28
+    l_arrow_right_4top:
+        number: 29
+    l_bullseye_special:
+        number: 30
+    l_outlane_left:
+        number: 31
+    l_outlane_right:
+        number: 32
+    l_3bank_1bottom:
+        number: 33
+    l_3bank_2:
+        number: 34
+    l_3bank_3mid:
+        number: 35
+    l_3bank_4:
+        number: 36
+    l_3bank_5top:
+        number: 37
+    l_ballsave:
+        number: 38
+    l_jet_bumper_left_top:
+        number: 39
+    l_jet_bumper_left_mid:
+        number: 40
+    l_jet_bumper_left_bottom:
+        number: 41
+    l_jet_bumper_right_mid:
+        number: 42
+    l_jet_bumper_right:
+        number: 43
+    l_arrow_left_1bottom:
+        number: 44
+    l_arrow_left_2:
+        number: 45
+    l_arrow_left_3:
+        number: 46
+    l_arrow_left_4top:
+        number: 47
+    l_5bank_1:
+        number: 48
+    l_inlanes:
+        number: 49
+    l_1canplay:
+        number: 50
+    l_2canplay:
+        number: 51
+    l_3canplay:
+        number: 52
+    l_4canplay:
+        number: 53
+    l_match:
+        number: 54
+    l_ball_in_play:
+        number: 55
+    l_credits_playfield:
+        number: 56
+    l_player_up_1:
+        number: 57
+    l_player_up_2:
+        number: 58
+    l_player_up_3:
+        number: 59
+    l_player_up_4:
+        number: 60
+    l_tilt:
+        number: 61
+    l_game_over:
+        number: 62
+    l_same_player_again_backbox:
+        number: 63
+    l_high_score_to_date:
+        number: 64
 
 
 ################################################################################
@@ -379,6 +498,7 @@ segment_displays:
 
 virtual_segment_display_connector:
     segment_displays: info_display, player1_display, player2_display, player3_display, player4_display
+
 # make info segment display only show numbers not hidden behind art
 segment_display_player:
     mask_info_display:
