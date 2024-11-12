@@ -376,10 +376,12 @@ segment_displays:
 #        platform: lisy
         size: 6
 
-# TODO: make 1st and 4th segment for admin display not show as these are hidden by art
-#segment_display_player:
-#    info_display:
-#        flash_mask: _FF_FF
+
+# make info segment display only show numbers not hidden behind art
+segment_display_player:
+    mask_info_display:
+        info_display:
+            flash_mask: "_FF_FF"
 
 
 #displays:
