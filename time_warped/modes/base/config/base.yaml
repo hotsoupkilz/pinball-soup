@@ -24,8 +24,8 @@ shots:
 #        shots: bumper_shot_1, bumper_shot_2
 
 
-#slide_player:
-#    mode_base_started: base
+slide_player:
+    mode_base_started: base
 #    s_start_button_active:
 #        base:
 #            action: method
@@ -104,9 +104,9 @@ variable_player:
         score: 1
 
 widget_player:
-#    slide_base_active:
-#        conditional_child_pools:
-#            slide: base
+    slide_base_active:
+        conditional_child_pools:
+            slide: base
 #    #s_switch_d_active:
 #    #    conditional_child_pools:
 #    #        action: remove
