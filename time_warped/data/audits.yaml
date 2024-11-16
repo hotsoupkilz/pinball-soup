@@ -1,58 +1,55 @@
 events:
-  game_ended: 12
-  game_started: 35
+  game_ended: 14
+  game_started: 39
 missing_switches:
-  s_3bank_drop_target_left: 35
-  s_3bank_drop_target_mid: 35
-  s_3bank_drop_target_right: 35
-  s_3bank_drop_target_series: 35
+  s_3bank_drop_target_left: 39
+  s_3bank_drop_target_mid: 39
+  s_3bank_drop_target_right: 39
+  s_3bank_drop_target_series: 39
   s_3bank_drop_target_standup: 2
-  s_3bank_standup: 33
-  s_5bank_drop_target_left: 35
-  s_5bank_drop_target_left_mid: 35
-  s_5bank_drop_target_mid: 35
-  s_5bank_drop_target_right: 35
-  s_5bank_drop_target_right_mid: 35
-  s_5bank_drop_target_series: 35
+  s_3bank_standup: 37
+  s_5bank_drop_target_left: 39
+  s_5bank_drop_target_left_mid: 39
+  s_5bank_drop_target_mid: 39
+  s_5bank_drop_target_right: 39
+  s_5bank_drop_target_right_mid: 39
+  s_5bank_drop_target_series: 39
   s_5bank_drop_target_standup: 2
-  s_5bank_standup: 33
-  s_coin_center: 35
-  s_coin_left: 35
-  s_coin_open_right: 35
-  s_eject_hole_mid: 33
+  s_5bank_standup: 37
+  s_coin_center: 39
+  s_coin_left: 39
+  s_coin_open_right: 39
+  s_eject_hole_mid: 37
   s_eject_hole_mid_right: 2
-  s_eject_hole_upper: 35
-  s_flipper_left: 1
-  s_flipper_right: 1
-  s_high_score_reset: 35
-  s_jet_bumper_left_bottom: 35
-  s_jet_bumper_left_mid: 35
-  s_jet_bumper_left_top: 35
-  s_jet_bumper_right: 35
-  s_jet_bumper_right_mid: 35
-  s_kicker_lower_left: 35
-  s_kicker_lower_right: 35
-  s_outhole: 1
-  s_rollover_inlane_left: 35
-  s_rollover_inlane_right: 35
-  s_rollover_outlane_left: 35
-  s_rollover_outlane_right: 35
-  s_rollover_upper_left: 35
-  s_rollover_upper_mid: 35
-  s_rollover_upper_right: 35
-  s_standup_lower_left: 35
-  s_standup_lower_right: 35
-  s_standup_upper_left: 35
-  s_standup_upper_right: 1
-  s_target_upper_left: 35
-  s_target_upper_right: 35
-  s_tilt_ball_roll: 35
-  s_tilt_lower_playfield: 35
-  s_tilt_plumb_bob: 35
-  s_tilt_slam: 35
+  s_eject_hole_upper: 39
+  s_high_score_reset: 39
+  s_jet_bumper_left_bottom: 39
+  s_jet_bumper_left_mid: 39
+  s_jet_bumper_left_top: 39
+  s_jet_bumper_right: 39
+  s_jet_bumper_right_mid: 39
+  s_kicker_lower_left: 39
+  s_kicker_lower_right: 39
+  s_rollover_inlane_left: 39
+  s_rollover_inlane_right: 39
+  s_rollover_outlane_left: 39
+  s_rollover_outlane_right: 39
+  s_rollover_upper_left: 39
+  s_rollover_upper_mid: 39
+  s_rollover_upper_right: 39
+  s_standup_lower_left: 39
+  s_standup_lower_right: 39
+  s_standup_upper_left: 39
+  s_start_button: 3
+  s_target_upper_left: 39
+  s_target_upper_right: 39
+  s_tilt_ball_roll: 39
+  s_tilt_lower_playfield: 39
+  s_tilt_plumb_bob: 39
+  s_tilt_slam: 39
 player:
   score:
-    average: 12
+    average: 11
     top:
     - 34
     - 27
@@ -61,10 +58,10 @@ player:
     - 21
     - 18
     - 18
+    - 18
     - 17
     - 15
-    - 12
-    total: 17
+    total: 19
 switches:
   s_3bank_drop_target_left: 0
   s_3bank_drop_target_mid: 0
@@ -86,8 +83,8 @@ switches:
   s_eject_hole_mid: 0
   s_eject_hole_mid_right: 0
   s_eject_hole_upper: 0
-  s_flipper_left: 248
-  s_flipper_right: 269
+  s_flipper_left: 284
+  s_flipper_right: 312
   s_high_score_reset: 0
   s_jet_bumper_left_bottom: 0
   s_jet_bumper_left_mid: 0
@@ -96,7 +93,7 @@ switches:
   s_jet_bumper_right_mid: 0
   s_kicker_lower_left: 0
   s_kicker_lower_right: 0
-  s_outhole: 54
+  s_outhole: 63
   s_rollover_inlane_left: 0
   s_rollover_inlane_right: 0
   s_rollover_outlane_left: 0
@@ -107,8 +104,8 @@ switches:
   s_standup_lower_left: 0
   s_standup_lower_right: 0
   s_standup_upper_left: 0
-  s_standup_upper_right: 320
-  s_start_button: 24
+  s_standup_upper_right: 361
+  s_start_button: 25
   s_target_upper_left: 0
   s_target_upper_right: 0
   s_tilt_ball_roll: 0

@@ -4,18 +4,18 @@
 # hardware
 ###############################################################################
 
-## hardware
+# hardware
 hardware:
     platform: smart_virtual
 
 #hardware:
 #    platform: lisy
-
+#
 #lisy:
 #    connection: serial
-#    port: # com1 #TODO figure out what to put here
+#    port: com1 #TODO figure out what to put here
 #    baud: 115200
-#    debug: true # log leve debug. can make game run slowly
+#    debug: true # log level debug. can make game run slowly
 
 
 ###############################################################################
@@ -35,10 +35,10 @@ modes:
 switches:
     ## (mostly) admin switches
     s_flipper_left: # switch TBD
-        number: #46
+        number: 46
         tags: left_flipper
     s_flipper_right: # switch TBD
-        number: #45
+        number: 45
         tags: right_flipper
     s_tilt_plumb_bob: # switch 1
         number: 1
@@ -389,12 +389,12 @@ ball_devices:
         eject_coil: c_eject_hole_mid
         eject_timeouts: 3s
 
-#ball_saves:
-#    default:
-#        active_time: 10s
-#        hurry_up_time: 2s
-#        grace_period: 3s
-##        enable_events: #TODO  mode_base_started
+ball_saves:
+    default:
+        active_time: 10s
+        hurry_up_time: 2s
+        grace_period: 3s
+        enable_events: base_mode_started
 ##        timer_start_events: #TODO balldevice_plunger_lane_ball_eject_success
 #        auto_launch: false
 #        balls_to_save: 1
