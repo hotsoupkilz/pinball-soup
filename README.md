@@ -25,6 +25,7 @@ The below steps will get a) a python virtualenv to work in, b) the godot engine 
 
 MissionPinball Docs: https://missionpinball.org/latest/start/quickstart/
 
+WIP
 - install godot: https://godotengine.org/download/linux/
 - $ mv ~/Downloads/Godot_v4.3-stable_linux.x86_64 godot
 - $ sudo mv godot /usr/local/bin
