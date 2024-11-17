@@ -1,10 +1,10 @@
 # pinball_soup
 
-The below steps will get a) arduino IDE, b) raspi set up with lisy, c) sd cards for APC to run Time Warped
+#### The below steps will get a) arduino IDE, b) raspi set up with lisy, c) sd cards for APC to run Time Warped
 
-Arduino Pinball Controller Docs: https://github.com/AmokSolderer/APC
-Arduino IDE: https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/
-lisy: https://lisy.dev/software.html
+- Arduino Pinball Controller Docs: https://github.com/AmokSolderer/APC
+- Arduino IDE: https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/
+- lisy: https://lisy.dev/software.html
 
 ### APC software
 - install arduino IDE (IDE 2) appimage from arduino site
@@ -20,8 +20,9 @@ lisy: https://lisy.dev/software.html
 - if permission error, likely need to add user to group that controls port access. check which group owns ports (how TBD), if "dialout" group exists, it is likely this one
 - `$ less /etc/group` (this lists all groups)
 - add user to appropriate group & reboot afterwards: `$ sudo usermod -a -G dialout $USER`. retry upload after reboot & it should work.
+- format an SD card from SDcard assoc (in windows machine only) for use on APC board. There will be a second SD card for use with raspi outlined below.
 
-The below steps will get a) a python virtualenv to work in, b) the godot engine needed by mpf, c) mpf and d) the gmc addons mpf needs into a given machine folder
+#### The below steps will get a) a python virtualenv to work in, b) the godot engine needed by mpf, c) mpf and d) the gmc addons mpf needs into a given machine folder
 
 MissionPinball Docs: https://missionpinball.org/latest/start/quickstart/
 
