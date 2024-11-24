@@ -9,7 +9,7 @@
 ### APC: PCB ordering
 - TBD
 - PCB maker did not have all parts available/in stock. Order list details for parts to solder for board completion:
-    > https://docs.google.com/spreadsheets/d/1Lxnt1CGEWpybvpkPa3vRJebU48Qeu8h9te3dvZjng0g/edit?gid=0#gid=0
+  - https://docs.google.com/spreadsheets/d/1Lxnt1CGEWpybvpkPa3vRJebU48Qeu8h9te3dvZjng0g/edit?gid=0#gid=0
 
 ### APC: Arduino Due & onboard SD card
 - install arduino IDE (IDE 2) appimage from arduino site
@@ -26,17 +26,17 @@
 - `$ less /etc/group` (this lists all groups)
 - add user to appropriate group & reboot afterwards: `$ sudo usermod -a -G dialout $USER`. retry upload after reboot & it should work.
 - format an SD card using formatter from SDcard assoc (in windows machine only) for use on APC board. There will be a second SD card for use with raspi outlined in later steps.
-    > wyze 32gb card: card with RED sharpie has Time Warp settings (APC & usb) & sounds from amoksolderer (via dropbox) pre-loaded
-    > wyze 32gb card: card with BLACK X/LINES sharpie has no pre-loaded settings (will need to configure APC correctly upon first use, which will save settings to card)
+  - wyze 32gb card: card with RED sharpie has Time Warp settings (APC & usb) & sounds from amoksolderer (via dropbox) pre-loaded
+  - wyze 32gb card: card with BLACK X/LINES sharpie has no pre-loaded settings (will need to configure APC correctly upon first use, which will save settings to card)
 - Install Due on APC, put sd card into APC's onboard slot
 - Install APC in pinball machine (no raspi yet):
-        > take one cord from old board, clearly label it based on name printed on old board (e.g. 2J4 on connector housing)
-        > take that same cord and plug into corresponging port on APC using this diagram: https://github.com/AmokSolderer/APC/blob/master/DOC/InitialTests.md
-        > run each test in order as described in APC initial test docs (linked in line above)
+  - take one cord from old board, clearly label it based on name printed on old board (e.g. 2J4 on connector housing)
+  - take that same cord and plug into corresponging port on APC using this diagram: https://github.com/AmokSolderer/APC/blob/master/DOC/InitialTests.md
+  - run each test in order as described in APC initial test docs (linked in line above)
 
 ### Lisy: Lisy image & raspberry pi
 - download latest lisy embedded image via https://lisy.dev/swrep/LISY_Image/embedded/latest/
-    > align image type with raspi type: ensure pi0w image since that's the raspi we're using here
+  - align image type with raspi type: ensure pi0w image since that's the raspi we're using here
 - optional: download latest full image via https://lisy.dev/swrep/LISY_Image/stable/
 - upload image to sdcard using a good image writer tool (can be linux or windows ex: raspi imager, dd)
 - Put sdcard into raspi (pi0w v 1.1) slot, install raspi (pi0w) on APC
@@ -46,8 +46,8 @@
 - APC creator sent Time Warp sound files, APC config, and usb/lisy/raspi config pre-set to pull up Time Warp.
 - unzip if needed from download, and upload files to (correctly formatted) sdcard as indicated in previous steps. Install card on APC board
 - Turn machine on. It should come up as original Time Warp
-    > the "first" time this is done (or sdcard wiped/reuploaded), machine will enter Williams settings vs gameplay. Flip coin door dipswitch to "Down", short press "Advance" to navigate back to final "exit" setting, then press start button. Settings will save to sdcard and game should start as normal going forward.
-    > rom is coin-based. will need to add credits to machine to start game.
+  - the "first" time this is done (or sdcard wiped/reuploaded), machine will enter Williams settings vs gameplay. Flip coin door dipswitch to "Down", short press "Advance" to navigate back to final "exit" setting, then press start button. Settings will save to sdcard and game should start as normal going forward.
+  - rom is coin-based. will need to add credits to machine to start game.
 
 #### Hard(er) method
 
