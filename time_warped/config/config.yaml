@@ -1,537 +1,578 @@
 #config_version=6
 
-###############################################################################
-# hardware
-###############################################################################
+#config_version=5
 
-# hardware
 hardware:
-    platform: smart_virtual
+    platform: lisy
 
-#hardware:
-#    platform: lisy
-#
-#lisy:
-#    connection: serial
-#    port: com1 #TODO figure out what to put here
-#    baud: 115200
-#    debug: true # log level debug. can make game run slowly
+lisy:
+    connection: serial
+    port: /dev/ACMO
+    baud: 115200
+    debug: True
 
+#virtual_platform_start_active_switches:
+ #   s_through1
+  #  s_through2
+   # s_through3
 
-###############################################################################
-# game modes
-###############################################################################
-
-modes:
-    - attract
-    - base
-    #- bonus
-    #- skillshot
-
-###############################################################################
-# switches
-###############################################################################
-
-switches:
-    ## (mostly) admin switches
-    s_flipper_left: # switch TBD
-        number: 46
-        tags: left_flipper
-    s_flipper_right: # switch TBD
-        number: 45
-        tags: right_flipper
-    s_tilt_plumb_bob: # switch 1
-        number: 1
-    s_tilt_ball_roll: # switch 2
-        number: 2
-    s_start_button: # switch 3
-        number: 3
-        tags: start
-    s_coin_open_right: # switch 4
-        number: 4
-    s_coin_center: # switch 5
-        number: 5
-    s_coin_left: # switch 6
-        number: 6
-    s_tilt_slam: # switch 7
-        number: 7
-    s_high_score_reset: # switch 8
-        number: 8
-    s_outhole: # switch 9
-        number: 9
-
-    ## playfield switches
-    # upper playfield
-    s_standup_upper_right: # switch 10
-        number: 10
-        tags: playfield_active
-    s_standup_upper_left: # switch 11
-        number: 11
-        tags: playfield_active
-    s_rollover_upper_left: # switch 12
-        number: 12
-        tags: playfield_active
-    s_rollover_upper_mid: # switch 13
-        number: 13
-        tags: playfield_active
-    s_rollover_upper_right: # switch 14
-        number: 14
-        tags: playfield_active
-    s_eject_hole_upper: # switch 15
-        number: 15
-    s_target_upper_right: # switch 16
-        number: 16
-        tags: playfield_active
-    s_target_upper_left: # switch 17
-        number: 17
-        tags: playfield_active
-
-    # (mostly) mid playfield
-    s_rollover_inlane_right: # switch 18
-        number: 18
-        tags: playfield_active
-    s_jet_bumper_left_top: # switch 19
-        number: 19
-    s_jet_bumper_left_mid: # switch 20
-        number: 20
-    s_jet_bumper_left_bottom: # switch 21
-        number: 21
-    s_jet_bumper_right_mid: # switch 22
-        number: 22
-    s_jet_bumper_right: # switch 23
-        number: 23
-    s_eject_hole_mid: # switch 24
-        number: 24
-    s_5bank_drop_target_left: # switch 25
-        number: 25
-    s_5bank_drop_target_left_mid: # switch 26
-        number: 26
-    s_5bank_drop_target_mid: # switch 27
-        number: 27
-    s_5bank_drop_target_right_mid: # switch 28
-        number: 28
-    s_5bank_drop_target_right: # switch 29
-        number: 29
-    s_5bank_drop_target_series: # switch 30
-        number: 30
-    s_5bank_standup: # switch 31
-        number: 31
-    s_standup_lower_right: # switch 32
-        number: 32
-        tags: playfield_active
-    s_3bank_drop_target_left: # switch 33
-        number: 33
-    s_3bank_drop_target_mid: # switch 34
-        number: 34
-    s_3bank_drop_target_right: # switch 35
-        number: 35
-    s_3bank_drop_target_series: # switch 36
-        number: 36
-    s_3bank_standup: # switch 37
-        number: 37
-
-    # lower playfield
-    s_standup_lower_left: # switch 38
-        number: 38
-        tags: playfield_active
-    s_rollover_outlane_right: # switch 39
-        number: 39
-        tags: playfield_active
-    s_rollover_outlane_left: # switch 40
-        number: 40
-        tags: playfield_active
-    s_kicker_lower_right: # switch 41
-        number: 41
-    s_kicker_lower_left: # switch 42
-        number: 42
-    s_tilt_lower_playfield: # switch 43
-        number: 43
-    s_rollover_inlane_left: # switch 44
-        number: 44
-        tags: playfield_active
-
-
-################################################################################
-# coils/solenoids
-################################################################################
-
-# comments indicate coil number in time warp manual
-coils:
-    c_eject_outhole: # coil 1
-        number: 1
-        default_pulse_ms: 30
-    c_eject_hole_upper: # coil 2
-        number: 2
-        default_pulse_ms: 30
-    c_eject_hole_mid: # coil 3
-        number: 3
-        default_pulse_ms: 30
-    c_3bank_drop_target_reset: # coil 4
-        number: 4
-        default_pulse_ms: 30
-    c_5bank_drop_target_reset_top: # coil 5
-        number: 5
-        default_pulse_ms: 30
-    c_5bank_drop_target_reset_bottom: # coil 6
-        number: 6
-        default_pulse_ms: 30
-    c_kicker_lower_right: # coil 7
-        number: 7
-        default_pulse_ms: 30
-    c_kicker_lower_left: # coil 8
-        number: 8
-        default_pulse_ms: 30
-    c_sound1: # coil 9
-        number: 9
-    c_sound2: # coil 10
-        number: 10
-    c_sound3: # coil 11
-        number: 11
-    c_sound4: # coil 12
-        number: 12
-    c_sound5: # coil 13
-        number: 13
-    c_credit_knocker: # coil 14
-        number: 14
-    # c_notused: # coil 15
-    #    number: 15
-    c_coin_lockout: # coil 16
-        number: 16
-    c_jet_bumper_left_top: # coil 17
-        number: 17
-        default_pulse_ms: 30
-    c_jet_bumper_left_mid: # coil 18
-        number: 18
-        default_pulse_ms: 30
-    c_jet_bumper_left_bottom: # coil 19
-        number: 19
-        default_pulse_ms: 30
-    c_jet_bumper_right_mid: # coil 20
-        number: 20
-        default_pulse_ms: 30
-    c_jet_bumper_right: # coil 21
-        number: 21
-        default_pulse_ms: 30
-    # c_notused # coil 22
-    #    number: 22
-    c_flipper_right_main:
-        number: 23
-        default_pulse_ms: 30
-        default_hold_power: 0.25
-    # remove hold if single wound coil
-    #c_flipper_right_hold:
-    #    number: #TBD
-    #    allow_enable: true
-    c_flipper_left_main:
-        number: 24
-        default_pulse_ms: 30
-        default_hold_power: 0.25
-    # remove hold if single wound coil
-    #c_flipper_left_hold:
-    #    number: #TBD
-    #    allow_enable: true
-
-
-################################################################################
-# lights
-################################################################################
-#number comes from lamp/matrix table in time warp manual, from top left down
-lights:
-    #l_notused:
-    #    number: 1
-    l_triangle1:
-        number: 2
-    l_triangle2:
-        number: 3
-    l_triangle3:
-        number: 4
-    l_triangle4:
-        number: 5
-    l_triangle5:
-        number: 6
-    l_triangle6:
-        number: 7
-    l_triangle7:
-        number: 8
-    l_triangle8:
-        number: 9
-    l_triangle9:
-        number: 10
-    l_triangle10:
-        number: 11
-    l_triangle11:
-        number: 12
-    l_triangle12:
-        number: 13
-    l_rollover_upper_left:
-        number: 14
-    l_rollover_upper_mid:
-        number: 15
-    l_rollover_upper_right:
-        number: 16
-    l_eject_hole_left_1bottom:
-        number: 17
-    l_eject_hole_left_2:
-        number: 18
-    l_eject_hole_left_3:
-        number: 19
-    l_eject_hole_left_4top:
-        number: 20
-    l_X2:
-        number: 21
-    l_X3:
-        number: 22
-    l_X5:
-        number: 23
-    l_X10:
-        number: 24
-    l_ABC_special:
-        number: 25
-    l_arrow_right_1bottom:
-        number: 26
-    l_arrow_right_2:
-        number: 27
-    l_arrow_right_3:
-        number: 28
-    l_arrow_right_4top:
-        number: 29
-    l_bullseye_special:
-        number: 30
-    l_outlane_left:
-        number: 31
-    l_outlane_right:
-        number: 32
-    l_3bank_1bottom:
-        number: 33
-    l_3bank_2:
-        number: 34
-    l_3bank_3mid:
-        number: 35
-    l_3bank_4:
-        number: 36
-    l_3bank_5top:
-        number: 37
-    l_ballsave:
-        number: 38
-    l_jet_bumper_left_top:
-        number: 39
-    l_jet_bumper_left_mid:
-        number: 40
-    l_jet_bumper_left_bottom:
-        number: 41
-    l_jet_bumper_right_mid:
-        number: 42
-    l_jet_bumper_right:
-        number: 43
-    l_arrow_left_1bottom:
-        number: 44
-    l_arrow_left_2:
-        number: 45
-    l_arrow_left_3:
-        number: 46
-    l_arrow_left_4top:
-        number: 47
-    l_5bank_1:
-        number: 48
-    l_inlanes:
-        number: 49
-    l_1canplay:
-        number: 50
-    l_2canplay:
-        number: 51
-    l_3canplay:
-        number: 52
-    l_4canplay:
-        number: 53
-    l_match:
-        number: 54
-    l_ball_in_play:
-        number: 55
-    l_credits_playfield:
-        number: 56
-    l_player_up_1:
-        number: 57
-    l_player_up_2:
-        number: 58
-    l_player_up_3:
-        number: 59
-    l_player_up_4:
-        number: 60
-    l_tilt:
-        number: 61
-    l_game_over:
-        number: 62
-    l_same_player_again_backbox:
-        number: 63
-    l_high_score_to_date:
-        number: 64
-
-
-################################################################################
-# playfield(s) & such
-################################################################################
-
-##ball devices (anything that holds & releases a ball, including the playfield which "holds a ball")
-ball_devices:
-    bd_drain:
-        ball_switches: s_outhole
-        eject_coil: c_eject_outhole
-        tags: drain, home, trough
-        eject_timeouts: 3s
-
-    bd_eject_hole_upper:
-        ball_switches: s_eject_hole_upper
-        eject_coil: c_eject_hole_upper
-        eject_timeouts: 3s
-
-    bd_eject_hole_mid:
-        ball_switches: s_eject_hole_mid
-        eject_coil: c_eject_hole_mid
-        eject_timeouts: 3s
-
-ball_saves:
-    default:
-        active_time: 10s
-        hurry_up_time: 2s
-        grace_period: 3s
-        enable_events: base_mode_started
-##        timer_start_events: #TODO balldevice_plunger_lane_ball_eject_success
-#        auto_launch: false
-#        balls_to_save: 1
-#        debug: true
-
-## playfield
 playfields:
     playfield:
-        default_source_device: bd_drain
         tags: default
+        default_source_device: bd_plunger
 
-## flippers
-flippers:
-    left_flipper:
-        main_coil: c_flipper_left_main
-        #hold_coil: c_flipper_left_hold # remove if single wound coil
-        activation_switch: s_flipper_left
-        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
-        #label: Left Flipper
-    right_flipper:
-        main_coil: c_flipper_right_main
-        #hold_coil: c_flipper_right_hold # remove if single wound coil
-        activation_switch: s_flipper_right
-        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
-        #label: Right Flipper
+# displays:
+    # window:
+        # width: 800
+        # height: 600
 
-## autofire coils (things that fire immediately when switch is hit)
-autofire_coils:
-    kicker_left:
-        coil: c_kicker_lower_left
-        switch: s_kicker_lower_left
-    kicker_right:
-        coil: c_kicker_lower_right
-        switch: s_kicker_lower_right
-    jet_bumper_left_top:
-        coil: c_jet_bumper_left_top
-        switch: s_jet_bumper_left_top
-    jet_bumper_left_mid:
-        coil: c_jet_bumper_left_mid
-        switch: s_jet_bumper_left_mid
-    jet_bumper_left_bottom:
-        coil: c_jet_bumper_left_bottom
-        switch: s_jet_bumper_left_bottom
+segment_displays:
+    display1:
+        number: 1
+        platform: lisy
+    display2:
+        number: 2
+        platform: lisy
 
-## drop targets
+hardware_sound_systems:
+    default:
+        label: APC
+
+keyboard:
+    y:
+        switch: s_ouhole
+    m:
+        switch: s_through1
+    s:
+        switch: s_start
+    q:
+        switch: s_right_inlane
+    p:
+        switch: s_plunger_lane
+    # c:
+        # event: LeftOrbit_start
+    # v:
+        # event: LeftOrbit_stop
+
+modes:
+  - base
+  - Lock1
+
+# slides:
+    # welcome_slide:
+        # widgets:
+          # - type: text
+            # text: PINBALL
+            # number_grouping: true
+            # min_digits: 2
+            # font_name: Ten_segment
+            # color: black
+            # x: 620
+            # y: 724
+            # font_size: 240
+            # anchor_x: right
+            # anchor_y: bottom
+            # z: 2
+
+# slide_player:
+    # init_done: welcome_slide
+
+player_vars:
+    # kickback_enable:
+        # initial_value: 1
+    score:
+        initial_value: 0
+
+switches:
+    s_tilt:
+        number: 1
+    s_ac_relay:
+        number: 2
+    s_start:
+        number: 3
+        tags: start
+    s_right_coin_chute:
+        number: 4
+    s_center_coin_chute:
+        number: 5
+    s_left_coin_chute:
+        number: 6
+    s_slam_tilt:
+        number: 7
+    s_high_score_reset:
+        number: 8
+    s_ouhole:
+        number: 9
+    s_through1:
+        number: 13
+    s_through2:
+        number: 12
+    s_through3:
+        number: 11
+    s_upper_kickback:
+        number: 14
+    s_ball_popper:
+        number: 16
+    s_right_inlane:
+        number: 18
+        tags: playfield_active
+    s_right_oulane:
+        number: 19
+        tags: playfield_active
+    s_plunger_lane:
+        number: 20
+    s_left_jetway_top:
+        number: 21
+        tags: playfield_active
+    s_right_jetway_top:
+        number: 22
+        tags: playfield_active
+    s_left_spinner:
+        number: 23
+        tags: playfield_active
+    s_right_spinner:
+        number: 24
+        tags: playfield_active
+    s_5bank_E:
+        number: 25
+        tags: playfield_active
+    s_5bank_T:
+        number: 26
+        tags: playfield_active
+    s_5bank_A:
+        number: 27
+        tags: playfield_active
+    s_5bank_K:
+        number: 28
+        tags: playfield_active
+    s_5bank_S:
+        number: 29
+        tags: playfield_active
+    s_standup_A:
+        number: 30
+        tags: playfield_active
+    s_standup_B:
+        number: 31
+        tags: playfield_active
+    s_standup_C:
+        number: 32
+        tags: playfield_active
+    s_left_sling:
+        number: 33
+    s_right_sling:
+        number: 34
+    s_left_jet_bumper:
+        number: 35
+    s_right_jet_bumper:
+        number: 36
+    s_lower_jet_bumper:
+        number: 37
+    s_ramp_diverter_1:
+        number: 38
+    s_ramp_diverter_2:
+        number: 39
+    s_outlane_kickback:
+        number: 40
+    s_top_standup_1:
+        number: 41
+        tags: playfield_active
+    s_top_standup_2:
+        number: 42
+        tags: playfield_active
+    s_top_standup_3:
+        number: 43
+        tags: playfield_active
+    s_extra_ball:
+        number: 44
+        tags: playfield_active
+    s_lane_rollover_J:
+        number: 46
+        tags: playfield_active
+    s_lane_rollover_E:
+        number: 47
+        tags: playfield_active
+    s_lane_rollover_T:
+        number: 48
+        tags: playfield_active
+    s_left_drop_target:
+        number: 49
+    s_center_drop_target:
+        number: 50
+    s_right_drop_target:
+        number: 51
+    s_lock_ramp_entry:
+        number: 52
+    s_lock_1:
+        number: 53
+    s_lock_2:
+        number: 54
+    s_left_inlane:
+        number: 56
+        tags: playfield_active
+    s_right_lane_change:
+        number: 57
+    s_left_lane_change:
+        number: 58
+
+coils:
+    c_ouhole_kicker:
+        number: 1
+        default_pulse_ms: 30
+    c_shooter_lane:
+        number: 2
+        default_pulse_ms: 30
+    c_ball_popper:
+        number: 4
+        default_pulse_ms: 50
+    c_drop_target_reset:
+        number: 6
+        default_pulse_ms: 50
+    c_knocker:
+        number: 7
+    c_lock_diverter:
+        number: 8
+        default_pulse_power: 1
+        default_pulse_ms: 2000
+        pulse_events:
+            balldevice_bd_lock_ejecting_ball: 0.5s
+    c_flash_9:
+        number: 9
+    c_insert_gen_illum_relay:
+        number: 10
+    c_playfield_gen_illum_relay:
+        number: 11
+    c_ac_relay:
+        number: 12
+    c_upper_kickback:
+        number: 13
+        default_pulse_ms: 40
+    c_lock_kickback:
+        number: 14
+        default_pulse_ms: 40
+    c_left_sling:
+        number: 15
+        default_pulse_ms: 30
+    c_right_sling:
+        number: 16
+        default_pulse_ms: 30
+    c_left_bumper:
+        number: 17
+        default_pulse_ms: 30
+    c_ramp_diverter:
+        number: 18
+        default_pulse_power: 1
+    c_right_bumper:
+        number: 19
+        default_pulse_ms: 30
+    c_outlane_kickback:
+        number: 20
+        default_pulse_ms: 40
+    c_lower_bumper:
+        number: 21
+        default_pulse_ms: 30
+    c_deepfreeze_magnet:
+        number: 22
+    c_right_flipper:
+        number: 23
+    c_left_flipper:
+        number: 24
+
+lights:
+    l_W:
+        number: 1
+    l_I1:
+        number: 2
+    l_L1:
+        number: 3
+    l_L2:
+        number: 4
+    l_I2:
+        number: 5
+    l_A:
+        number: 6
+    l_M:
+        number: 7
+    l_S:
+        number: 8
+    l_track_8:
+        number: 9
+    l_track_11:
+        number: 10
+    l_track_4:
+        number: 11
+    l_bonus2x:
+        number: 12
+    l_track_7:
+        number: 13
+    l_bonus1x:
+        number: 14
+    l_bonus4x:
+        number: 15
+    l_track_12:
+        number: 16
+    l_track_13:
+        number: 17
+    l_track_10:
+        number: 18
+    l_track_6:
+        number: 19
+    l_track_9:
+        number: 20
+    l_skate_again:
+        number: 21
+    l_left_orbit:
+        number: 22
+    l_roller_motion:
+        number: 23
+    l_right_orbit:
+        number: 24
+    l_5bank_E:
+        number: 25
+    l_5bank_T:
+        number: 26
+    l_5bank_A:
+        number: 27
+    l_5bank_K:
+        number: 28
+    l_5bank_S:
+        number: 29
+    l_standup_A:
+        number: 30
+    l_standup_B:
+        number: 31
+    l_standup_C:
+        number: 32
+    l_team_1:
+        number: 33
+    l_team_2:
+        number: 34
+    l_team_3:
+        number: 35
+    l_team_4:
+        number: 36
+    l_team_5:
+        number: 37
+    l_team_6:
+        number: 38
+    l_scoring_cycle:
+        number: 39
+    l_lites_loop:
+        number: 40
+    l_standup_1:
+        number: 41
+    l_standup_2:
+        number: 42
+    l_standup_3:
+        number: 43
+    l_extra_ball:
+        number: 44
+    l_special:
+        number: 45
+    l_lane_J:
+        number: 46
+    l_lane_E:
+        number: 47
+    l_lane_T:
+        number: 48
+    l_drop_target_W:
+        number: 49
+    l_drop_target_A:
+        number: 50
+    l_drop_target_R:
+        number: 51
+    l_jackpot:
+        number: 52
+    l_lock:
+        number: 53
+    l_million:
+        number: 54
+    l_deep_freeze:
+        number: 55
+    l_kickback:
+        number: 56
+    l_track_1:
+        number: 57
+    l_track_2:
+        number: 58
+    l_track_3:
+        number: 59
+    l_track_5:
+        number: 60
+    l_track_14:
+        number: 61
+    l_track_15:
+        number: 62
+    l_track_16:
+        number: 63
+    l_track_17:
+        number: 64
+
+shot_profiles:
+    on_off_profile:
+        states:
+          - name: unlit
+            show: off
+          - name: lit
+            show: on
+        loop: no
+    # jetway_profile:
+        # states:
+          # - name: unlit
+            # show: off
+          # - name: flashing
+            # show: flash
+            # speed: 5
+        # loop: no
+    # my_first_profile:
+        # states:
+          # - name: unlit
+            # show: off
+          # - name: flashing
+            # show: flash
+            # speed: 5
+          # - name: lit
+            # show: on
+        # loop: yes
+    flash_profile:
+        states:
+          - name: flashing
+            show: flash
+        loop: no
+
+digital_outputs:
+    game_over_relay:
+        number: 25
+        type: driver
+        enable_events: ball_started
+        disable_events: ball_will_end
+
 drop_targets:
-    fivebank_drop_target_left:
-        switch: s_5bank_drop_target_left
-    fivebank_drop_target_left_mid:
-        switch: s_5bank_drop_target_left_mid
-    fivebank_drop_target_mid:
-        switch: s_5bank_drop_target_mid
-    fivebank_drop_target_right_mid:
-        switch: s_5bank_drop_target_right_mid
-    fivebank_drop_target_right:
-        switch: s_5bank_drop_target_right
-
-    threebank_drop_target_left:
-        switch: s_3bank_drop_target_left
-    threebank_drop_target_mid:
-        switch: s_3bank_drop_target_mid
-    threebank_drop_target_right:
-        switch: s_3bank_drop_target_right
+    w_drop_target:
+        switch: s_left_drop_target
+    a_drop_target:
+        switch: s_center_drop_target
+    r_drop_target:
+        switch: s_right_drop_target
 
 drop_target_banks:
-    five_bank_drop_target:
-        drop_targets: fivebank_drop_target_left, fivebank_drop_target_left_mid, fivebank_drop_target_mid, fivebank_drop_target_right_mid, fivebank_drop_target_right
-        reset_coils: c_5bank_drop_target_reset_top, c_5bank_drop_target_reset_bottom
-        reset_on_complete: 10s
+    war_drop_targets:
+        drop_targets: w_drop_target, a_drop_target, r_drop_target
+        reset_coils: c_drop_target_reset
+        reset_on_complete: 1s
 
-    three_bank_drop_target:
-        drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right
-        reset_coils: c_3bank_drop_target_reset
-        reset_on_complete: 10s
+ball_devices:
+    bd_drain:
+        ball_switches: s_ouhole
+        eject_coil: c_ouhole_kicker
+        eject_targets: bd_trough
+        tags: drain
+    bd_trough:
+        ball_switches: s_through1, s_through2, s_through3
+        eject_coil: c_shooter_lane
+        eject_targets: bd_plunger
+        tags: home, trough
+    bd_plunger:
+        ball_switches: s_plunger_lane
+        mechanical_eject: true
+        eject_timeouts: 5s
+    bd_popper:
+        ball_switches: s_ball_popper
+        eject_coil: c_ball_popper
+        eject_timeouts: 5s
+    bd_lock:
+        ball_switches: s_lock_1, s_lock_2
+        eject_coil: c_lock_kickback
+    bd_upper_kickback:
+        ball_switches: s_upper_kickback
+        eject_coil: c_upper_kickback
+        eject_timeouts: 2s
 
-################################################################################
-## displays
-################################################################################
-# TODO: determine actual display numbers
-segment_displays:
-    info_display:
-        number: 1
-#        platform: lisy
-        size: 6
-    player1_display:
-        number: 2
-#        platform: lisy
-        size: 6
-    player2_display:
-        number: 3
-#        platform: lisy
-        size: 6
-    player3_display:
-        number: 4
-#        platform: lisy
-        size: 6
-    player4_display:
-        number: 5
-#        platform: lisy
-        size: 6
+diverters:
+    #diverter_lock:
+        #activation_coil: c_lock_diverter
+        #type: hold
+        #feeder_devices: bd_lock
+        #targets_when_active: playfield
+        #targets_when_inactive: bd_lock
+        #activation_time: 10s
+        #debug: True
+    diverter_2:
+        activation_switches: s_ramp_diverter_2
+        deactivation_switches: s_lock_ramp_entry
+        activation_coil: c_ramp_diverter
+        #enable_events: mode_Lock1_starting
+        type: hold
+        debug: True
 
+autofire_coils:
+    left_slingshot:
+        coil: c_left_sling
+        switch: s_left_sling
+    right_slingshot:
+        coil: c_right_sling
+        switch: s_right_sling
+    left_bumper:
+        coil: c_left_bumper
+        switch: s_left_jet_bumper
+    right_bumper:
+        coil: c_right_bumper
+        switch: s_right_jet_bumper
+    lower_bumper:
+        coil: c_lower_bumper
+        switch: s_lower_jet_bumper
 
-# make info segment display only show numbers not hidden behind art
-segment_display_player:
-    mask_info_display:
-        info_display:
-            flash_mask: "_FF_FF"
+kickbacks:
+    outlane_kickback:
+        coil: c_outlane_kickback
+        switch: s_outlane_kickback
+        enable_events: abc_targets_complete, mode_base_will_start
+        disable_events: kickback_outlane_kickback_fired
 
+hardware_sound_player:
+    game_start:
+        set_volume:
+            action: set_volume
+            value: 0.2
+        "MUSIC.SND":
+            track: 1
+            action: play_file
 
-#displays:
-#    window:
-#        width: 800
-#        height: 600
-#
-#slides:
-#    welcome_slide:
-#        widgets:
-#          - type: text
-#            text: PINBALL!
-#            font_size: 50
-#            color: red
-#          - type: rectangle
-#            width: 240
-#            height: 60
-#    attract_started:
-#        widgets:
-#          - text: ATTRACT MODE
-#            type: text
+    game_ending:
+        action: stop
+        set_volume:
+            action: set_volume
+            value: 0
 
-
-
-## virtual platform (when running without the physical hardware)
-
-virtual_platform_start_active_switches: s_outhole
-
-virtual_segment_display_connector:
-    segment_displays: info_display, player1_display, player2_display, player3_display, player4_display
-
-
-
+light_player:
+    mode_base_will_start:
+        l_kickback: ff
+    abc_targets_complete:
+        l_kickback: ff
+    kickback_outlane_kickback_fired:
+        l_kickback: 0
+    ball_starting{current_player.ball==1 and not is_extra_ball}:
+        l_team_1: ff
+        l_team_2: ff
+    state_team2_start:
+        l_team_1: ff
+    state_team3_start:
+        l_team_2: ff
+    state_team4_start:
+        l_team_3: ff
+    state_team5_start:
+        l_team_4: ff
+    state_team6_start:
+        l_team_5: ff
+    state_team6_complete:
+        l_team_6: ff
+    state_team_reset:
+        l_team_1: 0
+        l_team_2: 0
+        l_team_3: 0
+        l_team_4: 0
+        l_team_5: 0
+        l_team_6: 0
+        l_extra_ball: 0
+        l_skate_again: ff
+    playfield_ball_count_change{extra_balls == 0}:
+        l_skate_again: 0
