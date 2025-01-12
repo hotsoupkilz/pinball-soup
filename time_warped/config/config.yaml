@@ -195,19 +195,19 @@ coils:
         number: 16
     c_jet_bumper_left_top:
         number: 17
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     c_jet_bumper_left_mid:
         number: 18
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     c_jet_bumper_left_bottom:
         number: 19
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     c_jet_bumper_right_mid:
         number: 20
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     c_jet_bumper_right:
         number: 21
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     # c_notused
     #    number: 22
     c_flipper_right_main:
@@ -425,21 +425,21 @@ autofire_coils:
     kicker_right:
         coil: c_kicker_lower_right
         switch: s_kicker_lower_right
-    #jet_bumper_left_top:
-    #    coil: c_jet_bumper_left_top
-    #    switch: s_jet_bumper_left_top
-    #jet_bumper_left_mid:
-    #    coil: c_jet_bumper_left_mid
-    #    switch: s_jet_bumper_left_mid
-    #jet_bumper_left_bottom:
-    #    coil: c_jet_bumper_left_bottom
-    #    switch: s_jet_bumper_left_bottom
-    #jet_bumper_right_mid:
-    #    coil: c_jet_bumper_right_mid
-    #    switch: s_jet_bumper_right_mid
-    #jet_bumper_right:
-    #    coil: c_jet_bumper_right
-    #    switch: s_jet_bumper_right
+    jet_bumper_left_top:
+        coil: c_jet_bumper_left_top
+        switch: s_jet_bumper_left_top
+    jet_bumper_left_mid:
+        coil: c_jet_bumper_left_mid
+        switch: s_jet_bumper_left_mid
+    jet_bumper_left_bottom:
+        coil: c_jet_bumper_left_bottom
+        switch: s_jet_bumper_left_bottom
+    jet_bumper_right_mid:
+        coil: c_jet_bumper_right_mid
+        switch: s_jet_bumper_right_mid
+    jet_bumper_right:
+        coil: c_jet_bumper_right
+        switch: s_jet_bumper_right
 
 ## drop targets
 drop_targets:
@@ -505,13 +505,13 @@ segment_display_player:
         info_display:
             text: "{current_player.ball:d}"
         player1_display:
-            text: " "
-        #player2_display:
-        #    text: ""
-        #player3_display:
-        #    text: ""
-        #player4_display:
-        #    text: ""
+            text: ""
+        player2_display:
+            text: ""
+        player3_display:
+            text: ""
+        player4_display:
+            text: ""
 
     # show score when adding players
     player_added.1{num==1}:
