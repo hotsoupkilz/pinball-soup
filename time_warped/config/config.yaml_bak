@@ -15,14 +15,15 @@ lisy:
     connection: serial
     port: /dev/ttyACM0
     baud: 115200
-    # debug: true # log level debug. can make game run slowly
+    #debug: true # log level debug. can make game run slowly
+
 
 ###############################################################################
 # game modes
 ###############################################################################
 
 modes:
-    #- attract
+    - attract
     - base
     #- bonus
     #- skillshot
@@ -33,12 +34,12 @@ modes:
 
 switches:
     ## (mostly) admin switches
-    s_flipper_left: # switch TBD
-        number: 46
-        tags: left_flipper
-    s_flipper_right: # switch TBD
-        number: 45
-        tags: right_flipper
+#    s_flipper_left: # switch TBD
+#        number: 66
+#        tags: left_flipper
+#    s_flipper_right: # switch TBD
+#        number: 65
+#        tags: right_flipper
     s_tilt_plumb_bob: # switch 1
         number: 1
     s_tilt_ball_roll: # switch 2
@@ -167,13 +168,13 @@ coils:
         default_pulse_ms: 30
     c_3bank_drop_target_reset: # coil 4
         number: 4
-        default_pulse_ms: 30
+        default_pulse_ms: 50
     c_5bank_drop_target_reset_top: # coil 5
         number: 5
-        default_pulse_ms: 30
+        default_pulse_ms: 50
     c_5bank_drop_target_reset_bottom: # coil 6
         number: 6
-        default_pulse_ms: 30
+        default_pulse_ms: 50
     c_kicker_lower_right: # coil 7
         number: 7
         default_pulse_ms: 30
@@ -215,16 +216,16 @@ coils:
     #    number: 22
     c_flipper_right_main:
         number: 23
-        default_pulse_ms: 30
-        default_hold_power: 0.25
+        default_pulse_ms: 300
+#        default_hold_power: 0.25
     # remove hold if single wound coil
     #c_flipper_right_hold:
     #    number: #TBD
     #    allow_enable: true
     c_flipper_left_main:
         number: 24
-        default_pulse_ms: 30
-        default_hold_power: 0.25
+        default_pulse_ms: 300
+#        default_hold_power: 0.25
     # remove hold if single wound coil
     #c_flipper_left_hold:
     #    number: #TBD
@@ -375,9 +376,8 @@ ball_devices:
     bd_drain:
         ball_switches: s_outhole
         eject_coil: c_eject_outhole
-        eject_targets: playfield 
-        eject_timeouts: 3s
         tags: drain, home, trough
+        eject_timeouts: 3s
 
     bd_eject_hole_upper:
         ball_switches: s_eject_hole_upper
@@ -407,19 +407,19 @@ playfields:
         tags: default
 
 ## flippers
-flippers:
-    left_flipper:
-        main_coil: c_flipper_left_main
-        #hold_coil: c_flipper_left_hold # remove if single wound coil
-        activation_switch: s_flipper_left
-        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
-        #label: Left Flipper
-    right_flipper:
-        main_coil: c_flipper_right_main
-        #hold_coil: c_flipper_right_hold # remove if single wound coil
-        activation_switch: s_flipper_right
-        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
-        #label: Right Flipper
+#flippers:
+#    left_flipper:
+#        main_coil: c_flipper_left_main
+#        #hold_coil: c_flipper_left_hold # remove if single wound coil
+#        activation_switch: s_flipper_left
+#        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
+#        #label: Left Flipper
+#    right_flipper:
+#        main_coil: c_flipper_right_main
+#        #hold_coil: c_flipper_right_hold # remove if single wound coil
+#        activation_switch: s_flipper_right
+#        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
+#        #label: Right Flipper
 
 ## autofire coils (things that fire immediately when switch is hit)
 autofire_coils:
@@ -438,6 +438,12 @@ autofire_coils:
     jet_bumper_left_bottom:
         coil: c_jet_bumper_left_bottom
         switch: s_jet_bumper_left_bottom
+    jet_bumper_right_mid:
+        coil: c_jet_bumper_right_mid
+        switch: s_jet_bumper_right_mid
+    jet_bumper_right:
+        coil: c_jet_bumper_right
+        switch: s_jet_bumper_right
 
 ## drop targets
 drop_targets:
@@ -463,45 +469,40 @@ drop_target_banks:
     five_bank_drop_target:
         drop_targets: fivebank_drop_target_left, fivebank_drop_target_left_mid, fivebank_drop_target_mid, fivebank_drop_target_right_mid, fivebank_drop_target_right
         reset_coils: c_5bank_drop_target_reset_top, c_5bank_drop_target_reset_bottom
-        reset_on_complete: 10s
+        reset_on_complete: 1s
 
     three_bank_drop_target:
         drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right
         reset_coils: c_3bank_drop_target_reset
-        reset_on_complete: 10s
+        reset_on_complete: 1s
 
 ################################################################################
-## displays & sounds
+## displays
 ################################################################################
-# TODO: determine actual display numbers
 segment_displays:
     info_display:
+        number: 0
+        platform: lisy
+        size: 4
+    player1_display:
         number: 1
         platform: lisy
         size: 6
-    player1_display:
+    player2_display:
         number: 2
         platform: lisy
         size: 6
-    player2_display:
+    player3_display:
         number: 3
         platform: lisy
         size: 6
-    player3_display:
+    player4_display:
         number: 4
         platform: lisy
         size: 6
-    player4_display:
-        number: 5
-        platform: lisy
-        size: 6
 
 
-# make info segment display only show numbers not hidden behind art
 segment_display_player:
-    mask_info_display:
-        info_display:
-            flash_mask: "_FF_FF"
 
     # empty all displays on game start and setup info display
     game_start:
@@ -510,11 +511,11 @@ segment_display_player:
         player1_display:
             text: " "
         player2_display:
-            text: " "
+            text: ""
         player3_display:
-            text: " "
+            text: ""
         player4_display:
-            text: " "
+            text: ""
 
     # show score when adding players
     player_added.1{num==1}:
@@ -573,39 +574,36 @@ segment_display_player:
         player4_display:
             action: no_flash
 
+## make info segment display only show numbers not hidden behind art
+#    mask_info_display:
+#        info_display:
+#            flash_mask: "_FF_FF"
+
 digital_outputs:
     game_over_relay:
-        number: 1
-        type: light
-        enable_events: ball_started
-        disable_events: ball_will_end
-
+        number: 25
+        type: driver
+        enable_events: ball_started #, enable_flippers
+        disable_events: ball_will_end #, disable_flippers
 
 hardware_sound_systems:
     default:
         label: APC
 
+hardware_sound_player:
+    game_start:
+        set_volume:
+            action: set_volume
+            value: 0.2
+        "MUSIC.SND":
+            track: 1
+            action: play_file
 
-#displays:
-#    window:
-#        width: 800
-#        height: 600
-#
-#slides:
-#    welcome_slide:
-#        widgets:
-#          - type: text
-#            text: PINBALL!
-#            font_size: 50
-#            color: red
-#          - type: rectangle
-#            width: 240
-#            height: 60
-#    attract_started:
-#        widgets:
-#          - text: ATTRACT MODE
-#            type: text
-
+    game_ending:
+        action: stop
+        set_volume:
+            action: set_volume
+            value: 0
 
 
 ## virtual platform (when running without the physical hardware)
@@ -614,6 +612,5 @@ virtual_platform_start_active_switches: s_outhole
 
 virtual_segment_display_connector:
     segment_displays: info_display, player1_display, player2_display, player3_display, player4_display
-
 
 
