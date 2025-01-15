@@ -445,6 +445,8 @@ autofire_coils:
         switch: s_jet_bumper_right
 
 ## drop targets
+### NOTE: drop targets/banks still not working as expected all the time, they
+### will standup & reset but not always.
 drop_targets:
     fivebank_drop_target_left:
         switch: s_5bank_drop_target_left
