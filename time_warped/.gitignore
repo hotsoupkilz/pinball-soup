@@ -4,4 +4,4 @@
 
 # ignore mpf logs
 logs/
-
+data/
