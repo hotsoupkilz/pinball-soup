@@ -5,3 +5,6 @@
 # ignore mpf logs
 logs/
 
+# ignore machine vars
+data/
+
