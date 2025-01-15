@@ -30,7 +30,8 @@ modes:
 # NOTE: with APC, switch nbr. corresponds directly to number listed in orig.
 # hardware manual from manufacturer. In some Williams cases, "special solenoids
 # /switches" (flippers, jet bumpers, etc.) are used. For APC, solenoids 17-22
-# have switch nbrs replaced with 65-70.
+# have switch nbrs replaced with 65-70. Right/left flippers do not have their
+# button switches in mpf config, and use solenoids 23/24 respectively.
 # lisy docs (Section "Hardware rules for solenoids with APC"):
 #   - https://lisy.dev/swrep/LISY/LISY_user%20manual_v5.27-67a.pdf
 # APC docs: https://github.com/AmokSolderer/APC/blob/master/DOC/RunGame.md
