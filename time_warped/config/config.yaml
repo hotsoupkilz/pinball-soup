@@ -195,33 +195,29 @@ coils:
         number: 16
     c_jet_bumper_left_top:
         number: 17
-        default_pulse_ms: 30
+        default_pulse_ms: 50
     c_jet_bumper_left_mid:
         number: 18
-        default_pulse_ms: 30
+        default_pulse_ms: 50
     c_jet_bumper_left_bottom:
         number: 19
-        default_pulse_ms: 30
+        default_pulse_ms: 50
     c_jet_bumper_right_mid:
         number: 20
-        default_pulse_ms: 30
+        default_pulse_ms: 50
     c_jet_bumper_right:
         number: 21
-        default_pulse_ms: 30
+        default_pulse_ms: 50
     # c_notused
     #    number: 22
     c_flipper_right_main:
         number: 23
-        #default_pulse_ms: 300
-#        default_hold_power: 0.25
     # remove hold if single wound coil
     #c_flipper_right_hold:
     #    number: #TBD
     #    allow_enable: true
     c_flipper_left_main:
         number: 24
-        #default_pulse_ms: 300
-#        default_hold_power: 0.25
     # remove hold if single wound coil
     #c_flipper_left_hold:
     #    number: #TBD
@@ -443,6 +439,15 @@ autofire_coils:
 
 ## drop targets
 drop_targets:
+    threebank_drop_target_left:
+        switch: s_3bank_drop_target_left
+    threebank_drop_target_mid:
+        switch: s_3bank_drop_target_mid
+    threebank_drop_target_right:
+        switch: s_3bank_drop_target_right
+    threebank_drop_target_reset:
+        switch: s_3bank_drop_target_series
+
     fivebank_drop_target_left:
         switch: s_5bank_drop_target_left
     fivebank_drop_target_left_mid:
@@ -453,24 +458,22 @@ drop_targets:
         switch: s_5bank_drop_target_right_mid
     fivebank_drop_target_right:
         switch: s_5bank_drop_target_right
-
-    threebank_drop_target_left:
-        switch: s_3bank_drop_target_left
-    threebank_drop_target_mid:
-        switch: s_3bank_drop_target_mid
-    threebank_drop_target_right:
-        switch: s_3bank_drop_target_right
+    fivebank_drop_target_reset:
+        switch: s_5bank_drop_target_series
 
 drop_target_banks:
+    three_bank_drop_target:
+        drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right, threebank_drop_target_reset
+        reset_coil: c_3bank_drop_target_reset
+        reset_on_complete: 1s
+        reset_events: ball_starting
+
     five_bank_drop_target:
-        drop_targets: fivebank_drop_target_left, fivebank_drop_target_left_mid, fivebank_drop_target_mid, fivebank_drop_target_right_mid, fivebank_drop_target_right
+        drop_targets: fivebank_drop_target_left, fivebank_drop_target_left_mid, fivebank_drop_target_mid, fivebank_drop_target_right_mid, fivebank_drop_target_right, fivebank_drop_target_reset
         reset_coils: c_5bank_drop_target_reset_top, c_5bank_drop_target_reset_bottom
         reset_on_complete: 1s
+        reset_events: ball_starting
 
-    three_bank_drop_target:
-        drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right
-        reset_coils: c_3bank_drop_target_reset
-        reset_on_complete: 1s
 
 ################################################################################
 ## displays
