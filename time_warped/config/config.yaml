@@ -87,15 +87,15 @@ switches:
         number: 18
         tags: playfield_active
     s_jet_bumper_left_top:
-        number: 19
+        number: 65 #19
     s_jet_bumper_left_mid:
-        number: 20
+        number: 66 #20
     s_jet_bumper_left_bottom:
-        number: 21
+        number: 67 #21
     s_jet_bumper_right_mid:
-        number: 22
+        number: 68 #22
     s_jet_bumper_right:
-        number: 23
+        number: 69 #23
     s_eject_hole_mid:
         number: 24
     s_5bank_drop_target_left:
@@ -164,13 +164,13 @@ coils:
         default_pulse_ms: 30
     c_3bank_drop_target_reset:
         number: 4
-        default_pulse_ms: 30
+        #default_pulse_ms: 50
     c_5bank_drop_target_reset_top:
         number: 5
-        default_pulse_ms: 30
+        #default_pulse_ms: 50
     c_5bank_drop_target_reset_bottom:
         number: 6
-        default_pulse_ms: 30
+        #default_pulse_ms: 50
     c_kicker_lower_right:
         number: 7
         default_pulse_ms: 30
@@ -195,33 +195,29 @@ coils:
         number: 16
     c_jet_bumper_left_top:
         number: 17
-        default_pulse_ms: 30
+        #default_pulse_ms: 30
     c_jet_bumper_left_mid:
         number: 18
-        default_pulse_ms: 30
+        #default_pulse_ms: 30
     c_jet_bumper_left_bottom:
         number: 19
-        default_pulse_ms: 30
+        #default_pulse_ms: 30
     c_jet_bumper_right_mid:
         number: 20
-        default_pulse_ms: 30
+        #default_pulse_ms: 30
     c_jet_bumper_right:
         number: 21
-        default_pulse_ms: 30
+        #default_pulse_ms: 30
     # c_notused
     #    number: 22
     c_flipper_right_main:
         number: 23
-        #default_pulse_ms: 300
-#        default_hold_power: 0.25
     # remove hold if single wound coil
     #c_flipper_right_hold:
     #    number: #TBD
     #    allow_enable: true
     c_flipper_left_main:
         number: 24
-        #default_pulse_ms: 300
-#        default_hold_power: 0.25
     # remove hold if single wound coil
     #c_flipper_left_hold:
     #    number: #TBD
@@ -469,12 +465,12 @@ drop_target_banks:
     five_bank_drop_target:
         drop_targets: fivebank_drop_target_left, fivebank_drop_target_left_mid, fivebank_drop_target_mid, fivebank_drop_target_right_mid, fivebank_drop_target_right, fivebank_drop_target_reset
         reset_coils: c_5bank_drop_target_reset_top, c_5bank_drop_target_reset_bottom
-        reset_on_complete: 1s
+        reset_on_complete: 4s
 
     three_bank_drop_target:
         drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right
         reset_coils: c_3bank_drop_target_reset
-        reset_on_complete: 1s
+        reset_on_complete: 4s
 
 ################################################################################
 ## displays
