@@ -27,15 +27,26 @@ modes:
 ###############################################################################
 # switches
 ###############################################################################
+# NOTE: with APC, switch nbr. corresponds directly to number listed in orig.
+# hardware manual from manufacturer. In some Williams cases, "special solenoids
+# /switches" (flippers, jet bumpers, etc.) are used. For APC, solenoids 17-22
+# have switch nbrs replaced with 65-70.
+# lisy docs (Section "Hardware rules for solenoids with APC"):
+#   - https://lisy.dev/swrep/LISY/LISY_user%20manual_v5.27-67a.pdf
+# APC docs: https://github.com/AmokSolderer/APC/blob/master/DOC/RunGame.md
+# Time Warp manual: https://www.ipdb.org/files/2568/Williams_1979_Time_Warp_English_Manual_no_schematics.pdf
+
 
 switches:
     ## (mostly) admin switches
-#    s_flipper_left: # coil hardwired, switch config not needed
-#        number: 66
-#        tags: left_flipper
-#    s_flipper_right: # coil hardwired, switch config not needed
-#        number: 65
-#        tags: right_flipper
+
+    ### flipper coils hardwired via "special solenoid" & uses APC/lisy hardware rules, switch config not needed
+    #s_flipper_left:
+    #    number:
+    #    tags: left_flipper
+    #s_flipper_right:
+    #    number:
+    #    tags: right_flipper
     s_tilt_plumb_bob:
         number: 1
     s_tilt_ball_roll:
@@ -57,7 +68,7 @@ switches:
         number: 9
 
     ## playfield switches
-    # upper playfield
+    ### upper playfield
     s_standup_upper_right:
         number: 10
         tags: playfield_active
@@ -82,10 +93,14 @@ switches:
         number: 17
         tags: playfield_active
 
-    # (mostly) mid playfield
+    ### (mostly) mid playfield
     s_rollover_inlane_right:
         number: 18
         tags: playfield_active
+
+    #### williams used "special solenoids/switches" for a while. For APC, switch
+    #### nbrs 65-70 correspond to coils 17-22, respectively. Replace switch nbr
+    #### from manual with special switch nbr for mpf.
     s_jet_bumper_left_top:
         number: 65 #19
     s_jet_bumper_left_mid:
@@ -96,6 +111,7 @@ switches:
         number: 68 #22
     s_jet_bumper_right:
         number: 69 #23
+
     s_eject_hole_mid:
         number: 24
     s_5bank_drop_target_left:
@@ -126,7 +142,7 @@ switches:
     s_3bank_standup:
         number: 37
 
-    # lower playfield
+    ### lower playfield
     s_standup_lower_left:
         number: 38
         tags: playfield_active
@@ -150,8 +166,11 @@ switches:
 ################################################################################
 # coils/solenoids
 ################################################################################
+# NOTE: see note in switches section about APC/lisy-specific values.
+# - Flipper coils only, not switches or mpf flipper configs, should be added for
+# mpf.
+# - Per APC/mpf docs coil number corresponds to number in orig. manual.
 
-# comments indicate coil number in time warp manual
 coils:
     c_eject_outhole:
         number: 1
@@ -164,13 +183,13 @@ coils:
         default_pulse_ms: 30
     c_3bank_drop_target_reset:
         number: 4
-        #default_pulse_ms: 50
+        default_pulse_ms: 40
     c_5bank_drop_target_reset_top:
         number: 5
-        #default_pulse_ms: 50
+        default_pulse_ms: 40
     c_5bank_drop_target_reset_bottom:
         number: 6
-        #default_pulse_ms: 50
+        default_pulse_ms: 40
     c_kicker_lower_right:
         number: 7
         default_pulse_ms: 30
@@ -195,19 +214,19 @@ coils:
         number: 16
     c_jet_bumper_left_top:
         number: 17
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     c_jet_bumper_left_mid:
         number: 18
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     c_jet_bumper_left_bottom:
         number: 19
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     c_jet_bumper_right_mid:
         number: 20
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     c_jet_bumper_right:
         number: 21
-        #default_pulse_ms: 30
+        default_pulse_ms: 30
     # c_notused
     #    number: 22
     c_flipper_right_main:
@@ -227,7 +246,9 @@ coils:
 ################################################################################
 # lights
 ################################################################################
-#number comes from lamp/matrix table in time warp manual, from top left down
+# NOTE: see swithces note. number comes from lamp/matrix table in orig. manual,
+# from top left down in Time Warp manual.
+
 lights:
     #l_notused:
     #    number: 1
@@ -398,21 +419,6 @@ playfields:
         default_source_device: bd_drain
         tags: default
 
-## flippers
-#flippers:
-#    left_flipper:
-#        main_coil: c_flipper_left_main
-#        #hold_coil: c_flipper_left_hold # remove if single wound coil
-#        activation_switch: s_flipper_left
-#        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
-#        #label: Left Flipper
-#    right_flipper:
-#        main_coil: c_flipper_right_main
-#        #hold_coil: c_flipper_right_hold # remove if single wound coil
-#        activation_switch: s_flipper_right
-#        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
-#        #label: Right Flipper
-
 ## autofire coils (things that fire immediately when switch is hit)
 autofire_coils:
     kicker_left:
@@ -471,6 +477,23 @@ drop_target_banks:
         drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right
         reset_coils: c_3bank_drop_target_reset
         reset_on_complete: 4s
+
+## flippers
+### NOTE: due to communication delay b/w mpf and APC, hardware rules are used
+### and flipper configs not needed as with other platforms
+#flippers:
+#    left_flipper:
+#        main_coil: c_flipper_left_main
+#        #hold_coil: c_flipper_left_hold # remove if single wound coil
+#        activation_switch: s_flipper_left
+#        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
+#        #label: Left Flipper
+#    right_flipper:
+#        main_coil: c_flipper_right_main
+#        #hold_coil: c_flipper_right_hold # remove if single wound coil
+#        activation_switch: s_flipper_right
+#        #enable_events: machine_reset_phase_3 # temporary. enables flippers immediately with machine start
+#        #label: Right Flipper
 
 ################################################################################
 ## displays
@@ -579,8 +602,8 @@ digital_outputs:
     game_over_relay:
         number: 25
         type: driver
-        enable_events: ball_started #, enable_flippers
-        disable_events: ball_will_end #, disable_flippers
+        enable_events: ball_started
+        disable_events: ball_will_end
 
 hardware_sound_systems:
     default:
