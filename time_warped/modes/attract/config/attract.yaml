@@ -5,5 +5,9 @@ slide_player:
 
 show_player:
     mode_attract_started.1:
-        attract_light_show:
+        attract_triangle_flash:
             speed: 4
+        attract_arrow_sweep_left:
+            speed: 6
+        attract_arrow_sweep_right:
+            speed: 6

@@ -2,10 +2,25 @@
 
 mode:
     start_events: ball_starting
-    #stop_events: 
+    #stop_events:
     priority: 100
 
 shots:
+    sh_rollover_upper_left:
+        switch: s_rollover_upper_left
+        #reset_events: ball_will_end
+        show_tokens:
+            light: l_rollover_upper_left
+    sh_rollover_upper_mid:
+        switch: s_rollover_upper_mid
+        #reset_events: ball_will_end
+        show_tokens:
+            light: l_rollover_upper_mid
+    sh_rollover_upper_right:
+        switch: s_rollover_upper_right
+        #reset_events: ball_will_end
+        show_tokens:
+            light: l_rollover_upper_right
     sh_target_left:
         switch: s_target_upper_left
         show_tokens:
@@ -14,31 +29,21 @@ shots:
         switch: s_target_upper_right
         show_tokens:
             light: l_bullseye_special
-    sh_3bank_drop_target_left:
-        switch: s_3bank_drop_target_left
-        reset_events: ball_will_end
-        show_tokens:
-            light: l_arrow_right_1bottom
-    sh_rollover_upper_left:
-        switch: s_rollover_upper_left
-        reset_events: ball_will_end
-        show_tokens:
-            light: l_rollover_upper_left
-    sh_rollover_upper_mid:
-        switch: s_rollover_upper_mid
-        reset_events: ball_will_end
-        show_tokens:
-            light: l_rollover_upper_mid
-    sh_rollover_upper_right:
-        switch: s_rollover_upper_right
-        reset_events: ball_will_end
-        show_tokens:
-            light: l_rollover_upper_right
+    #sh_3bank_drop_target_left:
+    #    switch: s_3bank_drop_target_left
+    #    reset_events: ball_will_end
+    #    show_tokens:
+    #        light: l_arrow_right_1bottom
 
-#shot_groups:
+shot_groups:
+    rollover_lanes:
+        shots: sh_rollover_upper_left, sh_rollover_upper_mid, sh_rollover_upper_right
+        #rotate_left_events: sw_left_flipper
+        #rotate_right_events: sw_right_flipper
+        reset_events: rollover_lanes_complete
+
 #    bumper_shots:
 #        shots: bumper_shot_1, bumper_shot_2
-
 
 slide_player:
     mode_base_started: base
@@ -53,22 +58,31 @@ slide_player:
 #            expire: 3s
 
 variable_player:
+    # variable values defined in shot_groups
+    rollover_lanes_unlit_hit:
+        score: 1000
+    rollover_lanes_lit_hit:
+        score: 3000
+
+    # switches tied to points
+    s_target_upper_right_active:
+        score: 10000
+    s_target_upper_left_active:
+        score: 500
+
+    # single-point placeholders
     s_standup_upper_right_active:
         score: 1
         #bonus_multiplier: 1
     s_standup_upper_left_active:
         score: 1
-    s_rollover_upper_left_active:
-        score: 1
-    s_rollover_upper_mid_active:
-        score: 1
-    s_rollover_upper_right_active:
-        score: 1
+    #s_rollover_upper_left_active:
+    #    score: 1
+    #s_rollover_upper_mid_active:
+    #    score: 1
+    #s_rollover_upper_right_active:
+    #    score: 1
     s_eject_hole_upper_active:
-        score: 1
-    s_target_upper_right_active:
-        score: 1
-    s_target_upper_left_active:
         score: 1
     s_jet_bumper_left_top_active:
         score: 1
@@ -118,22 +132,4 @@ variable_player:
         score: 1
     s_rollover_inlane_right_active:
         score: 1
-
-widget_player:
-    slide_base_active:
-        conditional_child_pools:
-            slide: base
-#    #s_switch_d_active:
-#    #    conditional_child_pools:
-#    #        action: remove
-#    #        slide: base
-    mode_base_started:
-        overlay_widget:
-            slide: _overlay
-            expire: 5s
-            x: 100
-            y: 500
-
-
-
 

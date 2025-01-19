@@ -477,7 +477,7 @@ drop_target_banks:
         reset_on_complete: 4s
 
     three_bank_drop_target:
-        drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right
+        drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right, threebank_drop_target_reset
         reset_coils: c_3bank_drop_target_reset
         reset_on_complete: 4s
 

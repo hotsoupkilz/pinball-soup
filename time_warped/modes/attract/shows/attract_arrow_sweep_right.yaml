@@ -1,0 +1,25 @@
+#show_version=6
+
+- duration: 1
+  lights:
+      l_bullseye_special: ff
+- duration: 1
+  lights:
+      l_arrow_right_1bottom: ff
+- duration: 1
+  lights:
+      l_arrow_right_2: ff
+- duration: 1
+  lights:
+      l_arrow_right_3: ff
+- duration: 1
+  lights:
+      l_arrow_right_4top: ff
+- duration: 1
+  lights:
+      l_bullseye_special: 0
+      l_arrow_right_1bottom: 0
+      l_arrow_right_2: 0
+      l_arrow_right_3: 0
+      l_arrow_right_4top: 0
+
