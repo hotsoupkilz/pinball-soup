@@ -1,0 +1,9 @@
+#show_version=6
+
+- duration: 1
+  lights:
+      l_ballsave: ff
+- duration: 1
+  lights:
+      l_ballsave: 0
+

@@ -1,0 +1,14 @@
+#show_version=6
+
+# - duration: 1
+
+- playfield_2x_on:
+    #duration: 1
+- playfield_3x_on:
+    #duration: 1
+- playfield_4x_on:
+    #duration: 1
+- playfield_5x_on:
+    #duration: 1
+- playfield_10x_on:
+    #duration: 1

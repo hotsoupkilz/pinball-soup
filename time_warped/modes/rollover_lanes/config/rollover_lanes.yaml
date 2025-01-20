@@ -32,10 +32,10 @@ shot_groups:
             - sh_rollover_upper_left
             - sh_rollover_upper_mid
             - sh_rollover_upper_right
-        #rotate_left_events: sw_left_flipper_active
-        #rotate_right_events: sw_right_flipper_active
+        rotate_left_events: sw_jet_bumper_left_mid_active
+        rotate_right_events: sw_jet_bumper_right_mid_active
         reset_events:
-            rollover_lanes_lit_complete: 1s
+            l_rollover_lanes_lit_complete: 1s
 
 variable_player:
     mode_rollover_lanes_started:
@@ -61,17 +61,8 @@ variable_player:
     rollover_lanes_complete:
         score: 1000 * current_player.pf_multiplier
 
-#! shows:
-#!   Playfield_2x_on:
-#!     - duration: 1
-#!   Playfield_3x_on:
-#!     - duration: 1
-#!   Playfield_4x_on:
-#!     - duration: 1
-#!   Playfield_5x_on:
-#!     - duration: 1
-#!   Playfield_10x_on:
-#!     - duration: 1
+slide_player:
+    mode_rollover_lanes_started: rollover_lanes
 
 show_player:
     rollover_lanes_lit_complete:
