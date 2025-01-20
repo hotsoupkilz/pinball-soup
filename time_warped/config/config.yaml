@@ -21,6 +21,7 @@ lisy:
 modes:
     - attract
     - base
+    - rollover_lanes
     #- bonus
     #- skillshot
 
@@ -171,6 +172,9 @@ switches:
 # - Flipper coils only, not switches or mpf flipper configs, should be added for
 # mpf.
 # - Per APC/mpf docs coil number corresponds to number in orig. manual.
+# - Time Warp drop targets work differently than mpf expects (series switch is
+# active when all targets fall. Targets pass switch on way down and are
+# inactive otherwise). As such, drop target pulse events are set
 
 coils:
     c_eject_outhole:
@@ -184,13 +188,25 @@ coils:
         default_pulse_ms: 30
     c_3bank_drop_target_reset:
         number: 4
-        default_pulse_ms: 40
+        default_pulse_ms: 100
+        pulse_events:
+            - machine_reset_phase_3
+            - player_turn_started
+            - s_3bank_drop_target_series_active
     c_5bank_drop_target_reset_top:
         number: 5
-        default_pulse_ms: 40
+        default_pulse_ms: 30
+        pulse_events:
+            - machine_reset_phase_3
+            - player_turn_started
+            - s_5bank_drop_target_series_active
     c_5bank_drop_target_reset_bottom:
         number: 6
-        default_pulse_ms: 40
+        default_pulse_ms: 35
+        pulse_events:
+            - machine_reset_phase_3
+            - player_turn_started
+            - s_5bank_drop_target_series_active
     c_kicker_lower_right:
         number: 7
         default_pulse_ms: 30
@@ -215,19 +231,19 @@ coils:
         number: 16
     c_jet_bumper_left_top:
         number: 17
-        default_pulse_ms: 30
+        default_pulse_ms: 35
     c_jet_bumper_left_mid:
         number: 18
-        default_pulse_ms: 30
+        default_pulse_ms: 35
     c_jet_bumper_left_bottom:
         number: 19
-        default_pulse_ms: 30
+        default_pulse_ms: 35
     c_jet_bumper_right_mid:
         number: 20
-        default_pulse_ms: 30
+        default_pulse_ms: 35
     c_jet_bumper_right:
         number: 21
-        default_pulse_ms: 30
+        default_pulse_ms: 35
     # c_notused
     #    number: 22
     c_flipper_right_main:
@@ -291,15 +307,15 @@ lights:
         number: 19
     l_eject_hole_left_4top:
         number: 20
-    l_X2:
+    l_x2:
         number: 21
-    l_X3:
+    l_x3:
         number: 22
-    l_X5:
+    l_x5:
         number: 23
-    l_X10:
+    l_x10:
         number: 24
-    l_ABC_special:
+    l_rollover_lanes:
         number: 25
     l_arrow_right_1bottom:
         number: 26
@@ -445,41 +461,69 @@ autofire_coils:
         switch: s_jet_bumper_right
 
 ## drop targets
-### NOTE: drop targets/banks still not working as expected all the time, they
-### will standup & reset but not always.
-drop_targets:
-    fivebank_drop_target_left:
-        switch: s_5bank_drop_target_left
-    fivebank_drop_target_left_mid:
-        switch: s_5bank_drop_target_left_mid
-    fivebank_drop_target_mid:
-        switch: s_5bank_drop_target_mid
-    fivebank_drop_target_right_mid:
-        switch: s_5bank_drop_target_right_mid
-    fivebank_drop_target_right:
-        switch: s_5bank_drop_target_right
-    fivebank_drop_target_reset:
-        switch: s_5bank_drop_target_series
+### NOTE: drop targets/banks still not working as expected using mpf configs,
+### Time Warp drop target switches seem to be off when up/down and trigger
+### while falling. Series switch is active when all targets are down.
+##drop_targets:
+#    #fivebank_drop_target_left:
+#    #    switch: s_5bank_drop_target_left
+#    #fivebank_drop_target_left_mid:
+#    #    switch: s_5bank_drop_target_left_mid
+#    #fivebank_drop_target_mid:
+#    #    switch: s_5bank_drop_target_mid
+#    #fivebank_drop_target_right_mid:
+#    #    switch: s_5bank_drop_target_right_mid
+#    #fivebank_drop_target_right:
+#    #    switch: s_5bank_drop_target_right
+#    #fivebank_drop_target_reset:
+#    #    switch: s_5bank_drop_target_series
 
-    threebank_drop_target_left:
-        switch: s_3bank_drop_target_left
-    threebank_drop_target_mid:
-        switch: s_3bank_drop_target_mid
-    threebank_drop_target_right:
-        switch: s_3bank_drop_target_right
-    threebank_drop_target_reset:
-        switch: s_3bank_drop_target_series
+#    #threebank_drop_target_left:
+#    #    switch: s_3bank_drop_target_left
+#    #threebank_drop_target_mid:
+#    #    switch: s_3bank_drop_target_mid
+#    #threebank_drop_target_right:
+#    #    switch: s_3bank_drop_target_right
+#    #threebank_drop_target_reset:
+#    #    switch: s_3bank_drop_target_series
 
-drop_target_banks:
-    five_bank_drop_target:
-        drop_targets: fivebank_drop_target_left, fivebank_drop_target_left_mid, fivebank_drop_target_mid, fivebank_drop_target_right_mid, fivebank_drop_target_right, fivebank_drop_target_reset
-        reset_coils: c_5bank_drop_target_reset_top, c_5bank_drop_target_reset_bottom
-        reset_on_complete: 4s
+#drop_target_banks:
+#    fivebank:
+#        drop_targets:
+#            #- fivebank_drop_target_left
+#            #- fivebank_drop_target_left_mid
+#            #- fivebank_drop_target_mid
+#            #- fivebank_drop_target_right_mid
+#            #- fivebank_drop_target_right
+#            #- fivebank_drop_target_reset
+#        reset_coils:
+#            - c_5bank_drop_target_reset_top
+#            - c_5bank_drop_target_reset_bottom
+#        #reset_on_complete: 4s
+#        reset_events:
+#            #- drop_target_bank_fivebank_up
+#            # fivebank_drop_target_reset
+#            #- ball_started
+#            - machine_reset_phase_3
+#            - game_started
+#            - player_turn_started
 
-    three_bank_drop_target:
-        drop_targets: threebank_drop_target_left, threebank_drop_target_mid, threebank_drop_target_right, threebank_drop_target_reset
-        reset_coils: c_3bank_drop_target_reset
-        reset_on_complete: 4s
+#    threebank:
+#        drop_targets:
+#            #- threebank_drop_target_left
+#            #- threebank_drop_target_mid
+#            #- threebank_drop_target_right
+#            #- threebank_drop_target_reset
+#        reset_coil: c_3bank_drop_target_reset
+#        #reset_on_complete: 4s
+#        reset_events:
+#            #- drop_target_bank_threebank_up
+#            #- threebank_drop_target_reset
+#            #- ball_started
+#            - machine_reset_phase_3
+#            - game_started
+#            - player_turn_started
+
 
 ## flippers
 ### NOTE: due to communication delay b/w mpf and APC, hardware rules are used
@@ -525,7 +569,6 @@ segment_displays:
 
 
 segment_display_player:
-
     # empty all displays on game start and setup info display
     game_start:
         info_display:
@@ -596,11 +639,7 @@ segment_display_player:
         player4_display:
             action: no_flash
 
-## make info segment display only show numbers not hidden behind art
-#    mask_info_display:
-#        info_display:
-#            flash_mask: "_FF_FF"
-
+# platform/hardware type
 digital_outputs:
     game_over_relay:
         number: 25
@@ -608,6 +647,7 @@ digital_outputs:
         enable_events: ball_started
         disable_events: ball_will_end
 
+# Use APC sd card for sounds
 hardware_sound_systems:
     default:
         label: APC
@@ -620,6 +660,9 @@ hardware_sound_player:
         "MUSIC.SND":
             track: 1
             action: play_file
+            platform_options:
+                loop: true
+                no_cache: false
 
     game_ending:
         action: stop

@@ -6,41 +6,31 @@ mode:
     priority: 100
 
 shots:
-    sh_rollover_upper_left:
-        switch: s_rollover_upper_left
-        #reset_events: ball_will_end
-        show_tokens:
-            light: l_rollover_upper_left
-    sh_rollover_upper_mid:
-        switch: s_rollover_upper_mid
-        #reset_events: ball_will_end
-        show_tokens:
-            light: l_rollover_upper_mid
-    sh_rollover_upper_right:
-        switch: s_rollover_upper_right
-        #reset_events: ball_will_end
-        show_tokens:
-            light: l_rollover_upper_right
     sh_target_left:
         switch: s_target_upper_left
-        show_tokens:
-            light: l_X2
     sh_target_right:
         switch: s_target_upper_right
         show_tokens:
             light: l_bullseye_special
-    #sh_3bank_drop_target_left:
-    #    switch: s_3bank_drop_target_left
-    #    reset_events: ball_will_end
-    #    show_tokens:
-    #        light: l_arrow_right_1bottom
+#    sh_rollover_upper_left:
+#        switch: s_rollover_upper_left
+#        show_tokens:
+#            light: l_rollover_upper_left
+#    sh_rollover_upper_mid:
+#        switch: s_rollover_upper_mid
+#        show_tokens:
+#            light: l_rollover_upper_mid
+#    sh_rollover_upper_right:
+#        switch: s_rollover_upper_right
+#        show_tokens:
+#            light: l_rollover_upper_right
 
-shot_groups:
-    rollover_lanes:
-        shots: sh_rollover_upper_left, sh_rollover_upper_mid, sh_rollover_upper_right
-        #rotate_left_events: sw_left_flipper
-        #rotate_right_events: sw_right_flipper
-        reset_events: rollover_lanes_complete
+#shot_groups:
+#    rollover_lanes:
+#        shots: sh_rollover_upper_left, sh_rollover_upper_mid, sh_rollover_upper_right
+#        #rotate_left_events: sw_left_flipper
+#        #rotate_right_events: sw_right_flipper
+#        reset_events: rollover_lanes_complete
 
 #    bumper_shots:
 #        shots: bumper_shot_1, bumper_shot_2
@@ -59,10 +49,10 @@ slide_player:
 
 variable_player:
     # variable values defined in shot_groups
-    rollover_lanes_unlit_hit:
-        score: 1000
-    rollover_lanes_lit_hit:
-        score: 3000
+#    rollover_lanes_unlit_hit:
+#        score: 1000
+#    rollover_lanes_lit_hit:
+#        score: 3000
 
     # switches tied to points
     s_target_upper_right_active:

@@ -1,0 +1,101 @@
+#config_version=6
+
+mode:
+    start_events: ball_started
+    priority: 110
+
+counters:
+    lb_rollover_lanes_complete_count:
+        count_events: l_rollover_lanes_lit_complete
+        events_when_hit: rollover_lanes_done
+        starting_count: 1
+        direction: up
+        persist_state: false
+
+shots:
+    sh_rollover_upper_left:
+        switch: s_rollover_upper_left
+        show_tokens:
+            light: l_rollover_upper_left
+    sh_rollover_upper_mid:
+        switch: s_rollover_upper_mid
+        show_tokens:
+            light: l_rollover_upper_mid
+    sh_rollover_upper_right:
+        switch: s_rollover_upper_right
+        show_tokens:
+            light: l_rollover_upper_right
+
+shot_groups:
+    upper_rollover_lanes:
+        shots:
+            - sh_rollover_upper_left
+            - sh_rollover_upper_mid
+            - sh_rollover_upper_right
+        #rotate_left_events: sw_left_flipper_active
+        #rotate_right_events: sw_right_flipper_active
+        reset_events:
+            rollover_lanes_lit_complete: 1s
+
+variable_player:
+    mode_rollover_lanes_started:
+        pf_multiplier:
+            int: 1
+            action: set
+    rollover_lanes_done{count==2}:
+        pf_multiplier:
+            int: 2
+            action: set
+    rollover_lanes_done{count==3}:
+        pf_multiplier:
+            int: 3
+            action: set
+    rollover_lanes_done{count==4}:
+        pf_multiplier:
+            int: 5
+            action: set
+    rollover_lanes_done{count==5}:
+        pf_multiplier:
+            int: 10
+            action: set
+    rollover_lanes_complete:
+        score: 1000 * current_player.pf_multiplier
+
+#! shows:
+#!   Playfield_2x_on:
+#!     - duration: 1
+#!   Playfield_3x_on:
+#!     - duration: 1
+#!   Playfield_4x_on:
+#!     - duration: 1
+#!   Playfield_5x_on:
+#!     - duration: 1
+#!   Playfield_10x_on:
+#!     - duration: 1
+
+show_player:
+    rollover_lanes_lit_complete:
+        flash:
+            loops: 4
+            speed: 4
+            show_tokens:
+                lights: l_rollover_lanes_lit_complete
+    rollover_lanes_done{count==2}:
+        playfield_2x_on:
+            show_tokens:
+                lights: l_x2
+    rollover_lanes_done{count==3}:
+        playfield_3x_on:
+            show_tokens:
+                lights: l_x2, l_x3
+    rollover_lanes_done{count==4}:
+        playfield_5x_on:
+            show_tokens:
+                lights: l_x2, l_x3, l_x5
+    rollover_lanes_done{count>=5}:
+        playfield_10x_on:
+            show_tokens:
+                lights: l_x2, l_x3, l_x5, l_x10
+
+
+
