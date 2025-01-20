@@ -39,10 +39,10 @@ slide_player:
 
 variable_player:
     # variable values defined in shot_groups
-#    rollover_lanes_unlit_hit:
-#        score: 1000
-#    rollover_lanes_lit_hit:
-#        score: 3000
+    rollover_lanes_unlit_hit:
+        score: 1000
+    rollover_lanes_lit_hit:
+        score: 3000
 
     # switches tied to points
     s_target_upper_right_active:

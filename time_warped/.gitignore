@@ -1,7 +1,0 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
-
-# ignore mpf logs
-logs/
-data/

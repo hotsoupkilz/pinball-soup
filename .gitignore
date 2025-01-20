@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+/time_warped/.godot/
+/time_warped/android/
+
+# ignore mpf logs
+/time_warped/logs/
+/time_warped/data/
