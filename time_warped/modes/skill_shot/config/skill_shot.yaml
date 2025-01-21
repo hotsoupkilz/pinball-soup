@@ -1,0 +1,154 @@
+#config_version=6
+
+mode:
+    start_events: start_mode_skill_shot
+    stop_events: stop_mode_skill_shot
+    priority: 500
+
+event_player:
+    timer_skill_shot_rotate_stopped:
+        - advance_skill_shot_1{device.shots.skill_shot_drop_1.state==1}
+        - advance_skill_shot_2{device.shots.skill_shot_drop_2.state==1}
+        - advance_skill_shot_3{device.shots.skill_shot_drop_3.state==1}
+    skill_shot_hit: stop_mode_skill_shot
+    playfield_active: stop_mode_skill_shot|3s
+
+shot_groups:
+    skill_shot:
+        shots:
+            - skill_shot_drop_left
+            - skill_shot_drop_mid
+            - skill_shot_drop_right
+        rotate_events: timer_skill_shot_rotate_tick
+
+shots:
+    skill_shot_drop_left:
+        switch: s_rollover_upper_left
+        advance_events: mode_skill_shot_started, advance_skill_shot_1
+        profile: skill_shot_profile
+        show_tokens:
+            light: l_rollover_upper_left
+    skill_shot_drop_mid:
+        switch: s_rollover_upper_mid
+        advance_events: mode_skill_shot_started, advance_skill_shot_2
+        profile: skill_shot_profile
+        show_tokens:
+            light: l_rollover_upper_mid
+    skill_shot_drop_right:
+        switch: s_rollover_upper_right
+        advance_events: mode_skill_shot_started, advance_skill_shot_3
+        profile: skill_shot_profile
+        show_tokens:
+            light: l_rollover_upper_right
+
+shot_profiles:
+    skill_shot_profile:
+        advance_on_hit: false
+        states:
+            - name: off
+              show: off
+            - name: on
+              show: on
+            - name: lit
+              show: flash
+
+timers:
+    skill_shot_rotate:
+        tick_interval: 500ms
+        start_running: true
+        control_events:
+            - event: balldevice_bd_drain_ejecting_ball
+              action: stop
+
+variable_player:
+    skill_shot_lit_hit:
+        score: 25_000
+
+
+
+
+# mode:
+#     start_events: ball_started
+#     stop_events:
+#         - skill_success
+#         - skill_failed
+#     priority: 500
+# 
+# shots:
+#     skill_l:
+#         switch: s_rollover_upper_left
+#         profile: skill_shot_profile
+#         advance_events: mode_skill_shot_started
+#         show_tokens:
+#             light: l_rollover_upper_left
+#     skill_m:
+#         switch: s_rollover_upper_mid
+#         profile: skill_shot_profile
+#         show_tokens:
+#             light: l_rollover_upper_mid
+#     skill_r:
+#         switch: s_rollover_upper_right
+#         profile: skill_shot_profile
+#         show_tokens:
+#             light: l_rollover_upper_right
+# 
+# shot_groups:
+#     skill_shot:
+#         shots: skill_l, skill_m, skill_r
+#         rotate_left_events: c_flipper_left_main_active
+#         rotate_right_events: c_flipper_right_main_active
+# 
+# shot_profiles:
+#     skill_shot_profile:
+#         states:
+#             - name: unlit
+#               show: off
+#             - name: flashing
+#               show: flash
+#               #show_tokens:
+#               #    light: ff
+#               speed: 4
+#             - name: lit
+#               show: on
+#       loop: true
+# 
+# variable_player:
+#     skill_success:
+#         score: 100000
+# 
+# timers:
+#     skill_shot_timeout:
+#         start_value: 0
+#         end_value: 10
+#         direction: up
+#         tick_interval: 1s
+#         start_running: false
+#         control_events:
+#             - action: start
+#               event: balldevice_bd_drain_ejecting_ball
+# 
+# state_machines:
+#     skill_shot_success:
+#         debug: true
+#         states:
+#             start:
+#                 label: Skill shot ready
+#             success:
+#                 label: Skill successful
+#                 events_when_started: skill_success
+#             failed:
+#                 label: Skill failed
+#                 events_when_started: skill_failed
+#         transitions:
+#             - source: start
+#               target: success
+#               events: skill_shot_flashing_hit
+#             - source: start
+#               target: failed
+#               events: skill_shot_unlit_hit, timer_skill_shot_timeout_complete
+# 
+# 
+# 
+# 
+# 
+# 

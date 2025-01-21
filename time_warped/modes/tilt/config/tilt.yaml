@@ -2,7 +2,6 @@
 
 mode:
     start_events: ball_starting
-    priority: 199
 
 tilt:
     tilt_warning_switch_tag: tilt_warning

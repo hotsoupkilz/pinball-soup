@@ -76,7 +76,7 @@ modes:
     - base
     - ball_save
     - tilt
-    #- skillshot
+    - skill_shot
 
 ###############################################################################
 # switches
