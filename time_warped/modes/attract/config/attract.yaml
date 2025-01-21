@@ -8,6 +8,8 @@ show_player:
         attract_triangle_flash:
             speed: 4
         attract_arrow_sweep_left:
-            speed: 6
+            speed: 4
         attract_arrow_sweep_right:
-            speed: 6
+            speed: 4
+        attract_rollover_lanes:
+            speed: 4

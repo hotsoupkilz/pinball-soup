@@ -32,7 +32,7 @@ hardware_sound_player:
         set_volume:
             action: set_volume
             value: 0.2
-        "MUSIC.SND": # filename on sdcard
+        "music.snd": # filename on sdcard
             track: 1
             action: play_file
             platform_options:
@@ -44,6 +44,17 @@ hardware_sound_player:
             action: set_volume
             value: 0
 
+# various sound files for Time Warp on APC sdcard
+        #"0_00.snd": # single short tone, either warning or switch or menu back
+        #"0_0a.snd": # optimistic low to high, good for bank resets
+        #"0_0b.snd": # sounds like a phaser, lowish. good for outlanes or slingshots
+        #"0_0f.snd": # multiple high tones, long
+        #"0_01.snd": # # single short tone, either warning or switch or menu confirm
+        #"0_1a.snd": # sounds like a short phaser. good for single/reg switches
+        #"0_02.snd": # single short tone, either warning or switch or menu confirm
+        #"0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
+        #"0_13.snd": # short low to high, good for bullseye or kickouts
+        
 ## virtual platform (when running without the physical hardware)
 
 virtual_platform_start_active_switches: s_outhole
@@ -63,10 +74,8 @@ virtual_segment_display_connector:
 modes:
     - attract
     - base
-    - rollover_lanes
     - ball_save
     - tilt
-    #- bonus
     #- skillshot
 
 ###############################################################################
@@ -192,9 +201,9 @@ switches:
     s_rollover_outlane_left:
         number: 40
         tags: playfield_active
-    s_kicker_lower_right:
+    s_slingshot_lower_right:
         number: 41
-    s_kicker_lower_left:
+    s_slingshot_lower_left:
         number: 42
     s_tilt_lower_playfield:
         number: 43
@@ -244,10 +253,10 @@ coils:
             - machine_reset_phase_3
             - player_turn_started
             - s_5bank_drop_target_series_active
-    c_kicker_lower_right:
+    c_slingshot_lower_right:
         number: 7
         default_pulse_ms: 30
-    c_kicker_lower_left:
+    c_slingshot_lower_left:
         number: 8
         default_pulse_ms: 30
     c_sound1:
@@ -457,12 +466,12 @@ playfields:
 
 ## autofire coils (things that fire immediately when switch is hit)
 autofire_coils:
-    kicker_left:
-        coil: c_kicker_lower_left
-        switch: s_kicker_lower_left
-    kicker_right:
-        coil: c_kicker_lower_right
-        switch: s_kicker_lower_right
+    slingshot_left:
+        coil: c_slingshot_lower_left
+        switch: s_slingshot_lower_left
+    slingshot_right:
+        coil: c_slingshot_lower_right
+        switch: s_slingshot_lower_right
     jet_bumper_left_top:
         coil: c_jet_bumper_left_top
         switch: s_jet_bumper_left_top
@@ -547,7 +556,7 @@ autofire_coils:
 
 ## flippers
 ### NOTE: due to communication delay b/w mpf and APC, hardware rules are used
-### and flipper configs not needed as with other platforms
+### and flipper configs not needed/possible as with other platforms
 #flippers:
 #    left_flipper:
 #        main_coil: c_flipper_left_main

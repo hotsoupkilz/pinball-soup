@@ -2,21 +2,6 @@
 
 - duration: 1
   lights:
-      l_triangle1: ff
-      l_triangle2: ff
-      l_triangle3: ff
-      l_triangle4: ff
-      l_triangle5: ff
-      l_triangle6: ff
-      l_triangle7: ff
-      l_triangle8: ff
-      l_triangle9: ff
-      l_triangle10: ff
-      l_triangle11: ff
-      l_triangle12: ff
-
-- duration: 1
-  lights:
       l_triangle1: 0
       l_triangle2: 0
       l_triangle3: 0
@@ -29,4 +14,19 @@
       l_triangle10: 0
       l_triangle11: 0
       l_triangle12: 0
+
+- duration: 1
+  lights:
+      l_triangle1: ff
+      l_triangle2: ff
+      l_triangle3: ff
+      l_triangle4: ff
+      l_triangle5: ff
+      l_triangle6: ff
+      l_triangle7: ff
+      l_triangle8: ff
+      l_triangle9: ff
+      l_triangle10: ff
+      l_triangle11: ff
+      l_triangle12: ff
 

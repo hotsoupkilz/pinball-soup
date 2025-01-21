@@ -5,44 +5,47 @@ mode:
     priority: 100
 
 shots:
+    sh_rollover_upper_left:
+        switch: s_rollover_upper_left
+        show_tokens:
+            light: l_rollover_upper_left
+    sh_rollover_upper_mid:
+        switch: s_rollover_upper_mid
+        show_tokens:
+            light: l_rollover_upper_mid
+    sh_rollover_upper_right:
+        switch: s_rollover_upper_right
+        show_tokens:
+            light: l_rollover_upper_right
+
     sh_target_left:
         switch: s_target_upper_left
     sh_target_right:
         switch: s_target_upper_right
         show_tokens:
             light: l_bullseye_special
-#    sh_rollover_upper_left:
-#        switch: s_rollover_upper_left
-#        show_tokens:
-#            light: l_rollover_upper_left
-#    sh_rollover_upper_mid:
-#        switch: s_rollover_upper_mid
-#        show_tokens:
-#            light: l_rollover_upper_mid
-#    sh_rollover_upper_right:
-#        switch: s_rollover_upper_right
-#        show_tokens:
-#            light: l_rollover_upper_right
-
-#shot_groups:
-#    rollover_lanes:
-#        shots: sh_rollover_upper_left, sh_rollover_upper_mid, sh_rollover_upper_right
-#        #rotate_left_events: sw_left_flipper
-#        #rotate_right_events: sw_right_flipper
-#        reset_events: rollover_lanes_complete
+shot_groups:
+    rollover_lanes:
+        shots:
+            - sh_rollover_upper_left
+            - sh_rollover_upper_mid
+            - sh_rollover_upper_right
+        rotate_left_events: s_rollover_inlane_left_active
+        rotate_right_events: s_rollover_inlane_right_active
+        reset_events: rollover_lanes_lit_complete
+            #rollover_lanes_lit_complete: 60s
 
 #    bumper_shots:
 #        shots: bumper_shot_1, bumper_shot_2
 
-slide_player:
-    mode_base_started: base
-
 variable_player:
     # variable values defined in shot_groups
-    rollover_lanes_unlit_hit:
+    rollover_lanes_hit:
         score: 1000
-    rollover_lanes_lit_hit:
-        score: 3000
+    #rollover_lanes_lit_hit:
+    #    score: 3000
+    rollover_lanes_lit_complete:
+        score: 10000
 
     # switches tied to points
     s_target_upper_right_active:
@@ -112,4 +115,142 @@ variable_player:
         score: 1
     s_rollover_inlane_right_active:
         score: 1
+
+hardware_sound_player:
+    ## check machine config for notes on snd files"
+    # "regular" switch/rollover hits
+    s_standup_upper_right_active:
+        "0_1a.snd": # sounds like a short phaser. good for single/reg switches
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_standup_upper_left_active:
+        "0_1a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_target_upper_right_active:
+        "0_13.snd": # short low to high, good for bullseye or kickouts
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_target_upper_left_active:
+        "0_13.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_eject_hole_upper_active:
+        "0_0f.snd": # multiple high tones, long
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_eject_hole_mid_active:
+        "0_0f.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_slingshot_lower_right_active:
+        "0_0b.snd": # sounds like a phaser, lowish. good for outlanes or slingshots
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_slingshot_lower_left_active:
+        "0_0b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_rollover_inlane_right_active:
+        "0_0b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_rollover_inlane_left_active:
+        "0_0b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_rollover_outlane_right_active:
+        "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_rollover_outlane_left_active:
+        "0_11.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_5bank_drop_target_series_active:
+        "0_0a.snd": # optimistic low to high, good for bank resets
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    s_3bank_drop_target_series_active:
+        "0_0a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+
+
+
+
+
+#    s_eject_hole_upper_active:
+#        text:
+#            action: text_to_speech
+#            value: "Plop!"
+#            platform_operations:
+#                loop: 2
+#                no_cache: true
+#    s_standup_upper_left_active:
+#        text:
+#            action: text_to_speech
+#            value: "meat!"
+#            platform_operations:
+#                loop: false
+#                no_cache: true
+#    s_standup_upper_right_active:
+#        text:
+#            action: text_to_speech
+#            value: "loaf!"
+#            platform_operations:
+#                loop: false
+#                no_cache: true
+
+show_player:
+    rollover_lanes_default_lit_complete:
+        rollover_lanes_complete:
+            speed: 4
+            loops: 2
+            priority: 1
+
+slide_player:
+    mode_base_started: base
 

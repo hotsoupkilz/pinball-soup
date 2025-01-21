@@ -1,0 +1,98 @@
+#show_version=6
+
+#- duration: 1
+#  lights:
+#      l_rollover_upper_left: 0
+#      l_rollover_upper_mid: 0
+#      l_rollover_upper_right: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: ff
+- duration: 1
+  lights:
+      l_rollover_upper_mid: ff
+      l_rollover_upper_left: 0
+- duration: 1
+  lights:
+      l_rollover_upper_right: ff
+      l_rollover_upper_mid: 0
+- duration: 1
+  lights:
+      l_rollover_upper_mid: ff
+      l_rollover_upper_right: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: ff
+      l_rollover_upper_mid: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: 0
+- duration: 1
+  lights:
+      l_rollover_upper_mid: ff
+      l_rollover_upper_left: 0
+- duration: 1
+  lights:
+      l_rollover_upper_right: ff
+      l_rollover_upper_mid: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: ff
+      l_rollover_upper_mid: ff
+      l_rollover_upper_right: ff
+- duration: 1
+  lights:
+      l_rollover_upper_left: 0
+      l_rollover_upper_mid: 0
+      l_rollover_upper_right: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: ff
+      l_rollover_upper_mid: ff
+      l_rollover_upper_right: ff
+- duration: 1
+  lights:
+      l_rollover_upper_left: 0
+      l_rollover_upper_mid: 0
+      l_rollover_upper_right: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: ff
+      l_rollover_upper_mid: 0
+      l_rollover_upper_right: ff
+- duration: 1
+  lights:
+      l_rollover_upper_left: 0
+      l_rollover_upper_mid: ff
+      l_rollover_upper_right: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: ff
+      l_rollover_upper_mid: 0
+      l_rollover_upper_right: ff
+- duration: 1
+  lights:
+      l_rollover_upper_left: 0
+      l_rollover_upper_mid: ff
+      l_rollover_upper_right: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: 0
+      l_rollover_upper_mid: 0
+      l_rollover_upper_right: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: ff
+      l_rollover_upper_mid: ff
+      l_rollover_upper_right: ff
+- duration: 1
+  lights:
+      l_rollover_upper_left: 0
+      l_rollover_upper_mid: 0
+      l_rollover_upper_right: 0
+- duration: 1
+  lights:
+      l_rollover_upper_left: ff
+      l_rollover_upper_mid: ff
+      l_rollover_upper_right: ff
+
