@@ -27,6 +27,15 @@ hardware_sound_systems:
     default:
         label: APC
 
+# platform/hardware type (lisy/APC-specific)
+digital_outputs:
+    game_over_relay:
+        number: 25
+        type: driver
+        enable_events: ball_started
+        disable_events: ball_will_end
+
+# play sounds via files on APC sdcard
 hardware_sound_player:
     game_start:
         set_volume:
@@ -44,19 +53,42 @@ hardware_sound_player:
             action: set_volume
             value: 0
 
+
 # various sound files for Time Warp on APC sdcard
         #"0_00.snd": # single short tone, either warning or switch or menu back
         #"0_0a.snd": # optimistic low to high, good for bank resets
         #"0_0b.snd": # sounds like a phaser, lowish. good for outlanes or slingshots
+        #"0_0e_001.snd": # low background tone (several seconds, would require loop to be constant)
+        #"0_0e_002.snd": # low, higher than 1 background tone (several seconds, would require loop to be constant)
         #"0_0f.snd": # multiple high tones, long
         #"0_01.snd": # # single short tone, either warning or switch or menu confirm
-        #"0_1a.snd": # sounds like a short phaser. good for single/reg switches
+        # "0_1a.snd": # short high pitched tones, good for outlanes, maybe drop targets
+        #"0_1b.snd": # low, short low-to-medhigh ascent, maybe good for jet bumpers
+        #"0_1c.snd": # medium short phaser, good for target switches or kickouts
+        #"0_1d.snd": # medium, low short phaser descent
+        #"0_1e.snd": # med short phaser, very slight low to high
         #"0_02.snd": # single short tone, either warning or switch or menu confirm
+        #"0_03.snd": # quick high ting (service button)
+        #"0_04.snd": # short, med-high service tone
+        #"0_05.snd": # short, med service tone
+        #"0_06.snd": # short, med-low service tone
+        #"0_07.snd": # very long loud descent phaser sound. dont use this unless for like a wizard mode
+        #"0_08.snd": # medium, med-length phaser (good for key targets, dt resets, completions, etc.)
+        #"0_09.snd": # sounds like crash/blast. good for outhole/outlanes
+        #"0_10.snd": # medium-length (loud) echoing beep
         #"0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
+        #"0_12.snd": # short length high (quieter) echoing beep
         #"0_13.snd": # short low to high, good for bullseye or kickouts
-        
-## virtual platform (when running without the physical hardware)
+        #"0_14.snd": # long repeating siren, good for tilt?
+        #"0_15.snd": # short high, descending phaser, good for switch
+        #"0_16.snd": # loud, med-length echoing boing. good for hard, key target switches
+        #"0_17.snd": # echoing burn/crash. good for ball end or game over
+        #"0_18.snd": # dissonent short phaser. good for target dropdowns
+        #"0_19.snd": # long, loud dissonant sound. maybe good for game over or tilt
 
+
+
+## virtual platform (when running without the physical hardware)
 virtual_platform_start_active_switches: s_outhole
 virtual_segment_display_connector:
     segment_displays:
@@ -76,7 +108,10 @@ modes:
     - base
     - ball_save
     - tilt
-    - skill_shot
+    #(autorotating lanes skillshot. scoring works, not autorotate.
+    # skillshot resets if made and drained within ball_save window)
+    - skillshot
+
 
 ###############################################################################
 # switches
@@ -493,81 +528,10 @@ autofire_coils:
 ### NOTE: drop targets/banks still not working as expected using mpf configs,
 ### Time Warp drop target switches seem to be off when up/down and trigger
 ### while falling. Series switch is active when all targets are down.
-##drop_targets:
-#    #fivebank_drop_target_left:
-#    #    switch: s_5bank_drop_target_left
-#    #fivebank_drop_target_left_mid:
-#    #    switch: s_5bank_drop_target_left_mid
-#    #fivebank_drop_target_mid:
-#    #    switch: s_5bank_drop_target_mid
-#    #fivebank_drop_target_right_mid:
-#    #    switch: s_5bank_drop_target_right_mid
-#    #fivebank_drop_target_right:
-#    #    switch: s_5bank_drop_target_right
-#    #fivebank_drop_target_reset:
-#    #    switch: s_5bank_drop_target_series
-
-#    #threebank_drop_target_left:
-#    #    switch: s_3bank_drop_target_left
-#    #threebank_drop_target_mid:
-#    #    switch: s_3bank_drop_target_mid
-#    #threebank_drop_target_right:
-#    #    switch: s_3bank_drop_target_right
-#    #threebank_drop_target_reset:
-#    #    switch: s_3bank_drop_target_series
-
-#drop_target_banks:
-#    fivebank:
-#        drop_targets:
-#            #- fivebank_drop_target_left
-#            #- fivebank_drop_target_left_mid
-#            #- fivebank_drop_target_mid
-#            #- fivebank_drop_target_right_mid
-#            #- fivebank_drop_target_right
-#            #- fivebank_drop_target_reset
-#        reset_coils:
-#            - c_5bank_drop_target_reset_top
-#            - c_5bank_drop_target_reset_bottom
-#        #reset_on_complete: 4s
-#        reset_events:
-#            #- drop_target_bank_fivebank_up
-#            # fivebank_drop_target_reset
-#            #- ball_started
-#            - machine_reset_phase_3
-#            - game_started
-#            - player_turn_started
-
-#    threebank:
-#        drop_targets:
-#            #- threebank_drop_target_left
-#            #- threebank_drop_target_mid
-#            #- threebank_drop_target_right
-#            #- threebank_drop_target_reset
-#        reset_coil: c_3bank_drop_target_reset
-#        #reset_on_complete: 4s
-#        reset_events:
-#            #- drop_target_bank_threebank_up
-#            #- threebank_drop_target_reset
-#            #- ball_started
-#            - machine_reset_phase_3
-#            - game_started
-#            - player_turn_started
-
 
 ## flippers
 ### NOTE: due to communication delay b/w mpf and APC, hardware rules are used
 ### and flipper configs not needed/possible as with other platforms
-#flippers:
-#    left_flipper:
-#        main_coil: c_flipper_left_main
-#        #hold_coil: c_flipper_left_hold # remove if single wound coil
-#        activation_switch: s_flipper_left
-#        #label: Left Flipper
-#    right_flipper:
-#        main_coil: c_flipper_right_main
-#        #hold_coil: c_flipper_right_hold # remove if single wound coil
-#        activation_switch: s_flipper_right
-#        #label: Right Flipper
 
 ################################################################################
 ## displays
@@ -593,7 +557,6 @@ segment_displays:
         number: 4
         platform: lisy
         size: 6
-
 
 segment_display_player:
     # empty all displays on game start and setup info display
@@ -644,33 +607,49 @@ segment_display_player:
     player_turn_started.1{number==1}:
         player1_display:
             action: flash
+        #show_tokens:
+        #    light:
+        #        l_player_up_1: ff
     player_turn_ended.2{number==1}:
         player1_display:
             action: no_flash
+        #show_tokens:
+        #    light:
+        #        l_player_up_1: 0
     player_turn_started.3{number==2}:
         player2_display:
             action: flash
+        #show_tokens:
+        #    light:
+        #        l_player_up_2: ff
     player_turn_ended.4{number==2}:
         player2_display:
             action: no_flash
+        #show_tokens:
+        #    light:
+        #        l_player_up_2: 0
     player_turn_started.5{number==3}:
         player3_display:
             action: flash
+        #show_tokens:
+        #    light:
+        #        l_player_up_3: ff
     player_turn_ended.6{number==3}:
         player3_display:
             action: no_flash
+        #show_tokens:
+        #    light:
+        #        l_player_up_3: 0
     player_turn_started.7{number==4}:
         player4_display:
             action: flash
+        #show_tokens:
+        #    light:
+        #        l_player_up_4: ff
     player_turn_ended.8{number==4}:
         player4_display:
             action: no_flash
-
-# platform/hardware type (lisy/APC-specific)
-digital_outputs:
-    game_over_relay:
-        number: 25
-        type: driver
-        enable_events: ball_started
-        disable_events: ball_will_end
+        #show_tokens:
+        #    light:
+        #        l_player_up_4: 0
 

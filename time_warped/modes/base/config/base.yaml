@@ -4,6 +4,20 @@ mode:
     start_events: ball_starting
     priority: 100
 
+event_player:
+    mode_base_started:
+        - start_mode_skillshot
+
+show_player:
+    rollover_lanes_complete:
+        rollover_lanes_complete:
+            speed: 4
+            loops: 2
+            priority: 1
+
+slide_player:
+    mode_base_started: base
+
 shots:
     sh_rollover_upper_left:
         switch: s_rollover_upper_left
@@ -119,64 +133,88 @@ variable_player:
 hardware_sound_player:
     ## check machine config for notes on snd files"
     # "regular" switch/rollover hits
-    s_standup_upper_right_active:
-        "0_1a.snd": # sounds like a short phaser. good for single/reg switches
+    s_standup_upper_left_active:
+        "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
-    s_standup_upper_left_active:
-        "0_1a.snd":
+    s_standup_upper_right_active:
+        "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    
+    s_target_upper_left_active:
+        "0_08.snd": # medium, med-length phaser (good for key targets, dt resets, completions, etc.)
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_target_upper_right_active:
-        "0_13.snd": # short low to high, good for bullseye or kickouts
+        "0_16.snd": # loud, med-length echoing boing. good for hard, key target switches
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
-    s_target_upper_left_active:
-        "0_13.snd":
+    
+    s_rollover_upper_left_active:
+        "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
+    s_rollover_upper_mid_active:
+        "0_11.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_rollover_upper_right_active:
+        "0_11.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    
     s_eject_hole_upper_active:
-        "0_0f.snd": # multiple high tones, long
+        "0_1c.snd": # medium short phaser, good for target switches or kickouts
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_eject_hole_mid_active:
-        "0_0f.snd":
+        "0_1c.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_slingshot_lower_right_active:
-        "0_0b.snd": # sounds like a phaser, lowish. good for outlanes or slingshots
+        "0_1a.snd": # short high pitched tones, good for outlanes, maybe drop targets
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_slingshot_lower_left_active:
-        "0_0b.snd":
+        "0_1a.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_rollover_inlane_right_active:
-        "0_0b.snd":
+        "0_0b.snd": #
             track: 2
             action: play_file
             platform_options:
@@ -190,14 +228,14 @@ hardware_sound_player:
                 loop: false
                 no_cache: false
     s_rollover_outlane_right_active:
-        "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
+        "0_09.snd": # sounds like crash/blast. good for outhole/outlanes
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_rollover_outlane_left_active:
-        "0_11.snd":
+        "0_09.snd": # sounds like crash/blast. good for outhole/outlanes
             track: 2
             action: play_file
             platform_options:
@@ -243,14 +281,4 @@ hardware_sound_player:
 #            platform_operations:
 #                loop: false
 #                no_cache: true
-
-show_player:
-    rollover_lanes_complete:
-        rollover_lanes_complete:
-            speed: 4
-            loops: 2
-            priority: 1
-
-slide_player:
-    mode_base_started: base
 

@@ -1,48 +1,66 @@
 #config_version=6
 
+### NOTE: Attempt at autorotating skillshot using roller lanes. 
+### - with below config, skillshot starts after first ball (including if ejected from ball_save)
+### , all three lanes light at once and do not flash
+### , scoring works as expected (as if all 3 lanes are lit skillshots)
 mode:
-    start_events: start_mode_skill_shot
-    stop_events: stop_mode_skill_shot
-    priority: 500
+    start_events: ball_started # start_mode_skillshot #, balldevice_bd_drain_ejecting_ball #ball_started #, start_mode_skill_shot
+    stop_events: stop_mode_skillshot #, ball_ending
+    priority: 200
 
 event_player:
-    timer_skill_shot_rotate_stopped:
-        - advance_skill_shot_1{device.shots.skill_shot_drop_1.state==1}
-        - advance_skill_shot_2{device.shots.skill_shot_drop_2.state==1}
-        - advance_skill_shot_3{device.shots.skill_shot_drop_3.state==1}
-    skill_shot_hit: stop_mode_skill_shot
-    playfield_active: stop_mode_skill_shot|3s
-
-shot_groups:
-    skill_shot:
-        shots:
-            - skill_shot_drop_left
-            - skill_shot_drop_mid
-            - skill_shot_drop_right
-        rotate_events: timer_skill_shot_rotate_tick
+    timer_skillshot_rotate_stopped:
+        - advance_skillshot_1{device.shots.skillshot_drop_left.state==1}
+        - advance_skillshot_2{device.shots.skillshot_drop_mid.state==1}
+        - advance_skillshot_3{device.shots.skillshot_drop_right.state==1}
+    skillshot_hit: stop_mode_skillshot
+    playfield_active: stop_mode_skillshot|3s
 
 shots:
-    skill_shot_drop_left:
+    skillshot_drop_left:
         switch: s_rollover_upper_left
-        advance_events: mode_skill_shot_started, advance_skill_shot_1
-        profile: skill_shot_profile
+        advance_events: mode_skillshot_started, advance_skillshot_1
+        profile: skillshot_profile
         show_tokens:
-            light: l_rollover_upper_left
-    skill_shot_drop_mid:
+            light:
+                l_rollover_upper_left
+                #l_rollover_upper_left: ff
+    skillshot_drop_mid:
         switch: s_rollover_upper_mid
-        advance_events: mode_skill_shot_started, advance_skill_shot_2
-        profile: skill_shot_profile
+        advance_events: mode_skillshot_started, advance_skillshot_2
+        profile: skillshot_profile
         show_tokens:
-            light: l_rollover_upper_mid
-    skill_shot_drop_right:
+            light:
+                l_rollover_upper_mid
+                #l_rollover_upper_mid: ff
+    skillshot_drop_right:
         switch: s_rollover_upper_right
-        advance_events: mode_skill_shot_started, advance_skill_shot_3
-        profile: skill_shot_profile
+        advance_events: mode_skillshot_started, advance_skillshot_3
+        profile: skillshot_profile
         show_tokens:
-            light: l_rollover_upper_right
+            light:
+              l_rollover_upper_right
+              #l_rollover_upper_right: ff
+
+shot_groups:
+    skillshot:
+        shots:
+            - skillshot_drop_left
+            - skillshot_drop_mid
+            - skillshot_drop_right
+        rotate_events: timer_skillshot_rotate_tick
+
+timers:
+    skillshot_rotate:
+        tick_interval: 500ms
+        start_running: true
+        control_events:
+            - event: balldevice_playfield_ball_enter #s_standup_upper_left_active
+              action: stop
 
 shot_profiles:
-    skill_shot_profile:
+    skillshot_profile:
         advance_on_hit: false
         states:
             - name: off
@@ -52,17 +70,9 @@ shot_profiles:
             - name: lit
               show: flash
 
-timers:
-    skill_shot_rotate:
-        tick_interval: 500ms
-        start_running: true
-        control_events:
-            - event: balldevice_bd_drain_ejecting_ball
-              action: stop
-
 variable_player:
-    skill_shot_lit_hit:
-        score: 25_000
+    skillshot_lit_hit:
+        score: 50000
 
 
 
