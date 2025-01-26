@@ -4,62 +4,29 @@ mode:
     start_events: ball_starting
     priority: 100
 
-event_player:
-    mode_base_started:
-        - start_mode_skillshot
+#event_player:
+#    mode_base_started:
+#        - start_mode_skillshot
 
-show_player:
-    rollover_lanes_complete:
-        rollover_lanes_complete:
-            speed: 4
-            loops: 2
-            priority: 1
+#slide_player:
+#    mode_base_started: base
 
-slide_player:
-    mode_base_started: base
+#show_player:
 
 shots:
-    sh_rollover_upper_left:
-        switch: s_rollover_upper_left
-        show_tokens:
-            light: l_rollover_upper_left
-    sh_rollover_upper_mid:
-        switch: s_rollover_upper_mid
-        show_tokens:
-            light: l_rollover_upper_mid
-    sh_rollover_upper_right:
-        switch: s_rollover_upper_right
-        show_tokens:
-            light: l_rollover_upper_right
-
     sh_target_left:
         switch: s_target_upper_left
     sh_target_right:
         switch: s_target_upper_right
         show_tokens:
             light: l_bullseye_special
-shot_groups:
-    rollover_lanes:
-        shots:
-            - sh_rollover_upper_left
-            - sh_rollover_upper_mid
-            - sh_rollover_upper_right
-        rotate_left_events: c_flipper_left_main_active
-        rotate_right_events: c_flipper_right_main_active
-        reset_events: rollover_lanes_complete
-            #rollover_lanes_lit_complete: 60s
 
+#shot_groups:
 #    bumper_shots:
 #        shots: bumper_shot_1, bumper_shot_2
 
 variable_player:
     # variable values defined in shot_groups
-    rollover_lanes_unlit_hit:
-        score: 1000
-    rollover_lanes_lit_hit:
-        score: 3000
-    rollover_lanes_complete:
-        score: 10000
 
     # switches tied to points
     s_target_upper_right_active:
@@ -73,12 +40,6 @@ variable_player:
         #bonus_multiplier: 1
     s_standup_upper_left_active:
         score: 1
-    #s_rollover_upper_left_active:
-    #    score: 1
-    #s_rollover_upper_mid_active:
-    #    score: 1
-    #s_rollover_upper_right_active:
-    #    score: 1
     s_eject_hole_upper_active:
         score: 1
     s_jet_bumper_left_top_active:
@@ -111,14 +72,14 @@ variable_player:
         score: 1
     s_standup_lower_left_active:
         score: 1
-    s_3bank_drop_target_left_active:
-        score: 1
-    s_3bank_drop_target_mid_active:
-        score: 1
-    s_3bank_drop_target_right_active:
-        score: 1
-    s_3bank_drop_target_series_active:
-        score: 1
+    #s_3bank_drop_target_left_active:
+    #    score: 1
+    #s_3bank_drop_target_mid_active:
+    #    score: 1
+    #s_3bank_drop_target_right_active:
+    #    score: 1
+    #s_3bank_drop_target_series_active:
+    #    score: 1
     s_3bank_standup_active:
         score: 1
     s_rollover_outlane_right_active:
@@ -132,8 +93,20 @@ variable_player:
 
 hardware_sound_player:
     ## check machine config for notes on snd files"
+
+    # event-based sounds
+
     # "regular" switch/rollover hits
+    s_outhole_active:
+        "FOURNOTEMELODIC.snd": # nick sound
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+
     s_standup_upper_left_active:
+        #"4-note-melodic_1.snd": # nick sound
         "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
             track: 2
             action: play_file
@@ -141,14 +114,16 @@ hardware_sound_player:
                 loop: false
                 no_cache: false
     s_standup_upper_right_active:
+        #"A-SFX.snd": # nick sound
         "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
-    
+
     s_target_upper_left_active:
+        #"A-SFX-metallic.snd": # nick sound
         "0_08.snd": # medium, med-length phaser (good for key targets, dt resets, completions, etc.)
             track: 2
             action: play_file
@@ -156,14 +131,16 @@ hardware_sound_player:
                 loop: false
                 no_cache: false
     s_target_upper_right_active:
+        #"A-sharp-warble-drone.snd": # nick sound
         "0_16.snd": # loud, med-length echoing boing. good for hard, key target switches
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
-    
+
     s_rollover_upper_left_active:
+        #"FOURNOTEMELODIC.snd": # nick sound
         "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
             track: 2
             action: play_file
@@ -178,13 +155,14 @@ hardware_sound_player:
                 loop: false
                 no_cache: false
     s_rollover_upper_right_active:
+        #"melodicsynth-pattern-8Bar-76bpm1.snd": # nick sound
         "0_11.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
-    
+
     s_eject_hole_upper_active:
         "0_1c.snd": # medium short phaser, good for target switches or kickouts
             track: 2
@@ -199,6 +177,7 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: false
+
     s_slingshot_lower_right_active:
         "0_1a.snd": # short high pitched tones, good for outlanes, maybe drop targets
             track: 2
@@ -213,6 +192,43 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: false
+
+    s_jet_bumper_left_top_active:
+        "0_1a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_jet_bumper_left_mid_active:
+        "0_1a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_jet_bumper_left_bottom_active:
+        "0_1a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_jet_bumper_right_mid_active:
+        "0_1a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_jet_bumper_right_active:
+        "0_1a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+
     s_rollover_inlane_right_active:
         "0_0b.snd": #
             track: 2
@@ -227,20 +243,57 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: false
+
     s_rollover_outlane_right_active:
-        "0_09.snd": # sounds like crash/blast. good for outhole/outlanes
+        "0_17.snd": # echoing burn/crash. good for ball end or game over
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_rollover_outlane_left_active:
-        "0_09.snd": # sounds like crash/blast. good for outhole/outlanes
+        "0_17.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
+
+    s_5bank_drop_target_left_active:
+        "0_1b.snd": #low, short low-to-medhigh ascent, maybe good for jet bumpers
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    s_5bank_drop_target_left_mid_active:
+        "0_1b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    s_5bank_drop_target_mid_active:
+        "0_1b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    s_5bank_drop_target_right_mid_active:
+        "0_1b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    s_5bank_drop_target_right_active:
+        "0_1b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
     s_5bank_drop_target_series_active:
         "0_0a.snd": # optimistic low to high, good for bank resets
             track: 2
@@ -248,18 +301,43 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: true
-    s_3bank_drop_target_series_active:
-        "0_0a.snd":
+
+    s_3bank_drop_target_left_active:
+        "0_1b.snd": #low, short low-to-medhigh ascent, maybe good for jet bumpers
             track: 2
             action: play_file
             platform_options:
                 loop: false
-                no_cache: false
+                no_cache: true
+    s_3bank_drop_target_mid_active:
+        "0_1b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    s_3bank_drop_target_right_active:
+        "0_1b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    s_3bank_drop_target_series_active:
+        "0_0a.snd": # optimistic low to high, good for bank resets
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
 
 
 
 
 
+# NOTE: text-to-speech is a feature if using lisy as hardware sound player.
+# interested to see if lisy can be set as hardware_sound_player for a mode to
+# utilize text-to-speech via APC
 #    s_eject_hole_upper_active:
 #        text:
 #            action: text_to_speech

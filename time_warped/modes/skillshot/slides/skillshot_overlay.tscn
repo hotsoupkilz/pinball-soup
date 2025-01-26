@@ -1,5 +1,0 @@
-    slide_player:
-        mode_base_started: base
-        skillshot_hit:
-            skillshot_overlay:
-                action: remove

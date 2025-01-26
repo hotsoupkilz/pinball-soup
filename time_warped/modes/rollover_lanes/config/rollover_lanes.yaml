@@ -1,0 +1,47 @@
+#config_version=6
+
+mode:
+    start_events: ball_starting
+    priority: 100
+
+show_player:
+    rollover_lanes_complete:
+        rollover_lanes_complete:
+            speed: 4
+            loops: 2
+            priority: 1
+
+shots:
+    sh_rollover_upper_left:
+        switch: s_rollover_upper_left
+        show_tokens:
+            light: l_rollover_upper_left
+    sh_rollover_upper_mid:
+        switch: s_rollover_upper_mid
+        show_tokens:
+            light: l_rollover_upper_mid
+    sh_rollover_upper_right:
+        switch: s_rollover_upper_right
+        show_tokens:
+            light: l_rollover_upper_right
+
+shot_groups:
+    rollover_lanes:
+        shots:
+            - sh_rollover_upper_left
+            - sh_rollover_upper_mid
+            - sh_rollover_upper_right
+        rotate_left_events: c_flipper_left_main_active
+        rotate_right_events: c_flipper_right_main_active
+        reset_events: rollover_lanes_complete
+            #rollover_lanes_lit_complete: 60s
+
+variable_player:
+    # variable values defined in shot_groups
+    rollover_lanes_unlit_hit:
+        score: 1000
+    rollover_lanes_lit_hit:
+        score: 3000
+    rollover_lanes_complete:
+        score: 10000
+

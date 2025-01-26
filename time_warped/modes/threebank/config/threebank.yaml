@@ -1,0 +1,82 @@
+#config_version=6
+
+mode:
+    start_events: ball_starting
+    priority: 100
+
+show_player:
+    threebank_complete:
+        threebank_complete:
+            speed: 8
+            loops: 2
+            priority: 1
+
+shots:
+    sh_threebank_series:
+        switch: s_3bank_drop_target_series
+        #show_tokens:
+        #    light: l_rollover_upper_left
+    sh_threebank_left:
+        switch: s_3bank_drop_target_left
+        #show_tokens:
+        #    light: l_rollover_upper_left
+    sh_threebank_mid:
+        switch: s_3bank_drop_target_mid
+        #show_tokens:
+        #    light: l_rollover_upper_mid
+    sh_threebank_right:
+        switch: s_3bank_drop_target_right
+        #show_tokens:
+        #    light: l_rollover_upper_right
+
+shot_groups:
+    threebank:
+        shots:
+            - sh_threebank_series
+            #- sh_rollover_upper_left
+            #- sh_rollover_upper_mid
+            #- sh_rollover_upper_right
+        reset_events: threebank_complete|3s
+            #rollover_lanes_lit_complete: 60s
+
+variable_player:
+    # variable values defined in shot_groups
+    sh_threebank_left:
+        score: 1000
+    sh_threebank_mid:
+        score: 1000
+    sh_threebank_right:
+        score: 100
+
+    threebank_complete:
+        score: 10000
+
+#hardware_sound_player:
+#    s_3bank_drop_target_left_active:
+#        "0_1b.snd": # low, short low-to-medhigh ascent, maybe good for jet bumpers
+#            track: 2
+#            action: play_file
+#            platform_options:
+#                loop: false
+#                no_cache: true
+#    s_3bank_drop_target_mid_active:
+#        "0_1b.snd": # low, short low-to-medhigh ascent, maybe good for jet bumpers
+#            track: 2
+#            action: play_file
+#            platform_options:
+#                loop: false
+#                no_cache: true
+#    s_3bank_drop_target_right_active:
+#        "0_1b.snd": # low, short low-to-medhigh ascent, maybe good for jet bumpers
+#            track: 2
+#            action: play_file
+#            platform_options:
+#                loop: false
+#                no_cache: true
+#    s_3bank_drop_target_series_active:
+#        "0_0a.snd":
+#            track: 2
+#            action: play_file
+#            platform_options:
+#                loop: false
+#                no_cache: false

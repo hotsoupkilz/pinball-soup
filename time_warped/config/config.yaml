@@ -20,12 +20,7 @@ lisy:
     connection: serial
     port: /dev/ttyACM0
     baud: 115200
-    #debug: true # log level debug. can make game run slowly
-
-## use APC sdcard for sounds
-hardware_sound_systems:
-    default:
-        label: APC
+    #debug: true #can make game run slowly
 
 # platform/hardware type (lisy/APC-specific)
 digital_outputs:
@@ -34,6 +29,11 @@ digital_outputs:
         type: driver
         enable_events: ball_started
         disable_events: ball_will_end
+
+## use APC sdcard for sounds
+hardware_sound_systems:
+    default:
+        label: APC
 
 # play sounds via files on APC sdcard
 hardware_sound_player:
@@ -45,7 +45,7 @@ hardware_sound_player:
             track: 1
             action: play_file
             platform_options:
-                loop: false
+                loop: true
                 no_cache: false
     game_ending:
         action: stop
@@ -110,8 +110,9 @@ modes:
     - tilt
     #(autorotating lanes skillshot. scoring works, not autorotate.
     # skillshot resets if made and drained within ball_save window)
-    - skillshot
-
+    #- skillshot
+    - rollover_lanes
+    - threebank
 
 ###############################################################################
 # switches
@@ -607,49 +608,25 @@ segment_display_player:
     player_turn_started.1{number==1}:
         player1_display:
             action: flash
-        #show_tokens:
-        #    light:
-        #        l_player_up_1: ff
     player_turn_ended.2{number==1}:
         player1_display:
             action: no_flash
-        #show_tokens:
-        #    light:
-        #        l_player_up_1: 0
     player_turn_started.3{number==2}:
         player2_display:
             action: flash
-        #show_tokens:
-        #    light:
-        #        l_player_up_2: ff
     player_turn_ended.4{number==2}:
         player2_display:
             action: no_flash
-        #show_tokens:
-        #    light:
-        #        l_player_up_2: 0
     player_turn_started.5{number==3}:
         player3_display:
             action: flash
-        #show_tokens:
-        #    light:
-        #        l_player_up_3: ff
     player_turn_ended.6{number==3}:
         player3_display:
             action: no_flash
-        #show_tokens:
-        #    light:
-        #        l_player_up_3: 0
     player_turn_started.7{number==4}:
         player4_display:
             action: flash
-        #show_tokens:
-        #    light:
-        #        l_player_up_4: ff
     player_turn_ended.8{number==4}:
         player4_display:
             action: no_flash
-        #show_tokens:
-        #    light:
-        #        l_player_up_4: 0
 

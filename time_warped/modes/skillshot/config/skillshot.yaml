@@ -5,22 +5,22 @@
 ### , all three lanes light at once and do not flash
 ### , scoring works as expected (as if all 3 lanes are lit skillshots)
 mode:
-    start_events: ball_started # start_mode_skillshot #, balldevice_bd_drain_ejecting_ball #ball_started #, start_mode_skill_shot
+    start_events: start_mode_skillshot #, balldevice_bd_drain_ejecting_ball #ball_started #, start_mode_skill_shot
     stop_events: stop_mode_skillshot #, ball_ending
-    priority: 200
+    priority: 100
 
 event_player:
     timer_skillshot_rotate_stopped:
-        - advance_skillshot_1{device.shots.skillshot_drop_left.state==1}
-        - advance_skillshot_2{device.shots.skillshot_drop_mid.state==1}
-        - advance_skillshot_3{device.shots.skillshot_drop_right.state==1}
+        - advance_skillshot_left{device.shots.skillshot_drop_left.state==1}
+        - advance_skillshot_mid{device.shots.skillshot_drop_mid.state==1}
+        - advance_skillshot_right{device.shots.skillshot_drop_right.state==1}
     skillshot_hit: stop_mode_skillshot
     playfield_active: stop_mode_skillshot|3s
 
 shots:
     skillshot_drop_left:
         switch: s_rollover_upper_left
-        advance_events: mode_skillshot_started, advance_skillshot_1
+        advance_events: mode_skillshot_started, advance_skillshot_left
         profile: skillshot_profile
         show_tokens:
             light:
@@ -28,7 +28,7 @@ shots:
                 #l_rollover_upper_left: ff
     skillshot_drop_mid:
         switch: s_rollover_upper_mid
-        advance_events: mode_skillshot_started, advance_skillshot_2
+        advance_events: mode_skillshot_started, advance_skillshot_mid
         profile: skillshot_profile
         show_tokens:
             light:
@@ -36,7 +36,7 @@ shots:
                 #l_rollover_upper_mid: ff
     skillshot_drop_right:
         switch: s_rollover_upper_right
-        advance_events: mode_skillshot_started, advance_skillshot_3
+        advance_events: mode_skillshot_started, advance_skillshot_right
         profile: skillshot_profile
         show_tokens:
             light:
