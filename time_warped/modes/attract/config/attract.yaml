@@ -1,7 +1,6 @@
 #config_version=6
 
-slide_player:
-    mode_attract_started: attract
+#modes/attract/config/attract.yaml
 
 show_player:
     mode_attract_started.1:
@@ -20,11 +19,14 @@ hardware_sound_player:
     mode_attract_started.2:
         set_volume:
             action: set_volume
-            value: 0.2
+            value: "0.2"
         "FOURNOTEMELODIC.snd": # nick sound
             track: 1
             action: play_file
             platform_options:
                 loop: true
                 no_cache: false
+
+#slide_player:
+#    mode_attract_started: attract
 

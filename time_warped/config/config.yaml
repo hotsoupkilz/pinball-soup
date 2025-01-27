@@ -1,5 +1,8 @@
 #config_version=6
 
+#config/config.yaml
+
+
 ###############################################################################
 # hardware
 ###############################################################################
@@ -40,7 +43,7 @@ hardware_sound_player:
     game_start:
         set_volume:
             action: set_volume
-            value: 0.2
+            value: "0.2"
         "music.snd": # filename on sdcard
             track: 1
             action: play_file
@@ -51,7 +54,7 @@ hardware_sound_player:
         action: stop
         set_volume:
             action: set_volume
-            value: 0
+            value: "0"
 
 
 # various sound files for Time Warp on APC sdcard

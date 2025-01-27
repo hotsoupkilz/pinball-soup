@@ -1,5 +1,8 @@
 #config_version=6
 
+#modes/base/config/base.yaml
+
+
 mode:
     start_events: ball_starting
     priority: 100
@@ -20,13 +23,53 @@ shots:
         switch: s_target_upper_right
         show_tokens:
             light: l_bullseye_special
+        reset_events: ball_ending
 
-#shot_groups:
-#    bumper_shots:
-#        shots: bumper_shot_1, bumper_shot_2
+    sh_jet_bumper_left_top:
+        switch: s_jet_bumper_left_top
+        show_tokens:
+            light: l_jet_bumper_left_top
+        #reset_events: s_jet_bumper_left_top_inactive|100ms
+    sh_jet_bumper_left_mid:
+        switch: s_jet_bumper_left_mid
+        show_tokens:
+            light: l_jet_bumper_left_mid
+        #reset_events: s_jet_bumper_left_mid_inactive|100ms
+    sh_jet_bumper_left_bottom:
+        switch: s_jet_bumper_left_bottom
+        show_tokens:
+            light: l_jet_bumper_left_bottom
+        #reset_events: s_jet_bumper_left_bottom_inactive|100ms
+    sh_jet_bumper_right_mid:
+        switch: s_jet_bumper_right_mid
+        show_tokens:
+            light: l_jet_bumper_right_mid
+        #reset_events: s_jet_bumper_right_mid_inactive|100ms
+    sh_jet_bumper_right:
+        switch: s_jet_bumper_right
+        show_tokens:
+            light: l_jet_bumper_right
+        #reset_events: s_jet_bumper_right_inactive|100ms
+
+
+shot_groups:
+    jet_bumpers:
+        shots:
+            - sh_jet_bumper_left_top
+            #- sh_jet_bumper_left_bottom #switch doesnt work
+            - sh_jet_bumper_left_mid
+            - sh_jet_bumper_right_mid
+            - sh_jet_bumper_right
+        reset_events: jet_bumpers_complete
 
 variable_player:
     # variable values defined in shot_groups
+    jet_bumpers_unlit_hit:
+        score: 10
+    jet_bumpers_lit_hit:
+        score: 15
+    jet_bumpers_complete:
+        score: 250
 
     # switches tied to points
     s_target_upper_right_active:
@@ -36,75 +79,77 @@ variable_player:
 
     # single-point placeholders
     s_standup_upper_right_active:
-        score: 1
+        score: 25
         #bonus_multiplier: 1
     s_standup_upper_left_active:
-        score: 1
+        score: 25
     s_eject_hole_upper_active:
-        score: 1
-    s_jet_bumper_left_top_active:
-        score: 1
-    s_jet_bumper_left_mid_active:
-        score: 1
-    s_jet_bumper_left_bottom_active:
-        score: 1
-    s_jet_bumper_right_mid_active:
-        score: 1
-    s_jet_bumper_right_active:
-        score: 1
+        score: 500
+
+    #sh_jet_bumper_left_top:
+    #    score: 10
+    #sh_jet_bumper_left_mid:
+    #    score: 10
+    #sh_jet_bumper_left_bottom:
+    #    score: 10
+    #sh_jet_bumper_right_mid:
+    #    score: 10
+    #sh_jet_bumper_right:
+    #    score: 10
+    #s_jet_bumper_left_top_active:
+    #    score: 10
+    #s_jet_bumper_left_mid_active:
+    #    score: 10
+    #s_jet_bumper_left_bottom_active:
+    #    score: 10
+    #s_jet_bumper_right_mid_active:
+    #    score: 10
+    #s_jet_bumper_right_active:
+    #    score: 10
+
     s_eject_hole_mid_active:
-        score: 1
+        score: 500
     s_5bank_drop_target_left_active:
-        score: 1
+        score: 50
     s_5bank_drop_target_left_mid_active:
-        score: 1
+        score: 50
     s_5bank_drop_target_mid_active:
-        score: 1
+        score: 50
     s_5bank_drop_target_right_mid_active:
-        score: 1
+        score: 50
     s_5bank_drop_target_right_active:
-        score: 1
-    s_5bank_drop_target_series_active:
-        score: 1
+        score: 50
+    #s_5bank_drop_target_series_active:
+    #    score: 50
     s_5bank_standup_active:
-        score: 1
+        score: 75
     s_standup_lower_right_active:
-        score: 1
+        score: 50
     s_standup_lower_left_active:
-        score: 1
-    #s_3bank_drop_target_left_active:
-    #    score: 1
-    #s_3bank_drop_target_mid_active:
-    #    score: 1
-    #s_3bank_drop_target_right_active:
-    #    score: 1
-    #s_3bank_drop_target_series_active:
-    #    score: 1
-    s_3bank_standup_active:
-        score: 1
+        score: 50
     s_rollover_outlane_right_active:
-        score: 1
+        score: 5000
     s_rollover_outlane_left_active:
-        score: 1
+        score: 5000
     s_rollover_inlane_left_active:
-        score: 1
+        score: 25
     s_rollover_inlane_right_active:
-        score: 1
+        score: 25
 
 hardware_sound_player:
     ## check machine config for notes on snd files"
 
     # event-based sounds
-
-    # "regular" switch/rollover hits
-    s_outhole_active:
+    ball_ending:
         "FOURNOTEMELODIC.snd": # nick sound
             track: 2
             action: play_file
             platform_options:
-                loop: false
+                loops: 2
                 no_cache: false
 
+
+    # "regular" switch/rollover hits
     s_standup_upper_left_active:
         #"4-note-melodic_1.snd": # nick sound
         "0_11.snd": # short tone burst, good for outlanes, single switches, rollovers
@@ -148,6 +193,7 @@ hardware_sound_player:
                 loop: false
                 no_cache: false
     s_rollover_upper_mid_active:
+        #"FOURNOTEMELODIC.snd": # nick sound
         "0_11.snd":
             track: 2
             action: play_file
@@ -172,21 +218,6 @@ hardware_sound_player:
                 no_cache: false
     s_eject_hole_mid_active:
         "0_1c.snd":
-            track: 2
-            action: play_file
-            platform_options:
-                loop: false
-                no_cache: false
-
-    s_slingshot_lower_right_active:
-        "0_1a.snd": # short high pitched tones, good for outlanes, maybe drop targets
-            track: 2
-            action: play_file
-            platform_options:
-                loop: false
-                no_cache: false
-    s_slingshot_lower_left_active:
-        "0_1a.snd":
             track: 2
             action: play_file
             platform_options:
@@ -229,13 +260,36 @@ hardware_sound_player:
                 loop: false
                 no_cache: false
 
-    s_rollover_inlane_right_active:
-        "0_0b.snd": #
+    s_standup_lower_left_active:
+        "0_11.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
+    s_standup_lower_right_active:
+        "0_11.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+
+    s_slingshot_lower_left_active:
+        "0_1a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_slingshot_lower_right_active:
+        "0_1a.snd": # short high pitched tones, good for outlanes, maybe drop targets
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    
     s_rollover_inlane_left_active:
         "0_0b.snd":
             track: 2
@@ -243,16 +297,23 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: false
-
-    s_rollover_outlane_right_active:
-        "0_17.snd": # echoing burn/crash. good for ball end or game over
+    s_rollover_inlane_right_active:
+        "0_0b.snd": #
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
+
     s_rollover_outlane_left_active:
         "0_17.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_rollover_outlane_right_active:
+        "0_17.snd": # echoing burn/crash. good for ball end or game over
             track: 2
             action: play_file
             platform_options:
@@ -301,38 +362,13 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: true
-
-    s_3bank_drop_target_left_active:
-        "0_1b.snd": #low, short low-to-medhigh ascent, maybe good for jet bumpers
+    s_5bank_standup_active:
+        "0_1b.snd": # low, short low-to-medhigh ascent, maybe good for jet bumpers
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: true
-    s_3bank_drop_target_mid_active:
-        "0_1b.snd":
-            track: 2
-            action: play_file
-            platform_options:
-                loop: false
-                no_cache: true
-    s_3bank_drop_target_right_active:
-        "0_1b.snd":
-            track: 2
-            action: play_file
-            platform_options:
-                loop: false
-                no_cache: true
-    s_3bank_drop_target_series_active:
-        "0_0a.snd": # optimistic low to high, good for bank resets
-            track: 2
-            action: play_file
-            platform_options:
-                loop: false
-                no_cache: true
-
-
-
 
 
 # NOTE: text-to-speech is a feature if using lisy as hardware sound player.

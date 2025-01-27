@@ -1,9 +1,13 @@
 #config_version=6
 
+#modes/skillshot/config/skillshot.yaml
+
+
 ### NOTE: Attempt at autorotating skillshot using roller lanes. 
 ### - with below config, skillshot starts after first ball (including if ejected from ball_save)
 ### , all three lanes light at once and do not flash
 ### , scoring works as expected (as if all 3 lanes are lit skillshots)
+
 mode:
     start_events: start_mode_skillshot #, balldevice_bd_drain_ejecting_ball #ball_started #, start_mode_skill_shot
     stop_events: stop_mode_skillshot #, ball_ending
@@ -25,7 +29,6 @@ shots:
         show_tokens:
             light:
                 l_rollover_upper_left
-                #l_rollover_upper_left: ff
     skillshot_drop_mid:
         switch: s_rollover_upper_mid
         advance_events: mode_skillshot_started, advance_skillshot_mid
@@ -33,7 +36,6 @@ shots:
         show_tokens:
             light:
                 l_rollover_upper_mid
-                #l_rollover_upper_mid: ff
     skillshot_drop_right:
         switch: s_rollover_upper_right
         advance_events: mode_skillshot_started, advance_skillshot_right
@@ -41,7 +43,6 @@ shots:
         show_tokens:
             light:
               l_rollover_upper_right
-              #l_rollover_upper_right: ff
 
 shot_groups:
     skillshot:
@@ -156,9 +157,5 @@ variable_player:
 #             - source: start
 #               target: failed
 #               events: skill_shot_unlit_hit, timer_skill_shot_timeout_complete
-# 
-# 
-# 
-# 
-# 
-# 
+
+

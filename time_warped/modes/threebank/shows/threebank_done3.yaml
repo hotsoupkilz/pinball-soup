@@ -1,0 +1,19 @@
+#show_version=6
+
+#l_3bank_1bottom:
+#    number: 33
+#l_3bank_2:
+#    number: 34
+#l_3bank_3mid:
+#    number: 35
+#l_3bank_4:
+#    number: 36
+#l_3bank_5top:
+#    number: 37
+
+
+- duration: 1
+  lights:
+      l_3bank_1bottom: ff
+      l_3bank_2: ff
+      l_3bank_3mid: ff

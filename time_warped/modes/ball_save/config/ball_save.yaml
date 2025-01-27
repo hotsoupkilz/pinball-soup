@@ -1,15 +1,11 @@
 #config_version=6
 
+#modes/ball_save/config/ball_save.yaml
+
+
 mode:
     start_events: ball_started
-
-ball_saves:
-    ball_save_ball_save:
-        active_time: 15s
-        hurry_up_time: 5s
-        timer_start_events: balldevice_bd_drain_ejecting_ball
-        auto_launch: false
-        balls_to_save: 1
+    priority: 100
 
 show_player:
     ball_save_ball_save_ball_save_timer_start:
@@ -22,3 +18,12 @@ show_player:
             speed: 4
     ball_save_ball_save_ball_save_disabled:
         ball_save: stop
+
+ball_saves:
+    ball_save_ball_save:
+        active_time: 15s
+        hurry_up_time: 5s
+        timer_start_events: balldevice_bd_drain_ejecting_ball
+        auto_launch: false
+        balls_to_save: 1
+

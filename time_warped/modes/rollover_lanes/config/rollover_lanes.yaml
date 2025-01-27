@@ -1,5 +1,8 @@
 #config_version=6
 
+#modes/rollover_lanes/config/rollover_lanes.yaml
+
+
 mode:
     start_events: ball_starting
     priority: 100
@@ -31,8 +34,8 @@ shot_groups:
             - sh_rollover_upper_left
             - sh_rollover_upper_mid
             - sh_rollover_upper_right
-        rotate_left_events: c_flipper_left_main_active
-        rotate_right_events: c_flipper_right_main_active
+        rotate_left_events: s_jet_bumper_left_top_active, s_jet_bumper_right_mid_active
+        rotate_right_events: s_jet_bumper_left_mid_active, s_jet_bumper_left_bottom_active, s_jet_bumper_right_active
         reset_events: rollover_lanes_complete
             #rollover_lanes_lit_complete: 60s
 
