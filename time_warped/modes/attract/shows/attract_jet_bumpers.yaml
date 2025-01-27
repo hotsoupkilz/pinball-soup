@@ -1,0 +1,88 @@
+#show_version=6
+
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: ff
+      l_jet_bumper_left_mid: ff
+      l_jet_bumper_left_bottom: ff
+      l_jet_bumper_right_mid: ff
+      l_jet_bumper_right: ff
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: 0
+      l_jet_bumper_left_mid: 0
+      l_jet_bumper_left_bottom: 0
+      l_jet_bumper_right_mid: 0
+      l_jet_bumper_right: 0
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: ff
+      l_jet_bumper_left_mid: ff
+      l_jet_bumper_left_bottom: ff
+      l_jet_bumper_right_mid: ff
+      l_jet_bumper_right: ff
+- duration: 1
+  lights:
+      l_jet_bumper_right: 0
+- duration: 1
+  lights:
+      l_jet_bumper_right_mid: 0
+- duration: 1
+  lights:
+      l_jet_bumper_left_mid: 0
+- duration: 1
+  lights:
+      l_jet_bumper_left_bottom: 0
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: 0
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: ff
+      l_jet_bumper_left_mid: ff
+      l_jet_bumper_left_bottom: ff
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: 0
+      l_jet_bumper_left_mid: 0
+      l_jet_bumper_left_bottom: 0
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: ff
+      l_jet_bumper_left_mid: ff
+      l_jet_bumper_left_bottom: ff
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: 0
+      l_jet_bumper_left_mid: 0
+      l_jet_bumper_left_bottom: 0
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: ff
+- duration: 1
+  lights:
+      l_jet_bumper_left_bottom: ff
+- duration: 1
+  lights:
+      l_jet_bumper_left_mid: ff
+- duration: 1
+  lights:
+      l_jet_bumper_right_mid: ff
+- duration: 1
+  lights:
+      l_jet_bumper_right: ff
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: 0
+      l_jet_bumper_left_mid: 0
+      l_jet_bumper_left_bottom: 0
+      l_jet_bumper_right_mid: 0
+      l_jet_bumper_right: 0
+- duration: 1
+  lights:
+      l_jet_bumper_left_top: ff
+      l_jet_bumper_left_mid: ff
+      l_jet_bumper_left_bottom: ff
+      l_jet_bumper_right_mid: ff
+      l_jet_bumper_right: ff
+

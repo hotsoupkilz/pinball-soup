@@ -43,7 +43,7 @@ hardware_sound_player:
     game_start:
         set_volume:
             action: set_volume
-            value: "0.2"
+            value: 0.2
         "music.snd": # filename on sdcard
             track: 1
             action: play_file
@@ -54,7 +54,7 @@ hardware_sound_player:
         action: stop
         set_volume:
             action: set_volume
-            value: "0"
+            value: 0
 
 
 # various sound files for Time Warp on APC sdcard
@@ -108,14 +108,15 @@ virtual_segment_display_connector:
 
 modes:
     - attract
-    - base
     - ball_save
-    - tilt
+    - base
+    - jet_bumpers
     #(autorotating lanes skillshot. scoring works, not autorotate.
     # skillshot resets if made and drained within ball_save window)
     #- skillshot
     - rollover_lanes
     - threebank
+    - tilt
 
 ###############################################################################
 # switches

@@ -8,10 +8,12 @@ show_player:
             speed: 4
         attract_arrow_sweep_right:
             speed: 4
+        attract_jet_bumpers:
+            speed: 4
         attract_rollover_lanes:
             speed: 4
         attract_threebank_sweep:
-            speed: 2
+            speed: 4
         attract_triangle_flash:
             speed: 4
 
@@ -19,7 +21,7 @@ hardware_sound_player:
     mode_attract_started.2:
         set_volume:
             action: set_volume
-            value: "0.2"
+            value: 0.2
         "FOURNOTEMELODIC.snd": # nick sound
             track: 1
             action: play_file
