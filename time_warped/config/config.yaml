@@ -110,6 +110,7 @@ modes:
     - attract
     - ball_save
     - base
+    - bonus
     - jet_bumpers
     #(autorotating lanes skillshot. scoring works, not autorotate.
     # skillshot resets if made and drained within ball_save window)

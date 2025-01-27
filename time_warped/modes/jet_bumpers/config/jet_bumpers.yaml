@@ -11,7 +11,7 @@ show_player:
     jet_bumpers_complete:
         jet_bumpers_complete:
             speed: 10
-            loops: 2
+            loops: 1
             priority: 1
 
 shots:
@@ -19,17 +19,14 @@ shots:
         switch: s_jet_bumper_left_top
         show_tokens:
             light: l_jet_bumper_left_top
-        #reset_events: s_jet_bumper_left_top_inactive|100ms
     sh_jet_bumper_left_mid:
         switch: s_jet_bumper_left_mid
         show_tokens:
             light: l_jet_bumper_left_mid
-        #reset_events: s_jet_bumper_left_mid_inactive|100ms
     sh_jet_bumper_left_bottom: # switch isnt working, so removing from shot_profile & light (it works rarely)
         switch: s_jet_bumper_left_bottom
         #show_tokens:
         #    light: l_jet_bumper_left_bottom
-        #reset_events: s_jet_bumper_left_bottom_inactive|100ms
     sh_jet_bumper_right_mid:
         switch: s_jet_bumper_right_mid
         show_tokens:
@@ -49,7 +46,9 @@ shot_groups:
             - sh_jet_bumper_left_mid
             - sh_jet_bumper_right_mid
             - sh_jet_bumper_right
-        reset_events: jet_bumpers_complete
+        reset_events:
+            - jet_bumpers_complete
+            - ball_ending
 
 variable_player:
     # variable values defined in shot_groups

@@ -1,0 +1,20 @@
+#config_version=6
+
+#modes/bonus/config/bonus.yaml
+
+
+mode_settings:
+    bonus_entries:
+        - entry: bonus_jet_bumpers
+          text: "jet bumpers bonus"
+          player_score_entry: jet_bumpers_completed
+          score: 500
+        - entry: bonus_rollover_lanes
+          text: "rollover lanes bonus"
+          player_score_entry: rollover_lanes_completed
+          score: 5000
+          #reset_player_score_entry: true
+        - entry: bonus_threebank
+          text: "threebank bonus"
+          player_score_entry: threebank_completed
+          score: 1000
