@@ -103,9 +103,10 @@ virtual_segment_display_connector:
 
 
 ###############################################################################
-# game modes
+# game modes & player variables
 ###############################################################################
 
+# modes: anything that has a folder in modes/ should be listed here
 modes:
     - attract
     - ball_save
@@ -118,6 +119,12 @@ modes:
     - rollover_lanes
     - threebank
     - tilt
+
+# player variables: set the initial state of variables used by players when game starts
+#player_vars:
+#    bonus_multiplier:
+#        initial_value:
+
 
 ###############################################################################
 # switches
