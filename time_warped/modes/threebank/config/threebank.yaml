@@ -16,6 +16,8 @@ shots:
         switch: s_3bank_drop_target_mid
     sh_3bank_right:
         switch: s_3bank_drop_target_right
+    sh_3bank_standup:
+        switch: s_3bank_standup
 
 counters:
     threebank_reset_counter:
@@ -44,10 +46,11 @@ variable_player:
         score: 500
     sh_3bank_right_hit:
         score: 500
+    sh_3bank_standup_hit:
+        score: 500
 
 show_player:
     logicblock_threebank_reset_counter_updated{value<=6}:
-    #sh_3bank_series_hit:
         threebank_complete:
             action: play
             speed: 8
@@ -71,11 +74,6 @@ light_player:
         l_3bank_4: ff
     logicblock_threebank_reset_counter_updated{value==5}:
         l_3bank_5top: ff
-        #threebank_complete:
-        #    action: play
-        #    speed: 8
-        #    loop: true
-        #    priority: 1
 
 hardware_sound_player:
     sh_3bank_left_hit:
@@ -106,82 +104,11 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: false
+    s_3bank_standup_active:
+        "0_1b.snd": #low, short low-to-medhigh ascent, maybe good for jet bumpers
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
 
-
-
-#show_player:
-#    threebank_complete:
-#        threebank_complete:
-#            speed: 8
-#            loops: 2
-#            # priority: 1
-#    threebank_done.1{count==1}:
-#        threebank_done1:
-#            action: play
-#    threebank_done.2{count==2}:
-#        threebank_done2:
-#            action: play
-#    threebank_done.3{count==3}:
-#        threebank_done3:
-#            action: play
-#    threebank_done.4{count==4}:
-#        threebank_done4:
-#            action: play
-#    threebank_done.6{count==5}:
-#        threebank_done5:
-#            action: play
-#            speed: 8
-#    threebank_done.7{count>5}:
-#        threebank_complete:
-#            speed: 8
-#            loops: 50
-#
-#
-#
-#shot_groups:
-#    threebank:
-#        shots:
-#            - sh_threebank_series
-#            #- sh_rollover_upper_left
-#            #- sh_rollover_upper_mid
-#            #- sh_rollover_upper_right
-#        reset_events: threebank_complete|3s
-#            #rollover_lanes_lit_complete: 60s
-#
-#variable_player:
-#    # variable values defined in shot_groups
-#
-#    mode_threebank_started.1:
-#        threebank_multiplier:
-#            int: 1
-#            action: set
-#    threebank_done.1{count==1}:
-#        threebank_multiplier:
-#            int: 1
-#            action: set
-#    threebank_done.2{count==2}:
-#        threebank_multiplier:
-#            int: 2
-#            action: set
-#    threebank_done.3{count==3}:
-#        threebank_multiplier:
-#            int: 3
-#            action: set
-#    threebank_done.4{count==4}:
-#        threebank_multiplier:
-#            int: 4
-#            action: set
-#    threebank_done.5{count==5}:
-#        threebank_multiplier:
-#            int: 5
-#            action: set
-#    threebank_complete:
-#        score: 5000 * current_player.threebank_multiplier
-#
-#    sh_threebank_left:
-#        score: 1000
-#    sh_threebank_mid:
-#        score: 1000
-#    sh_threebank_right:
-#        score: 1000
-#
