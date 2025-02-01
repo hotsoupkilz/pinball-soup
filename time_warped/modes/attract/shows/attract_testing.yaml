@@ -1,0 +1,69 @@
+#show_version=6
+
+- duration: 1
+  lights:
+    #known lights, unassigned
+      l_x2: 0
+      l_x3: 0
+      l_x5: 0
+      l_x10: 0
+      l_ballsave: 0
+      l_inlanes: 0
+      l_outlane_left: 0
+      l_outlane_right: 0
+      l_rollover_lanes: 0 # single "red ABC" light at top of playfield
+      l_bullseye_special: 0 # single "red spec when lit" on lower right side of playfield
+      l_5bank_1: 0 # single "red spec when lit" mid playfield below 5bank
+      l_high_score_to_date: 0 # backbox top left, light (left, is right light out?) aboveish player1
+      l_game_over: 0 # backbox bottom left, bottom row 1&2 (of 11) from left, under "game over"
+      l_ball_in_play: 0 #(LIGHT OUT) thinking backbox bottom left, bottom row 3rd (of 11) from left, under "Ball in Play"
+      l_match: 0 # backbox bottom left, bottom row 4th (of 11) from left, below & right of numeric
+      l_same_player_again_backbox: 0 # backbox bottom mid, bottom row 5&6 (of 11) from left, under middle of backbox
+      l_1canplay: 0 # backbox bottom right, bottom row 7th (of 11) from left, under "1"
+      l_2canplay: 0 # backbox bottom right, bottom row 8th (of 11) from left, under "2"
+      l_3canplay: 0 # backbox bottom right, bottom row 9th (of 11) from left, under "3"
+      l_4canplay: 0 # backbox bottom right, bottom row 10th (of 11) from left, under "4"
+      l_tilt: 0 # backbox bottom right, bottom row 11th (of 11) from left, under "tilt"
+      l_player_up_1: 0 # backbox top left, single light above player1 numeric display
+      l_player_up_2: 0 # backbox top right, single light above player2 numeric display
+      l_player_up_3: 0 # backbox mid right, single light above player3 numeric display
+      l_player_up_4: 0 # backbox bottom right, single light above player4 numeric display
+
+    #unknown lights
+      #l_credits_playfield: 0
+      #l_notused: 0
+
+- duration: 1
+  lights:
+    #known lights, unassigned
+      l_x2: ff
+      l_x3: ff
+      l_x5: ff
+      l_x10: ff
+      l_ballsave: ff
+      l_inlanes: ff
+      l_outlane_left: ff
+      l_outlane_right: ff
+      l_rollover_lanes: ff # single "red ABC" light at top of playfield
+      l_bullseye_special: ff # single "red spec when lit" on lower right side of playfield
+      l_5bank_1: ff # single "red spec when lit" mid playfield below 5bank
+      l_high_score_to_date: ff # backbox top left, light (left, is right light out?) aboveish player1
+      l_game_over: ff # backbox bottom left, bottom row 1&2 (of 11) from left, under "game over"
+      l_ball_in_play: ff #(LIGHT OUT) thinking backbox bottom left, bottom row 3rd (of 11) from left, under "Ball in Play"
+      l_match: ff # backbox bottom left, bottom row 4th (of 11) from left, below & right of numeric
+      l_same_player_again_backbox: ff # backbox bottom mid, bottom row 5&6 (of 11) from left, under middle of backbox
+      l_1canplay: ff # backbox bottom right, bottom row 7th (of 11) from left, under "1"
+      l_2canplay: ff # backbox bottom right, bottom row 8th (of 11) from left, under "2"
+      l_3canplay: ff # backbox bottom right, bottom row 9th (of 11) from left, under "3"
+      l_4canplay: ff # backbox bottom right, bottom row 10th (of 11) from left, under "4"
+      l_tilt: ff # backbox bottom right, bottom row 11th (of 11) from left, under "tilt"
+      l_player_up_1: ff # backbox top left, single light above player1 numeric display
+      l_player_up_2: ff # backbox top right, single light above player2 numeric display
+      l_player_up_3: ff # backbox mid right, single light above player3 numeric display
+      l_player_up_4: ff # backbox bottom right, single light above player4 numeric display
+
+    #unknown lights
+      #l_credits_playfield: ff
+      #l_notused: ff
+
+

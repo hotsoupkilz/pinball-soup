@@ -31,7 +31,7 @@ variable_player:
         score: 1500
     sh_target_right_hit:
         score: 10000
-    
+
     #s_target_upper_right_active:
     #    score: 10000
     #s_target_upper_left_active:
@@ -70,10 +70,10 @@ variable_player:
         score: 5000
     s_rollover_outlane_left_active:
         score: 5000
-    s_rollover_inlane_left_active:
-        score: 25
-    s_rollover_inlane_right_active:
-        score: 25
+    #s_rollover_inlane_left_active:
+    #    score: 25
+    #s_rollover_inlane_right_active:
+    #    score: 25
 
 hardware_sound_player:
     ## check machine config for notes on snd files"

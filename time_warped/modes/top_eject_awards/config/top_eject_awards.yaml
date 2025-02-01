@@ -1,0 +1,46 @@
+#config_version=6
+
+#modes/top_eject_awards/config/top_eject_awards.yaml
+
+
+mode:
+    start_events: ball_starting
+    priority: 100
+
+shots:
+    sh_top_eject:
+        switch: s_eject_hole_upper
+    sh_left_inlane:
+        switch
+
+counters:
+    top_eject_counter:
+        count_events: sh_top_eject_hit
+        starting_count: 0
+        #count_complete_value: 5
+        #reset_on_complete: false
+
+variable_player:
+    sh_top_eject_hit{device.counters.top_eject_counter.value == 0}:
+        score: 500
+    sh_top_eject_hit{device.counters.top_eject_counter.value == 1}:
+        score: 750
+    sh_top_eject_hit{device.counters.top_eject_counter.value == 2}:
+        score: 1000
+    sh_top_eject_hit{device.counters.top_eject_counter.value == 3}:
+        score: 1500
+    sh_top_eject_hit{device.counters.top_eject_counter.value == 4}:
+        score: 2000
+    sh_top_eject_hit{device.counters.top_eject_counter.value == 5}:
+        score: 2500
+
+light_player:
+    logicblock_top_eject_counter_updated{value==1}:
+        l_eject_hole_left_1bottom: ff
+    logicblock_top_eject_counter_updated{value==2}:
+        l_eject_hole_left_2: ff
+    logicblock_top_eject_counter_updated{value==3}:
+        l_eject_hole_left_3: ff
+    logicblock_top_eject_counter_updated{value==4}:
+        l_eject_hole_left_4top: ff
+
