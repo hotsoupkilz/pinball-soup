@@ -226,6 +226,7 @@ switches:
         number: 29
     s_5bank_drop_target_series:
         number: 30
+        ignore_window_ms: 500ms
     s_5bank_standup:
         number: 31
     s_standup_lower_right:
@@ -239,6 +240,7 @@ switches:
         number: 35
     s_3bank_drop_target_series:
         number: 36
+        ignore_window_ms: 500ms
     s_3bank_standup:
         number: 37
 

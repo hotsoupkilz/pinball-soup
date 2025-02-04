@@ -26,7 +26,7 @@ shots:
 shot_groups:
     fivebank:
         shots:
-            - sh_fivebank_series
+            - sh_5bank_series
         reset_events: ball_ending
 
 counters:
@@ -38,23 +38,31 @@ counters:
 
 variable_player:
     sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 0}:
-        playfield_multiplier: 1
         score: 1000 * current_player.playfield_multiplier
+        playfield_multiplier:
+            int: 2
+            action: set
     sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 1}:
-        playfield_multiplier: 2
         score: 1000 * current_player.playfield_multiplier
+        playfield_multiplier:
+            int: 3
+            action: set
     sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 2}:
-        playfield_multiplier: 3
         score: 1000 * current_player.playfield_multiplier
-    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 3}:
-        playfield_multiplier: 5
+        playfield_multiplier:
+            int: 5
+            action: set
+    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value >= 3}:
         score: 1000 * current_player.playfield_multiplier
-    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 4}:
-        playfield_multiplier: 10
-        score: 1000 * current_player.playfield_multiplier
-    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value >= 5}:
-        playfield_multiplier: 10
-        score: 5000 * current_player.playfield_multiplier
+        playfield_multiplier:
+            int: 10
+            action: set
+    #sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 4}:
+    #    score: 1000 * current_player.playfield_multiplier
+    #    playfield_multiplier: 10
+    #sh_5bank_series_hit{device.counters.fivebank_reset_counter.value >= 5}:
+    #    score: 5000 * current_player.playfield_multiplier
+    #    playfield_multiplier: 10
 
     sh_5bank_left_hit:
         score: 500 * current_player.playfield_multiplier
@@ -129,4 +137,5 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: true
+
 
