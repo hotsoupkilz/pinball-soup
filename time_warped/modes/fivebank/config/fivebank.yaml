@@ -1,0 +1,132 @@
+#config_version=6
+
+#modes/fivebank/config/fivebank.yaml
+
+
+mode:
+    start_events: ball_starting
+    priority: 100
+
+shots:
+    sh_5bank_series:
+        switch: s_5bank_drop_target_series
+    sh_5bank_drop_target_left:
+        switch: s_5bank_drop_target_left
+    sh_5bank_drop_target_left_mid:
+        switch: s_5bank_drop_target_left_mid
+    sh_5bank_drop_target_mid:
+        switch: s_5bank_drop_target_mid
+    sh_5bank_drop_target_right_mid:
+        switch: s_5bank_drop_target_right_mid
+    sh_5bank_drop_target_right:
+        switch: s_5bank_drop_target_right
+    sh_5bank_standup:
+        switch: s_5bank_standup
+
+shot_groups:
+    fivebank:
+        shots:
+            - sh_fivebank_series
+        reset_events: ball_ending
+
+counters:
+    fivebank_reset_counter:
+        count_events: sh_5bank_series_hit
+        starting_count: 0
+        #count_complete_value: 5
+        #reset_on_complete: false
+
+variable_player:
+    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 0}:
+        playfield_multiplier: 1
+        score: 1000 * current_player.playfield_multiplier
+    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 1}:
+        playfield_multiplier: 2
+        score: 1000 * current_player.playfield_multiplier
+    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 2}:
+        playfield_multiplier: 3
+        score: 1000 * current_player.playfield_multiplier
+    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 3}:
+        playfield_multiplier: 5
+        score: 1000 * current_player.playfield_multiplier
+    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value == 4}:
+        playfield_multiplier: 10
+        score: 1000 * current_player.playfield_multiplier
+    sh_5bank_series_hit{device.counters.fivebank_reset_counter.value >= 5}:
+        playfield_multiplier: 10
+        score: 5000 * current_player.playfield_multiplier
+
+    sh_5bank_left_hit:
+        score: 500 * current_player.playfield_multiplier
+    sh_5bank_left_mid_hit:
+        score: 500 * current_player.playfield_multiplier
+    sh_5bank_mid_hit:
+        score: 500 * current_player.playfield_multiplier
+    sh_5bank_right_mid_hit:
+        score: 500 * current_player.playfield_multiplier
+    sh_5bank_right_hit:
+        score: 500 * current_player.playfield_multiplier
+    sh_5bank_standup_hit:
+        score: 500 * current_player.playfield_multiplier
+
+show_player:
+    logicblock_fivebank_reset_counter_updated{value<=4}:
+        fivebank_complete:
+            action: play
+            speed: 8
+            loops: 2
+            priority: 1
+    logicblock_fivebank_reset_counter_updated{value==5}:
+        fivebank_complete:
+            action: play
+            speed: 8
+            loops: 500
+            priority: 1
+
+light_player:
+    logicblock_fivebank_reset_counter_updated{value==1}:
+        l_x2: ff
+    logicblock_fivebank_reset_counter_updated{value==2}:
+        l_x3: ff
+    logicblock_fivebank_reset_counter_updated{value==3}:
+        l_x5: ff
+    logicblock_fivebank_reset_counter_updated{value==4}:
+        l_x10: ff
+
+hardware_sound_player:
+    sh_5bank_left_hit:
+        "0_1b.snd": #low, short low-to-medhigh ascent, maybe good for jet bumpers
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    sh_5bank_mid_hit:
+        "0_1b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    sh_5bank_right_hit:
+        "0_1b.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+    sh_5bank_series_hit:
+        "0_0a.snd":
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: false
+    s_5bank_standup_active:
+        "0_1b.snd": #low, short low-to-medhigh ascent, maybe good for jet bumpers
+            track: 2
+            action: play_file
+            platform_options:
+                loop: false
+                no_cache: true
+

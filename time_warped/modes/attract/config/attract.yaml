@@ -8,6 +8,8 @@ show_player:
             speed: 4
         attract_arrow_sweep_right:
             speed: 4
+        attract_fivebank_sweep:
+            speed: 4
         attract_jet_bumpers:
             speed: 4
         attract_rollover_lanes:
@@ -18,8 +20,8 @@ show_player:
             speed: 4
         attract_triangle_flash:
             speed: 4
-        #attract_testing:
-        #    speed: 2
+        attract_testing:
+            speed: 2
 
 hardware_sound_player:
     mode_attract_started.2:

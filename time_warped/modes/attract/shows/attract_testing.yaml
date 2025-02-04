@@ -3,10 +3,10 @@
 - duration: 1
   lights:
     #known lights, unassigned
-      l_x2: 0
-      l_x3: 0
-      l_x5: 0
-      l_x10: 0
+      #l_x2: 0
+      #l_x3: 0
+      #l_x5: 0
+      #l_x10: 0
       l_ballsave: 0
       l_inlanes: 0
       l_outlane_left: 0
@@ -36,10 +36,10 @@
 - duration: 1
   lights:
     #known lights, unassigned
-      l_x2: ff
-      l_x3: ff
-      l_x5: ff
-      l_x10: ff
+      #l_x2: ff
+      #l_x3: ff
+      #l_x5: ff
+      #l_x10: ff
       l_ballsave: ff
       l_inlanes: ff
       l_outlane_left: ff

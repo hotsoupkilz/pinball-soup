@@ -42,9 +42,9 @@ shot_groups:
 variable_player:
     # variable values defined in shot_groups
     rollover_lanes_unlit_hit:
-        score: 1000
+        score: 1000 * current_player.playfield_multiplier
     rollover_lanes_lit_hit:
-        score: 3000
+        score: 3000 * current_player.playfield_multiplier
     rollover_lanes_complete:
-        score: 10000
+        score: 10000 * current_player.playfield_multiplier
 

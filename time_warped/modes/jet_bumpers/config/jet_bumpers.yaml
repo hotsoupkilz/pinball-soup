@@ -31,12 +31,10 @@ shots:
         switch: s_jet_bumper_right_mid
         show_tokens:
             light: l_jet_bumper_right_mid
-        #reset_events: s_jet_bumper_right_mid_inactive|100ms
     sh_jet_bumper_right:
         switch: s_jet_bumper_right
         show_tokens:
             light: l_jet_bumper_right
-        #reset_events: s_jet_bumper_right_inactive|100ms
 
 shot_groups:
     jet_bumpers:
@@ -53,11 +51,11 @@ shot_groups:
 variable_player:
     # variable values defined in shot_groups
     jet_bumpers_unlit_hit:
-        score: 10
+        score: 10 * current_player.playfield_multiplier
     jet_bumpers_lit_hit:
-        score: 15
+        score: 15 * current_player.playfield_multiplier
     jet_bumpers_complete:
-        score: 250
+        score: 250 * current_player.playfield_multiplier
 
 hardware_sound_player:
     s_jet_bumper_left_top_active:
@@ -95,6 +93,5 @@ hardware_sound_player:
             platform_options:
                 loop: false
                 no_cache: false
-
 
 

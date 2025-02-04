@@ -45,12 +45,12 @@ hardware_sound_player:
             action: set_volume
             value: 0.2
         #"SFXBGTIMEWARPED.SND": #
-        "music.snd": # filename on sdcard
-            track: 1
-            action: play_file
-            platform_options:
-                loop: true
-                no_cache: false
+        #"music.snd": # filename on sdcard
+        #    track: 1
+        #    action: play_file
+        #    platform_options:
+        #        loop: true
+        #        no_cache: false
     game_ending:
         action: stop
         set_volume:
@@ -113,6 +113,7 @@ modes:
     - ball_save
     - base
     - bonus
+    - fivebank
     - jet_bumpers
     #(autorotating lanes skillshot. scoring works, not autorotate.
     # skillshot resets if made and drained within ball_save window)
@@ -122,9 +123,10 @@ modes:
     - tilt
 
 # player variables: set the initial state of variables used by players when game starts
-#player_vars:
-#    bonus_multiplier:
-#        initial_value:
+player_vars:
+    playfield_multiplier:
+        value_type: int
+        initial_value: 1
 
 
 ###############################################################################

@@ -18,3 +18,7 @@ mode_settings:
           text: "threebank bonus"
           player_score_entry: threebank_completed
           score: 1000
+        - entry: bonus_fivebank
+          text: "fivebank bonus"
+          player_score_entry: fivebank_completed
+          score: 1000
