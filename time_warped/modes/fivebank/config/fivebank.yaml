@@ -78,13 +78,13 @@ variable_player:
         score: 500 * current_player.playfield_multiplier
 
 show_player:
-    logicblock_fivebank_reset_counter_updated{value<=4}:
+    logicblock_fivebank_reset_counter_updated{value<=5}:
         fivebank_complete:
             action: play
             speed: 8
             loops: 2
             priority: 1
-    logicblock_fivebank_reset_counter_updated{value==5}:
+    logicblock_fivebank_reset_counter_updated{value==6}:
         fivebank_complete:
             action: play
             speed: 8

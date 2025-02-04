@@ -28,12 +28,12 @@ hardware_sound_player:
         set_volume:
             action: set_volume
             value: 0.2
-        #"SFXBGD.SND": # nick sound
-        #    track: 1
-        #    action: play_file
-        #    platform_options:
-        #        loops: -1
-        #        no_cache: false
+        "SFXBGD.SND": # nick sound. electronic ambient
+            track: 1
+            action: play_file
+            platform_options:
+                loops: 2
+                no_cache: false
 
 #slide_player:
 #    mode_attract_started: attract

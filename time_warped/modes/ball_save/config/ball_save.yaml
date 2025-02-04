@@ -21,8 +21,9 @@ show_player:
 
 ball_saves:
     ball_save_ball_save:
-        active_time: 15s
+        active_time: 20s
         hurry_up_time: 5s
+        grace_period: 2s
         timer_start_events: balldevice_bd_drain_ejecting_ball
         auto_launch: false
         balls_to_save: 1
