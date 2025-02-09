@@ -27,7 +27,7 @@ shot_groups:
     fivebank:
         shots:
             - sh_5bank_series
-        reset_events: ball_ending
+        #reset_events: ball_ending
 
 counters:
     fivebank_reset_counter:

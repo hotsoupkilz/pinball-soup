@@ -59,35 +59,40 @@ variable_player:
 
 hardware_sound_player:
     s_jet_bumper_left_top_active:
-        "0_1a.snd":
+        "dammitjanet5.snd":
+        #"0_1a.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_jet_bumper_left_mid_active:
-        "0_1a.snd":
+        "dammitjanet5.snd":
+        #"0_1a.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_jet_bumper_left_bottom_active:
-        "0_1a.snd":
+        "dammitjanet5.snd":
+        #"0_1a.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_jet_bumper_right_mid_active:
-        "0_1a.snd":
+        "dammitjanet5.snd":
+        #"0_1a.snd":
             track: 2
             action: play_file
             platform_options:
                 loop: false
                 no_cache: false
     s_jet_bumper_right_active:
-        "0_1a.snd":
+        "dammitjanet5.snd":
+        #"0_1a.snd":
             track: 2
             action: play_file
             platform_options:

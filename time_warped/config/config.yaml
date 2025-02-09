@@ -44,8 +44,9 @@ hardware_sound_player:
         set_volume:
             action: set_volume
             value: 0.2
-        #"SFXBGTIMEWARPED.SND": #
-        "music.snd": # filename on sdcard
+        "timewarpv2.snd": # time warp song, reduced 10db via audacity
+        #"timewarp10minus.snd": # time warp song, reduced 10db via audacity
+        #"music.snd": # filename on sdcard. using "music.snd" enables using background track on orig game rom
             track: 1
             action: play_file
             platform_options:
