@@ -148,5 +148,35 @@ hotsoup@timewarpedapc:~ $ git clone git@github.com:hotsoupkilz/pinball_soup.git
 
 ```
 
+- test run mpf `$ cd pinball_soup/time_warped && mpf -b -t`
 
+- since we dont want to manually start mpf every time machine is turned on,
+  add details to `/etc/rc.local` that executes mpf comman at system start
 
+```
+
+hotsoup@timewarpedapc:~/pinball_soup/time_warped $ sudo vi /etc/rc.local
+... add the following and save/close: su hotsoup -c 'cd /home/hotsoup/pinball_soup/time_warped && mpf -b -t'...
+hotsoup@timewarpedapc:~/pinball_soup/time_warped $ sudo chmod +x /etc/rc.local
+hotsoup@timewarpedapc:~/pinball_soup/time_warped $ sudo vi /etc/systemd/system/rc-local.service
+..add the following to rc-local.service...
+[Unit]
+Description=/etc/rc.local
+ConditionPathExists=/etc/rc.local
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes
+SysVStartPriority=99
+
+[Install]
+WantedBy=multi-user.target
+
+hotsoup@timewarpedapc:~/pinball_soup/time_warped $ sudo systemctl enable rc-local
+Created symlink /etc/systemd/system/multi-user.target.wants/rc-local.service → /etc/systemd/system/rc-local.service.
+hotsoup@timewarpedapc:~/pinball_soup/time_warped $ sudo systemctl start rc-local
+hotsoup@timewarpedapc:~/pinball_soup/time_warped $ systemctl reboot
