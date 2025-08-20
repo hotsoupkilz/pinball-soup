@@ -3,5 +3,7 @@
 /time_warped/android/
 
 # ignore mpf logs
+/ozzy/logs/
+/ozzy/data/
 /time_warped/logs/
 /time_warped/data/
