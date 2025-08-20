@@ -1,1 +1,195 @@
 #config_version=6
+
+###############################################################################
+# hardware
+###############################################################################
+
+#hardware:
+    #platform:
+
+##virtual configs (when not connected to physical machine)
+virtual_platform_start_active_switches:
+  - s_trough1
+  - s_trough2
+  - s_trough3
+  - s_trough4
+  - s_trough5
+  - s_trough6
+
+#virtual_segment_display_connector:
+#    segment_displays:
+
+###############################################################################
+# game modes & player variables
+###############################################################################
+
+
+###############################################################################
+# switches
+###############################################################################
+
+switches:
+  s_flipper_left:
+    number:
+    tags: left_flipper
+  s_flipper_right:
+    number:
+    tags: right_flipper
+
+  s_start_button:
+    number:
+    tags: start
+
+  #s_tilt_plumb_bob:
+  #  number:
+  #  ignore_window_ms: 200
+  #  tags: tilt_warning
+  #s_tilt_ball_roll:
+  #  number:
+  #s_coin_open_right:
+  #  number:
+  #s_coin_center:
+  #  number:
+  #s_coin_left:
+  #  number:
+  #s_tilt_slam:
+  #  number:
+  #s_high_score_reset:
+  #  number:
+  #s_outhole:
+  #  number:
+
+  ## modern trough with opto switches (FAST) & plunger lane
+  s_trough1:
+    number:
+    type: NC
+  s_trough2:
+    number:
+    type: NC
+  s_trough3:
+    number:
+    type: NC
+  s_trough4:
+    number:
+    type: NC
+  s_trough5:
+    number:
+    type: NC
+  s_trough6:
+    number:
+    type: NC
+  s_trough_jam:
+    number:
+    type: NC
+  s_plunger_lane:
+    number:
+
+
+################################################################################
+# coils/solenoids
+################################################################################
+
+coils:
+  c_flipper_left_main:
+    number:
+    #default_pulse_ms: 20
+  c_flipper_left_hold:
+    number:
+    allow_enable: true
+  c_flipper_right_main:
+    number:
+    #default_pulse_ms: 20
+  c_flipper_right_hold:
+    number:
+    allow_enable: true
+
+  ## modern trough with optos (FAST) & combo mechanical+coil-fired plungers
+  c_trough_eject:
+    number:
+    default_pulse_ms: 20
+  c_plunger_lane:
+    number:
+    default_pulse_ms: 20
+
+################################################################################
+# lights
+################################################################################
+
+
+################################################################################
+# playfield details/devices
+################################################################################
+
+## ball devices (anything that holds & releases a ball, including the playfield
+## which "holds a ball". trough, the plunger lane, VUKs, poppers, playfield locks, etc.)
+
+ball_devices:
+  ## plunger. config for manual+coil-fired plunge w/option for button vs manual pull
+  bd_plunger:
+    ball_switches: s_plunger_lane
+    eject_coil: c_plunger_lane
+    mechanical_eject: true
+    ## for using something like an action button to launch vs manual plunge
+    ## *_active launches when button pressed. *_inactive launches when released.
+    # player_controlled_eject_event: s_launch_button_active
+
+    ## TODO: need to determine what plunged ball will release to:
+    ## playfield or ball device? will this hit a "eject confirm" switch?
+    #confirm_eject_type: switch
+    #confirm_eject_switch: s_plunger_lane_exit
+    eject_timeouts: 3s
+
+  ## trough. config for modern 6ball trough with jam switch
+  bd_trough:
+    ball_switches:
+      - s_trough1
+      - s_trough2
+      - s_trough3
+      - s_trough4
+      - s_trough5
+      - s_trough6
+      - s_trough_jam
+    eject_coil: c_trough_eject
+    tags: drain, home, trough
+    jam_switch: s_trough_jam
+    eject_coil_jam_pulse: 15ms
+    eject_timeouts: 3s
+    eject_targets: bd_plunger
+
+  ## example of another ball device (popper)
+  #bd_eject_hole_upper:
+  #    ball_switches: s_eject_hole_upper
+  #    eject_coil: c_eject_hole_upper
+  #    eject_timeouts: 3s
+
+
+# main playfield & any other minor playfields
+playfields:
+  playfield:
+    tags: default
+    default_source_device: bd_plunger
+
+
+## flipper config (double wound)
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_flipper_left
+    enable_events: machine_reset_phase_3 #temporary for testing, mpf only enables flippers when game starts by default
+  right_flipper:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_flipper_right
+    enable_events: machine_reset_phase_3 #temporary for testing, mpf only enables flippers when game starts by default
+
+
+################################################################################
+## displays
+################################################################################
+
+
+
+
+
+
