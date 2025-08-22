@@ -23,12 +23,24 @@ virtual_platform_start_active_switches:
 # game modes & player variables
 ###############################################################################
 
+## modes: anything that has a folder in modes/ should be listed here
+modes:
+    - attract
+    - base
+
+## player variables: set the initial state of variables used by players when game starts
+player_vars:
+    playfield_multiplier:
+        value_type: int
+        initial_value: 1
+
 
 ###############################################################################
 # switches
 ###############################################################################
 
 switches:
+  ## playfield
   s_flipper_left:
     number:
     tags: left_flipper
@@ -36,28 +48,30 @@ switches:
     number:
     tags: right_flipper
 
-  s_start_button:
+  s_slingshot_lower_right:
     number:
-    tags: start
+  s_slingshot_lower_left:
+    number:
 
-  #s_tilt_plumb_bob:
-  #  number:
-  #  ignore_window_ms: 200
-  #  tags: tilt_warning
-  #s_tilt_ball_roll:
-  #  number:
-  #s_coin_open_right:
-  #  number:
-  #s_coin_center:
-  #  number:
-  #s_coin_left:
-  #  number:
-  #s_tilt_slam:
-  #  number:
-  #s_high_score_reset:
-  #  number:
-  #s_outhole:
-  #  number:
+  s_rollover_outlane_left:
+    number:
+    tags: playfield_active
+  s_rollover_outlane_right:
+    number:
+    tags: playfield_active
+  s_rollover_inlane_left:
+    number:
+    tags: playfield_active
+  s_rollover_inlane_right:
+    number:
+    tags: playfield_active
+
+  s_pop_bumper_top:
+    number:
+  s_pop_bumper_mid:
+      number:
+  s_pop_bumper_bottom:
+      number:
 
   ## modern trough with opto switches (FAST) & plunger lane
   s_trough1:
@@ -83,6 +97,30 @@ switches:
     type: NC
   s_plunger_lane:
     number:
+  #s_outhole:
+  #  number:
+
+  ## non-playfield switches
+  s_start_button:
+    number:
+    tags: start
+  s_tilt_plumb_bob:
+    number:
+    ignore_window_ms: 200
+    tags: tilt_warning
+  s_tilt_ball_roll:
+    number:
+  s_tilt_slam:
+    number:
+  s_high_score_reset:
+    number:
+
+  s_coindoor_open:
+    number:
+  s_coin_left:
+    number:
+  s_coin_right:
+    number:
 
 
 ################################################################################
@@ -103,13 +141,30 @@ coils:
     number:
     allow_enable: true
 
+  c_slingshot_lower_right:
+    number:
+    #default_pulse_ms: 30
+  c_slingshot_lower_left:
+    number:
+    #default_pulse_ms: 30
+
+  c_pop_bumper_top:
+    number:
+    #default_pulse_ms: 35
+  c_pop_bumper_mid:
+    number:
+    #default_pulse_ms: 35
+  c_pop_bumper_bottom:
+    number:
+    #default_pulse_ms: 35
+
   ## modern trough with optos (FAST) & combo mechanical+coil-fired plungers
   c_trough_eject:
     number:
-    default_pulse_ms: 20
+    #default_pulse_ms: 20
   c_plunger_lane:
     number:
-    default_pulse_ms: 20
+    #default_pulse_ms: 20
 
 ################################################################################
 # lights
@@ -176,12 +231,10 @@ flippers:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
     activation_switch: s_flipper_left
-    enable_events: machine_reset_phase_3 #temporary for testing, mpf only enables flippers when game starts by default
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_flipper_right
-    enable_events: machine_reset_phase_3 #temporary for testing, mpf only enables flippers when game starts by default
 
 
 ################################################################################

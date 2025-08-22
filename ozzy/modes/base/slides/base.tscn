@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://jlquogq6ryl3"]
+
+[ext_resource type="Script" uid="uid://c2bty2eitmunb" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_j4cmf"]
+[ext_resource type="Texture2D" uid="uid://tc631ctsmoja" path="res://data/ozzy_sharon.jpg" id="2_vwbax"]
+[ext_resource type="Script" uid="uid://b4k5no3l6q2ra" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_6f3t8"]
+
+[node name="BaseSlide" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_j4cmf")
+metadata/_custom_type_script = "uid://c2bty2eitmunb"
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(680.25, 387)
+scale = Vector2(2.21195, 1.86765)
+texture = ExtResource("2_vwbax")
+
+[node name="MPFVariable" type="Label" parent="."]
+offset_left = -32.0
+offset_top = 519.0
+offset_right = 1348.0
+offset_bottom = 734.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 150
+text = "1,000,000"
+horizontal_alignment = 1
+script = ExtResource("3_6f3t8")
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://b4k5no3l6q2ra"

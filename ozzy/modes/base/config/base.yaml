@@ -1,0 +1,26 @@
+#config_version=6
+
+#modes/base/config/base.yaml
+
+
+mode:
+    start_events: ball_starting
+    priority: 100
+
+slide_player:
+  mode_base_started: base
+
+
+shots:
+  sh_rollover_outlane_left:
+    switch: s_rollover_outlane_left
+
+
+variable_player:
+  # placeholders
+  sh_rollover_outlane_left_hit:
+    score: 25 * current_player.playfield_multiplier
+    #bonus_multiplier: 1
+
+
+
