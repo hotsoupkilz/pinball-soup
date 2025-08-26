@@ -9,12 +9,9 @@
 
 ##virtual configs (when not connected to physical machine)
 virtual_platform_start_active_switches:
-  - s_trough1
+  - s_trough1_right
   - s_trough2
-  - s_trough3
-  - s_trough4
-  - s_trough5
-  - s_trough6
+  - s_trough3_left
 
 #virtual_segment_display_connector:
 #    segment_displays:
@@ -40,14 +37,173 @@ player_vars:
 ###############################################################################
 
 switches:
-  ## playfield
-  s_flipper_left:
-    number:
-    tags: left_flipper
-  s_flipper_right:
-    number:
-    tags: right_flipper
+  s_tilt_bob:
+    number: 1
+    ignore_window_ms: 200
+    tags: tilt_warning
+  s_notused1:
+    number: 2
+  s_start_button:
+    number: 3
+    tags: start
+  s_coin_chute_right:
+    number: 4
+  s_coin_chute_mid: #not used in US config
+    number: 5
+  s_coin_chute_left:
+    number: 6
+  s_tilt_slam:
+    number: 7
+  s_high_score_reset:
+    number: 8
+  s_tilt_playfield:
+    number: 9
+  s_outhole:
+    number: 10
+  s_trough1_right:
+    number: 11
+  s_trough2:
+    number: 12
+  s_trough3_left:
+    number: 13
+  s_inlane_right_inner:
+    number: 14
+    tags: playfield_active
+  s_inlane_right_outer:
+    number: 15
+    tags: playfield_active
+  s_outlane_right:
+    number: 16
+    tags: playfield_active
+  s_outlane_left:
+    number: 17
+    tags: playfield_active
+  s_inlane_left:
+    number: 18
+    tags: playfield_active
+  s_standup_left:
+    number: 19
+    tags: playfield_active
+  s_eject_hole:
+    number: 20
+  s_standup_right_top:
+    number: 21
+    tags: playfield_active
+  s_standup_right_bottom:
+    number: 22
+    tags: playfield_active
+  s_standup_captive_ball:
+    number: 23
+    tags: playfield_active
+  s_standup_right_50k:
+    number: 24
+    tags: playfield_active
+  s_bldg_height1:
+    number: 25
+  s_bldg_height2:
+    number: 26
+  s_threebank_left:
+    number: 27
+    tags: playfield_active
+  s_threebank_mid:
+    number: 28
+    tags: playfield_active
+  s_threebank_right:
+    number: 29
+    tags: playfield_active
+  s_standup_ramp:
+    number: 30
+    tags: playfield_active
+  s_loop_right:
+    number: 31
+    tags: playfield_active
+  s_loop_left:
+    number: 32
+    tags: playfield_active
+  s_onramp_loop_low:
+    number: 33
+    tags: playfield_active
+  s_onramp_loop_mid:
+    number: 34
+    tags: playfield_active
+  s_onramp_loop_high:
+    number: 35
+    tags: playfield_active
+  s_onramp_bypass:
+    number: 36
+    tags: playfield_active
+  s_ball_popper_upper:
+    number: 37
+  s_drophole1:
+    number: 38
+    tags: playfield_active
+  s_drophole2:
+    number: 39
+    tags: playfield_active
+  s_ball_popper_lower:
+    number: 40
+  s_spinner:
+    number: 41
+    tags: playfield_active
+  s_fault_open:
+    number: 42
+  s_ramp_right_entry:
+    number: 43
+    tags: playfield_active
+  s_ramp_center_entry:
+    number: 44
+    tags: playfield_active
+  s_ramp_center_mid:
+    number: 45
+    tags: playfield_active
+  s_ramp_center_exit:
+    number: 46
+    tags: playfield_active
+  s_notused2:
+    number: 47
+  s_notused3:
+    number: 48
+  s_notused4:
+    number: 49
+  s_plunger_lane:
+    number: 50
+  s_notused5:
+    number: 51
+  s_pop_bumper_left:
+    number: 52
+  s_pop_bumper_right:
+    number: 53
+  s_pop_bumper_top:
+    number: 54
+  s_slingshot_left:
+    number: 55
+  s_slingshot_right:
+    number: 56
+  s_flipper_right_lane_change:
+    number: 57
+  s_flipper_left_lane_change:
+    number: 58
+  s_notused6:
+    number: 59
+  s_notused7:
+    number: 60
+  s_notused8:
+    number: 61
+  s_notused9:
+    number: 62
+  s_notused10:
+    number: 63
+  s_notused11:
+    number: 64
 
+### flipper coils hardwired via "special solenoid" & uses APC/lisy hardware
+### rules, switch config not needed.
+#s_flipper_left:
+#    number:
+#    tags: left_flipper
+#s_flipper_right:
+#    number:
+#    tags: right_flipper
   s_slingshot_lower_right:
     number:
   s_slingshot_lower_left:
@@ -153,7 +309,7 @@ coils:
     number: 11
   c_ac_select_relay:
     number: 12
-  c_ball_popper_top:
+  c_ball_popper_upper:
     number: 13
   c_jackpot_flasher:
     number: 14
@@ -163,20 +319,20 @@ coils:
     number: 16
   c_pop_bumper_left:
     number: 17
-  c_slingshot_lower_left:
+  c_slingshot_left:
     number: 18
   c_pop_bumper_right:
     number: 19
-  c_slingshot_lower_right:
+  c_slingshot_right:
     number: 20
   c_pop_bumper_top:
     number: 21
   c_shaker_motor:
     number: 22
 
-  c_right_flipper_lower:
+  c_flipper_right:
     number: 23
-  c_left_flipper_lower_upper:
+  c_flipper_left:
     number: 24
 
 
@@ -307,7 +463,7 @@ lights:
     number: 56
   l_roadsign_right:
     number: 57
-  l_backbox_jackpot1:
+  l_backbox_jackpot1_left:
     number: 58
   l_backbox_jackpot2:
     number: 59
@@ -319,7 +475,7 @@ lights:
     number: 62
   l_backbox_jackpot6:
     number: 63
-  l_backbox_jackpot7:
+  l_backbox_jackpot7_right:
     number: 64
 
 
@@ -378,15 +534,15 @@ playfields:
 
 
 ## flipper config (double wound)
-flippers:
-  left_flipper:
-    main_coil: c_flipper_left_main
-    hold_coil: c_flipper_left_hold
-    activation_switch: s_flipper_left
-  right_flipper:
-    main_coil: c_flipper_right_main
-    hold_coil: c_flipper_right_hold
-    activation_switch: s_flipper_right
+#flippers:
+#  left_flipper:
+#    main_coil: c_flipper_left_main
+#    hold_coil: c_flipper_left_hold
+#    activation_switch: s_flipper_left
+#  right_flipper:
+#    main_coil: c_flipper_right_main
+#    hold_coil: c_flipper_right_hold
+#    activation_switch: s_flipper_right
 
 
 ################################################################################
