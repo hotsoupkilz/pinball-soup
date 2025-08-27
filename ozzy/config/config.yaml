@@ -13,15 +13,14 @@
 # APC docs: https://github.com/AmokSolderer/APC/blob/master/DOC/RunGame.md
 
 
-hardware:
-  platform: lisy
-
-lisy:
-  connection: serial
-  port: /dev/ttyACM0
-  baud: 115200
-  #debug: true #will make game run slowly
-
+#hardware:
+#  platform: lisy
+#
+#lisy:
+#  connection: serial
+#  port: /dev/ttyACM0
+#  baud: 115200
+#  #debug: true #will make game run slowly
 
 ##virtual configs (when not connected to physical machine)
 virtual_platform_start_active_switches:
@@ -29,10 +28,6 @@ virtual_platform_start_active_switches:
   - s_trough2
   - s_trough3_left
 
-virtual_segment_display_connector:
-  segment_displays:
-    - segment_display_top
-    - segment_display_bottom
 
 ###############################################################################
 # game modes & player variables
@@ -484,80 +479,80 @@ autofire_coils:
 ## displays
 ################################################################################
 
-# segment displays
-segment_displays:
-  segment_display_top:
-    number: 1
-    platform: lisy
-    #size: TBD
-  segment_display_bottom:
-    number: 2
-    platform: lisy
-
-segment_display_player:
-  # game start
-  game_start:
-    segment_display_top:
-      text: "{current_player.ball:d}"
-    segment_display_bottom:
-      text: ""
-
-  # show score when adding players
-  player_added.1{num==1}:
-    segment_display_top:
-      text: "{players[0].score:d}"
-  player_added.2{num==2}:
-    segment_display_top:
-      text: "{players[1].score:d}"
-  player_added.3{num==3}:
-    segment_display_bottom:
-      text: "{players[2].score:d}"
-  player_added.4{num==4}:
-    segment_display_bottom:
-      text: "{players[3].score:d}"
-
-  # clear only info display after game
-  game_ended:
-    #info_display:
-    #  text: ""
-  game_ended{machine.player1_score > 0}:
-    segment_display_top:
-      text: "{machine.player1_score:d}"
-  game_ended{machine.player2_score > 0}:
-    segment_display_top:
-      text: "{machine.player2_score:d}"
-  game_ended{machine.player3_score > 0}:
-    segment_display_bottom:
-      text: "{machine.player3_score:d}"
-  game_ended{machine.player4_score > 0}:
-    segment_display_bottom:
-      text: "{machine.player4_score:d}"
-
-  #flash display on player turn
-  player_turn_started.1{number==1}:
-    segment_display_top:
-      action: flash
-  player_turn_ended.2{number==1}:
-    segment_display_top:
-      action: no_flash
-  player_turn_started.3{number==2}:
-    segment_display_top:
-      action: flash
-  player_turn_ended.4{number==2}:
-    segment_display_top:
-      action: no_flash
-  player_turn_started.5{number==3}:
-    segment_display_bottom:
-      action: flash
-  player_turn_ended.6{number==3}:
-    segment_display_bottom:
-      action: no_flash
-  player_turn_started.7{number==4}:
-    segment_display_bottom:
-      action: flash
-  player_turn_ended.8{number==4}:
-    segment_display_bottom:
-      action: no_flash
+## segment displays
+#segment_displays:
+#  segment_display_top:
+#    number: 1
+#    platform: lisy
+#    #size: TBD
+#  segment_display_bottom:
+#    number: 2
+#    platform: lisy
+#
+#segment_display_player:
+#  # game start
+#  game_start:
+#    segment_display_top:
+#      text: "{current_player.ball:d}"
+#    segment_display_bottom:
+#      text: ""
+#
+#  # show score when adding players
+#  player_added.1{num==1}:
+#    segment_display_top:
+#      text: "{players[0].score:d}"
+#  player_added.2{num==2}:
+#    segment_display_top:
+#      text: "{players[1].score:d}"
+#  player_added.3{num==3}:
+#    segment_display_bottom:
+#      text: "{players[2].score:d}"
+#  player_added.4{num==4}:
+#    segment_display_bottom:
+#      text: "{players[3].score:d}"
+#
+#  # clear only info display after game
+#  game_ended:
+#    #info_display:
+#    #  text: ""
+#  game_ended{machine.player1_score > 0}:
+#    segment_display_top:
+#      text: "{machine.player1_score:d}"
+#  game_ended{machine.player2_score > 0}:
+#    segment_display_top:
+#      text: "{machine.player2_score:d}"
+#  game_ended{machine.player3_score > 0}:
+#    segment_display_bottom:
+#      text: "{machine.player3_score:d}"
+#  game_ended{machine.player4_score > 0}:
+#    segment_display_bottom:
+#      text: "{machine.player4_score:d}"
+#
+#  #flash display on player turn
+#  player_turn_started.1{number==1}:
+#    segment_display_top:
+#      action: flash
+#  player_turn_ended.2{number==1}:
+#    segment_display_top:
+#      action: no_flash
+#  player_turn_started.3{number==2}:
+#    segment_display_top:
+#      action: flash
+#  player_turn_ended.4{number==2}:
+#    segment_display_top:
+#      action: no_flash
+#  player_turn_started.5{number==3}:
+#    segment_display_bottom:
+#      action: flash
+#  player_turn_ended.6{number==3}:
+#    segment_display_bottom:
+#      action: no_flash
+#  player_turn_started.7{number==4}:
+#    segment_display_bottom:
+#      action: flash
+#  player_turn_ended.8{number==4}:
+#    segment_display_bottom:
+#      action: no_flash
 
 
 
