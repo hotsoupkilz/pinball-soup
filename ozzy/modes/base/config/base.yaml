@@ -12,13 +12,13 @@ slide_player:
 
 
 shots:
-  sh_rollover_outlane_left:
-    switch: s_rollover_outlane_left
+  sh_outlane_left:
+    switch: s_outlane_left
 
 
 variable_player:
   # placeholders
-  sh_rollover_outlane_left_hit:
+  sh_outlane_left_hit:
     score: 25 * current_player.playfield_multiplier
     #bonus_multiplier: 1
 
