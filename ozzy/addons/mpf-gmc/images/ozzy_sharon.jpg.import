@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8at8tfw0hyi4"
-path="res://.godot/imported/ozzy-mspiggy.webp-85ff7b3a544476dbf8c854271807f08c.ctex"
+uid="uid://b356yhohp6x8f"
+path="res://.godot/imported/ozzy_sharon.jpg-f159fd9fcb2257c2641e4570e0aae8eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/ozzy-mspiggy.webp"
-dest_files=["res://.godot/imported/ozzy-mspiggy.webp-85ff7b3a544476dbf8c854271807f08c.ctex"]
+source_file="res://addons/mpf-gmc/images/ozzy_sharon.jpg"
+dest_files=["res://.godot/imported/ozzy_sharon.jpg-f159fd9fcb2257c2641e4570e0aae8eb.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi6rlayrnirdg"
-path="res://.godot/imported/GridLayout.svg-25652440c5bd6d44830d1377b8608c10.ctex"
+uid="uid://dnlim1ym7th2u"
+path="res://.godot/imported/ozzy-mspiggy.webp-77a0d359daa41833e44a7a8008786614.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/mpf-gmc/icons/GridLayout.svg"
-dest_files=["res://.godot/imported/GridLayout.svg-25652440c5bd6d44830d1377b8608c10.ctex"]
+source_file="res://addons/mpf-gmc/images/ozzy-mspiggy.webp"
+dest_files=["res://.godot/imported/ozzy-mspiggy.webp-77a0d359daa41833e44a7a8008786614.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="ozzy"
 run/main_scene="uid://ds4gduf8660uj"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,7 +23,12 @@ MPF="*res://addons/mpf-gmc/mpf_gmc.gd"
 
 window/size/viewport_width=1360
 window/size/viewport_height=768
+window/size/resizable=false
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/mpf-gmc/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="mobile"

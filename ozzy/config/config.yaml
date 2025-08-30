@@ -268,7 +268,7 @@ coils:
     number: 7 #7a in manual. 7c is right ramp2 flasher
   c_notused:
     number: 8 #8a in manual. 8c is right ramp3 flashers
-  c_notused2:
+  c_notused2: #building motor + relay in Earthshaker manual
     number: 9
   c_playfield_upper_gi_relay:
     number: 10
@@ -497,6 +497,7 @@ playfields:
     tags: default
     default_source_device: bd_plunger_lane
 
+
 ## autofire coils (things that fire immediately when switch is hit)
 autofire_coils:
   slingshot_left:
@@ -514,6 +515,13 @@ autofire_coils:
   pop_bumper_top:
     coil: c_pop_bumper_top
     switch: s_pop_bumper_top
+
+## diverters. anything that changes a ball's path
+## things like ramp changes & magnets /control gates & posts/trap doors/ringmaster
+diverters:
+  div_ramp_vs_subway:
+    activation_coil: c_diverter
+    type: hold
 
 
 ################################################################################

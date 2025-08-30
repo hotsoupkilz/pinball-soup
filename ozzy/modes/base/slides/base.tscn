@@ -1,31 +1,135 @@
-[gd_scene load_steps=4 format=3 uid="uid://jlquogq6ryl3"]
+[gd_scene load_steps=5 format=3 uid="uid://dlcr085mcfevd"]
 
-[ext_resource type="Script" uid="uid://c2bty2eitmunb" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_j4cmf"]
-[ext_resource type="Texture2D" uid="uid://tc631ctsmoja" path="res://data/ozzy_sharon.jpg" id="2_vwbax"]
-[ext_resource type="Script" uid="uid://b4k5no3l6q2ra" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_6f3t8"]
+[ext_resource type="Script" uid="uid://5xvbmjko6ly8" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_j4cmf"]
+[ext_resource type="Texture2D" uid="uid://b356yhohp6x8f" path="res://addons/mpf-gmc/images/ozzy_sharon.jpg" id="2_6f3t8"]
+[ext_resource type="Theme" uid="uid://chal5tkdwfp4x" path="res://red_font_theme.tres" id="3_nr40w"]
+[ext_resource type="Script" uid="uid://dc0jbov3shmgr" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_qv1nn"]
 
-[node name="BaseSlide" type="Control"]
+[node name="Base" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_j4cmf")
-metadata/_custom_type_script = "uid://c2bty2eitmunb"
+metadata/_custom_type_script = "uid://5xvbmjko6ly8"
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(680.25, 387)
-scale = Vector2(2.21195, 1.86765)
-texture = ExtResource("2_vwbax")
+position = Vector2(680.25, 389)
+scale = Vector2(2.2054, 1.86765)
+texture = ExtResource("2_6f3t8")
 
-[node name="MPFVariable" type="Label" parent="."]
-offset_left = -32.0
-offset_top = 519.0
-offset_right = 1348.0
-offset_bottom = 734.0
+[node name="current player score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 382.0
+offset_right = 1354.0
+offset_bottom = 587.0
+theme = ExtResource("3_nr40w")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
+theme_override_constants/outline_size = 18
 theme_override_font_sizes/font_size = 150
 text = "1,000,000"
 horizontal_alignment = 1
-script = ExtResource("3_6f3t8")
+script = ExtResource("4_qv1nn")
 variable_name = "score"
 comma_separate = true
-metadata/_custom_type_script = "uid://b4k5no3l6q2ra"
+min_digits = 2
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="hbox - current player+ball" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 494.0
+offset_bottom = 235.0
+
+[node name="player" type="Label" parent="hbox - current player+ball"]
+layout_mode = 2
+theme = ExtResource("3_nr40w")
+text = "Player 1  "
+script = ExtResource("4_qv1nn")
+variable_name = "number"
+template_string = "Player %s  "
+min_players = 2
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="ball" type="Label" parent="hbox - current player+ball"]
+layout_mode = 2
+theme = ExtResource("3_nr40w")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 70
+text = "Ball 1"
+script = ExtResource("4_qv1nn")
+variable_name = "ball"
+template_string = "Ball %s"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="player1 score" type="Label" parent="."]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 667.0
+offset_right = 332.0
+offset_bottom = 736.0
+theme = ExtResource("3_nr40w")
+theme_override_font_sizes/font_size = 50
+text = "1,000,000"
+horizontal_alignment = 2
+script = ExtResource("4_qv1nn")
+variable_type = 4
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+min_players = 1
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="player2 score" type="Label" parent="."]
+layout_mode = 2
+offset_left = 332.0
+offset_top = 667.0
+offset_right = 657.0
+offset_bottom = 736.0
+theme = ExtResource("3_nr40w")
+theme_override_font_sizes/font_size = 50
+text = "2,000,000"
+horizontal_alignment = 2
+script = ExtResource("4_qv1nn")
+variable_type = 5
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+min_players = 2
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="player3 score" type="Label" parent="."]
+layout_mode = 2
+offset_left = 657.0
+offset_top = 667.0
+offset_right = 982.0
+offset_bottom = 736.0
+theme = ExtResource("3_nr40w")
+theme_override_font_sizes/font_size = 50
+text = "3,000,000"
+horizontal_alignment = 2
+script = ExtResource("4_qv1nn")
+variable_type = 6
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+min_players = 3
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="player4 score" type="Label" parent="."]
+layout_mode = 2
+offset_left = 982.0
+offset_top = 667.0
+offset_right = 1307.0
+offset_bottom = 736.0
+theme = ExtResource("3_nr40w")
+theme_override_font_sizes/font_size = 50
+text = "4,000,000"
+horizontal_alignment = 2
+script = ExtResource("4_qv1nn")
+variable_type = 7
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+min_players = 4
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"

@@ -1,28 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://u6t5c3bh40rt"]
+[gd_scene load_steps=3 format=3 uid="uid://lcii8j32ewbi"]
 
-[ext_resource type="Script" uid="uid://c2bty2eitmunb" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_o4v0r"]
-[ext_resource type="Texture2D" uid="uid://c8at8tfw0hyi4" path="res://data/ozzy-mspiggy.webp" id="2_gensg"]
+[ext_resource type="Script" uid="uid://5xvbmjko6ly8" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_o4v0r"]
+[ext_resource type="Texture2D" uid="uid://dnlim1ym7th2u" path="res://addons/mpf-gmc/images/ozzy-mspiggy.webp" id="2_gensg"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_o4v0r")
-metadata/_custom_type_script = "uid://c2bty2eitmunb"
+metadata/_custom_type_script = "uid://5xvbmjko6ly8"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(1360, 768)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1360.0
+offset_bottom = 757.0
 texture = ExtResource("2_gensg")
-expand_mode = 1
+expand_mode = 2
 
-[node name="Label" type="Label" parent="TextureRect"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 466.0
-offset_top = 515.0
-offset_right = 922.0
-offset_bottom = 788.0
-theme_override_font_sizes/font_size = 200
-text = "Ozzy"
+offset_left = 193.0
+offset_top = 599.0
+offset_right = 1108.0
+offset_bottom = 736.0
+theme_override_font_sizes/font_size = 100
+text = "Ozzy: Attract Mode"
 horizontal_alignment = 1
+vertical_alignment = 2
