@@ -516,7 +516,7 @@ autofire_coils:
     coil: c_pop_bumper_top
     switch: s_pop_bumper_top
 
-## diverters. anything that changes a ball's path
+## diverters. anything that changes a ball's path on the playfield
 ## things like ramp changes & magnets /control gates & posts/trap doors/ringmaster
 diverters:
   div_ramp_vs_subway:
