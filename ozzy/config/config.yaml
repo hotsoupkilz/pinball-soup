@@ -29,6 +29,32 @@ virtual_platform_start_active_switches:
   - s_trough3_left
 
 
+### hardware sounds
+
+### use APC sdcard for sounds
+#hardware_sound_systems:
+#  default:
+#    label: APC
+#
+## play sounds via files on APC sdcard (action name should be "<FILENAME>.SND:")
+#hardware_sound_player:
+#  game_start:
+#    set_volume:
+#      action: set_volume
+#      value: 0.4
+#    #"music.snd": # filename on sdcard. using "music.snd" enables using background track on orig game rom
+#      track: 1
+#      action: play_file
+#      platform_options:
+#        loop: true
+#        no_cache: false
+#  game_ending:
+#    action: stop
+#    set_volume:
+#      action: set_volume
+#      value: 0
+
+
 ###############################################################################
 # game modes & player variables
 ###############################################################################
@@ -97,7 +123,7 @@ switches:
   s_standup_left:
     number: 19
     tags: playfield_active
-  s_eject_hole:
+  s_ball_popper:
     number: 20
   s_standup_right_top:
     number: 21
@@ -145,20 +171,20 @@ switches:
   s_onramp_bypass:
     number: 36
     tags: playfield_active
-  s_ball_popper_upper:
+  s_vuk_upper:
     number: 37
-  s_drophole1:
+  s_subway1:
     number: 38
     tags: playfield_active
-  s_drophole2:
+  s_subway2:
     number: 39
     tags: playfield_active
-  s_ball_popper_lower:
+  s_vuk_subway:
     number: 40
   s_spinner:
     number: 41
     tags: playfield_active
-  s_fault_open:
+  s_diverter_open:
     number: 42
   s_ramp_right_entry:
     number: 43
@@ -211,12 +237,12 @@ switches:
 
   ### flipper coils hardwired via "special solenoid" & APC/lisy uses hardware
   ### rules, switch config not needed.
-  #s_flipper_left:
-  #    number:
-  #    tags: left_flipper
-  #s_flipper_right:
-  #    number:
-  #    tags: right_flipper
+  s_flipper_left:
+      number:
+      tags: left_flipper
+  s_flipper_right:
+      number:
+      tags: right_flipper
 
 
 ################################################################################
@@ -232,11 +258,11 @@ coils:
     #default_pulse_ms: 20
   c_threebank_reset:
     number: 3 #3a in manual. 3c is ctr ramp2+spinner flashers
-  c_cali_fault:
+  c_diverter:
     number: 4 #4a in manual. 4c is ctr ramp3 flasher
-  c_eject_hole:
+  c_ball_popper:
     number: 5 #5a in manual. 5c is ctr ramp4 flasher
-  c_ball_popper_lower:
+  c_vuk_subway:
     number: 6 #6a in manual. 6c is right ramp1 flasher
   c_knocker:
     number: 7 #7a in manual. 7c is right ramp2 flasher
@@ -250,7 +276,7 @@ coils:
     number: 11
   c_ac_select_relay:
     number: 12
-  c_ball_popper_upper:
+  c_vuk_upper:
     number: 13
   c_jackpot_flasher:
     number: 14
@@ -382,9 +408,9 @@ lights:
     number: 49
   l_standup_left:
     number: 50
-  l_eject_lock:
+  l_ball_popper_lock:
     number: 51
-  l_eject_top:
+  l_ball_popper_top:
     number: 52
   l_standup_center:
     number: 53
@@ -421,11 +447,13 @@ lights:
 ## a ball". trough, the plunger lane, VUKs, poppers, playfield locks, etc.)
 
 ball_devices:
+
   ## plunger. config for manual plunge
   bd_plunger_lane:
     ball_switches: s_plunger
     mechanical_eject: true
     eject_timeouts: 5s
+
   ## trough. ball is kicked from drain/outhole to trough
   bd_trough:
     ball_switches:
@@ -436,6 +464,7 @@ ball_devices:
     tags: home, trough
     eject_timeouts: 3s
     eject_targets: bd_plunger_lane
+
   ## drain/outhole (used with older 3+ ball games). ball leaves playfield to here
   bd_drain:
     ball_switches: s_drain
@@ -443,11 +472,23 @@ ball_devices:
     eject_targets: bd_trough
     tags: drain
 
-  ## example of another ball device (popper)
-  #bd_eject_hole_upper:
-  #    ball_switches: s_eject_hole_upper
-  #    eject_coil: c_eject_hole_upper
-  #    eject_timeouts: 3s
+  # left playfield ball popper
+  bd_ball_popper_left:
+    ball_switches: s_ball_popper
+    eject_coil: c_ball_popper
+    eject_timeouts: 3s
+
+  # upper right playfield vuk
+  bd_vuk_upper:
+    ball_switches: s_vuk_upper
+    eject_coil: c_vuk_upper
+    eject_timeouts: 3s
+
+  # lower right subway vuk
+  bd_vuk_subway:
+    ball_switches: s_vuk_subway
+    eject_coil: c_vuk_subway
+    eject_timeouts: 3s
 
 
 ## main playfield & any other minor playfields
