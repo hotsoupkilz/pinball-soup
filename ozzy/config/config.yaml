@@ -22,6 +22,15 @@ lisy:
   baud: 115200
   #debug: true #will make game run slowly
 
+# platform/hardware type (lisy/APC-specific)
+digital_outputs:
+  game_over_relay:
+    number: 25
+    type: driver
+    enable_events: ball_started
+    disable_events: ball_will_end
+
+
 ##virtual configs (when not connected to physical machine)
 #virtual_platform_start_active_switches:
 #  - s_trough1_right
@@ -80,8 +89,8 @@ switches:
     number: 1
     ignore_window_ms: 200
     tags: tilt_warning
-  s_notused1:
-    number: 2
+  #s_notused1:
+  #  number: 2
   s_start_button:
     number: 3
     tags: start
@@ -255,21 +264,24 @@ coils:
     default_pulse_ms: 35
   c_trough_eject:
     number: 2 #2a in manual (shooter ln feeder). 2c is center ramp1+bldg flashers
-    default_pulse_ms: 20
+    default_pulse_ms: 35
   c_threebank_reset:
     number: 3 #3a in manual. 3c is ctr ramp2+spinner flashers
   c_diverter:
     number: 4 #4a in manual. 4c is ctr ramp3 flasher
+    default_pulse_ms: 30
   c_ball_popper:
     number: 5 #5a in manual. 5c is ctr ramp4 flasher
+    default_pulse_ms: 30
   c_vuk_subway:
     number: 6 #6a in manual. 6c is right ramp1 flasher
+    default_pulse_ms: 30
   c_knocker:
     number: 7 #7a in manual. 7c is right ramp2 flasher
   c_notused:
     number: 8 #8a in manual. 8c is right ramp3 flashers
-  c_notused2: #building motor + relay in Earthshaker manual
-    number: 9
+  #c_notused2: #building motor + relay in Earthshaker manual
+  #  number: 9
   c_playfield_upper_gi_relay:
     number: 10
   c_insert_board_gi_relay:
@@ -278,6 +290,7 @@ coils:
     number: 12
   c_vuk_upper:
     number: 13
+    default_pulse_ms: 30
   c_jackpot_flasher:
     number: 14
   c_playfield_lower_gi_relay:
@@ -286,14 +299,19 @@ coils:
     number: 16
   c_pop_bumper_left:
     number: 17
+    default_pulse_ms: 30
   c_slingshot_left:
     number: 18
+    default_pulse_ms: 20
   c_pop_bumper_right:
     number: 19
+    default_pulse_ms: 30
   c_slingshot_right:
     number: 20
+    default_pulse_ms: 20
   c_pop_bumper_top:
     number: 21
+    default_pulse_ms: 30
   c_shaker_motor:
     number: 22
 
@@ -452,7 +470,7 @@ ball_devices:
   bd_plunger_lane:
     ball_switches: s_plunger
     mechanical_eject: true
-    eject_timeouts: 5s
+    eject_timeouts: 3s
 
   ## trough. ball is kicked from drain/outhole to trough
   bd_trough:
@@ -462,7 +480,7 @@ ball_devices:
       - s_trough3_left
     eject_coil: c_trough_eject
     tags: home, trough
-    eject_timeouts: 3s
+    eject_timeouts: 5s
     eject_targets: bd_plunger_lane
 
   ## drain/outhole (used with older 3+ ball games). ball leaves playfield to here
