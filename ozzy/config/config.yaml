@@ -13,30 +13,30 @@
 # APC docs: https://github.com/AmokSolderer/APC/blob/master/DOC/RunGame.md
 
 
-#hardware:
-#  platform: lisy
-#
-#lisy:
-#  connection: serial
-#  port: /dev/ttyACM0
-#  baud: 115200
-#  #debug: true #will make game run slowly
+hardware:
+  platform: lisy
+
+lisy:
+  connection: serial
+  port: /dev/ttyACM0
+  baud: 115200
+  #debug: true #will make game run slowly
 
 ##virtual configs (when not connected to physical machine)
-virtual_platform_start_active_switches:
-  - s_trough1_right
-  - s_trough2
-  - s_trough3_left
+#virtual_platform_start_active_switches:
+#  - s_trough1_right
+#  - s_trough2
+#  - s_trough3_left
 
 
 ### hardware sounds
 
-### use APC sdcard for sounds
-#hardware_sound_systems:
-#  default:
-#    label: APC
-#
-## play sounds via files on APC sdcard (action name should be "<FILENAME>.SND:")
+## use APC sdcard for sounds
+hardware_sound_systems:
+  default:
+    label: APC
+
+# play sounds via files on APC sdcard (action name should be "<FILENAME>.SND:")
 #hardware_sound_player:
 #  game_start:
 #    set_volume:
@@ -237,12 +237,12 @@ switches:
 
   ### flipper coils hardwired via "special solenoid" & APC/lisy uses hardware
   ### rules, switch config not needed.
-  s_flipper_left:
-      number:
-      tags: left_flipper
-  s_flipper_right:
-      number:
-      tags: right_flipper
+  #s_flipper_left:
+  #    number:
+  #    tags: left_flipper
+  #s_flipper_right:
+  #    number:
+  #    tags: right_flipper
 
 
 ################################################################################
@@ -252,10 +252,10 @@ switches:
 coils:
   c_drain_eject:
     number: 1 #listed as 1a in manual. 1c is captive ball flashers
-    #default_pulse_ms: 20
+    default_pulse_ms: 35
   c_trough_eject:
     number: 2 #2a in manual (shooter ln feeder). 2c is center ramp1+bldg flashers
-    #default_pulse_ms: 20
+    default_pulse_ms: 20
   c_threebank_reset:
     number: 3 #3a in manual. 3c is ctr ramp2+spinner flashers
   c_diverter:
@@ -528,15 +528,16 @@ diverters:
 ## displays
 ################################################################################
 
-## segment displays
+# segment displays
 #segment_displays:
 #  segment_display_top:
 #    number: 1
 #    platform: lisy
-#    #size: TBD
+#    size: 16
 #  segment_display_bottom:
 #    number: 2
 #    platform: lisy
+#    size: 16
 #
 #segment_display_player:
 #  # game start
