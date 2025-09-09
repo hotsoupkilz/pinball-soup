@@ -1,0 +1,138 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqtr7rupp0fmt"]
+
+[ext_resource type="Script" uid="uid://5xvbmjko6ly8" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_o0oqw"]
+[ext_resource type="Script" uid="uid://bg4u06t3w7k0n" path="res://addons/mpf-gmc/classes/mpf_conditional_children.gd" id="2_d6i6j"]
+[ext_resource type="Theme" uid="uid://chal5tkdwfp4x" path="res://red_font_theme.tres" id="3_gj3sr"]
+[ext_resource type="Script" uid="uid://dc0jbov3shmgr" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_wxe4p"]
+
+[node name="Bonus" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o0oqw")
+metadata/_custom_type_script = "uid://5xvbmjko6ly8"
+
+[node name="MPFConditionalChildren" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_d6i6j")
+variable_type = 1
+variable_name = "entry"
+metadata/_custom_type_script = "uid://bg4u06t3w7k0n"
+
+[node name="initial" type="Node2D" parent="MPFConditionalChildren"]
+visible = false
+
+[node name="MPFVariable" type="Label" parent="MPFConditionalChildren/initial"]
+offset_left = 438.0
+offset_top = 314.0
+offset_right = 853.0
+offset_bottom = 410.0
+theme = ExtResource("3_gj3sr")
+text = "End of Ball 1"
+script = ExtResource("4_wxe4p")
+variable_name = "ball"
+template_string = "End of Ball %s"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="__default__" type="Node2D" parent="MPFConditionalChildren"]
+visible = false
+
+[node name="text" type="Label" parent="MPFConditionalChildren/__default__"]
+offset_left = 192.0
+offset_top = 460.0
+offset_right = 640.0
+offset_bottom = 556.0
+theme = ExtResource("3_gj3sr")
+text = "Bonus Total"
+script = ExtResource("4_wxe4p")
+variable_type = 1
+variable_name = "text"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="score" type="Label" parent="MPFConditionalChildren/__default__"]
+offset_left = 691.0
+offset_top = 460.0
+offset_right = 1008.0
+offset_bottom = 556.0
+theme = ExtResource("3_gj3sr")
+text = "1,000,000"
+script = ExtResource("4_wxe4p")
+variable_type = 1
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="subtotal" type="Node2D" parent="MPFConditionalChildren"]
+visible = false
+
+[node name="score" type="Label" parent="MPFConditionalChildren/subtotal"]
+offset_left = 508.0
+offset_top = 460.0
+offset_right = 825.0
+offset_bottom = 556.0
+theme = ExtResource("3_gj3sr")
+text = "1,000,000"
+script = ExtResource("4_wxe4p")
+variable_type = 1
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="Label" type="Label" parent="MPFConditionalChildren/subtotal"]
+offset_left = 192.0
+offset_top = 355.0
+offset_right = 1165.0
+offset_bottom = 451.0
+theme = ExtResource("3_gj3sr")
+text = "Bonus Subtotal (Base Bonus)"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="total" type="Node2D" parent="MPFConditionalChildren"]
+visible = false
+
+[node name="score" type="Label" parent="MPFConditionalChildren/total"]
+offset_left = 691.0
+offset_top = 355.0
+offset_right = 1008.0
+offset_bottom = 451.0
+theme = ExtResource("3_gj3sr")
+text = "1,000,000"
+script = ExtResource("4_wxe4p")
+variable_type = 1
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="Label" type="Label" parent="MPFConditionalChildren/total"]
+offset_left = 246.0
+offset_top = 355.0
+offset_right = 665.0
+offset_bottom = 451.0
+theme = ExtResource("3_gj3sr")
+text = "Bonus Total"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="multiplier" type="Node2D" parent="MPFConditionalChildren"]
+
+[node name="score" type="Label" parent="MPFConditionalChildren/multiplier"]
+offset_left = 796.0
+offset_top = 460.0
+offset_right = 897.0
+offset_bottom = 556.0
+theme = ExtResource("3_gj3sr")
+text = "5X"
+script = ExtResource("4_wxe4p")
+variable_type = 1
+variable_name = "score"
+template_string = "%sX"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="Label" type="Label" parent="MPFConditionalChildren/multiplier"]
+offset_left = 192.0
+offset_top = 460.0
+offset_right = 751.0
+offset_bottom = 556.0
+theme = ExtResource("3_gj3sr")
+text = "Bonus Multiplier"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"

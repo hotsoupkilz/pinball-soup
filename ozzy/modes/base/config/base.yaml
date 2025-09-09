@@ -4,23 +4,201 @@
 
 
 mode:
-    start_events: ball_starting
-    priority: 100
+  start_events: ball_starting
+  priority: 100
 
 slide_player:
   mode_base_started: base
 
 
+#segment_display_player:
+#    mode_base_started:
+#        display1:
+#            text: "{players[0].score:d}"
+#
+
+
+
+
+
+
+sequence_shots:
+#  sh_ramp_center_through:
+#    switch_sequence: s_ramp_center_entry, s_ramp_center_mid, s_ramp_center_exit
+#    sequence_timeout: 5s
+#  sh_ramp_right_through:
+#    switch_sequence: s_ramp_right_entry, s_vuk_upper
+#    sequence_timeout: 5s
+#
+#  sh_loop_clockwise:
+#    switch_sequence: s_spinner, s_loop_left, s_loop_right
+#    sequence_timeout: 5s
+#  sh_loop_counterclockwise:
+#    switch_sequence: s_loop_right, s_loop_left, s_spinner
+#    sequence_timeout: 5s
+
+
 shots:
+  #sequence shots
+#  sh_ramp_center_through:
+#    hit_events: ramp_center_through_hit
+#  sh_ramp_right_through:
+#    hit_events: ramp_right_through_hit
+#  sh_loop_clockwise:
+#    hit_events: loop_clockwise_hit
+#  sh_loop_counterclockwise:
+#    hit_events: loop_counterclockwise_hit
+
+
+
+
+  #playfield entry loop ramp
+  sh_onramp_bypass:
+    switch: s_onramp_bypass
+  sh_onramp_low:
+    switch: s_onramp_loop_low
+  sh_onramp_mid:
+    switch: s_onramp_loop_mid
+  sh_onramp_high:
+    switch: s_onramp_loop_high
+
   sh_outlane_left:
-    switch: s_outlane_left
+    switches: s_outlane_left
+  sh_inlane_left:
+    switches: s_inlane_left
+
+  sh_outlane_right:
+    switches: s_outlane_right
+  sh_inlane_left_inner:
+    switches: s_inlane_right_inner
+  sh_inlane_left_outer:
+    switches: s_inlane_right_outer
+
+  sh_pop_bumper_left:
+    switch: s_pop_bumper_left
+  sh_pop_bumper_right:
+    switch: s_pop_bumper_right
+  sh_pop_bumper_top:
+    switch: s_pop_bumper_top
+
+#    switch: s_standup_left
+#    switch: s_ball_popper
+#  
+#    switch: s_standup_right_top
+#    switch: s_standup_right_bottom
+#    switch: s_standup_captive_ball
+#    switch: s_standup_right_50k
+#
+#    switch: s_threebank_left
+#    switch: s_threebank_mid
+#    switch: s_threebank_right
+
+#    switch: s_standup_ramp
+#    switch: s_ramp_center_entry
+#    switch: s_ramp_center_mid
+#    switch: s_ramp_center_exit
+#  
+#    switch: s_loop_right
+#    switch: s_loop_left
+#    switch: s_spinner
+#
+#    switch: s_ramp_right_entry
+#    switch: s_vuk_upper
+#    switch: s_diverter_open
+#    switch: s_subway1
+#    switch: s_subway2
+#    switch: s_vuk_subway
+#
+#    switches: s_slingshot_left
+#    switches: s_slingshot_right
 
 
+#shot_groups:
+#  ramp_center_group:
+#    shots: sh_ramp_center_through
+#  ramp_right_group:
+#    shots: sh_ramp_right_through
+#  loop_clockwise_group:
+#    shots: sh_loop_clockwise
+#  loop_counterclockwise_group:
+#    shots: sh_loop_counterclockwise
+
+
+#counters:
+#  spinner_rotations:
+#    count_events: spinner_loop_spinner_hit
+#    #count_complete_value: 10
+#    #events_when_complete: mode_finished
+
+
+# scoring for shots & such
 variable_player:
+
+  ##counters
+  s_spinner_active:
+    spinner_rotations: 1
+
+
+  ###scoring
+  ##onramp
+  sh_onramp_bypass_hit:
+    score: 10000
+  sh_onramp_low_hit:
+    score: 50000
+  sh_onramp_mid_hit:
+    score: 25000
+  sh_onramp_high_hit:
+    score: 100000
+
+#  sh_ramp_center_group_hit:
+#    score: 1000 * current_player.playfield_multiplier
+#  sh_ramp_right_group_hit:
+#    score: 5000 * current_player.playfield_multiplier
+#
+#  sh_loop_clockwise_group_hit:
+#    score: 2000 * current_player.playfield_multiplier
+#  sh_loop_counterclockwise_group_hit:
+#    score: 2000 * current_player.playfield_multiplier
+
+
   # placeholders
-  sh_outlane_left_hit:
-    score: 25 * current_player.playfield_multiplier
+  sh_inlane_left_hit:
+    score: 50 * current_player.playfield_multiplier
     #bonus_multiplier: 1
+  sh_inlane_right_inner_hit:
+    score: 50 * current_player.playfield_multiplier
+  sh_inlane_right_outer_hit:
+    score: 50 * current_player.playfield_multiplier
+  sh_outlane_left_hit:
+    score: 10000 * current_player.playfield_multiplier
+  sh_outlane_right_hit:
+    score: 10000 * current_player.playfield_multiplier
 
+#segment_display_player:
+#    mode_base_started:
+#        segment_display_top:
+#            text: "{players[0].score:d}"
 
+#hardware_sound_player:
+#    skate_targets_unlit_hit:
+#        "SOUND.BIN":
+#            track: 2
+#            action: play_file
 
+# 
+#  # event-based sounds
+#  ball_starting:
+#    "holy_diver.snd":
+#      track: 2
+#      action: play_file
+#      platform_options:
+#        loops: true
+#        no_cache: false
+#    
+#  ball_will_end:
+#    "holy_diver.snd":
+#      track: 2
+#      action: play_file
+#      platform_options:
+#        loops: 2
+#        no_cache: false

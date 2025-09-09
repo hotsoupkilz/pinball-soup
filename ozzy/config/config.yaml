@@ -46,22 +46,22 @@ hardware_sound_systems:
     label: APC
 
 # play sounds via files on APC sdcard (action name should be "<FILENAME>.SND:")
-#hardware_sound_player:
-#  game_start:
-#    set_volume:
-#      action: set_volume
-#      value: 0.4
-#    #"music.snd": # filename on sdcard. using "music.snd" enables using background track on orig game rom
-#      track: 1
-#      action: play_file
-#      platform_options:
-#        loop: true
-#        no_cache: false
-#  game_ending:
-#    action: stop
-#    set_volume:
-#      action: set_volume
-#      value: 0
+hardware_sound_player:
+  game_start:
+    set_volume:
+      action: set_volume
+      value: 0.2
+    "holy_diver.snd": # filename on sdcard.
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+        no_cache: false
+  game_ending:
+    action: stop
+    set_volume:
+      action: set_volume
+      value: 0
 
 
 ###############################################################################
@@ -89,8 +89,8 @@ switches:
     number: 1
     ignore_window_ms: 200
     tags: tilt_warning
-  #s_notused1:
-  #  number: 2
+  s_notused1:
+    number: 2
   s_start_button:
     number: 3
     tags: start
@@ -272,7 +272,7 @@ coils:
     default_pulse_ms: 30
   c_ball_popper:
     number: 5 #5a in manual. 5c is ctr ramp4 flasher
-    default_pulse_ms: 30
+    default_pulse_ms: 50
   c_vuk_subway:
     number: 6 #6a in manual. 6c is right ramp1 flasher
     default_pulse_ms: 30
@@ -342,17 +342,17 @@ lights:
     number: 7
   l_pop_bumper_center:
     number: 8
-  l_bonus_2x:
+  l_bonus1_left:
     number: 9
-  l_bonus_3x:
+  l_bonus2:
     number: 10
-  l_bonus_4x:
+  l_bonus3_mid:
     number: 11
-  l_bonus_5x:
+  l_bonus5:
     number: 12
-  l_bonus_6x_exball:
+  l_bonus6_right:
     number: 13
-  l_bonus_6x_spec:
+  l_bonus6_top:
     number: 14
   l_return_lane:
     number: 15
@@ -390,21 +390,21 @@ lights:
     number: 31
   l_ballsave:
     number: 32
-  l_miles1:
+  l_arrow_left1_bottom:
     number: 33
-  l_miles2:
+  l_arrow_left2:
     number: 34
-  l_miles3:
+  l_arrow_left3:
     number: 35
-  l_miles4:
+  l_arrow_left4:
     number: 36
-  l_miles5:
+  l_arrow_left5:
     number: 37
-  l_miles10:
+  l_arrow_left_top_left:
     number: 38
-  l_miles20:
+  l_arrow_left_top:
     number: 39
-  l_miles30:
+  l_arrow_left_top_right:
     number: 40
   l_pop_bumper_top:
     number: 41
@@ -541,6 +541,12 @@ diverters:
     activation_coil: c_diverter
     type: hold
 
+## spinners
+spinners:
+  loop_spinner:
+    switch: s_spinner
+    active_ms: 500
+
 
 ################################################################################
 ## displays
@@ -552,10 +558,12 @@ diverters:
 #    number: 1
 #    platform: lisy
 #    size: 16
+#    integrated_commas: true
 #  segment_display_bottom:
 #    number: 2
 #    platform: lisy
 #    size: 16
+#    integrated_commas: true
 #
 #segment_display_player:
 #  # game start
@@ -564,7 +572,7 @@ diverters:
 #      text: "{current_player.ball:d}"
 #    segment_display_bottom:
 #      text: ""
-#
+
 #  # show score when adding players
 #  player_added.1{num==1}:
 #    segment_display_top:
@@ -597,30 +605,30 @@ diverters:
 #      text: "{machine.player4_score:d}"
 #
 #  #flash display on player turn
-#  player_turn_started.1{number==1}:
-#    segment_display_top:
-#      action: flash
-#  player_turn_ended.2{number==1}:
-#    segment_display_top:
-#      action: no_flash
-#  player_turn_started.3{number==2}:
-#    segment_display_top:
-#      action: flash
-#  player_turn_ended.4{number==2}:
-#    segment_display_top:
-#      action: no_flash
-#  player_turn_started.5{number==3}:
-#    segment_display_bottom:
-#      action: flash
-#  player_turn_ended.6{number==3}:
-#    segment_display_bottom:
-#      action: no_flash
-#  player_turn_started.7{number==4}:
-#    segment_display_bottom:
-#      action: flash
-#  player_turn_ended.8{number==4}:
-#    segment_display_bottom:
-#      action: no_flash
+  #player_turn_started.1{number==1}:
+  #  segment_display_top:
+  #    action: flash
+  #player_turn_ended.2{number==1}:
+  #  segment_display_top:
+  #    action: no_flash
+  #player_turn_started.3{number==2}:
+  #  segment_display_top:
+  #    action: flash
+  #player_turn_ended.4{number==2}:
+  #  segment_display_top:
+  #    action: no_flash
+  #player_turn_started.5{number==3}:
+  #  segment_display_bottom:
+  #    action: flash
+  #player_turn_ended.6{number==3}:
+  #  segment_display_bottom:
+  #    action: no_flash
+  #player_turn_started.7{number==4}:
+  #  segment_display_bottom:
+  #    action: flash
+  #player_turn_ended.8{number==4}:
+  #  segment_display_bottom:
+  #    action: no_flash
 
 
 

@@ -1,0 +1,52 @@
+#show_version=6
+
+- duration: 1
+  lights:
+      l_arrow_left1_bottom: ff
+- duration: 1
+  lights:
+      l_arrow_left2: ff
+      l_arrow_left1_bottom: 0
+- duration: 1
+  lights:
+      l_arrow_left3: ff
+      l_arrow_left2: 0
+- duration: 1
+  lights:
+      l_arrow_left4: ff
+      l_arrow_left3: 0
+- duration: 1
+  lights:
+      l_arrow_left5: ff
+      l_arrow_left4: 0
+- duration: 1
+  lights:
+      l_arrow_left_top_left: ff
+      l_arrow_left_top: ff
+      l_arrow_left_top_right: ff
+      l_arrow_left5: 0
+- duration: 1
+  lights:
+      l_arrow_left_top_left: 0
+      l_arrow_left_top: 0
+      l_arrow_left_top_right: 0
+- duration: 1
+  lights:
+      l_arrow_left1_bottom: ff
+      l_arrow_left2: ff
+      l_arrow_left3: ff
+      l_arrow_left4: ff
+      l_arrow_left5: ff
+      l_arrow_left_top_left: ff
+      l_arrow_left_top: ff
+      l_arrow_left_top_right: ff
+- duration: 1
+  lights:
+      l_arrow_left1_bottom: 0
+      l_arrow_left2: 0
+      l_arrow_left3: 0
+      l_arrow_left4: 0
+      l_arrow_left5: 0
+      l_arrow_left_top_left: 0
+      l_arrow_left_top: 0
+      l_arrow_left_top_right: 0

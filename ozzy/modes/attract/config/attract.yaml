@@ -1,4 +1,24 @@
 #config_version=6
 
 slide_player:
-    mode_attract_started: attract
+  mode_attract_started: attract
+
+
+show_player:
+  mode_attract_started.1:
+    attract_arrow_sweep_left:
+      speed: 4
+    #attract_arrow_sweep_right:
+    #  speed: 4
+    #attract_fivebank_sweep:
+    #  speed: 4
+    #attract_jet_bumpers:
+    #  speed: 4
+    #attract_rollover_lanes:
+    #  speed: 4
+    #attract_threebank_sweep:
+    #  speed: 4
+    #attract_top_outhole_sweep:
+    #  speed: 4
+    #attract_triangle_flash:
+    #  speed: 4
