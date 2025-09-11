@@ -150,15 +150,12 @@ switches:
     number: 25
   s_bldg_height2:
     number: 26
-  s_threebank_left:
+  s_drop_target_left:
     number: 27
-    tags: playfield_active
-  s_threebank_mid:
+  s_drop_target_mid:
     number: 28
-    tags: playfield_active
-  s_threebank_right:
+  s_drop_target_right:
     number: 29
-    tags: playfield_active
   s_standup_ramp:
     number: 30
     tags: playfield_active
@@ -265,8 +262,9 @@ coils:
   c_trough_eject:
     number: 2 #2a in manual (shooter ln feeder). 2c is center ramp1+bldg flashers
     default_pulse_ms: 35
-  c_threebank_reset:
+  c_drop_target_reset:
     number: 3 #3a in manual. 3c is ctr ramp2+spinner flashers
+    default_pulse_ms: 50
   c_diverter:
     number: 4 #4a in manual. 4c is ctr ramp3 flasher
     default_pulse_ms: 30
@@ -540,6 +538,21 @@ diverters:
   div_ramp_vs_subway:
     activation_coil: c_diverter
     type: hold
+
+## drop targets
+drop_targets:
+  drop_left:
+    switch: s_drop_target_left
+  drop_mid:
+    switch: s_drop_target_mid
+  drop_right:
+    switch: s_drop_target_right
+
+drop_target_banks:
+  threebank:
+    drop_targets: drop_left, drop_mid, drop_right
+    reset_coils: c_drop_target_reset
+    reset_on_complete: 2s
 
 ## spinners
 spinners:
