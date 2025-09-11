@@ -45,23 +45,23 @@ hardware_sound_systems:
   default:
     label: APC
 
-# play sounds via files on APC sdcard (action name should be "<FILENAME>.SND:")
-#hardware_sound_player:
-#  game_start:
-#    set_volume:
-#      action: set_volume
-#      value: 0.2
-#    "holy_diver.snd": # filename on sdcard.
-#      track: 1
-#      action: play_file
-#      platform_options:
-#        loop: true
-#        no_cache: false
-#  game_ending:
-#    action: stop
-#    set_volume:
-#      action: set_volume
-#      value: 0
+## play sounds via files on APC sdcard (action name should be "<FILENAME>.SND:")
+hardware_sound_player:
+  game_start:
+    set_volume:
+      action: set_volume
+      value: 0.2
+    "holy_diver.snd": # filename on sdcard.
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+        no_cache: false
+  game_ending:
+    action: stop
+    set_volume:
+      action: set_volume
+      value: 0
 
 
 ###############################################################################

@@ -22,7 +22,7 @@ slide_player:
 
 
 
-sequence_shots:
+#sequence_shots:
 #  sh_ramp_center_through:
 #    switch_sequence: s_ramp_center_entry, s_ramp_center_mid, s_ramp_center_exit
 #    sequence_timeout: 5s
@@ -83,7 +83,7 @@ shots:
 
 #    switch: s_standup_left
 #    switch: s_ball_popper
-#  
+#
 #    switch: s_standup_right_top
 #    switch: s_standup_right_bottom
 #    switch: s_standup_captive_ball
@@ -97,7 +97,7 @@ shots:
 #    switch: s_ramp_center_entry
 #    switch: s_ramp_center_mid
 #    switch: s_ramp_center_exit
-#  
+#
 #    switch: s_loop_right
 #    switch: s_loop_left
 #    switch: s_spinner
@@ -135,20 +135,33 @@ shots:
 variable_player:
 
   ##counters
-  s_spinner_active:
-    spinner_rotations: 1
+  #s_spinner_active:
+  #  spinner_rotations: 1
 
 
   ###scoring
   ##onramp
   sh_onramp_bypass_hit:
-    score: 10000
+    score: 100
   sh_onramp_low_hit:
-    score: 50000
+    score: 500
   sh_onramp_mid_hit:
-    score: 25000
+    score: 250
   sh_onramp_high_hit:
-    score: 100000
+    score: 1000
+
+  sh_inlane_left_hit:
+    score: 50 * current_player.playfield_multiplier
+    #bonus_multiplier: 1
+  sh_inlane_right_inner_hit:
+    score: 50 * current_player.playfield_multiplier
+  sh_inlane_right_outer_hit:
+    score: 50 * current_player.playfield_multiplier
+
+  sh_outlane_left_hit:
+    score: 1000 * current_player.playfield_multiplier
+  sh_outlane_right_hit:
+    score: 1000 * current_player.playfield_multiplier
 
 #  sh_ramp_center_group_hit:
 #    score: 1000 * current_player.playfield_multiplier
@@ -161,18 +174,80 @@ variable_player:
 #    score: 2000 * current_player.playfield_multiplier
 
 
-  # placeholders
-  sh_inlane_left_hit:
-    score: 50 * current_player.playfield_multiplier
-    #bonus_multiplier: 1
-  sh_inlane_right_inner_hit:
-    score: 50 * current_player.playfield_multiplier
-  sh_inlane_right_outer_hit:
-    score: 50 * current_player.playfield_multiplier
-  sh_outlane_left_hit:
-    score: 10000 * current_player.playfield_multiplier
-  sh_outlane_right_hit:
-    score: 10000 * current_player.playfield_multiplier
+  ## placeholders
+
+  #s_inlane_right_inner_active:
+  #      score: 10 * current_player.playfield_multiplier
+  #s_inlane_right_outer_active:
+  #      score: 10 * current_player.playfield_multiplier
+  #s_outlane_right_active:
+  #      score: 10 * current_player.playfield_multiplier
+  #s_outlane_left_active:
+  #      score: 10 * current_player.playfield_multiplier
+  #s_inlane_left_active:
+  #      score: 10 * current_player.playfield_multiplier
+
+  s_standup_left_active:
+    score: 10 * current_player.playfield_multiplier
+  s_ball_popper_active:
+    score: 10 * current_player.playfield_multiplier
+  s_standup_right_bottom_active:
+    score: 10 * current_player.playfield_multiplier
+  s_standup_captive_ball_active:
+    score: 10 * current_player.playfield_multiplier
+  s_standup_right_50k_active:
+    score: 100 * current_player.playfield_multiplier
+
+  s_drop_target_left_active:
+    score: 10 * current_player.playfield_multiplier
+  s_drop_target_mid_active:
+    score: 10 * current_player.playfield_multiplier
+  s_drop_target_right_active:
+    score: 10 * current_player.playfield_multiplier
+
+  s_spinner_active:
+    score: 10 * current_player.playfield_multiplier
+    spinner_rotations: 1
+  s_loop_left_active:
+    score: 10 * current_player.playfield_multiplier
+  s_loop_right_active:
+    score: 10 * current_player.playfield_multiplier
+
+  s_standup_ramp_active:
+    score: 10 * current_player.playfield_multiplier
+  s_ramp_center_mid_active:
+    score: 10 * current_player.playfield_multiplier
+  s_ramp_center_exit_active:
+    score: 10 * current_player.playfield_multiplier
+
+  s_ramp_right_entry_active:
+    score: 10 * current_player.playfield_multiplier
+  s_ramp_center_entry_active:
+    score: 10 * current_player.playfield_multiplier
+  s_vuk_upper_active:
+    score: 100 * current_player.playfield_multiplier
+  s_subway1_active:
+    score: 1 * current_player.playfield_multiplier
+  s_subway2_active:
+    score: 1 * current_player.playfield_multiplier
+  s_vuk_subway_active:
+    score: 10 * current_player.playfield_multiplier
+
+  s_pop_bumper_left_active:
+    score: 5 * current_player.playfield_multiplier
+  s_pop_bumper_right_active:
+    score: 5 * current_player.playfield_multiplier
+  s_pop_bumper_top_active:
+    score: 5 * current_player.playfield_multiplier
+
+  s_slingshot_left_active:
+    score: 5 * current_player.playfield_multiplier
+  s_slingshot_right_active:
+    score: 5 * current_player.playfield_multiplier
+
+
+
+
 
 #segment_display_player:
 #    mode_base_started:
@@ -185,7 +260,7 @@ variable_player:
 #            track: 2
 #            action: play_file
 
-# 
+#
 #  # event-based sounds
 #  ball_starting:
 #    "holy_diver.snd":
@@ -194,7 +269,7 @@ variable_player:
 #      platform_options:
 #        loops: true
 #        no_cache: false
-#    
+#
 #  ball_will_end:
 #    "holy_diver.snd":
 #      track: 2
