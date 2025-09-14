@@ -1,0 +1,8 @@
+#config_version=6
+
+mode:
+  start_events: carousel_artist_ozzy_selected
+  stop_events: ball_ended
+  priority: 130
+
+

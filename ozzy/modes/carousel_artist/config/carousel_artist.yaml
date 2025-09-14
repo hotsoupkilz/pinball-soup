@@ -1,0 +1,26 @@
+#config_version=6
+
+mode:
+  start_events: ball_starting
+  stop_events: carousel_artist_item_selected
+  code: mpf.modes.carousel.code.carousel.Carousel
+  use_wait_queue: true
+
+mode_settings:
+  selectable_items: ozzy, dio, zombie, meatloaf, rivers
+  select_item_events: s_plunger_inactive
+  next_item_events: sw_right_flipper_active
+
+slide_player:
+  carousel_ozzy_highlighted: select_ozzy
+  carousel_dio_highlighted: select_dio
+  carousel_zombie_highlighted: select_zombie
+  carousel_meatloaf_highlighted: select_meatloaf
+  carousel_rivers_highlighted: select_rivers
+
+event_player:
+  select_ozzy: mode_ozzy_start
+  select_dio: mode_dio_start
+  select_zombie: mode_zombie_start
+  select_meatloaf: mode_meatloaf_start
+  select_rivers: mode_rivers_start
