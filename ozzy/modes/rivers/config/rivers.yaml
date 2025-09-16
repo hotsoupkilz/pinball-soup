@@ -5,3 +5,12 @@ mode:
   stop_events: ball_ended
   priority: 130
 
+
+hardware_sound_player:
+  mode_rivers_started:
+    "rivers_despair_church.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+        no_cache: false

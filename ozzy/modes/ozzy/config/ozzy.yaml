@@ -6,3 +6,11 @@ mode:
   priority: 130
 
 
+hardware_sound_player:
+  mode_ozzy_started:
+    "ozzy_crazy_train.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+        no_cache: false

@@ -6,3 +6,12 @@ mode:
   priority: 130
 
 
+hardware_sound_player:
+  mode_dio_started:
+    "tenacious_the_metal.snd":
+    #"dio_holy_diver.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+        no_cache: false

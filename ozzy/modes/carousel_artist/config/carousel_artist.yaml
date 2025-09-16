@@ -1,26 +1,91 @@
 #config_version=6
 
 mode:
-  start_events: ball_starting
+  start_events: ball_starting  #start_mode_base_started  #start_carousel_artist_mode, show_carousel_artist_mode  #start_mode_ball1_started
   stop_events: carousel_artist_item_selected
+  game_mode: false
   code: mpf.modes.carousel.code.carousel.Carousel
-  use_wait_queue: true
+  #use_wait_queue: true
+  priority: 120
 
 mode_settings:
-  selectable_items: ozzy, dio, zombie, meatloaf, rivers
+  selectable_items:
+    - dio
+    - ozzy
+    - zombie
+    - meatloaf
+    - rivers
   select_item_events: s_plunger_inactive
-  next_item_events: sw_right_flipper_active
+  next_item_events: s_flipper_right_inactive
+  previous_item_events: s_flipper_left_inactive
+
+  carousel_artist_ozzy_highlighted:
+    highlighted_artist:
+      string: "ozzy"
+      action: set
+  carousel_artist_dio_highlighted:
+    highlighted_artist:
+      string: "dio"
+      action: set
+  carousel_artist_zombie_highlighted:
+    highlighted_artist:
+      string: "zombie"
+      action: set
+  carousel_artist_meatloaf_highlighted:
+    highlighted_artist:
+      string: "meatloaf"
+      action: set
+  carousel_artist_rivers_highlighted:
+    highlighted_artist:
+      string: "rivers"
+      action: set
 
 slide_player:
-  carousel_ozzy_highlighted: select_ozzy
-  carousel_dio_highlighted: select_dio
-  carousel_zombie_highlighted: select_zombie
-  carousel_meatloaf_highlighted: select_meatloaf
-  carousel_rivers_highlighted: select_rivers
+  mode_carousel_artist_started: carousel_artist
 
-event_player:
-  select_ozzy: mode_ozzy_start
-  select_dio: mode_dio_start
-  select_zombie: mode_zombie_start
-  select_meatloaf: mode_meatloaf_start
-  select_rivers: mode_rivers_start
+
+hardware_sound_player:
+  mode_character_select_started:
+    "dio_holy_diver.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  carousel_artist_ozzy_highlighted:
+    "ozzy_crazy_train.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  carousel_artist_dio_highlighted:
+    "tenacious_the_metal.snd":
+    #"holy_diver.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  carousel_artist_zombie_highlighted:
+    "zombie_meet_the_creeper.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  carousel_artist_meatloaf_highlighted:
+    "meatloaf_bat_out_of_hell.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  carousel_artist_rivers_highlighted:
+    "rivers_despair_church.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+

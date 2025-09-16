@@ -45,13 +45,13 @@ hardware_sound_systems:
   default:
     label: APC
 
-## play sounds via files on APC sdcard (action name should be "<FILENAME>.SND:")
+# play sounds via files on APC sdcard (action name should be "<FILENAME>.SND:")
 #hardware_sound_player:
 #  game_start:
 #    set_volume:
 #      action: set_volume
 #      value: 0.2
-#    "holy_diver.snd": # filename on sdcard.
+#    "tenacious_the_metal.snd": # filename on sdcard.
 #      track: 1
 #      action: play_file
 #      platform_options:
@@ -71,7 +71,9 @@ hardware_sound_systems:
 ## modes: anything that has a folder in modes/ should be listed here
 modes:
     - attract
-    - base
+    #- base
+
+    #- select_mode_ball1
     - carousel_artist
     - dio
     - meatloaf
@@ -80,7 +82,6 @@ modes:
     - zombie
 
     - tilt
-    
 
 ## player variables: set the initial state of variables used by players when game starts
 player_vars:
@@ -233,10 +234,12 @@ switches:
     number: 55
   s_slingshot_right:
     number: 56
-  s_flipper_right_lane_change:
+  s_flipper_right:
     number: 57
-  s_flipper_left_lane_change:
+    tags: right_flipper
+  s_flipper_left:
     number: 58
+    tags: left_flipper
   s_notused6:
     number: 59
   s_notused7:

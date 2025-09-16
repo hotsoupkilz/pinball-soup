@@ -4,3 +4,13 @@ mode:
   start_events: carousel_artist_zombie_selected
   stop_events: ball_ended
   priority: 130
+
+
+hardware_sound_player:
+  mode_zombie_started:
+    "zombie_meet_the_creeper.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loops: 2
+        no_cache: false

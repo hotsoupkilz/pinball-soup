@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://dynpq2bv6oebb"]
+
+[ext_resource type="Script" uid="uid://5xvbmjko6ly8" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_bgcjt"]
+[ext_resource type="Texture2D" uid="uid://dwdifwiv52ufu" path="res://addons/mpf-gmc/images/metal_stage.jpg" id="2_40o7a"]
+[ext_resource type="Script" uid="uid://fl67uiol76t0" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="3_vgs5j"]
+[ext_resource type="Script" uid="uid://dc0jbov3shmgr" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_boska"]
+[ext_resource type="Theme" uid="uid://chal5tkdwfp4x" path="res://red_font_theme.tres" id="4_vgs5j"]
+[ext_resource type="Texture2D" uid="uid://bma3rou6cbxw" path="res://addons/mpf-gmc/images/carousel_ozzy.jpg" id="6_2pvqg"]
+[ext_resource type="Texture2D" uid="uid://brec41psfdkn5" path="res://addons/mpf-gmc/images/carousel_dio.jpg" id="7_yvy57"]
+[ext_resource type="Texture2D" uid="uid://yge2a4j18uxa" path="res://addons/mpf-gmc/images/carousel_zombie.jpg" id="8_grq4p"]
+[ext_resource type="Texture2D" uid="uid://wklm3xt81i4n" path="res://addons/mpf-gmc/images/carousel_meat_loaf.jpg" id="9_kwvio"]
+[ext_resource type="Texture2D" uid="uid://8od53y5ce2se" path="res://addons/mpf-gmc/images/carousel_rivers.jpg" id="10_xaewd"]
+
+[node name="carousel_artist" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bgcjt")
+metadata/_custom_type_script = "uid://5xvbmjko6ly8"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(684, 415.25)
+scale = Vector2(2.16294, 1.50739)
+texture = ExtResource("2_40o7a")
+
+[node name="carousel_artist" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1361.0
+offset_bottom = 823.0
+theme = ExtResource("4_vgs5j")
+script = ExtResource("3_vgs5j")
+carousel_name = "carousel_artist"
+metadata/_custom_type_script = "uid://fl67uiol76t0"
+
+[node name="ozzy" type="Label" parent="carousel_artist"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 384.0
+offset_right = 770.0
+offset_bottom = 480.0
+theme = ExtResource("4_vgs5j")
+text = "Ozzy"
+script = ExtResource("4_boska")
+variable_type = 1
+variable_name = "ozzy"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="carousel_ozzy" type="Sprite2D" parent="carousel_artist/ozzy"]
+position = Vector2(114, 1.52588e-05)
+scale = Vector2(0.65534, 0.620388)
+texture = ExtResource("6_2pvqg")
+
+[node name="dio" type="Label" parent="carousel_artist"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 384.0
+offset_right = 724.0
+offset_bottom = 480.0
+theme = ExtResource("4_vgs5j")
+text = "Dio"
+script = ExtResource("4_boska")
+variable_type = 1
+variable_name = "dio"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="carousel_dio" type="Sprite2D" parent="carousel_artist/dio"]
+position = Vector2(114, -7.62939e-06)
+scale = Vector2(0.541406, 0.644271)
+texture = ExtResource("7_yvy57")
+
+[node name="zombie" type="Label" parent="carousel_artist"]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 384.0
+offset_right = 906.0
+offset_bottom = 480.0
+theme = ExtResource("4_vgs5j")
+text = "Rob Zombie"
+script = ExtResource("4_boska")
+variable_type = 1
+variable_name = "zombie"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="carousel_zombie" type="Sprite2D" parent="carousel_artist/zombie"]
+position = Vector2(221, 38)
+scale = Vector2(0.606362, 0.58244)
+texture = ExtResource("8_grq4p")
+
+[node name="meatloaf" type="Label" parent="carousel_artist"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 384.0
+offset_right = 869.0
+offset_bottom = 480.0
+theme = ExtResource("4_vgs5j")
+text = "Meat Loaf"
+script = ExtResource("4_boska")
+variable_type = 1
+variable_name = "meatloaf"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="carousel_meatloaf" type="Sprite2D" parent="carousel_artist/meatloaf"]
+position = Vector2(193, 0)
+texture = ExtResource("9_kwvio")
+
+[node name="rivers" type="Label" parent="carousel_artist"]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 384.0
+offset_right = 941.0
+offset_bottom = 480.0
+theme = ExtResource("4_vgs5j")
+text = "Rivers of Nihil"
+script = ExtResource("4_boska")
+variable_type = 1
+variable_name = "rivers"
+metadata/_custom_type_script = "uid://dc0jbov3shmgr"
+
+[node name="carousel_rivers" type="Sprite2D" parent="carousel_artist/rivers"]
+position = Vector2(251, 25)
+texture = ExtResource("10_xaewd")
