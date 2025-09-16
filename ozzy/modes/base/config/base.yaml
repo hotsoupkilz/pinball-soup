@@ -4,7 +4,7 @@
 
 
 mode:
-  start_events: ball_starting
+  start_events: carousel_artist_item_selected
   priority: 100
 
 slide_player:

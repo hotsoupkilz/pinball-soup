@@ -71,7 +71,7 @@ hardware_sound_systems:
 ## modes: anything that has a folder in modes/ should be listed here
 modes:
     - attract
-    #- base
+    - base
 
     #- select_mode_ball1
     - carousel_artist
