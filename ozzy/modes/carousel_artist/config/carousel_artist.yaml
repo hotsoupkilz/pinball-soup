@@ -40,51 +40,53 @@ mode_settings:
       string: "rivers"
       action: set
 
-  hardware_sound_player:
-    #mode_character_select_started:
-    #  "dio_holy_diver.snd":
-    #    track: 1
-    #    action: play_file
-    #    platform_options:
-    #      loop: false
-    #      no_cache: false
-    carousel_artist_ozzy_highlighted:
-      "ozzy_crazy_train.snd":
-        track: 1
-        action: play_file
-        platform_options:
-          loop: false
-          no_cache: false
-    carousel_artist_dio_highlighted:
-      "tenacious_the_metal.snd":
-      #"holy_diver.snd":
-        track: 1
-        action: play_file
-        platform_options:
-          loop: false
-          no_cache: false
-    carousel_artist_zombie_highlighted:
-      "zombie_meet_the_creeper.snd":
-        track: 1
-        action: play_file
-        platform_options:
-          loop: false
-          no_cache: false
-    carousel_artist_meatloaf_highlighted:
-      "meatloaf_bat_out_of_hell.snd":
-        track: 1
-        action: play_file
-        platform_options:
-          loop: false
-          no_cache: false
-    carousel_artist_rivers_highlighted:
-      "rivers_despair_church.snd":
-        track: 1
-        action: play_file
-        platform_options:
-          loop: false
-          no_cache: false
+hardware_sound_player:
+  mode_carousel_artist_started:
+    "dio_holy_diver.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  mode_carousel_artist_ozzy_highlighted.2:
+    "ozzy_crazy_train.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  mode_carousel_artist_dio_highlighted.2:
+    "tenacious_the_metal.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  mode_carousel_artist_zombie_highlighted.2:
+    "zombie_meet_the_creeper.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  mode_carousel_artist_meatloaf_highlighted.2:
+    "meatloaf_bat_out_of_hell.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
+  mode_carousel_artist_rivers_highlighted.2:
+    "rivers_despair_church.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: false
+        no_cache: false
 
 
 slide_player:
   mode_carousel_artist_started: carousel_artist
+
+
+

@@ -1,9 +1,6 @@
 #config_version=6
 
-slide_player:
-  mode_attract_started: attract
-
-
+  # TODO: make a working carousel for attract that shows gameover, title, and last_game_scores slides
 #mode:
 #  start_events: mode_attract_started
 #  stop_events: mode_attract_will_stop
@@ -18,6 +15,13 @@ slide_player:
 #  next_item_events: s_flipper_right_inactive
 #  previous_item_events: s_flipper_left_inactive
 
+
+
+
+
+
+slide_player:
+  mode_attract_started: attract
 
 show_player:
   mode_attract_started.1:
@@ -37,3 +41,14 @@ show_player:
     #  speed: 4
     #attract_triangle_flash:
     #  speed: 4
+    #
+    #
+    #
+    #
+
+#hardware_sound_player:
+#  mode_attract_started.2:
+#    "0_00.snd":
+#      track: 1
+#      action: play_file
+
