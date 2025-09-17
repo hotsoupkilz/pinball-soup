@@ -17,6 +17,13 @@ slide_player:
 #            text: "{players[0].score:d}"
 #
 
+segment_display_player:
+  # game start
+  mode_base_started:
+    display1:
+      text: "{current_player.ball:d}"
+    display2:
+      text: "{current_player.score:d}"
 
 
 
