@@ -578,12 +578,12 @@ spinners:
 
 # segment displays
 segment_displays:
-  display1:
+  segment_display_top:
     number: 1
     platform: lisy
     size: 16
     #integrated_commas: true
-  display2:
+  segment_display_bottom:
     number: 2
     platform: lisy
     size: 16

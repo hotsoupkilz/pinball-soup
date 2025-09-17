@@ -20,9 +20,9 @@ slide_player:
 segment_display_player:
   # game start
   mode_base_started:
-    display1:
-      text: "{current_player.ball:d}"
-    display2:
+    segment_display_top:
+      text: "PLAYER {current_player.player_num}: BALL {current_player.ball:d}"
+    segment_display_bottom:
       text: "{current_player.score:d}"
 
 
