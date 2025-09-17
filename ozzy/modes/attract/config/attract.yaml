@@ -4,6 +4,21 @@ slide_player:
   mode_attract_started: attract
 
 
+#mode:
+#  start_events: mode_attract_started
+#  stop_events: mode_attract_will_stop
+#  game_mode: false
+#  code: mpf.modes.carousel.code.carousel.Carousel
+#
+#mode_settings:
+#  selectable_items:
+#    - gameover
+#    - title
+#    - last_game_scores
+#  next_item_events: s_flipper_right_inactive
+#  previous_item_events: s_flipper_left_inactive
+
+
 show_player:
   mode_attract_started.1:
     attract_arrow_sweep_left:

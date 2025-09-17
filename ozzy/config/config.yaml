@@ -73,7 +73,6 @@ modes:
     - attract
     - base
 
-    #- select_mode_ball1
     - carousel_artist
     - dio
     - meatloaf

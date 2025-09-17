@@ -1,28 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://lcii8j32ewbi"]
+[gd_scene load_steps=5 format=3 uid="uid://lcii8j32ewbi"]
 
 [ext_resource type="Script" uid="uid://5xvbmjko6ly8" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_o4v0r"]
-[ext_resource type="Texture2D" uid="uid://dnlim1ym7th2u" path="res://addons/mpf-gmc/images/ozzy-mspiggy.webp" id="2_gensg"]
+[ext_resource type="Theme" uid="uid://chal5tkdwfp4x" path="res://red_font_theme.tres" id="3_p3rss"]
+[ext_resource type="Texture2D" uid="uid://c30qo6r0u32nv" path="res://addons/mpf-gmc/images/attract_game_over_instrument_smash.jpg" id="4_db5fx"]
+[ext_resource type="Texture2D" uid="uid://bxjrmrfwqq0x5" path="res://addons/mpf-gmc/images/attract_title_ozzfest.png" id="5_4o4im"]
 
-[node name="Attract" type="Control"]
+[node name="attract" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("3_p3rss")
 script = ExtResource("1_o4v0r")
 metadata/_custom_type_script = "uid://5xvbmjko6ly8"
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1360.0
-offset_bottom = 757.0
-texture = ExtResource("2_gensg")
-expand_mode = 2
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 193.0
-offset_top = 599.0
-offset_right = 1108.0
-offset_bottom = 736.0
-theme_override_font_sizes/font_size = 100
-text = "Ozzy: Attract Mode"
-horizontal_alignment = 1
-vertical_alignment = 2
+offset_left = 498.0
+offset_top = 601.0
+offset_right = 878.0
+offset_bottom = 697.0
+theme = ExtResource("3_p3rss")
+text = "Game Over"
+
+[node name="ozzfest" type="Sprite2D" parent="."]
+position = Vector2(690, 384.25)
+scale = Vector2(1.98333, 1.85608)
+texture = ExtResource("5_4o4im")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = -38.0
+offset_right = 1218.0
+offset_bottom = 607.0
+texture = ExtResource("4_db5fx")
