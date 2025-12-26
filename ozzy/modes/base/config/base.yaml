@@ -11,20 +11,13 @@ slide_player:
   mode_base_started: base
 
 
-#segment_display_player:
-#    mode_base_started:
-#        display1:
-#            text: "{players[0].score:d}"
-#
-
 segment_display_player:
   # game start
   mode_base_started:
     segment_display_top:
-      text: "PLAYER {current_player.player_num}: BALL {current_player.ball:d}"
+      text: "player {current_player.player_num:d}: ball {current_player.ball:d}"
     segment_display_bottom:
       text: "{current_player.score:d}"
-
 
 
 
@@ -255,11 +248,6 @@ variable_player:
 
 
 
-
-#segment_display_player:
-#    mode_base_started:
-#        segment_display_top:
-#            text: "{players[0].score:d}"
 
 #hardware_sound_player:
 #    skate_targets_unlit_hit:

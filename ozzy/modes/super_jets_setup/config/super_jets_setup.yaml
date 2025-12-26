@@ -1,0 +1,15 @@
+#config_version=6
+
+#modes/super_jets_setup/config/super_jets_setup.yaml
+
+mode:
+  start_events: ball_starting
+  priority: 105
+
+
+shots:
+  jets:
+    switch: s_pop_bumper_left, s_pop_bumper_right, s_pop_bumper_top
+  left_loop:
+    switch: s_loop_left
+    show_tokens

@@ -1,0 +1,25 @@
+#config_version=6
+
+#modes/super_jets/config/super_jets.yaml
+
+mode:
+  start_events: super_jets_go, super_jets_resume_go
+  priority: 110
+
+
+variable_player:
+  s_left_bumper_active:
+    score: 3000|block
+  s_middle_bumper_active:
+    score: 3000|block
+  s_right_bumper_active:
+    score: 3000|block
+
+
+show_player:
+  mode_super_jets_started:
+    super_jets_startup:
+      loops: 0
+    super_jets_on:
+      show_tokens:
+        light: l_pop_bumper_center

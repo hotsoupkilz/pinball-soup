@@ -41,42 +41,42 @@ mode_settings:
       action: set
 
 hardware_sound_player:
-  mode_carousel_artist_started:
-    "dio_holy_diver.snd":
-      track: 1
-      action: play_file
-      platform_options:
-        loop: false
-        no_cache: false
-  mode_carousel_artist_ozzy_highlighted.2:
+  #mode_carousel_artist_started:
+  #  "dio_holy_diver.snd":
+  #    track: 1
+  #    action: play_file
+  #    platform_options:
+  #      loop: false
+  #      no_cache: false
+  carousel_artist_ozzy_highlighted.1:
     "ozzy_crazy_train.snd":
       track: 1
       action: play_file
       platform_options:
         loop: false
         no_cache: false
-  mode_carousel_artist_dio_highlighted.2:
+  carousel_artist_dio_highlighted.1:
     "tenacious_the_metal.snd":
       track: 1
       action: play_file
       platform_options:
         loop: false
         no_cache: false
-  mode_carousel_artist_zombie_highlighted.2:
+  carousel_artist_zombie_highlighted.1:
     "zombie_meet_the_creeper.snd":
       track: 1
       action: play_file
       platform_options:
         loop: false
         no_cache: false
-  mode_carousel_artist_meatloaf_highlighted.2:
+  carousel_artist_meatloaf_highlighted.1:
     "meatloaf_bat_out_of_hell.snd":
       track: 1
       action: play_file
       platform_options:
         loop: false
         no_cache: false
-  mode_carousel_artist_rivers_highlighted.2:
+  carousel_artist_rivers_highlighted.1:
     "rivers_despair_church.snd":
       track: 1
       action: play_file
