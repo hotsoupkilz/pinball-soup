@@ -1,0 +1,4 @@
+- each folder within pinball-soup contains the code to run a physical pinball machine using the mission pinball (mpf) software framework
+- only the 0.80.x and dev branches from mpf repo should be considered as godot is needed for all machines in pinball-soup
+- the Arduino Pinball Controller (APC) is the Hardware Platform used for the ozzy and time_warped machines
+- the Mission Pinball tutorial (https://missionpinball.org/latest/tutorial/) and its repos are the preferred reference for new machine scaffolds; clone only if helpful, otherwise mirror their structure with ozzy as the fallback baseline

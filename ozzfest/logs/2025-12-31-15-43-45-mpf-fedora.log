@@ -1,0 +1,110 @@
+2025-12-31 15:43:45,736 : INFO : root : Loading config.
+2025-12-31 15:43:45,737 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2025-12-31 15:43:45,738 : WARNING : ConfigProcessor : Config file in cache changed: /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml
+2025-12-31 15:43:45,738 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml.
+2025-12-31 15:43:45,744 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml
+2025-12-31 15:43:45,744 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml.
+2025-12-31 15:43:45,751 : INFO : ConfigProcessor : Loading config: /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml
+2025-12-31 15:43:45,752 : INFO : ConfigProcessor : Config file cache created: /tmp/5527cdf0eba21cb5b62cdbf1412f48ab.mpf_cache
+2025-12-31 15:43:45,774 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/modes/attract/config/attract.yaml.
+2025-12-31 15:43:45,775 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/modes/attract/config/attract.yaml
+2025-12-31 15:43:45,775 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball-soup/ozzfest/modes/attract/config/attract.yaml.
+2025-12-31 15:43:45,775 : INFO : ConfigProcessor : Loading config: /home/hotsoup/repos/pinball-soup/ozzfest/modes/attract/config/attract.yaml
+2025-12-31 15:43:45,775 : INFO : ConfigProcessor : Config file cache created: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2025-12-31 15:43:45,775 : INFO : ConfigProcessor : Loading config from cache: /tmp/f57f0537fdc7805225abf9c1a1ee119c.mpf_cache
+2025-12-31 15:43:45,775 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2025-12-31 15:43:45,776 : INFO : ConfigProcessor : Loading config from cache: /tmp/ac54eaf53dec484b1f36e96223ff75e9.mpf_cache
+2025-12-31 15:43:45,776 : INFO : ConfigProcessor : Loading config from cache: /tmp/66fe1c40c93c020774352c1dfff2604e.mpf_cache
+2025-12-31 15:43:45,776 : INFO : Machine : Mission Pinball Framework Core Engine v0.80.0.dev11
+2025-12-31 15:43:45,776 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'platform_integration_test': False, 'jsonlogging': False, 'logfile': 'logs/2025-12-31-15-43-45-mpf-fedora.log', 'pause': False, 'production': False, 'text_ui': False, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': 'virtual', 'syslog_address': None, 'full_logfile_path': '/home/hotsoup/repos/pinball-soup/ozzfest/logs/2025-12-31-15-43-45-mpf-fedora.log'}
+2025-12-31 15:43:45,776 : INFO : Machine : MPF path: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf
+2025-12-31 15:43:45,776 : INFO : Machine : Machine path: /home/hotsoup/repos/pinball-soup/ozzfest
+2025-12-31 15:43:45,776 : INFO : Machine : Platform: linux
+2025-12-31 15:43:45,776 : INFO : Machine : Python executable location: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/bin/python
+2025-12-31 15:43:45,776 : INFO : Machine : Python version: 3.12.8 (64-bit)
+2025-12-31 15:43:45,777 : INFO : Machine : Initializing MPF...
+2025-12-31 15:43:45,796 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,801 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,801 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev11', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,801 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev11, Config version:6, Show version: 6, BCP version:1.1', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,801 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.12.8', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,802 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-6.17.12-300.fc43.x86_64-x86_64-with-glibc2.42', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,802 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,802 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '6.17.12-300.fc43.x86_64', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,802 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#1 SMP PREEMPT_DYNAMIC Sat Dec 13 05:06:24 UTC 2025', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,802 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,802 : INFO : EventManager : Event: ======'machine_var_log_file_path'====== Args={'value': '/home/hotsoup/repos/pinball-soup/ozzfest/logs/2025-12-31-15-43-45-mpf-fedora.log', 'prev_value': None, 'change': True}
+2025-12-31 15:43:45,802 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2025-12-31 15:43:45,817 : INFO : EventManager : Event: ======'init_phase_2'====== Args={}
+2025-12-31 15:43:45,818 : INFO : EventManager : Event: ======'bcp_connection_attempt'====== Args={'name': 'local_display', 'host': 'localhost', 'port': 5050}
+2025-12-31 15:43:45,818 : INFO : BCPClientSocket : Connecting BCP to 'local_display' at localhost:5050...
+2025-12-31 15:43:45,820 : INFO : BCPClientSocket : No BCP connection made to 'local_display' localhost:5050
+2025-12-31 15:43:45,821 : ERROR : asyncio : Exception in callback Util.raise_exceptions(<Task finishe... 'readline'")>) at /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/utility_functions.py:789
+handle: <Handle Util.raise_exceptions(<Task finishe... 'readline'")>) at /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/utility_functions.py:789>
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/utility_functions.py", line 797, in raise_exceptions
+    future.result()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/bcp/bcp_transport.py", line 55, in _receive_loop
+    cmd, kwargs = await transport.read_message()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/bcp/bcp_socket_client.py", line 301, in read_message
+    message = await self._receiver.readline()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2025-12-31 15:43:45,824 : INFO : EventManager : Event: ======'bcp_clients_connected'====== Args={}
+2025-12-31 15:43:45,824 : ERROR : asyncio : Task exception was never retrieved
+future: <Task finished name='Task-176' coro=<BallDevice._initialize_async() done, defined at /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_device.py:196> exception=ConfigFileError("Ball device 'trough' uses switch 's_right_ball_trough' which has a 'playfield_active' tag. This is handled internally by the device. Remove the redundant 'playfield_active' tag from that switch.")>
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_device.py", line 198, in _initialize_async
+    await self.ball_count_handler.initialize()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_count_handler.py", line 92, in initialize
+    self.counter = counter_class(self.ball_device, self.ball_device.config.get("counter", {}))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/switch_counter.py", line 81, in __init__
+    self.ball_device.raise_config_error(
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/logging.py", line 175, in raise_config_error
+    raise ConfigFileError(msg, error_no, self.log.name if self.log else "", context, self._url_base) \
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ball_device.trough: Ball device 'trough' uses switch 's_right_ball_trough' which has a 'playfield_active' tag. This is handled internally by the device. Remove the redundant 'playfield_active' tag from that switch. Error Code: CFE-ball_device-13 (https://missionpinball.org/logs)
+2025-12-31 15:43:45,826 : INFO : Machine : Starting the main run loop with active modes: []
+2025-12-31 15:43:45,826 : WARNING : Machine : Attract mode is not active, game will not be playable. Please check your attract mode configuration.
+2025-12-31 15:43:45,826 : INFO : Machine : Shutting down...
+2025-12-31 15:43:45,826 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2025-12-31 15:43:45,827 : ERROR : root : Exception while processing RegisteredHandler(callback=<bound method BcpTransportManager.shutdown of <mpf.core.bcp.bcp_transport.BcpTransportManager object at 0x7f1e277af4c0>>, priority=1, kwargs={}, key=UUID('988d8f67-d269-469f-bd85-4a5a39f3b128'), condition=None, blocking_facility=None) for event shutdown. 'NoneType' object has no attribute 'transport'
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/events.py", line 755, in _run_handlers
+    result = handler.callback(**merged_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/bcp/bcp_transport.py", line 117, in shutdown
+    client.stop()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/bcp/bcp_socket_client.py", line 270, in stop
+    self.send_goodbye()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/bcp/bcp_socket_client.py", line 357, in send_goodbye
+    self.send('goodbye', {})
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/bcp/bcp_socket_client.py", line 292, in send
+    if hasattr(self._sender.transport, "is_closing") and self._sender.transport.is_closing():
+               ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'transport'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/commands/game.py", line 229, in __init__
+    self.machine.run()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 706, in run
+    self._run_loop()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 806, in _run_loop
+    self._crash_shutdown()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 751, in _crash_shutdown
+    self._do_stop()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 741, in _do_stop
+    self.events.process_event_queue()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/events.py", line 846, in process_event_queue
+    self._process_event(event=event[0],
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/events.py", line 808, in _process_event
+    result = self._run_handlers(event, ev_type, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/events.py", line 757, in _run_handlers
+    raise EventHandlerException(
+mpf.core.events.EventHandlerException: Exception while processing RegisteredHandler(callback=<bound method BcpTransportManager.shutdown of <mpf.core.bcp.bcp_transport.BcpTransportManager object at 0x7f1e277af4c0>>, priority=1, kwargs={}, key=UUID('988d8f67-d269-469f-bd85-4a5a39f3b128'), condition=None, blocking_facility=None) for event shutdown. 'NoneType' object has no attribute 'transport'

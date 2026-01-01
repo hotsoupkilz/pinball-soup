@@ -1,0 +1,75 @@
+3. Operate switches; a sound is produced and switch number is momentarily indicated in the ball in play
+display. If two switches in a row are indicated with one switch closed, check for a short between the
+column wires; for multiple indication check column wire for short to ground. If two switches in a
+column are indicated with one switch closed, check for short between row wires.
+
+4. If proper indications are obtained in Test 03 but matrix problem is suspected in game play, disconnect
+lamp connectors 2P5 and 2P7. Recheck in game play. Perform CPU Self-Test if problem remains. If
+problem is cleared, check for short between lamp matrix and jet bumper mounting brackets.
+
+5. Shorted diodes can cause “rectangle” switch matrix problems as follows: Right 3-bank bottom target
+down (switch 25), left 3-bank center target down (switch 30), and as a ball makes the left standup
+(switch 46) a shorted diode at switch 30 would cause switch 41, Playfield Tilt, to be indicated.
+
+14 15 16 34 37 38 Switch .
+33 | 35 36 No. Function (Scores)
+13 01 Plumb Bob Tilt
+02 Ball Roll Tilt
+40 03 Credit Button —
+e amma: [es [tas | cre | ores eco 04 Right Coin Switch
+ee lt a > 05 Center Coin Switch
+nae FY, enn Gat Cura Ow! en 44 06 ~=Left Coin Switch
+17 een eee ee 7 07 Slam Tilt
+a Ae Y ae 08 High Score Reset
+. ~f = a¥ - Ee 7? 39 09 Right Ball Ramp
+._*. GQ Ew - cone Ae 10 Left Ball Ramp
+woe! i, Sa “PLS ae 11 Not Used
+ay ERT ye 12. Left Kicker (10)
+ae _ ® «ft } yt 13. “L” Rollover (5000)
+og 3 ace Rollover (2800)
+| ye. % . I “R” Rollover (
+= wi, # a’: *. cht 16 “DO” Rollover (5000)
+~ me 2 Beart oocs a 2 17 1 Target (1000)
+~ GR. Py \ UES ee 5 7 18 2 Target (1000)
+Sa 4 ar aoe ah e 19 3 parget (1000)
+hop. . “Qo OV WAS 20 4 Rollover oy
+fe MSO A. A 2! 5 Rollover (1000
+“ ate ae A 22 Left Drain Lane (5000)
+oo 23. Right Drain Lane (5000)
+24 Turnaround Lower Rollover (1000/16,000*)
+25 Right 3-Bank, Lower Drop Target (1000)
+26 Right 3-Bank, Center Drop Target (1000)
+32 18 46 A7 27 Right 3-Bank, Upper Drop Target (1000)
+24 19 28 Right Kicker (10
+29‘ Left 3-Bank, Lower Drop Target (1000)
+30 Left 3-Bank, Center Drop Target (1000)
+31 Left 3-Bank, Upper Drop Target (1000)
+31 32 Turnaround, Upper Rollover (1000*)
+27 33. 5-Bank, #1 Drop Target (Left) (10,000**)
+ore we rd 34 5-Bank, #2 Drop Target (10,000**)
+30 a re aan oT eo 26 35 5-Bank, #3 Drop Target (10,010**)
+NN cot % ; ‘ Co 36 © 5-Bank, #4 Drop Target (10,000**)
+29 0 a . aaa 25 37. 5-Bank, #5 Drop (ange (Right) (10,000**)
+Poy BB ee Vom 38 Upper Eject Hole (1000)
+10 a ae BS wating, 28 39 Lower Eject Hole (1000)
+. « AD) ows . 40 Upper Kicker (10)
+a - i gee Ue 21 41 Playfield Tilt
+22a ete gill 7 ran ee ae 42 Outhole
+So, &. @) 7 Sie a 23 «43. ~Ballshooter Trough
+20 ae ber (Oy Me - Be 44 Playfield Entry
+* Hoe. ' ate ol PS 45 Upper Left Standup (10)
+gs ee | \ 46 Le t Standup (10)
+> ae > feat Suntan, arbre A \ 48 Not Used
+At j aa Merk eet caihaoe oe a, 49 Right Magnet Button
+mig doe ; gid \ 50 Left Magnet Button
+Pet Ses Yan } + AN 5
+or LORD f aan H scores are doubled for 2X Scoring.
+ee ae | afte * Switch 24 scores 1000 when made before switch 32,
+ey ee es ee §686f000 when made after switch 32 with Advance
+Bonus X or Lite Drain Shield lit, and 16,000 when
+made after switch 32 with neither lamp on.
+42 **5-Bank 10,000 score is doubled u
+- p to 160,000 for
+10 09 43 Double-Trouble feature.
+Figure 3. Playfield Switch Locations and Switch Chart
+12

@@ -1,0 +1,114 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_will_end
+  priority: 100
+timers:
+  bagatelle_timer:
+    start_value: 3
+    end_value: 0
+    direction: down
+    control_events:
+      - event: start_bagatelle
+        action: restart
+
+sequence_shots:
+  drain_shield_combo:
+    switch_sequence: s_turnaround_lower_rollover, s_right_threebank_lower
+    sequence_timeout: 1
+
+variable_player:
+  s_left_slingshot_active:
+    score: 250
+  s_right_slingshot_active:
+    score: 250
+  s_left_standup_active:
+    score: 500
+  s_right_standup_active:
+    score: 500
+  s_rollover_l_active:
+    score: 750
+  s_rollover_o_active:
+    score: 750
+  s_rollover_r_active:
+    score: 750
+  s_rollover_d_active:
+    score: 750
+  s_one_target_active:
+    score: 500
+  s_two_target_active:
+    score: 500
+  s_three_target_active:
+    score: 500
+  s_rollover_4_active:
+    score: 500
+  s_rollover_5_active:
+    score: 500
+  s_upper_eject_hole_active:
+    score: 1500
+  s_lower_eject_hole_active:
+    score: 1500
+  s_turnaround_lower_rollover_active:
+    score: 2000
+  s_turnaround_upper_rollover_active:
+    score: 2000
+  s_right_threebank_lower_active:
+    score: 750
+    magnet_save_right_tokens: 1
+    magnet_save_right_tokens_max_value: 5
+  s_right_threebank_center_active:
+    score: 750
+    magnet_save_right_tokens: 1
+    magnet_save_right_tokens_max_value: 5
+  s_right_threebank_upper_active:
+    score: 750
+    magnet_save_right_tokens: 1
+    magnet_save_right_tokens_max_value: 5
+  s_left_threebank_lower_active:
+    score: 750
+    magnet_save_left_tokens: 1
+    magnet_save_left_tokens_max_value: 5
+  s_left_threebank_center_active:
+    score: 750
+    magnet_save_left_tokens: 1
+    magnet_save_left_tokens_max_value: 5
+  s_left_threebank_upper_active:
+    score: 750
+    magnet_save_left_tokens: 1
+    magnet_save_left_tokens_max_value: 5
+  drop_target_bank_right_threebank_down:
+    score: 5000
+    bonus_multiplier: 1
+    bonus_multiplier_max_value: 10
+  drop_target_bank_left_threebank_down:
+    score: 5000
+    bonus_multiplier: 1
+    bonus_multiplier_max_value: 10
+  drop_target_bank_fivebank_inline_down:
+    score: 10000
+    bonus_multiplier: 1
+    bonus_multiplier_max_value: 10
+  drain_shield_combo_complete:
+    drain_shield_left_active: 1
+    drain_shield_right_active: 1
+  s_left_magnet_button_active:
+    magnet_save_left_tokens: -1
+    magnet_save_left_tokens_min_value: 0
+    score: 5000
+  s_right_magnet_button_active:
+    magnet_save_right_tokens: -1
+    magnet_save_right_tokens_min_value: 0
+    score: 5000
+  timer_bagatelle_timer_complete:
+    score: 10000
+
+event_player:
+  s_lower_eject_hole_active: start_bagatelle
+  s_upper_eject_hole_active: start_bagatelle
+  sequence_shots_drain_shield_combo_hit: drain_shield_combo_complete
+
+coil_player:
+  timer_bagatelle_timer_complete:
+    c_miniball_kicker: pulse
+

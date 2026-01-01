@@ -1,0 +1,41 @@
+2025-12-31 15:51:46,818 : INFO : root : Loading config.
+2025-12-31 15:51:46,819 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2025-12-31 15:51:46,820 : INFO : ConfigProcessor : Loading config from cache: /tmp/5527cdf0eba21cb5b62cdbf1412f48ab.mpf_cache
+2025-12-31 15:51:46,843 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2025-12-31 15:51:46,843 : INFO : ConfigProcessor : Loading config from cache: /tmp/f57f0537fdc7805225abf9c1a1ee119c.mpf_cache
+2025-12-31 15:51:46,843 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2025-12-31 15:51:46,843 : INFO : ConfigProcessor : Loading config from cache: /tmp/ac54eaf53dec484b1f36e96223ff75e9.mpf_cache
+2025-12-31 15:51:46,843 : INFO : Machine : Mission Pinball Framework Core Engine v0.80.0.dev11
+2025-12-31 15:51:46,843 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'platform_integration_test': False, 'jsonlogging': False, 'logfile': 'logs/2025-12-31-15-51-46-mpf-fedora.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': None, 'syslog_address': None, 'full_logfile_path': '/home/hotsoup/repos/pinball-soup/ozzfest/logs/2025-12-31-15-51-46-mpf-fedora.log'}
+2025-12-31 15:51:46,843 : INFO : Machine : MPF path: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf
+2025-12-31 15:51:46,843 : INFO : Machine : Machine path: /home/hotsoup/repos/pinball-soup/ozzfest
+2025-12-31 15:51:46,843 : INFO : Machine : Platform: linux
+2025-12-31 15:51:46,843 : INFO : Machine : Python executable location: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/bin/python
+2025-12-31 15:51:46,843 : INFO : Machine : Python version: 3.12.8 (64-bit)
+2025-12-31 15:51:46,844 : INFO : Machine : Initializing MPF...
+2025-12-31 15:51:46,848 : ERROR : ConfigValidator : Your config contains a value for the setting "lisy:watchdog_tickle", but this is not a valid setting name.
+2025-12-31 15:51:46,848 : ERROR : Machine : Failed to initialize MPF
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 688, in initialize_mpf
+    raise init.exception()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 250, in initialize
+    await self.initialize_core_and_hardware()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 236, in initialize_core_and_hardware
+    self._load_hardware_platforms()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 492, in _load_hardware_platforms
+    self.add_platform(hardware_platform)
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 622, in add_platform
+    self.hardware_platforms[name] = hardware_platform(self)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/platforms/lisy/lisy.py", line 337, in __init__
+    self.config = self.machine.config_validator.validate_config("lisy", self.machine.config['lisy'])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/config_validator.py", line 164, in validate_config
+    return self._validate_config(config_spec, source, base_spec=base_spec, add_missing_keys=add_missing_keys,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/config_validator.py", line 177, in _validate_config
+    self.check_for_invalid_sections(this_spec, source, validation_failure_info)
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/config_validator.py", line 345, in check_for_invalid_sections
+    raise ConfigFileError('Your config contains a value for the '
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ConfigValidator: Your config contains a value for the setting "lisy:watchdog_tickle", but this is not a valid setting name. Error Code: CFE-ConfigValidator-2 (https://missionpinball.org/logs)
+2025-12-31 15:51:46,849 : INFO : root : MPF run loop ended.

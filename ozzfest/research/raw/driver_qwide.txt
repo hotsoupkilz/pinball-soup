@@ -1,0 +1,63 @@
+-— 7 O8B
+| POWER SUPPLY 6 {> RED _ SOL. B+
+| 3 BLK GROUND
+———_—_- —, 2ull 2PUI 8P3 83
+[ DRIVER BOARD GRY-GRN SOL. 5 |
+Oo) , GRY-YEL SOL. 4 | :
+QI7 5 |\|_GRY-RED SOL. 2 (| els
+| O16 4 |>{-GRY-BRN SOL. | Trey
+Q29 | |S{-GRY-BLK SOL. 8 || lel
+| . Q27 > GRY-VIO SOL. 7 an a
+| Q 3 GRY-BLU SOL. 6
+| | 2J9 2P9 |
+| Q33 7 BRN-RED SOL.I0 | | j* ID
+O31 5 BRN-BLK SOL. 9 | | | 9 8L9.
+| 037 3 BRN-YEL SOL.I2 BO SANK 4 |
+Q39 3 | >+-BRN-GRN SOL. 15 (LEFT) DROP
+Q4I 4 BRN-BLU SOL. I4¢4 TARGET
+8DI37 RESET gnize
+| | 36 -
+BLI2
+lie
+| 2JI2  2Pl2 PT ha )
+BLU-ORN SOL. I9 Ff _
+Q6 3 IS
+| O8 5 BLU-YEL SOL.20 to 20
+| 02 7 BLU-BRN SOL. I7 rs .
+mr 4 |>._BLU-RED SOL.18 tig | |
+| O12 9 BLU-BLK SOL. 22 || 20
+GT 910 3 BLU-GRN SOL. 21 | | OI
+Zi | |
+| 2 35
+| =| | c3
+= (r“r™?> + 7 { sswe
+L. J SRB o\ ol UPPE!
+| _—— 2Ji3  2PI3 ele) KICKE
+ORN-BLK
+. 2
+co te epee ow * | 7[-ORN-BRN i ne Da
+SOL. 17 SPEC. SW 5 24
+ORN-RED Ff
+Sot. 1S SPEC. SW S|? orn-veL 1 | (28
+| SOL. 20 SPEC. SW 4 ORN-YEL 27 N/C
+. . | ORN-GRN ss] |
+SOL. 21' SPEC. SW S| > orn-BLu_ dt | _S {78 nrc
+| SOL. 22 SPEC. SW 9 RN- BL 29 N/C
+7Jl 7PI |
+RIGHT
+RIGHT FLIPPER
+| Fer 31/5 33
+A BLU- VIO ee Da
+| 0 BLU-GRY N52
+LEFT 30 BLK- BLU ae Di
+| FLIPPER 5 LEFT FLIPPER
+BUTTON / 0
+| | WHT-RED
+| PART OF CABINET — | * | UPPER UPPE
+as LEFT Ff RIGH
+FLIPPER /, FLIPF
+8L26 1 8DI52
+33 3P3 8P2 82 |
+BLU |
+FLIPPER B+ 4 2s )
+FROM POWER a

@@ -1,0 +1,495 @@
+—eee eee eee ee
+
+SP3
+
+“) 3JU3
+
+| POWER SUPPLY
+
+6} >
+
+RED
+
+SOL. B+
+
+GROUND
+
+[__
+
+>} 3 | >4-BEK
+
+See eee celts cee Cee
+
+2ull
+
+2Pll
+
+8P3
+
+8J3
+
+GRY-GRN SOL
+
+[p
+
+RIVER BOARD
+
+Q23
+
+>| 9
+
+Q2|
+
+>| 8
+
+GRY-YEL SOL
+
+QI9
+
+A
+
+7
+
+\
+
+v
+
+GRY-ORN SOL
+
+<-—- N/C
+
+|
+
+QI7
+
+>| 5
+
+GRY-RED SOL
+
+GRY-BRN_ SOL
+
+Qi5
+
+>| 4
+
+Q29
+
+GRY-BLK SOL
+
+>) 2
+
+GRY-VIO_ SOL. 7
+
+GRY-BLU SOL. 6
+
+=
+
+13
+
+| 2J9 + 2P9
+
+BRN-ORN SOL. II
+
+Q3
+
+—
+
+S
+
+\
+
+4
+
+BRN-RED SOL.IO
+
+I
+
+Q33
+
+Le
+
+QS!
+
+< 9 <n: BRN-BLK SOL. 9
+
+a
+
+8L9
+
+pr
+
+Q37
+
+P| 2 |>
+
+BRN-YEL SOL.I2
+
+5-BANK # I
+
+Q39
+
+4
+
+\i BRN-GRN_ SOL.I3
+
+(LEFT) DROP
+
+BRN-BLU SOL. I4
+
+TARGET
+
+¥.
+
+cap} 4 ya
+
+8DI37
+
+36
+
+os
+
+|
+
+8Li2
+
+5-BANK#4
+
+DROP
+
+|
+
+TARGET 8DI4t
+
+{12
+
+RESET
+
+ee
+
+IS
+
+aio
+
+| 2Ji2 2Pl2
+
+I4
+
+os +f 3 |> BLU-ORN SOL. I9
+
+IS
+
+5
+
+> BLU-YEL SOL.20
+
+20
+
+|
+
+\
+
+\
+
+BLU-BRN SOL. I7
+
+Q2
+
+4
+
+7
+
+\
+
+¢
+
+BLU-RED SOL.I8
+
+17
+
+Q4
+
+>| 4
+
+4
+
+18
+
+Qi2
+
+NS
+
+4
+
+9
+
+>
+
+BLU-BLK SOL. 22
+
+22
+
+1
+
+Qi
+
+0
+
+|
+
+Ss
+
+7
+
+8
+
+~
+
+BLU-GRN SOL. 2)
+
+2|
+
+[zr
+
+\.
+
+|
+
++>] 2
+
+4
+
+35
+
+ct
+
+>
+
+[
+
+Lscs
+
+|
+
+|
+
+=
+
++] 22
+
+7
+
+SRS
+
+\
+
+UPPE!
+
+8SW6E
+
+[00
+
+| 2JI3 =2PI3
+
+KICKE
+
+SOL. i9 SPEC. SW
+
+j
+
+ORN- BLK
+
+26
+
+L|
+
+SOL. 17 SPEC. SW
+
+5
+
+|
+
+ORN-BRN
+
+24
+
+i
+
+ORN-RED
+
+SOL. 18 SPEC. SW
+
+ORN-YEL
+
+25
+
+SOL. 20 SPEC. SW
+
+ORN-GRN
+
+27
+
+€+——- N/C
+
+SOL. 21 SPEC. SW
+
+28
+
+€;>-—— N/C
+
+SOL. 22 SPEC. SW
+
+ORN-BLU
+
+29
+
+€;—N/C
+
+++
+
+=
+
+Ee eee, eee ee eee
+
+RIGHT
+
+ful re | RIGHT
+
+I
+
+\
+
+7
+
+y
+
+7
+
+FLIPPER
+
+BUTTON
+
+ea.)
+
+S
+
+4
+
+3i
+
+f-
+
+BLK-YEL
+
+33
+
+>
+
+\
+
+BLU- VIO
+
+7
+
+\S
+
+8
+
+\
+
+4
+
+BLU-GRY
+
+34
+
+7
+
+10
+
+4
+
+32
+
+LEFT
+
+4
+
+S
+
+30
+
+\
+
+7
+
+BLK- BLU
+
+3
+
+sect
+
+\
+
+LEFT FLIPPER
+
+BUTTON
+
+/ I
+
+4
+
+WHT-RED
+
+lc
+
+nar OF CABINET
+
+a ee
+
+SS
+
+UPPER
+
+UPPE
+
+LEFT
+
+RIGH
+
+FLIPPER
+
+FLIPF
+
+8L26
+
+8DI52
+
+3JU3
+
+SP3
+
+8P2
+
+8J2
+
+S
+
+~
+
+BLU
+
+FLIPPER B+
+
+7
+
+4
+
+FROM POWER
+
+=. =_ a.
+
+f
+
+~_
+
+Kz

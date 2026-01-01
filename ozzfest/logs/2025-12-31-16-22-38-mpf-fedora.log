@@ -1,0 +1,37 @@
+2025-12-31 16:22:38,387 : INFO : root : Loading config.
+2025-12-31 16:22:38,389 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2025-12-31 16:22:38,390 : INFO : ConfigProcessor : Loading config from cache: /tmp/5527cdf0eba21cb5b62cdbf1412f48ab.mpf_cache
+2025-12-31 16:22:38,424 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2025-12-31 16:22:38,424 : INFO : ConfigProcessor : Loading config from cache: /tmp/f57f0537fdc7805225abf9c1a1ee119c.mpf_cache
+2025-12-31 16:22:38,424 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2025-12-31 16:22:38,424 : INFO : ConfigProcessor : Loading config from cache: /tmp/ac54eaf53dec484b1f36e96223ff75e9.mpf_cache
+2025-12-31 16:22:38,425 : INFO : Machine : Mission Pinball Framework Core Engine v0.80.0.dev11
+2025-12-31 16:22:38,425 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'platform_integration_test': False, 'jsonlogging': False, 'logfile': 'logs/2025-12-31-16-22-38-mpf-fedora.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': 'smart_virtual', 'syslog_address': None, 'full_logfile_path': '/home/hotsoup/repos/pinball-soup/ozzfest/logs/2025-12-31-16-22-38-mpf-fedora.log'}
+2025-12-31 16:22:38,425 : INFO : Machine : MPF path: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf
+2025-12-31 16:22:38,425 : INFO : Machine : Machine path: /home/hotsoup/repos/pinball-soup/ozzfest
+2025-12-31 16:22:38,425 : INFO : Machine : Platform: linux
+2025-12-31 16:22:38,425 : INFO : Machine : Python executable location: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/bin/python
+2025-12-31 16:22:38,425 : INFO : Machine : Python version: 3.12.8 (64-bit)
+2025-12-31 16:22:38,425 : INFO : Machine : Initializing MPF...
+2025-12-31 16:22:38,462 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,470 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,470 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev11', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,470 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev11, Config version:6, Show version: 6, BCP version:1.1', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,471 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.12.8', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,473 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-6.17.12-300.fc43.x86_64-x86_64-with-glibc2.42', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,473 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,473 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '6.17.12-300.fc43.x86_64', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,473 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#1 SMP PREEMPT_DYNAMIC Sat Dec 13 05:06:24 UTC 2025', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,473 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,473 : INFO : EventManager : Event: ======'machine_var_log_file_path'====== Args={'value': '/home/hotsoup/repos/pinball-soup/ozzfest/logs/2025-12-31-16-22-38-mpf-fedora.log', 'prev_value': None, 'change': True}
+2025-12-31 16:22:38,473 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2025-12-31 16:22:38,499 : INFO : EventManager : Event: ======'init_phase_2'====== Args={}
+2025-12-31 16:22:38,499 : INFO : SwitchController : Found active switch: ('9', <Platform.SmartVirtual>) <switch.s_right_ball_trough>
+2025-12-31 16:22:38,499 : INFO : SwitchController : Found active switch: ('10', <Platform.SmartVirtual>) <switch.s_left_ball_trough>
+2025-12-31 16:22:38,501 : INFO : EventManager : Event: ======'bcp_connection_attempt'====== Args={'name': 'local_display', 'host': 'localhost', 'port': 5050}
+2025-12-31 16:22:38,502 : INFO : BCPClientSocket : Connecting BCP to 'local_display' at localhost:5050...
+2025-12-31 16:22:48,620 : INFO : Machine : Starting the main run loop with active modes: []
+2025-12-31 16:22:48,620 : WARNING : Machine : Attract mode is not active, game will not be playable. Please check your attract mode configuration.
+2025-12-31 16:22:48,620 : INFO : Machine : Shutting down...
+2025-12-31 16:22:48,620 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2025-12-31 16:22:49,621 : INFO : root : MPF run loop ended.

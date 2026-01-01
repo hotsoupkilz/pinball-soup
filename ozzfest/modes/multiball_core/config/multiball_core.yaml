@@ -1,0 +1,13 @@
+#config_version=6
+
+mode:
+  start_events: multiball_core_start
+  stop_events: multiball_core_stop
+  priority: 150
+
+multiballs:
+  jungle_multiball:
+    ball_count: 3
+    start_events: multiball_jungle_start
+    shoot_again: 8s
+    ball_locks: []

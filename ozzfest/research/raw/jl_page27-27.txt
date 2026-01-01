@@ -1,0 +1,86 @@
+-— 7s PB
+| POWER SUPPLY 1 [5] ¢[>]-ReD___soL. B+
+L rb] 3 > BLK GROUND
+2ull zPI! BP3 83 8P6 86
+ee se ey : PS a
+[DRIVER BOARD ges [5] o [>| 9RY-GRN sou. 8 «| sl <j21 {4
+a2! >| 8 | >-2e conn so 3 {| 4 |< 20\<
+aig >| 7 | >-eav-neD Sole <|3 |< N/C
+Qi ?| >|? ery-BRN SOL” | <} 2 1¢ <|'8 16
+| Qi5 >| 4 | > Gecptk sore <}if< <|17}<
+Q29 | : <|@ |<
+| 027 Ke 2 | GRY-VIO_SOL. 7 »; ° é
+| 028 | S| 3 |S | -GRY-BLU sou. 6
+= =
+| 2u9 2P9
+_ TI
+5 ! BRN-ORN SOL. II
+| os Ke $[[BRN-RED_SOL.10 Tel iple
+\| BRN-BLK SOL. 9 > 8L4 A 8L5
+031 ?| 9 | peN-YEL_SOL.l2 9)< i 8L9. —? BLIO 8LII 8LT —* sie — EFT Seat
+| Q37 >| 2 | +-SRN-GRN SOL 13 5-BANK 4# | 5- BANK#2 5-BANK#3 LOWER UPPER 8LI BALL DROP DROP
+Q39 >| 3 |>-BeNcBLU SOL (LEFT) DROP DROP DROP EJECT EJECT BALL RAMP TARGET TARGET
+| Q4! >| 4 | > 2 ¥v TARGET ¥v TARGET W TARGET HOLE L 4 HOLE v RELEASE THROWER h 4 3-BANK 5 3-BANK
+eee 8D137 RESET gni3g RESET gni39 RESET gpi35 8DI36| D129} 8D130 8DI32 RESET 80133 RESET
+| | L+t< | 36] < <| |< +
+BLI2 8LI5 Lig 8L20
+4 5-BANK#4 —L BANK#5 1  35-BANK# UPPER MINI- 8dIS4 SLG_ _SDIAS|, = SLIT SDI4g SLis
+| a 7 5 x DROP KICKER y tan % 3 3Bvzzer LEFT a RIGHT
+8D140 TARGET 8DI41 DROP 8DI46 TARGET 8DI47 DI48 KICKER KICKER KICKER
+| <|12}< RESET TARGET RELEASE
+| <1 13 |< RESET
+| 2ui2 aPi2 eliale ere
+a6 | Sls n BLU-ORN SOL. 19 <lis le 100
+| as | >| 5 |>{BLU-YEL SOL.20 <leol<
+L Zz "4 Zz
+| > || BLU-BRN SOL. 17 <]) 81S < 221 <
+oa 1 15] 4 |5{_BLURED SOL.I8 elie le <}11 6
+| gi2——! 15] 9 |5{-BLU-BLK SOL. 22 <loole <lisl<
+fa 5 < | BLU-GRN SOL. 21 eloile eliele
+| | —1>| 2 |> + |35 |< - <|14]<
+eee | >| 1 |> L 8c3 sci | sce 8L2I 8L22
+| = +] 22 8SW67 224] 22 |+ LEFT RIGHT
+. yan & 8R3 UPPER , 8S W65 3 8SWE66 MAGNET MAGNET
+1 |,] > [,|_oRN-BLk 100 KICKER 1007 KICKER v
+SOL. 19 SPEC. SW >| 2 )> ORN-BRN 26\< * 8DI49 8DI50
+SOL. 17 SPEC. SW—{—1>| 5 | >So -ec 24/€ <} 1ol< .
+SOL. 18 SPEC. SW-—+—7> | 3 | GEE < |25 |< <j ue .
+| SOL. 20 SPEC. SW >| 4 |>1-GenccRn < |27 | <+—- n/c
+SOL. 21 SPEC. wt 8 |> < |28 | <+— N/c = BR? ; RS
+| SOL. 22 SPEC. SW >| 9 | >-ORN-BLU < |29|<€+—-N/c t 3w 1 3w
+Ld
+ro ——— es eee
+| 7Jl 7PI
+RIGHT
+RIGHT C1 fy] FLIPPER
+| Ferg 7|> BLK-YEL
+BUTTON o— >| 3t|> SLU-vIO < |33}<
+>| 8|> BLU-GRY <134]< I3 |<
+>1101> BLK-ELU <{32|< <|12/<€
+LEFT +> | 30} > <}31}< Ht
+FLIPPER sto |\, | LEFT FLIPPER
+BUTTON i i | 7} 9 | >r-F Y} Ly
+| | WHT- RED 8P7 | 8u7
+JL ‘ Nv J
+ART OF CABI ~ BOTTOM 8L2I BOTTOM
+[PART « CABINET en _ UPPER UPPER LEFT RIGHT | 8L22
+FLipper /, —4 vy FLIPPER y FLIPPER oe FLIPPER / oes
+—
+BL26 “| SDI52 8L27 | 8DIss 8P5 85 T ee4 8D152 8DI53
+4 pm , ¥ st29 { yY sl2s
+BRN aile LEFT 8L25 RIGHT
+<jely< TI MAGNET MAGNET
+ORN <loole
+3J3  3P3 8P2 82 <
+sla fy BLU Clos le clos le oe
+FLIPPER B+ 4 23)¢ 23 |< ryan
+FROM POWER ert
+SUPPLY GRY
+>| 5 |> <|24|< € ono
+> < rs ]?4 1S] BA
+
+Playfield Solenoid Wiring Diagram
+
+503
+
+25

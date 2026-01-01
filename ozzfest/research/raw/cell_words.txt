@@ -1,0 +1,61 @@
+R1C1: 1 - Again(B gain(Backbox) Shoots Player
+R1C2: Lamp Magnet #2
+R1C3: Target
+R1C4: 3-Bank
+R1C5: Arrow (L #1 eft)
+R1C6: Magnet #3
+R1C7: Bonus
+R1C8: Bonus
+R2C1: 2 Play Ball in
+R2C2: Lamp Magnet Right #3
+R2C3: Target #2 #3
+R2C4: Scoring Keep 2x
+R2C5: 5-Bank o-Bank Arrow #2
+R2C6: Magnet weet Left #4
+R2C7: Bonus Bo, “2”
+R2C8: Bonus aa “10”
+R3C1: 3 Game ri ilt
+R3C2: Lamp Right Right agnet #4
+R3C3: 1 arget #4 i
+R3C4: (Playfiela) 5 Mini-field hootin
+R3C5: 5-Bank Arrow #
+R3C6: (Top) Extra agnet 45
+R3C7: onus “4”
+R3C8: “30" onus
+R4C1: 4 EL Over
+R4C2: Lamp Magnet (top) #5
+R4C3: Rollover not’
+R4C4: Special ake,
+R4C5: S-Bank Arrow #4
+R4C6: jLock When Kick Lit
+R4C7: Bonus
+R4C8: Bonus
+R5C1: 5 “ High atch
+R5C2: “L" :
+R5C3: ollover Left
+R5C4: Loop an
+R5C5: a Arrow Mini- #
+R5C6: Double- (x2) amps
+R5C7: “6”
+R5C8: ox
+R6C1: 6 Multi-Ball Score Date to
+R6C3: Shield Drain Right
+R6C4: Letter Spots Loop
+R6C5: Illumination Field Left
+R6C6: Mini-field Trouble Lamp
+R6C7: Bonus “7
+R6C8: 3X
+R7C1: 7 wid Timer Right
+R7C3: Mini-field Shield Drain
+R7C4: Mini-fietd X Spots Value
+R7C5: (Bottom) Magnet Left #1
+R7C6: illumination Mini-tield
+R7C7: Bonus “gr
+R7C8: 5X
+R8C1: 8 (Bottom) Lamp Magnet #1
+R8C3: Iiumination (x2)
+R8C4: Wlumnination
+R8C5: Magnet #2
+R8C6: Ilumination
+R8C7: Bonus
+R8C8: 10X

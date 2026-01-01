@@ -1,0 +1,15 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_will_end
+  priority: 110
+
+ball_saves:
+  ball_save_main:
+    active_time: 20s
+    hurry_up_time: 5s
+    grace_period: 2s
+    timer_start_events: ball_starting
+    auto_launch: false
+    balls_to_save: 1

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://740e3u2nsvdy"]
+
+[ext_resource type="Script" uid="uid://dceh40rj6e713" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_o4v0r"]
+
+[node name="Attract" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o4v0r")
+metadata/_custom_type_script = "uid://dceh40rj6e713"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1358.0
+offset_bottom = 759.0
+color = Color(0.811734, 0.578011, 0.434442, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+text = "testing"
+horizontal_alignment = 1

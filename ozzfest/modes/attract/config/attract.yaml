@@ -1,0 +1,15 @@
+#config_version=6
+
+mode:
+  start_events: reset_complete
+  stop_events: ball_starting, service_mode_entered
+  priority: 10
+
+slide_player:
+  mode_attract_started: attract
+
+show_player:
+  mode_attract_started:
+    attract_wave_sweep:
+      speed: 1
+      loops: -1

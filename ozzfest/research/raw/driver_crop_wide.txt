@@ -1,0 +1,20 @@
+7 8B
+| POWER SUPPLY 6 [>)RED___SOL. B+
+[_ 3 BLK GROUND
+——-— —_—_, 2Jl1  2PI 8P3  8u3 8PG6 86
+[ DRIVER BOARD GRY-GRN SOL. 5
+oor 3 | sLSRYYEL sou. 4 TT |S eps 2
+aig 5 |>[-GRY-RED soL.2 || I<} . ig
+| OIs a/opgryeRN sot TT ep ygpOO—O—OSOC“‘“‘“*SCOCOCOCOCOCOOCOCOCOCSCSS
+O29 i |Sigry-euk soe || If,
+| Oo? > |5{gry-vio_sor.7 || |e|s
+| Q 3 GRY-BLU SOL. 6
+| | 2J9 2P9
+Q3 i BRN-ORN SOL. It rT
+| ose + |S{-BRN-RED SOL.10 | [1 “[s] I
+Gs 2 |S [BRN-BLKsoL.9 | | | _1<|
+BRN-YEL SOL.I2 8L9. 8LIO 8Lil 8L7 8L8
+| Q37 2 BRN-GRN SOL.I3 §5-BANK #1 5-BANK#2 5-BANK#3 LOWER UPPER 8Ll
+Q39: 3 BRN-BLU SOL. 14 (LEFT) DROP DROP DROP EJECT EJECT BALL
+| Q4! 4 : TARGET TARGET TARGET HOLE HOLE RELEA
+BDI37 RESET gnizg RESET gnizg RESET ania gpise 8DI

@@ -1,0 +1,19 @@
+ull PI 8P3_8V3
+_ o [>] SRY-GRN_SOL. 5 5
+5 | >| GRY-YEL SOL. 4 Lt lel 4
+| 7|>{GRY-ORN SOL. 3 LI els N/C
+, 5 GRY-RED SOL. 2 || lie
+4 |>LGRY-BRN SOL. | Lt Lely
+| |>|-GRY-BLK SOL. 8 [| les
+> |$|_GRY-VIO_ SOL. 7 Li ls
+3 |>|GRY-BLU SOL. 6
+| 2u9 2P9
+| I BRN-ORN SOL. II I
+7 BRN-RED SOL.10 | | to
+9 |>5._BRN-BLK SOL. 9 Lit ls BL9 SLO
+. 2 |>4-BRN-YEL SOL. |2 5-BANK # | 5-BANK
+3 | 4-BRN-GRN SOL.I3 (LEFT) DROP DROP
+9 |>{_BRN-BLU_SOL.14 TARGET TARGET
+goi37]| PRESET gni3e RESET
+| 36 —
+e115 ‘ griz

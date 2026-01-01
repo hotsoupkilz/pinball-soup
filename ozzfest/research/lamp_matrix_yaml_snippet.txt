@@ -1,0 +1,192 @@
+  l_shoot_again_backbox:
+    number: 1
+    label: 'Shoot Again (Backbox)'
+  l_ball_in_play:
+    number: 2
+    label: 'Ball In Play'
+  l_tilt:
+    number: 3
+    label: 'Tilt'
+  l_game_over:
+    number: 4
+    label: 'Game Over'
+  l_match:
+    number: 5
+    label: 'Match'
+  l_high_score:
+    number: 6
+    label: 'High Score'
+  l_multiball_timer:
+    number: 7
+    label: 'Multi-Ball Timer'
+  l_right_magnet_1_bottom:
+    number: 8
+    label: 'Right Magnet Lamp #1 (Bottom)'
+  l_right_magnet_2:
+    number: 9
+    label: 'Right Magnet Lamp #2'
+  l_right_magnet_3:
+    number: 10
+    label: 'Right Magnet Lamp #3'
+  l_right_magnet_4:
+    number: 11
+    label: 'Right Magnet Lamp #4'
+  l_right_magnet_5_top:
+    number: 12
+    label: 'Right Magnet Lamp #5 (Top)'
+  l_letter_l:
+    number: 13
+    label: 'Letter L'
+  l_letter_o:
+    number: 14
+    label: 'Letter O'
+  l_letter_r:
+    number: 15
+    label: 'Letter R'
+  l_letter_d:
+    number: 16
+    label: 'Letter D'
+  l_target_1:
+    number: 17
+    label: 'Target 1'
+  l_target_2:
+    number: 18
+    label: 'Target 2'
+  l_target_3:
+    number: 19
+    label: 'Target 3'
+  l_rollover_4:
+    number: 20
+    label: 'Rollover 4'
+  l_rollover_5:
+    number: 21
+    label: 'Rollover 5'
+  l_left_drain_shield:
+    number: 22
+    label: 'Left Drain Shield'
+  l_right_drain_shield:
+    number: 23
+    label: 'Right Drain Shield'
+  l_minifield_illumination_24:
+    number: 24
+    label: 'Mini-field Illumination (2 lamps)'
+  l_right_threebank:
+    number: 25
+    label: 'Right 3-Bank'
+  l_scoring_2x:
+    number: 26
+    label: '2X Scoring'
+  l_keep_shooting_playfield:
+    number: 27
+    label: 'Keep Shooting (Playfield)'
+  l_minifield_special:
+    number: 28
+    label: 'Mini-field Special'
+  l_left_threebank:
+    number: 29
+    label: 'Left 3-Bank'
+  l_loop_spots_letter:
+    number: 30
+    label: 'Loop Spots Letter'
+  l_loop_spots_x_value:
+    number: 31
+    label: 'Loop Spots X-Value'
+  l_minifield_illumination_32:
+    number: 32
+    label: 'Mini-field Illumination'
+  l_fivebank_arrow_1_left:
+    number: 33
+    label: '5-Bank #1 Arrow (Left)'
+  l_fivebank_arrow_2:
+    number: 34
+    label: '5-Bank #2 Arrow'
+  l_fivebank_arrow_3:
+    number: 35
+    label: '5-Bank #3 Arrow'
+  l_fivebank_arrow_4:
+    number: 36
+    label: '5-Bank #4 Arrow'
+  l_fivebank_arrow_5_right:
+    number: 37
+    label: '5-Bank #5 Arrow (Right)'
+  l_minifield_illumination_38:
+    number: 38
+    label: 'Mini-field Illumination'
+  l_left_magnet_1_bottom:
+    number: 39
+    label: 'Left Magnet Lamp #1 (Bottom)'
+  l_left_magnet_2:
+    number: 40
+    label: 'Left Magnet Lamp #2'
+  l_left_magnet_3:
+    number: 41
+    label: 'Left Magnet Lamp #3'
+  l_left_magnet_4:
+    number: 42
+    label: 'Left Magnet Lamp #4'
+  l_left_magnet_5_top:
+    number: 43
+    label: 'Left Magnet Lamp #5 (Top)'
+  l_extra_kick_when_lit:
+    number: 44
+    label: 'Extra Kick When Lit'
+  l_lock_lamps_pair:
+    number: 45
+    label: 'Lock Lamps (2 lamps)'
+  l_double_trouble:
+    number: 46
+    label: 'Double-Trouble'
+  l_minifield_illumination_47:
+    number: 47
+    label: 'Mini-field Illumination'
+  l_minifield_illumination_48:
+    number: 48
+    label: 'Mini-field Illumination'
+  l_bonus_1:
+    number: 49
+    label: '"1" Bonus'
+  l_bonus_2:
+    number: 50
+    label: '"2" Bonus'
+  l_bonus_3:
+    number: 51
+    label: '"3" Bonus'
+  l_bonus_4:
+    number: 52
+    label: '"4" Bonus'
+  l_bonus_5:
+    number: 53
+    label: '"5" Bonus'
+  l_bonus_6:
+    number: 54
+    label: '"6" Bonus'
+  l_bonus_7:
+    number: 55
+    label: '"7" Bonus'
+  l_bonus_8:
+    number: 56
+    label: '"8" Bonus'
+  l_bonus_9:
+    number: 57
+    label: '"9" Bonus'
+  l_bonus_10:
+    number: 58
+    label: '"10" Bonus'
+  l_bonus_20:
+    number: 59
+    label: '"20" Bonus'
+  l_bonus_30:
+    number: 60
+    label: '"30" Bonus'
+  l_bonus_multiplier_2x:
+    number: 61
+    label: 'Bonus Multiplier 2X'
+  l_bonus_multiplier_3x:
+    number: 62
+    label: 'Bonus Multiplier 3X'
+  l_bonus_multiplier_5x:
+    number: 63
+    label: 'Bonus Multiplier 5X'
+  l_bonus_multiplier_10x:
+    number: 64
+    label: 'Bonus Multiplier 10X'

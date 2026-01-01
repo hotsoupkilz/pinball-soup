@@ -1,0 +1,11 @@
+row_tops {1: 762, 2: 602, 3: 769, 4: 944, 5: 1112, 6: 1279, 7: 1446, 8: 1613}
+sorted_rows [(1, 762), (2, 602), (3, 769), (4, 944), (5, 1112), (6, 1279), (7, 1446), (8, 1613)]
+row_bounds {1: (702, 682.0), 2: (682.0, 685.5), 3: (685.5, 856.5), 4: (856.5, 1028.0), 5: (1028.0, 1195.5), 6: (1195.5, 1362.5), 7: (1362.5, 1529.5), 8: (1529.5, 1673)}
+1 ['', '', '', '', '', '', '', '']
+2 ['', '', '', '', '', '', '', '']
+3 ['2J7-3 RED- ri ilt', 'Lamp Right agnet #4', 'arget #3 i', '(Playfiela) hootin Keep', 'o-Bank Arrow #', 'weet (Top) agnet 45', 'Bo, onus', 'aa onus']
+4 ['2J7-4 RED- EL Game Over', 'Lamp Magnet Right (top) #5', 'Rollover #4', 'Mini-field Special', '5-Bank Arrow #4', 'When Extra Kick Lit', 'Bonus 4', 'Bonus 30']
+5 ['2J7-5 RED-  atch', 'L :', 'not’ ollover', 'ake, an', 'S-Bank a Arrow #', 'jLock (x2) amps', '', 'ox']
+6 ['2J7-6 RED- Score High Date to', '', 'Shield Drain Left', 'Letter Spots Loop', 'Illumination Mini- Field', 'Double- Trouble Lamp', 'Bonus 6', '3X']
+7 ['2J57-9 RED- wid Multi-Ball Timer', '', 'Shield Drain Right', 'X Spots Loop Value', '(Bottom) Magnet Left #1', 'illumination Mini-field', 'Bonus 7', '5X']
+8 ['2J7-8 RED- (Bottom) Lamp Magnet Right #1', '', 'Iiumination Mini-field (x2)', 'Wlumnination Mini-fietd', 'Magnet Left #2', 'Ilumination Mini-tield', 'Bonus gr', '10X']

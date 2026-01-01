@@ -1,0 +1,21 @@
+-— 7s PB
+| POWER SUPPLY 6 [> RED __SOL. B+
+L 3 BLK GROUND
+——-—_ —__ —_, 2uI1  2PH 8P3_8u3
+[ DRIVER BOARD GRY-GRN SOL. 5
+oor 8 {SL GRY-YEL soL.4 11 [e|2
+| o19 7s GRY-ORN SOL.3 TT Tel we
+Qi7 5|>[-GRY-ReD soL.2 [TT 5
+| Qis 4|>_SRY-BRN SOL.1
+Q29 1 |>{-GRY-BLK soL.8 | | Vg
+| 027 2 |>ry-vio sou. 7 | [ey 2
+| G 3 GRY-BLU SOL. 6
+| | 2u9 2P9
+Qs: | BRN-ORN SOL. II i
+| @33 7 |S LBRNERED SOL.10 TT TTe| i
+Osi § |S-BRN-BLK-soL.9 | | | _[<|'©
+BRN-YEL SOL.I2 8L9. 8LIO 8Lil 8L
+| Q37: 2 SAN-OAN SOL IS 5-BANK # I 5-BANK#2 5-BANK#3 L¢
+Q39 3 : (LEFT) DROP DROP DROP Ec
+| O41 3 BRN-BLU SOL. I4 TARGET TARGET TARGET HC
+BDI37 RESET gnizg RESET gnizg RESET anize

@@ -1,0 +1,6 @@
+2025-12-29 21:49:34,079 : INFO : root : Loading config.
+2025-12-29 21:49:34,081 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2025-12-29 21:49:34,081 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml.
+2025-12-29 21:49:34,093 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml
+2025-12-29 21:49:34,093 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml.
+2025-12-29 21:49:34,100 : INFO : ConfigProcessor : Loading config: /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml

@@ -1,0 +1,70 @@
+O83 PB
+| POWER SUPPLY 1 [5] [>] Reo SOL. B+
++15! 3/5] 8k  _ GRouND
+LT
+eee || er 8P3 83
+—
+[ DRIVER BOARD  go3 ] >| 9 }>{SRY-GRN SOL. 5 «| sie
+“T GRY-YEL SOL. 4 yap
+Q2| >| 8|> TEL. 4\<
+QiI9—4+—_15| 7 | >1-GRY-ORN SOL. 3 <|3|<¢—- wre
+gi7—_}—_15| 5 |S -GRY-RED SOL. 2 elo le
+GRY-BRN SOL. | >
+ozo _[5| | |S L-gry¥-BLk soi. 8 y 3 g _
+| | Q27 S| 2 |S |_eRy-vio_ SOL. 7 <l7le
+| 025 | S| 3 |5{-GRY-BLU SOL. 6
+| | 2J9 2P9
+5 | BRN-ORN SOL. II ;
+| os -?| | | >7~BRN-RED SOL_10 Thiple
+pi 5 9 |S_BRN-BLK SOL. 9 tl 9 le —eL9. _
+| Q37 K : >-BRN-YEL _SOL.I2___ 5-BANK # |
+Q39 > BRN-GRN SOL. 1S (LEFT) DROP
+7| BRN-BLU SOL. I4 : TARGET
+l 8DI37 ET gpi3e
+| | <|36/< + — +
+B8LI2
+| | 5-BANK#4
+| tod yd DROP A
+8D140 TARGET 8DI4h
+| Klt2}< RESET {
+| <113 |< ~
+| 2ui2  2Pl2 tliale
+‘N NX
+a8 mn 3 |> ST ULYEL SOL I9 < 119 }<
+| | 5 | >, BLU-YEL SOL.20 < l20] €
+/ f
+| Q2 5] 7 | >{-BLU-BRN SOL. 17 , . 2
+04 K a S BLU-RED SOL.I8 é\i8 2
+| Qi2 >} 9 | >{ BLU-BLK SOL. 22 <\e2l<
+| >| 2 | > +X {35 j< T
+i — | >] I 8C3
+baie ‘Tees )\\ gems
+| _—— | 2N13  2PI3 100 [| KICKE
+SOL. 19 SPEC. SW——+—7>| 2 | 7-8 Ee 26|<
+| SOL. 17 SPEC. SW—}—}>| 5 | >7o oe 24l€
+SOL. 18 SPEC. SW >| 3 | > eNcveL ¢j25/<
+| SOL. 20 SPEC. SW——}> | 4 | >)—Gen-cRn < 127 |<+—- nv
+SOL. 21 SPEC. SW >| 8) >So < |28|<+—N/c
+| SOL. 22 SPEC. sw 9 | 4 ORN-BLU < |29|<+—-nc
+7Jl  7PI | RIGHT
+RIGHT nN , FLIPPER
+I 7 {> BLK-YEL
+BUTTON >131|> . : <133\<
+. < BLU-GRY 3 >
+>110/> <132|<
+LEFT 5130} > BLK~ BLU , 131 /€
+cee =A sto |5_ | LEFT FLIPPER
+BUTTON > I |
+| WHT- RED
+| ob
+PART =
+vamorcaomer weer [tT PPE
+LEFT RIGH
+FLIPPER FLIPF
+BL26 | 8DI52
+3U3 3P3 8P2 82 —
+
+BLU ;
+FLIPPER B+ >| 4 231¢€
+FROM POWER | a |
+

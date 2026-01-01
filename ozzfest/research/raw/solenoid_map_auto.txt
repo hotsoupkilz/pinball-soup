@@ -1,0 +1,18 @@
+SOL  1: Q=Q15  col=?   color=GRY-BRN | | OI 4 |>GRY-BRN_ SOL. | LT te
+SOL  2: Q=Q17  col=5   color=GRY-RED | QI7 5 |$|_GRY-RED SOL. 2 [| els | ,
+SOL  4: Q=Q21  col=?   color=GRY-YEL | Oo) s GRY-YEL. SOL. 4 | :
+SOL  5: Q=Q23  col=?   color=GRY-GRN | [ DRIVER BOARD GRY-GRN_ SOL. 5 |
+SOL  6: Q=Q25  col=?   color=GRY-BLU | GRY-BLU SOL. 6
+SOL  7: Q=Q27  col=?   color=GRY-VIO | | : 027 > GRY-VIO SOL. 7 Lt lls
+SOL  8: Q=Q29  col=?   color=GRY-BLK | GRY-BLK SOL. 8 Sibi
+SOL  9: Q=Q31  col=9   color=BRN-BLK | Q31 9 BRN-BLK SOL. 9 |] ft 9
+SOL 10: Q=Q33  col=7   color=BRN-RED | Q33 7 BRN-RED SOL.IO | | iD
+SOL 11: Q=Q35  col=?   color=BRN-ORN | os | BRN-ORN SOL. II r 7
+SOL 12: Q=Q37  col=2   color=+-BRN-VEL | | Q37 2 | >+-BRN-VEL SOL.12 5-BANK # | 5-BANK#2 | | 5-BANK#3 LOWER
+SOL 14: Q=Q41  col=4   color=BRN-BLU | | Q4I 4 BRN-BLU SOL.I4 TARGET TARGET TARGET HOLE |
+SOL 17: Q=Q47  col=?   color=BLU-BRN | | 02 7 BLU-BRN SOL. I7 na - ]
+SOL 18: Q=Q49  col=?   color=None | SOL. 18 SPEC. SW 3 ORN- RED a a
+SOL 19: Q=Q51  col=?   color=BLU-ORN | 06 3 BLU-ORN SOL. 19 ft lie a
+SOL 20: Q=Q53  col=?   color=None | | SOL. 20 SPEC. SW *|7TorN-GRN. Lid AE N7e
+SOL 21: Q=Q55  col=?   color=BLU-GRN | GT 71 ato 3 BLU-GRN SOL. 21 DA Py
+SOL 22: Q=Q57  col=?   color=None | | SOL. 22 SPEC. SW 9 RN-BL. 29 N/C

@@ -1,0 +1,12 @@
+2025-12-31 14:28:59,987 : INFO : root : Loading config.
+2025-12-31 14:28:59,988 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2025-12-31 14:28:59,989 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml.
+2025-12-31 14:28:59,994 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml
+2025-12-31 14:28:59,995 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml.
+2025-12-31 14:29:00,001 : INFO : ConfigProcessor : Loading config: /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml
+2025-12-31 14:29:00,002 : INFO : ConfigProcessor : Config file cache created: /tmp/5527cdf0eba21cb5b62cdbf1412f48ab.mpf_cache
+2025-12-31 14:29:00,022 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/modes/attract/config/attract.yaml.
+2025-12-31 14:29:00,022 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/modes/attract/config/attract.yaml
+2025-12-31 14:29:00,023 : INFO : ConfigProcessor : Config file cache created: /tmp/a880b27c5798e8d813d78fb92a1ffdaa.mpf_cache
+2025-12-31 14:29:00,023 : INFO : ConfigProcessor : Loading config from cache: /tmp/f57f0537fdc7805225abf9c1a1ee119c.mpf_cache
+2025-12-31 14:29:00,023 : INFO : ConfigProcessor : Loading config from cache: /tmp/a880b27c5798e8d813d78fb92a1ffdaa.mpf_cache
