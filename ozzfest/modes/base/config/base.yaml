@@ -12,6 +12,60 @@ timers:
     control_events:
       - event: start_bagatelle
         action: restart
+  left_threebank_timer:
+    start_value: 10
+    end_value: 0
+    direction: down
+    control_events:
+      - event: s_left_threebank_lower_active
+        action: restart
+      - event: s_left_threebank_center_active
+        action: restart
+      - event: s_left_threebank_upper_active
+        action: restart
+      - event: drop_target_bank_left_threebank_down
+        action: stop
+  right_threebank_timer:
+    start_value: 10
+    end_value: 0
+    direction: down
+    control_events:
+      - event: s_right_threebank_lower_active
+        action: restart
+      - event: s_right_threebank_center_active
+        action: restart
+      - event: s_right_threebank_upper_active
+        action: restart
+      - event: drop_target_bank_right_threebank_down
+        action: stop
+  band_hurryup_timer:
+    start_value: 10
+    end_value: 0
+    direction: down
+    control_events:
+      - event: band_hurryup_start
+        action: restart
+
+shot_profiles:
+  lord_letter_profile:
+    advance_on_hit: true
+    states:
+      - name: unlit
+      - name: lit
+
+shots:
+  lord_l:
+    switch: s_rollover_l
+    profile: lord_letter_profile
+  lord_o:
+    switch: s_rollover_o
+    profile: lord_letter_profile
+  lord_r:
+    switch: s_rollover_r
+    profile: lord_letter_profile
+  lord_d:
+    switch: s_rollover_d
+    profile: lord_letter_profile
 
 sequence_shots:
   drain_shield_combo:
@@ -19,6 +73,37 @@ sequence_shots:
     sequence_timeout: 1
 
 variable_player:
+  mode_base_started:
+    bagatelle_active:
+      action: set
+      int: 0
+  start_bagatelle:
+    bagatelle_active:
+      action: set
+      int: 1
+    bagatelle_ball_locked:
+      action: set
+      int: 1
+  s_lower_ball_popper_active:
+    bagatelle_source_popper:
+      action: set
+      string: lower
+    score: 1500
+  s_upper_ball_popper_active:
+    bagatelle_source_popper:
+      action: set
+      string: upper
+    score: 1500
+  bagatelle_window_close:
+    bagatelle_active:
+      action: set
+      int: 0
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+    bagatelle_source_popper:
+      action: set
+      string: none
   s_left_slingshot_active:
     score: 250
   s_right_slingshot_active:
@@ -27,14 +112,42 @@ variable_player:
     score: 500
   s_right_standup_active:
     score: 500
-  s_rollover_l_active:
+  s_rollover_l_active{current_player.bagatelle_active == 1 and current_player.bagatelle_ball_locked == 1}:
     score: 750
-  s_rollover_o_active:
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+  s_rollover_o_active{current_player.bagatelle_active == 1 and current_player.bagatelle_ball_locked == 1}:
     score: 750
-  s_rollover_r_active:
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+  s_rollover_r_active{current_player.bagatelle_active == 1 and current_player.bagatelle_ball_locked == 1}:
     score: 750
-  s_rollover_d_active:
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+  s_rollover_d_active{current_player.bagatelle_active == 1 and current_player.bagatelle_ball_locked == 1}:
     score: 750
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+  shot_lord_l_lit:
+    score: 2500
+    bonus_lord_letters: 1
+    lord_letters_lit: 1
+  shot_lord_o_lit:
+    score: 2500
+    bonus_lord_letters: 1
+    lord_letters_lit: 1
+  shot_lord_r_lit:
+    score: 2500
+    bonus_lord_letters: 1
+    lord_letters_lit: 1
+  shot_lord_d_lit:
+    score: 2500
+    bonus_lord_letters: 1
+    lord_letters_lit: 1
   s_one_target_active:
     score: 500
   s_two_target_active:
@@ -45,50 +158,57 @@ variable_player:
     score: 500
   s_rollover_5_active:
     score: 500
-  s_upper_eject_hole_active:
-    score: 1500
-  s_lower_eject_hole_active:
-    score: 1500
   s_turnaround_lower_rollover_active:
     score: 2000
+    bonus_loops: 1
   s_turnaround_upper_rollover_active:
     score: 2000
+    bonus_loops: 1
   s_right_threebank_lower_active:
     score: 750
     magnet_save_right_tokens: 1
     magnet_save_right_tokens_max_value: 5
+    bonus_targets: 1
   s_right_threebank_center_active:
     score: 750
     magnet_save_right_tokens: 1
     magnet_save_right_tokens_max_value: 5
+    bonus_targets: 1
   s_right_threebank_upper_active:
     score: 750
     magnet_save_right_tokens: 1
     magnet_save_right_tokens_max_value: 5
+    bonus_targets: 1
   s_left_threebank_lower_active:
     score: 750
     magnet_save_left_tokens: 1
     magnet_save_left_tokens_max_value: 5
+    bonus_targets: 1
   s_left_threebank_center_active:
     score: 750
     magnet_save_left_tokens: 1
     magnet_save_left_tokens_max_value: 5
+    bonus_targets: 1
   s_left_threebank_upper_active:
     score: 750
     magnet_save_left_tokens: 1
     magnet_save_left_tokens_max_value: 5
+    bonus_targets: 1
   drop_target_bank_right_threebank_down:
     score: 5000
     bonus_multiplier: 1
     bonus_multiplier_max_value: 10
+    bonus_targets: 3
   drop_target_bank_left_threebank_down:
     score: 5000
     bonus_multiplier: 1
     bonus_multiplier_max_value: 10
+    bonus_targets: 3
   drop_target_bank_fivebank_inline_down:
     score: 10000
     bonus_multiplier: 1
     bonus_multiplier_max_value: 10
+    bonus_targets: 5
   drain_shield_combo_complete:
     drain_shield_left_active: 1
     drain_shield_right_active: 1
@@ -102,13 +222,422 @@ variable_player:
     score: 5000
   timer_bagatelle_timer_complete:
     score: 10000
+  reset_lord_letters:
+    lord_letters_lit:
+      action: set
+      int: 0
+    lord_letters_complete:
+      action: set
+      int: 0
+  s_fivebank_drop_left_active:
+    score: 500
+    bonus_targets: 1
+  s_fivebank_drop_left_mid_active:
+    score: 500
+    bonus_targets: 1
+  s_fivebank_drop_center_active:
+    score: 500
+    bonus_targets: 1
+  s_fivebank_drop_right_mid_active:
+    score: 500
+    bonus_targets: 1
+  s_fivebank_drop_right_active:
+    score: 500
+    bonus_targets: 1
+  lord_letters_complete:
+    lord_letters_complete:
+      action: set
+      int: 1
+  band_mode_completed:
+    bands_completed: 1
+    band_progress_index: 1
+    score:
+      int: (current_player.bands_completed * 10000 + 50000)
+  start_dio_mode:
+    band_current:
+      action: set
+      string: dio
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+    bagatelle_source_popper:
+      action: set
+      string: none
+  start_meatloaf_mode:
+    band_current:
+      action: set
+      string: meatloaf
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+    bagatelle_source_popper:
+      action: set
+      string: none
+  start_ozzy_mode:
+    band_current:
+      action: set
+      string: ozzy
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+    bagatelle_source_popper:
+      action: set
+      string: none
+  start_rob_zombie_mode:
+    band_current:
+      action: set
+      string: rob_zombie
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+    bagatelle_source_popper:
+      action: set
+      string: none
+  start_rivers_mode:
+    band_current:
+      action: set
+      string: rivers
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+    bagatelle_source_popper:
+      action: set
+      string: none
+  start_black_sabbath_mode:
+    band_current:
+      action: set
+      string: black_sabbath
+    bagatelle_ball_locked:
+      action: set
+      int: 0
+    bagatelle_source_popper:
+      action: set
+      string: none
+  bagatelle_all_letters_left:
+    score: 15000
+    magnet_save_left_tokens: 1
+    magnet_save_left_tokens_max_value: 5
+  bagatelle_all_letters_right:
+    score: 15000
+    magnet_save_right_tokens: 1
+    magnet_save_right_tokens_max_value: 5
+  band_clear_current:
+    band_current:
+      action: set
+      string: none
+  band_hurryup_start:
+    band_hurryup_active:
+      action: set
+      int: 1
+    band_hurryup_value:
+      action: set
+      int: 25000
+  timer_band_hurryup_timer_complete:
+    band_hurryup_active:
+      action: set
+      int: 0
+    band_hurryup_value:
+      action: set
+      int: 0
+  band_hurryup_collect:
+    score:
+      int: (current_player.band_hurryup_value)
+    band_hurryup_active:
+      action: set
+      int: 0
+    band_hurryup_value:
+      action: set
+      int: 0
 
 event_player:
-  s_lower_eject_hole_active: start_bagatelle
-  s_upper_eject_hole_active: start_bagatelle
-  sequence_shots_drain_shield_combo_hit: drain_shield_combo_complete
+  mode_base_started:
+    - reset_lord_letters
+    - band_progression_request
+  s_lower_ball_popper_active:
+    - start_bagatelle
+  s_upper_ball_popper_active:
+    - band_hurryup_collect{current_player.band_hurryup_active == 1}
+    - start_bagatelle{current_player.band_current != "none" and current_player.band_hurryup_active != 1}
+    - band_progression_request{current_player.band_current == "none" and current_player.band_hurryup_active != 1}
+  drop_target_bank_left_threebank_down:
+    - light_all_lord_letters
+  drop_target_bank_right_threebank_down:
+    - light_all_lord_letters
+  lord_letters_complete:
+    - band_mode_completed{current_player.band_current != "none"}
+  shot_lord_l_lit:
+    - lord_letters_complete{current_player.lord_letters_lit >= 4}
+  shot_lord_o_lit:
+    - lord_letters_complete{current_player.lord_letters_lit >= 4}
+  shot_lord_r_lit:
+    - lord_letters_complete{current_player.lord_letters_lit >= 4}
+  shot_lord_d_lit:
+    - lord_letters_complete{current_player.lord_letters_lit >= 4}
+  light_all_lord_letters:
+    - shot_lord_l_hit
+    - shot_lord_o_hit
+    - shot_lord_r_hit
+    - shot_lord_d_hit
+  band_mode_completed:
+    - band_hurryup_start
+    - reset_lord_letters
+    - band_clear_current
+    - band_progression_request{current_player.band_hurryup_active != 1}|100ms
+    - stop_dio_mode{current_player.band_current == "dio"}
+    - stop_meatloaf_mode{current_player.band_current == "meatloaf"}
+    - stop_ozzy_mode{current_player.band_current == "ozzy"}
+    - stop_rob_zombie_mode{current_player.band_current == "rob_zombie"}
+    - stop_rivers_mode{current_player.band_current == "rivers"}
+    - stop_black_sabbath_mode{current_player.band_current == "black_sabbath"}
+  band_progression_request:
+    - start_dio_mode{current_player.band_progress_index == 0 and current_player.band_current == "none"}
+    - start_meatloaf_mode{current_player.band_progress_index == 1 and current_player.band_current == "none"}
+    - start_ozzy_mode{current_player.band_progress_index == 2 and current_player.band_current == "none"}
+    - start_rob_zombie_mode{current_player.band_progress_index == 3 and current_player.band_current == "none"}
+    - start_rivers_mode{current_player.band_progress_index == 4 and current_player.band_current == "none"}
+    - start_black_sabbath_mode{current_player.band_progress_index >= 5 and current_player.band_current == "none"}
+  sequence_shots_drain_shield_combo_hit:
+    - drain_shield_combo_complete
+  start_bagatelle:
+    - bagatelle_window_close|12s
+  shot_lord_l_hit:
+    - bagatelle_all_letters_hit{current_player.bagatelle_active == 1 and current_player.lord_letters_complete == 1}
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  shot_lord_o_hit:
+    - bagatelle_all_letters_hit{current_player.bagatelle_active == 1 and current_player.lord_letters_complete == 1}
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  shot_lord_r_hit:
+    - bagatelle_all_letters_hit{current_player.bagatelle_active == 1 and current_player.lord_letters_complete == 1}
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  shot_lord_d_hit:
+    - bagatelle_all_letters_hit{current_player.bagatelle_active == 1 and current_player.lord_letters_complete == 1}
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  start_dio_mode:
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  start_meatloaf_mode:
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  start_ozzy_mode:
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  start_rob_zombie_mode:
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  start_rivers_mode:
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  start_black_sabbath_mode:
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  bagatelle_window_close:
+    - bd_upper_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "upper"}
+    - bd_lower_ball_popper_eject{current_player.bagatelle_active == 1 and current_player.bagatelle_source_popper == "lower"}
+  band_hurryup_collect:
+    - band_progression_request|100ms
+  timer_band_hurryup_timer_complete:
+    - band_progression_request|100ms
+
+random_event_player:
+  bagatelle_all_letters_hit:
+    events:
+      - bagatelle_all_letters_left
+      - bagatelle_all_letters_right
+
+slide_player:
+  mode_base_started:
+    main_hud:
+      action: play
+      priority: 50
+  mode_dio_started:
+    dio_intro:
+      action: play
+      priority: 200
+      expire: 3s
+  mode_meatloaf_started:
+    meatloaf_intro:
+      action: play
+      priority: 200
+      expire: 3s
+  mode_ozzy_started:
+    ozzy_intro:
+      action: play
+      priority: 200
+      expire: 3s
+  mode_rob_zombie_started:
+    rob_zombie_intro:
+      action: play
+      priority: 200
+      expire: 3s
+  mode_rivers_started:
+    rivers_intro:
+      action: play
+      priority: 200
+      expire: 3s
+  mode_black_sabbath_started:
+    black_sabbath_intro:
+      action: play
+      priority: 200
+      expire: 3s
+  band_hurryup_start:
+    band_hurryup:
+      action: play
+      priority: 210
+      expire: 10s
+
+slides:
+  main_hud:
+    background_color: "#0a0a0f"
+    widgets:
+      - type: text
+        text: "OZZFEST"
+        font: res://assets/fonts/imfellenglish/IMFeENrm28P.ttf
+        font_size: 64
+        color: "#d92b4f"  # crimson accent
+        anchor_x: left
+        anchor_y: top
+        x: 40
+        y: 32
+      - type: text
+        text: "SCORE: {current_player.score:,d}"
+        font: res://assets/fonts/imfellenglish/IMFeENrm28P.ttf
+        font_size: 54
+        color: "#e5e5e5"
+        anchor_x: left
+        anchor_y: top
+        x: 40
+        y: 120
+        update_on_change: current_player.score
+      - type: text
+        text: "BALL {current_player.ball}"
+        font: res://assets/fonts/imfellenglish/IMFeENrm28P.ttf
+        font_size: 36
+        color: "#c4b1ff"  # purple tint
+        anchor_x: left
+        anchor_y: top
+        x: 40
+        y: 190
+        update_on_change: current_player.ball
+      - type: text
+        text: "BAND: {current_player.band_current}"
+        font: res://assets/fonts/imfellenglish/IMFeENrm28P.ttf
+        font_size: 42
+        color: "#ffffff"
+        anchor_x: left
+        anchor_y: top
+        x: 40
+        y: 250
+        update_on_change: current_player.band_current
+      - type: text
+        text: "HURRY-UP: {current_player.band_hurryup_value}"
+        font: res://assets/fonts/imfellenglish/IMFeENrm28P.ttf
+        font_size: 36
+        color: "#9c27b0"
+        anchor_x: left
+        anchor_y: top
+        x: 40
+        y: 310
+        update_on_change: current_player.band_hurryup_value
+      - type: text
+        text: "BAGATELLE: {current_player.bagatelle_active}"
+        font: res://assets/fonts/imfellenglish/IMFeENrm28P.ttf
+        font_size: 32
+        color: "#e5e5e5"
+        anchor_x: left
+        anchor_y: top
+        x: 40
+        y: 360
+        update_on_change: current_player.bagatelle_active
+      - type: text
+        text: "BANDS CLEARED: {current_player.bands_completed}"
+        font: res://assets/fonts/imfellenglish/IMFeENrm28P.ttf
+        font_size: 32
+        color: "#d92b4f"
+        anchor_x: left
+        anchor_y: top
+        x: 40
+        y: 410
+        update_on_change: current_player.bands_completed
+  dio_intro:
+    widgets:
+      - type: text
+        text: "DIO START"
+        anchor_x: center
+        anchor_y: center
+  meatloaf_intro:
+    widgets:
+      - type: text
+        text: "MEATLOAF START"
+        anchor_x: center
+        anchor_y: center
+  ozzy_intro:
+    widgets:
+      - type: text
+        text: "OZZY START"
+        anchor_x: center
+        anchor_y: center
+  rob_zombie_intro:
+    widgets:
+      - type: text
+        text: "ROB ZOMBIE START"
+        anchor_x: center
+        anchor_y: center
+  rivers_intro:
+    widgets:
+      - type: text
+        text: "RIVERS START"
+        anchor_x: center
+        anchor_y: center
+  black_sabbath_intro:
+    widgets:
+      - type: text
+        text: "BLACK SABBATH START"
+        anchor_x: center
+        anchor_y: center
+  band_hurryup:
+    widgets:
+      - type: text
+        text: "HURRY-UP 25,000 AT UPPER POPPER"
+        anchor_x: center
+        anchor_y: center
+
+light_player:
+  reset_lord_letters:
+    l_letter_l: off
+    l_letter_o: off
+    l_letter_r: off
+    l_letter_d: off
+  shot_lord_l_unlit:
+    l_letter_l: off
+  shot_lord_o_unlit:
+    l_letter_o: off
+  shot_lord_r_unlit:
+    l_letter_r: off
+  shot_lord_d_unlit:
+    l_letter_d: off
+  shot_lord_l_lit:
+    l_letter_l: on
+  shot_lord_o_lit:
+    l_letter_o: on
+  shot_lord_r_lit:
+    l_letter_r: on
+  shot_lord_d_lit:
+    l_letter_d: on
+  light_all_lord_letters:
+    l_letter_l: on
+    l_letter_o: on
+    l_letter_r: on
+    l_letter_d: on
 
 coil_player:
   timer_bagatelle_timer_complete:
     c_miniball_kicker: pulse
+  timer_left_threebank_timer_complete:
+    c_left_threebank_reset: pulse
+  timer_right_threebank_timer_complete:
+    c_right_threebank_reset: pulse
 

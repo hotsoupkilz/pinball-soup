@@ -1,0 +1,13 @@
+2026-01-02 09:21:03,192 : INFO : root : Loading config.
+2026-01-02 09:21:03,194 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2026-01-02 09:21:03,194 : WARNING : ConfigProcessor : Config file in cache changed: /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml
+2026-01-02 09:21:03,194 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml.
+2026-01-02 09:21:03,200 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml
+2026-01-02 09:21:03,200 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml.
+2026-01-02 09:21:03,208 : INFO : ConfigProcessor : Loading config: /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml
+2026-01-02 09:21:03,209 : INFO : ConfigProcessor : Config file cache created: /tmp/5527cdf0eba21cb5b62cdbf1412f48ab.mpf_cache
+2026-01-02 09:21:03,233 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2026-01-02 09:21:03,233 : INFO : ConfigProcessor : Loading config from cache: /tmp/f57f0537fdc7805225abf9c1a1ee119c.mpf_cache
+2026-01-02 09:21:03,233 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2026-01-02 09:21:03,233 : WARNING : ConfigProcessor : Config file in cache changed: /home/hotsoup/repos/pinball-soup/ozzfest/modes/base/config/base.yaml
+2026-01-02 09:21:03,234 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball-soup/ozzfest/modes/base/config/base.yaml.

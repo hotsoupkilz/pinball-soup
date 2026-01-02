@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3]
+
+[ext_resource type="Font" path="res://assets/fonts/imfellenglish/IMFeENrm28P.ttf" id="1"]
+
+[resource]
+default_font = ExtResource("1")
+default_font_size = 38
+
+# Core palette: black base, white text, red and purple accents
+# Use in slides via theme overrides or widget color settings

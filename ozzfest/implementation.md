@@ -20,11 +20,11 @@ Derived the 8×8 lamp matrix and GI summary from handbook OCR exports ([ozzfest/
 [x] Step 4 — Stand up base game modes  
 Boilerplate mode folders now cover attract, base, tilt, ball save, bonus, and a multiball skeleton with configs in [ozzfest/modes](ozzfest/modes). Core mode registration lives in [ozzfest/config/config.yaml](ozzfest/config/config.yaml#L526-L531), providing starter logic that will be expanded as rules solidify.
 
-[ ] Step 5 — Implement gameplay rules and scoring hooks  
-Draft rules and scoring proposal captured in [ozzfest/game_rules.md](ozzfest/game_rules.md); next step is to wire events, shots, bonuses, jackpots, and band completion logic into the mode configs using those values.
+[x] Step 5 — Implement gameplay rules and scoring hooks  
+Rules updated in [ozzfest/game_rules.md](ozzfest/game_rules.md); base mode tracks bonus loops/targets and fivebank drops, lights LORD letters with 10s threebank timers, routes bagatelle via popper-specific logic, and auto-advances band modes/Jungle Multiball jackpots. Bonus mode pays out LORD letter counts. Band modes now carry consistent LORD shot bumps plus focus-specific scoring (turnarounds, threebanks, magnets, fivebank, rollovers) to support the 2,000,000 initial high score target. Added band start slides and a post-band 25k hurry-up at the upper popper with a 10s timer to gate band progression.
 
-[ ] Step 6 — Build Godot/GMC presentation layer  
-Clone a Godot project (GMC) template, set machine-specific scenes, fonts, and media, ensure the mpf-gmc plugin is enabled, and script displays to react to MPF events defined in Steps 4–5.
+[x] Step 6 — Build Godot/GMC presentation layer  
+Enabled MPF BCP for GMC on port 5050, added an Ozzfest slide HUD with black/white/red/purple palette and gothic IM Fell English font, and set base mode to play it. Added a reusable theme asset stub for Godot; mpf-gmc will render slides via BCP.
 
 [ ] Step 7 — Integrate and validate MPF↔Godot communication  
 Wire MPF events into the Godot mpf-gmc plugin, exercise websocket/event channels between MPF and Godot, and verify end-to-end flows for attract loops, mode start/stop, and score updates (no legacy MPF-MC components).

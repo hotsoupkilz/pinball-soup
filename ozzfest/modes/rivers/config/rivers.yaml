@@ -5,4 +5,13 @@ mode:
   stop_events: stop_rivers_mode, rivers_mode_completed
   priority: 310
 
-# Placeholder: add shots, timers, and scoring once band rules are finalized.
+variable_player:
+  # Focus area: rollover/LORD letters hit harder in Rivers
+  shot_lord_l_lit:
+    score: 4000
+  shot_lord_o_lit:
+    score: 4000
+  shot_lord_r_lit:
+    score: 4000
+  shot_lord_d_lit:
+    score: 4000

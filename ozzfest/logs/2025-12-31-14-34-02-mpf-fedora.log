@@ -1,6 +1,0 @@
-2025-12-31 14:34:02,635 : INFO : root : Loading config.
-2025-12-31 14:34:02,637 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
-2025-12-31 14:34:02,637 : WARNING : ConfigProcessor : Config file in cache changed: /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml
-2025-12-31 14:34:02,637 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml.
-2025-12-31 14:34:02,649 : INFO : ConfigProcessor : Loading config: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/mpfconfig.yaml
-2025-12-31 14:34:02,650 : INFO : ConfigProcessor : Loading config from file /home/hotsoup/repos/pinball-soup/ozzfest/config/config.yaml.

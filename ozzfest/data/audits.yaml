@@ -1,67 +1,73 @@
 events:
   game_ended: 0
-  game_started: 1
+  game_started: 5
 missing_switches:
-  s_ball_roll_tilt: 1
-  s_coin_chute_center: 1
-  s_coin_chute_left: 1
-  s_coin_chute_right: 1
-  s_fivebank_drop_center: 1
-  s_fivebank_drop_left: 1
-  s_fivebank_drop_left_mid: 1
-  s_fivebank_drop_right: 1
-  s_fivebank_drop_right_mid: 1
-  s_high_score_reset: 1
-  s_left_outlane: 1
-  s_left_slingshot: 1
-  s_left_standup: 1
-  s_left_threebank_center: 1
-  s_left_threebank_lower: 1
-  s_left_threebank_upper: 1
-  s_one_target: 1
-  s_playfield_entry_gate: 1
-  s_playfield_tilt: 1
-  s_plumb_bob_tilt: 1
-  s_right_outlane: 1
-  s_right_slingshot: 1
-  s_right_standup: 1
-  s_right_threebank_center: 1
-  s_right_threebank_lower: 1
-  s_right_threebank_upper: 1
-  s_rollover_4: 1
-  s_rollover_5: 1
-  s_rollover_l: 1
-  s_rollover_o: 1
-  s_slam_tilt: 1
-  s_start_button: 1
-  s_three_target: 1
-  s_turnaround_lower_rollover: 1
-  s_turnaround_upper_rollover: 1
-  s_two_target: 1
-  s_unused_11: 1
-  s_unused_48: 1
-  s_unused_51: 1
-  s_unused_52: 1
-  s_unused_53: 1
-  s_unused_54: 1
-  s_unused_55: 1
-  s_unused_56: 1
-  s_unused_57: 1
-  s_unused_58: 1
-  s_unused_59: 1
-  s_unused_60: 1
-  s_unused_61: 1
-  s_unused_62: 1
-  s_unused_63: 1
-  s_unused_64: 1
-  s_upper_eject_hole: 1
-  s_upper_kicker: 1
-  s_upper_left_standup: 1
+  s_ball_roll_tilt: 5
+  s_coin_chute_center: 5
+  s_coin_chute_left: 5
+  s_coin_chute_right: 5
+  s_fivebank_drop_center: 5
+  s_fivebank_drop_left: 5
+  s_fivebank_drop_left_mid: 5
+  s_fivebank_drop_right: 5
+  s_fivebank_drop_right_mid: 5
+  s_high_score_reset: 5
+  s_left_magnet_button: 4
+  s_left_outlane: 5
+  s_left_slingshot: 5
+  s_left_standup: 5
+  s_left_threebank_center: 5
+  s_left_threebank_lower: 5
+  s_left_threebank_upper: 5
+  s_lower_ball_popper: 4
+  s_one_target: 5
+  s_playfield_entry_gate: 5
+  s_playfield_tilt: 5
+  s_plumb_bob_tilt: 5
+  s_right_magnet_button: 4
+  s_right_outlane: 5
+  s_right_slingshot: 5
+  s_right_standup: 5
+  s_right_threebank_center: 5
+  s_right_threebank_lower: 5
+  s_right_threebank_upper: 5
+  s_rollover_4: 5
+  s_rollover_5: 5
+  s_rollover_l: 5
+  s_rollover_o: 5
+  s_rollover_r: 4
+  s_slam_tilt: 5
+  s_start_button: 5
+  s_three_target: 5
+  s_turnaround_lower_rollover: 5
+  s_turnaround_upper_rollover: 5
+  s_two_target: 5
+  s_unused_11: 5
+  s_unused_48: 5
+  s_unused_51: 5
+  s_unused_52: 5
+  s_unused_53: 5
+  s_unused_54: 5
+  s_unused_55: 5
+  s_unused_56: 5
+  s_unused_57: 5
+  s_unused_58: 5
+  s_unused_59: 5
+  s_unused_60: 5
+  s_unused_61: 5
+  s_unused_62: 5
+  s_unused_63: 5
+  s_unused_64: 5
+  s_upper_ball_popper: 5
+  s_upper_kicker: 5
+  s_upper_left_standup: 5
 player:
   score:
     average: 0
     top: []
     total: 0
+shots:
+  lord_d: 291
 switches:
   s_ball_roll_tilt: 0
   s_coin_chute_center: 0
@@ -73,7 +79,7 @@ switches:
   s_fivebank_drop_right: 0
   s_fivebank_drop_right_mid: 0
   s_high_score_reset: 0
-  s_left_ball_trough: 5
+  s_left_ball_trough: 9
   s_left_magnet_button: 5
   s_left_outlane: 0
   s_left_slingshot: 0
@@ -81,13 +87,13 @@ switches:
   s_left_threebank_center: 0
   s_left_threebank_lower: 0
   s_left_threebank_upper: 0
-  s_lower_eject_hole: 86
+  s_lower_ball_popper: 86
   s_one_target: 0
-  s_outhole: 7
+  s_outhole: 14
   s_playfield_entry_gate: 0
   s_playfield_tilt: 0
   s_plumb_bob_tilt: 0
-  s_right_ball_trough: 6
+  s_right_ball_trough: 10
   s_right_magnet_button: 5
   s_right_outlane: 0
   s_right_slingshot: 0
@@ -97,11 +103,11 @@ switches:
   s_right_threebank_upper: 0
   s_rollover_4: 0
   s_rollover_5: 0
-  s_rollover_d: 515
+  s_rollover_d: 806
   s_rollover_l: 0
   s_rollover_o: 0
   s_rollover_r: 2
-  s_shooter_lane: 18
+  s_shooter_lane: 26
   s_slam_tilt: 0
   s_start_button: 0
   s_three_target: 0
@@ -124,6 +130,6 @@ switches:
   s_unused_62: 0
   s_unused_63: 0
   s_unused_64: 0
-  s_upper_eject_hole: 0
+  s_upper_ball_popper: 0
   s_upper_kicker: 0
   s_upper_left_standup: 0

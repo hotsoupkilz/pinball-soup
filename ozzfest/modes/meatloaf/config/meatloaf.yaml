@@ -5,4 +5,31 @@ mode:
   stop_events: stop_meatloaf_mode, meatloaf_mode_completed
   priority: 310
 
-# Placeholder: add shots, timers, and scoring once band rules are finalized.
+variable_player:
+  # Baseline major shots during Meatloaf (keeps bands consistent)
+  shot_lord_l_lit:
+    score: 2500
+  shot_lord_o_lit:
+    score: 2500
+  shot_lord_r_lit:
+    score: 2500
+  shot_lord_d_lit:
+    score: 2500
+
+  # Focus area: threebank hits and completions pay extra
+  s_left_threebank_lower_active:
+    score: 3000
+  s_left_threebank_center_active:
+    score: 3000
+  s_left_threebank_upper_active:
+    score: 3000
+  s_right_threebank_lower_active:
+    score: 3000
+  s_right_threebank_center_active:
+    score: 3000
+  s_right_threebank_upper_active:
+    score: 3000
+  drop_target_bank_left_threebank_down:
+    score: 2000
+  drop_target_bank_right_threebank_down:
+    score: 2000

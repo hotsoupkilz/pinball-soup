@@ -1,0 +1,107 @@
+2026-01-02 10:07:03,335 : INFO : root : Loading config.
+2026-01-02 10:07:03,338 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2026-01-02 10:07:03,338 : INFO : ConfigProcessor : Loading config from cache: /tmp/5527cdf0eba21cb5b62cdbf1412f48ab.mpf_cache
+2026-01-02 10:07:03,390 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2026-01-02 10:07:03,391 : INFO : ConfigProcessor : Loading config from cache: /tmp/f57f0537fdc7805225abf9c1a1ee119c.mpf_cache
+2026-01-02 10:07:03,392 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2026-01-02 10:07:03,392 : INFO : ConfigProcessor : Loading config from cache: /tmp/ac54eaf53dec484b1f36e96223ff75e9.mpf_cache
+2026-01-02 10:07:03,393 : INFO : ConfigProcessor : Loading config from cache: /tmp/fe5f14ef594c03fb5611c1e920d2be25.mpf_cache
+2026-01-02 10:07:03,394 : INFO : ConfigProcessor : Loading config from cache: /tmp/6276d6086c07cc997337f319c85e49db.mpf_cache
+2026-01-02 10:07:03,395 : INFO : ConfigProcessor : Loading config from cache: /tmp/c094e41fe024d7b15eec3b38569b70a8.mpf_cache
+2026-01-02 10:07:03,395 : INFO : ConfigProcessor : Loading config from cache: /tmp/4af1932c551eae6d17fcd9051a9ed7e2.mpf_cache
+2026-01-02 10:07:03,396 : INFO : ConfigProcessor : Loading config from cache: /tmp/e26bcbce20924eebcd28aaf7cbd67347.mpf_cache
+2026-01-02 10:07:03,397 : INFO : ConfigProcessor : Loading config from cache: /tmp/84547a3e86c6d8bbc6382bc8543834be.mpf_cache
+2026-01-02 10:07:03,397 : INFO : ConfigProcessor : Loading config from cache: /tmp/55480dc30bdfd41d93b37a6dcca6a184.mpf_cache
+2026-01-02 10:07:03,397 : INFO : ConfigProcessor : Loading config from cache: /tmp/f54f451608ad210d0560a0f6f0f24980.mpf_cache
+2026-01-02 10:07:03,398 : INFO : ConfigProcessor : Loading config from cache: /tmp/3967131bded016b3099a5c98a7500c29.mpf_cache
+2026-01-02 10:07:03,398 : INFO : ConfigProcessor : Loading config from cache: /tmp/67b07a9251e0b18722b8536fbbc452a9.mpf_cache
+2026-01-02 10:07:03,399 : INFO : ConfigProcessor : Loading config from cache: /tmp/2be5cec3ce49c331e603f3f334d07368.mpf_cache
+2026-01-02 10:07:03,399 : INFO : Machine : Mission Pinball Framework Core Engine v0.80.0.dev11
+2026-01-02 10:07:03,399 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'platform_integration_test': False, 'jsonlogging': False, 'logfile': 'logs/2026-01-02-10-07-03-mpf-fedora.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': 'smart_virtual', 'syslog_address': None, 'full_logfile_path': '/home/hotsoup/repos/pinball-soup/ozzfest/logs/2026-01-02-10-07-03-mpf-fedora.log'}
+2026-01-02 10:07:03,399 : INFO : Machine : MPF path: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf
+2026-01-02 10:07:03,399 : INFO : Machine : Machine path: /home/hotsoup/repos/pinball-soup/ozzfest
+2026-01-02 10:07:03,399 : INFO : Machine : Platform: linux
+2026-01-02 10:07:03,400 : INFO : Machine : Python executable location: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/bin/python
+2026-01-02 10:07:03,400 : INFO : Machine : Python version: 3.12.8 (64-bit)
+2026-01-02 10:07:03,401 : INFO : Machine : Initializing MPF...
+2026-01-02 10:07:03,463 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,479 : INFO : EventManager : Event: ======'machine_var_high_score'====== Args={'value': 2000000, 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,480 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,480 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev11', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,480 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev11, Config version:6, Show version: 6, BCP version:1.1', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,481 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.12.8', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,484 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-6.17.12-300.fc43.x86_64-x86_64-with-glibc2.42', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,484 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,484 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '6.17.12-300.fc43.x86_64', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,484 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#1 SMP PREEMPT_DYNAMIC Sat Dec 13 05:06:24 UTC 2025', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,484 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,484 : INFO : EventManager : Event: ======'machine_var_log_file_path'====== Args={'value': '/home/hotsoup/repos/pinball-soup/ozzfest/logs/2026-01-02-10-07-03-mpf-fedora.log', 'prev_value': None, 'change': True}
+2026-01-02 10:07:03,484 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2026-01-02 10:07:03,559 : INFO : EventManager : Event: ======'drop_target_bank_right_threebank_up'====== Args={}
+2026-01-02 10:07:03,559 : INFO : EventManager : Event: ======'drop_target_bank_left_threebank_up'====== Args={}
+2026-01-02 10:07:03,559 : INFO : EventManager : Event: ======'drop_target_bank_fivebank_inline_up'====== Args={}
+2026-01-02 10:07:03,565 : INFO : EventManager : Event: ======'init_phase_2'====== Args={}
+2026-01-02 10:07:03,566 : INFO : SwitchController : Found active switch: ('9', <Platform.SmartVirtual>) <switch.s_right_ball_trough>
+2026-01-02 10:07:03,566 : INFO : SwitchController : Found active switch: ('10', <Platform.SmartVirtual>) <switch.s_left_ball_trough>
+2026-01-02 10:07:03,584 : INFO : EventManager : Event: ======'bcp_connection_attempt'====== Args={'name': 'local_display', 'host': 'localhost', 'port': 5050}
+2026-01-02 10:07:03,585 : INFO : BCPClientSocket : Connecting BCP to 'local_display' at localhost:5050...
+2026-01-02 10:07:03,999 : INFO : BCPClientSocket : Connected BCP to 'local_display' localhost:5050
+2026-01-02 10:07:03,999 : INFO : EventManager : Event: ======'bcp_clients_connected'====== Args={}
+2026-01-02 10:07:04,001 : INFO : ball_device.bd_trough : BCH: Initial count: 2
+2026-01-02 10:07:04,001 : INFO : ball_device.bd_trough : State: idle
+2026-01-02 10:07:04,002 : INFO : ball_device.bd_shooter_lane : BCH: Initial count: 0
+2026-01-02 10:07:04,002 : INFO : ball_device.bd_shooter_lane : State: idle
+2026-01-02 10:07:04,002 : INFO : ball_device.bd_outhole : BCH: Initial count: 0
+2026-01-02 10:07:04,002 : INFO : ball_device.bd_outhole : State: idle
+2026-01-02 10:07:04,002 : ERROR : asyncio : Task exception was never retrieved
+future: <Task finished name='Task-226' coro=<BallDevice._initialize_async() done, defined at /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_device.py:196> exception=ConfigFileError("Ball device 'bd_upper_ball_popper' uses switch 's_upper_ball_popper' which has a 'playfield_active' tag. This is handled internally by the device. Remove the redundant 'playfield_active' tag from that switch.")>
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_device.py", line 198, in _initialize_async
+    await self.ball_count_handler.initialize()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_count_handler.py", line 92, in initialize
+    self.counter = counter_class(self.ball_device, self.ball_device.config.get("counter", {}))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/switch_counter.py", line 81, in __init__
+    self.ball_device.raise_config_error(
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/logging.py", line 175, in raise_config_error
+    raise ConfigFileError(msg, error_no, self.log.name if self.log else "", context, self._url_base) \
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ball_device.bd_upper_ball_popper: Ball device 'bd_upper_ball_popper' uses switch 's_upper_ball_popper' which has a 'playfield_active' tag. This is handled internally by the device. Remove the redundant 'playfield_active' tag from that switch. Error Code: CFE-ball_device-13 (https://missionpinball.org/logs)
+2026-01-02 10:07:04,005 : ERROR : asyncio : Task exception was never retrieved
+future: <Task finished name='Task-228' coro=<BallDevice._initialize_async() done, defined at /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_device.py:196> exception=ConfigFileError("Ball device 'bd_lower_ball_popper' uses switch 's_lower_ball_popper' which has a 'playfield_active' tag. This is handled internally by the device. Remove the redundant 'playfield_active' tag from that switch.")>
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_device.py", line 198, in _initialize_async
+    await self.ball_count_handler.initialize()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/ball_count_handler.py", line 92, in initialize
+    self.counter = counter_class(self.ball_device, self.ball_device.config.get("counter", {}))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/devices/ball_device/switch_counter.py", line 81, in __init__
+    self.ball_device.raise_config_error(
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/logging.py", line 175, in raise_config_error
+    raise ConfigFileError(msg, error_no, self.log.name if self.log else "", context, self._url_base) \
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ball_device.bd_lower_ball_popper: Ball device 'bd_lower_ball_popper' uses switch 's_lower_ball_popper' which has a 'playfield_active' tag. This is handled internally by the device. Remove the redundant 'playfield_active' tag from that switch. Error Code: CFE-ball_device-13 (https://missionpinball.org/logs)
+2026-01-02 10:07:04,006 : INFO : Machine : Starting the main run loop with active modes: []
+2026-01-02 10:07:04,006 : WARNING : Machine : Attract mode is not active, game will not be playable. Please check your attract mode configuration.
+2026-01-02 10:07:04,014 : INFO : EventManager : Event: ======'init_phase_3'====== Args={}
+2026-01-02 10:07:04,015 : INFO : Machine : Shutting down...
+2026-01-02 10:07:04,015 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2026-01-02 10:07:04,015 : ERROR : root : no running event loop
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/commands/game.py", line 229, in __init__
+    self.machine.run()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 706, in run
+    self._run_loop()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 806, in _run_loop
+    self._crash_shutdown()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 751, in _crash_shutdown
+    self._do_stop()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 741, in _do_stop
+    self.events.process_event_queue()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/events.py", line 842, in process_event_queue
+    self._process_queue_event(event=event[0],
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/events.py", line 783, in _process_queue_event
+    task = asyncio.create_task(self._run_handlers_sequential(event, callback, kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.12.8/lib/python3.12/asyncio/tasks.py", line 417, in create_task
+    loop = events.get_running_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: no running event loop

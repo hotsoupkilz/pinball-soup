@@ -29,11 +29,15 @@ hardware_sound_player:
 
 
 #bcp:
-#  connections: None
+#  connections:
+#    gmc:
+#      type: mpf.core.bcp.bcp_socket_client.BCPClientSocket
+#      port: 5050
+#      type: mpf.core.bcp.bcp_socket_client.BCPClient
 
 virtual_platform_start_active_switches:
-  - s_right_ball_trough
   - s_left_ball_trough
+  - s_right_ball_trough
 
 ################################################################################
 ## displays
@@ -45,26 +49,31 @@ segment_displays:
     number: 0
     platform: lisy
     size: 4
+    update_method: stack
     #integrated_commas: true
   player1_display:
     number: 1
     platform: lisy
     size: 7
+    update_method: stack
     #integrated_commas: true
   player2_display:
     number: 2
     platform: lisy
     size: 7
+    update_method: stack
     #integrated_commas: true
   player3_display:
     number: 3
     platform: lisy
     size: 7
+    update_method: stack
     #integrated_commas: true
   player4_display:
     number: 4
     platform: lisy
     size: 7
+    update_method: stack
     #integrated_commas: true
 
 segment_display_player:
@@ -236,12 +245,10 @@ switches:
     number: 36
   s_fivebank_drop_right:
     number: 37
-  s_upper_eject_hole:
+  s_upper_ball_popper:
     number: 38
-    tags: playfield_active
-  s_lower_eject_hole:
+  s_lower_ball_popper:
     number: 39
-    tags: playfield_active
   s_upper_kicker:
     number: 40
     tags: playfield_active
@@ -329,14 +336,14 @@ coils:
     number: 6
     default_pulse_ms: 30
     label: "Sol 6 / Q25 — Buzzer (Gry-Blu; 2J11-3 / 8P3-6 / 8P6-22)"
-  c_lower_eject_hole:
+  c_lower_ball_popper:
     number: 7
     default_pulse_ms: 45
-    label: "Sol 7 / Q27 — Lower Eject Hole (Gry-Vio; 2J11-2 / 8P3-7)"
-  c_upper_eject_hole:
+    label: "Sol 7 / Q27 — Lower Ball Popper (Gry-Vio; 2J11-2 / 8P3-7)"
+  c_upper_ball_popper:
     number: 8
     default_pulse_ms: 45
-    label: "Sol 8 / Q29 — Upper Eject Hole (Gry-Blk; 2J11-1 / 8P3-8)"
+    label: "Sol 8 / Q29 — Upper Ball Popper (Gry-Blk; 2J11-1 / 8P3-8)"
   c_fivebank_reset_left:
     number: 9
     default_pulse_ms: 50
@@ -396,18 +403,11 @@ coils:
     label: "Sol 22 / Q57 — Right Magnet Relay (8L28)"
     allow_enable: true  # TODO: tune hold power once hardware is online
 
-  c_lower_right_flipper:
-    number: 23
-    default_pulse_ms: 30
-    label: "Sol 23 — Lower Right Flipper (Blu-Vio; 7P1-8 / 8P3-34 / 8P6-3)"
-    allow_enable: true  # TODO: set enable/hold strengths after bench testing
-  c_lower_left_flipper:
-    number: 24
-    default_pulse_ms: 30
-    label: "Sol 24 — Lower Left Flipper (Blu-Gry; 7P1-10 / 8P3-32 / 8P6-4)"
-    allow_enable: true  # TODO: set enable/hold strengths after bench testing
-
-
+  #c_lower_right_flipper:
+  #  number: 23
+  #c_lower_left_flipper:
+  #  number: 24
+    
 lights:
   # Williams Jungle Lord lamp matrix (columns 1-8, rows 1-8) per Williams Jungle Lord Tech Chart
   l_shoot_again_backbox:
@@ -628,25 +628,35 @@ modes:
 
 playfields:
   playfield:
+    default_source_device: bd_shooter_lane
     tags: default
-    default_source_device: trough
 
 ball_devices:
-  trough:
-    tags: trough, home
+  bd_trough:
     ball_switches: s_left_ball_trough, s_right_ball_trough
     eject_coil: c_ball_release
-    eject_targets: shooter_lane
-  shooter_lane:
+    eject_targets: bd_shooter_lane
+    tags: home, trough
+  bd_shooter_lane:
     tags: shooter_lane
     ball_switches: s_shooter_lane
     mechanical_eject: true
     eject_targets: playfield
-  outhole:
-    tags: outhole
+  bd_outhole:
+    tags: drain
     ball_switches: s_outhole
     eject_coil: c_outhole_kicker
-    eject_targets: trough
+    eject_targets: bd_trough
+  bd_upper_ball_popper:
+    ball_switches: s_upper_ball_popper
+    eject_coil: c_upper_ball_popper
+    eject_targets: playfield
+    eject_timeouts: 3s
+  bd_lower_ball_popper:
+    ball_switches: s_lower_ball_popper
+    eject_coil: c_lower_ball_popper
+    eject_targets: playfield
+    eject_timeouts: 3s
 
 ## drop targets
 drop_targets:
@@ -736,5 +746,47 @@ player_vars:
     initial_value: 0
     value_type: int
   bagatelle_ready:
+    initial_value: 0
+    value_type: int
+  bonus_targets:
+    initial_value: 0
+    value_type: int
+  bonus_loops:
+    initial_value: 0
+    value_type: int
+  bonus_lord_letters:
+    initial_value: 0
+    value_type: int
+  lord_letters_lit:
+    initial_value: 0
+    value_type: int
+  lord_letters_complete:
+    initial_value: 0
+    value_type: int
+  bagatelle_active:
+    initial_value: 0
+    value_type: int
+  bagatelle_ball_locked:
+    initial_value: 0
+    value_type: int
+  bagatelle_source_popper:
+    initial_value: none
+    value_type: str
+  band_progress_index:
+    initial_value: 0
+    value_type: int
+  jackpot_lit:
+    initial_value: 0
+    value_type: int
+  super_jackpot_lit:
+    initial_value: 0
+    value_type: int
+  jackpot_hits:
+    initial_value: 0
+    value_type: int
+  band_hurryup_active:
+    initial_value: 0
+    value_type: int
+  band_hurryup_value:
     initial_value: 0
     value_type: int

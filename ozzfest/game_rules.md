@@ -9,6 +9,15 @@ This draft translates the initial requirements into actionable rules, scoring, a
 - Turnaround lanes (upper/lower): 2,000
 - Outlane inlane returns: 250 (no bonus if shielded)
 - Pop bumpers (if added later): 300
+- Upper/lower popper entries: 1,500 (also tags the source for bagatelle/band advance)
+
+## Band Mode Shot Values (consistent across bands)
+- Lit LORD letters during any band mode: +2,500 on top of base (total ~5,000); Rivers focuses on rollovers so its LORD hits pay +4,000 instead (total ~6,500).
+- Dio focus: turnaround loops +3,000 on top of base (total ~5,000).
+- Meatloaf focus: any threebank target +3,000 and threebank completion +2,000 (stacked on base values).
+- Ozzy focus: magnet activations +3,000 on top of the base magnet award (net ~8,000).
+- Rob Zombie focus: fivebank targets +1,000 each (base 500) and fivebank completion +5,000 (base 10,000).
+- Black Sabbath remains to be defined separately; use above values as the baseline feel.
 
 ## Bonus Table (per ball end)
 - Target completions: 1,000 each
@@ -21,10 +30,14 @@ This draft translates the initial requirements into actionable rules, scoring, a
 
 ## Band Selection and Progression
 - Bands: Dio, Meatloaf, Ozzy, Rob Zombie, Rivers of Nihil; Black Sabbath is wizard mode.
-- Start of game: carousel prompts band selection (event: `start_band_select`). On confirm, fire `start_<band>_mode`.
+- Base mode auto-requests a band on start (`band_progression_request`) and when no band is running the upper popper triggers the same request; the next band starts based on `band_progress_index` with no player choice needed.
 - Mode complete condition: all LORD letters lit (either via rollover switches or completing any threebank within 10s). Completing both threebanks within the 10s windows lights all LORD letters immediately.
-- Completing a band: award 50,000 base + 10,000 per previously completed band; increment `bands_completed`; prompt band select again (unless all five complete, then start Black Sabbath).
-- Black Sabbath (wizard): starts when `bands_completed == 5`; baseline award 150,000 plus progressive jackpots (see jackpots).
+- Completing a band: award 50,000 base + 10,000 per previously completed band; increment `bands_completed` and `band_progress_index`; clear `band_current`, then auto-request the next band. Upper popper falls back to bagatelle when a band is already running.
+- Black Sabbath (wizard): starts when `bands_completed >= 5` and `band_progression_request` fires; baseline award 150,000 plus progressive jackpots (see jackpots).
+- Band completion hurry-up: when a band is finished, light a 25,000 hurry-up at the upper popper for 10s; collecting it pauses band selection until taken or expired.
+
+## High Score Target
+- Seed the initial high score at 2,000,000; tune difficulty upward after playtesting. A full five-band run with solid focus-shot play should approach but not trivialize this number.
 
 ## LORD Lighting Logic
 - Each letter is a rollover switch; alternatively, completing a threebank within 10s lights all letters on that bank’s side.
@@ -42,10 +55,11 @@ This draft translates the initial requirements into actionable rules, scoring, a
 - Second activation in same ball lights both shields (both lamps) for one save each.
 
 ## Bagatelle Mini-Game
-- Entry: lower eject hole always; upper eject hole if current band not complete; else upper eject triggers band select.
-- After 3s delay, `c_miniball_kicker` fires mini ball toward LORD rollovers.
-- If mini ball hits an unlit LORD letter: light it and award 10,000.
-- If all LORD already lit: award 15,000 and add 1 magnasave token randomly to a side (respect max).
+- Entry: lower popper always starts bagatelle; upper popper starts bagatelle only when a band is already running (otherwise it advances to the next band).
+- On start, `bagatelle_active` and `bagatelle_ball_locked` set to 1 and the source popper is recorded (upper/lower). A 3s timer runs for a 10,000 award; a 12s window auto-ejects from the source popper if nothing else ends it.
+- LORD rollover hits while bagatelle is active and the ball is “locked” score 750 and clear the lock flag; lit LORD letters score 2,500, add to bonus/LORD counts, and immediately eject from the source popper.
+- If all LORD letters are already complete during bagatelle, the next letter hit triggers a random reward of 15,000 plus 1 magnasave token to a side (respecting the 5-token cap) and ejects the ball.
+- Starting any band mode or closing the bagatelle window also ejects from the source popper to resume play.
 
 ## Jackpots and Multiball
 - Multiball skeleton: `jungle_multiball` (3-ball) starts on `multiball_jungle_start`.

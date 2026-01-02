@@ -18,6 +18,11 @@ mode_settings:
       player_score_entry: bonus_loops
       score: 500
       reset_player_score_entry: true
+    - entry: bonus_lord_letters
+      text: "LORD Letters"
+      player_score_entry: bonus_lord_letters
+      score: 2500
+      reset_player_score_entry: true
 
 slide_player:
   mode_bonus_started: bonus

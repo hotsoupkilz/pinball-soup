@@ -1,0 +1,4 @@
+high_score:
+  expire: null
+  expire_secs: null
+  value: 2000000

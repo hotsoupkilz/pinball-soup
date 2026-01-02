@@ -5,4 +5,27 @@ mode:
   stop_events: stop_rob_zombie_mode, rob_zombie_mode_completed
   priority: 310
 
-# Placeholder: add shots, timers, and scoring once band rules are finalized.
+variable_player:
+  # Baseline major shots during Rob Zombie (keeps bands consistent)
+  shot_lord_l_lit:
+    score: 2500
+  shot_lord_o_lit:
+    score: 2500
+  shot_lord_r_lit:
+    score: 2500
+  shot_lord_d_lit:
+    score: 2500
+
+  # Focus area: fivebank targets and completion pay extra
+  s_fivebank_drop_left_active:
+    score: 1000
+  s_fivebank_drop_left_mid_active:
+    score: 1000
+  s_fivebank_drop_center_active:
+    score: 1000
+  s_fivebank_drop_right_mid_active:
+    score: 1000
+  s_fivebank_drop_right_active:
+    score: 1000
+  drop_target_bank_fivebank_inline_down:
+    score: 5000
