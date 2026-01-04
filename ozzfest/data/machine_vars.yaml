@@ -2,3 +2,11 @@ high_score:
   expire: null
   expire_secs: null
   value: 2000000
+master_volume:
+  expire: null
+  expire_secs: null
+  value: 0.5
+player1_score:
+  expire: null
+  expire_secs: null
+  value: 25000

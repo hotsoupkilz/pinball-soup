@@ -103,7 +103,7 @@ variable_player:
       int: 0
     bagatelle_source_popper:
       action: set
-      string: none
+      string: "none"
   s_left_slingshot_active:
     score: 250
   s_right_slingshot_active:

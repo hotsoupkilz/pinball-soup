@@ -1,0 +1,48 @@
+2026-01-02 11:55:14,390 : INFO : root : Loading config.
+2026-01-02 11:55:14,398 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2026-01-02 11:55:14,399 : INFO : ConfigProcessor : Loading config from cache: /tmp/5527cdf0eba21cb5b62cdbf1412f48ab.mpf_cache
+2026-01-02 11:55:14,475 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2026-01-02 11:55:14,477 : INFO : ConfigProcessor : Loading config from cache: /tmp/f57f0537fdc7805225abf9c1a1ee119c.mpf_cache
+2026-01-02 11:55:14,478 : INFO : ConfigProcessor : Loading config from cache: /tmp/ba195dfdf1ea05015ec0aa565015d157.mpf_cache
+2026-01-02 11:55:14,479 : INFO : ConfigProcessor : Loading config from cache: /tmp/ac54eaf53dec484b1f36e96223ff75e9.mpf_cache
+2026-01-02 11:55:14,481 : INFO : ConfigProcessor : Loading config from cache: /tmp/2be5cec3ce49c331e603f3f334d07368.mpf_cache
+2026-01-02 11:55:14,481 : INFO : Machine : Mission Pinball Framework Core Engine v0.80.0.dev11
+2026-01-02 11:55:14,481 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'platform_integration_test': False, 'jsonlogging': False, 'logfile': 'logs/2026-01-02-11-55-14-mpf-fedora.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': None, 'syslog_address': None, 'full_logfile_path': '/home/hotsoup/repos/pinball-soup/ozzfest/logs/2026-01-02-11-55-14-mpf-fedora.log'}
+2026-01-02 11:55:14,482 : INFO : Machine : MPF path: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf
+2026-01-02 11:55:14,482 : INFO : Machine : Machine path: /home/hotsoup/repos/pinball-soup/ozzfest
+2026-01-02 11:55:14,482 : INFO : Machine : Platform: linux
+2026-01-02 11:55:14,482 : INFO : Machine : Python executable location: /home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/bin/python
+2026-01-02 11:55:14,482 : INFO : Machine : Python version: 3.12.8 (64-bit)
+2026-01-02 11:55:14,483 : INFO : Machine : Initializing MPF...
+2026-01-02 11:55:14,569 : INFO : lisy : Connecting to /dev/ttyACM0 at 115200bps
+2026-01-02 11:55:15,175 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:15,676 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:16,178 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:16,680 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:17,181 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:17,683 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:18,186 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:18,688 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:19,189 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:19,690 : WARNING : lisy : Reset of LISY failed. Did not get a response in 500ms. Will retry.
+2026-01-02 11:55:19,965 : ERROR : lisy : Failed to read lisy_version from LISY. Got b''
+2026-01-02 11:55:19,968 : WARNING : lisy : Reset of LISY failed. Got 65 instead of 0. Will retry.
+2026-01-02 11:55:19,977 : INFO : EventManager : Event: ======'machine_var_lisy_hardware'====== Args={'value': '', 'prev_value': None, 'change': True}
+2026-01-02 11:55:19,977 : INFO : EventManager : Event: ======'machine_var_lisy_version'====== Args={'value': 'APC', 'prev_value': None, 'change': True}
+2026-01-02 11:55:19,977 : INFO : EventManager : Event: ======'machine_var_lisy_api_version'====== Args={'value': b'01.04', 'prev_value': None, 'change': True}
+2026-01-02 11:55:19,985 : INFO : Machine : Shutting down...
+2026-01-02 11:55:19,986 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2026-01-02 11:55:20,090 : ERROR : Machine : Failed to initialize MPF
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 688, in initialize_mpf
+    raise init.exception()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 250, in initialize
+    await self.initialize_core_and_hardware()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 246, in initialize_core_and_hardware
+    await self._initialize_platforms()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/core/machine.py", line 336, in _initialize_platforms
+    result.result()
+  File "/home/hotsoup/.pyenv/versions/3.12.8/envs/ozzfest/lib/python3.12/site-packages/mpf/platforms/lisy/lisy.py", line 517, in initialize
+    raise AssertionError("Invalid switch {}. Got response: {}".format(number, state))
+AssertionError: Invalid switch 0. Got response: 25
+2026-01-02 11:55:20,095 : INFO : root : MPF run loop ended.
