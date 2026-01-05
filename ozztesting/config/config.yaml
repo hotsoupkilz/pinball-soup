@@ -38,8 +38,9 @@ hardware_sound_systems:
 
 # modes: anything that has a folder in modes/ should be listed here
 modes:
-    - attract
-    - base
+  - attract
+  - base
+  - ball_save
 
 ################################################################################
 # playfield details
@@ -88,18 +89,6 @@ ball_devices:
     ball_switches: s_kickout_hole_lower
     eject_coil: c_kickout_hole_lower
     #eject_timeouts: 3s
-
-## autofire coils (things that fire immediately when switch is hit)
-autofire_coils:
-  slingshot_left:
-    coil: c_slingshot_left
-    switch: s_slingshot_left
-  slingshot_right:
-    coil: c_slingshot_right
-    switch: s_slingshot_right
-  slingshot_upper:
-    coil: c_slingshot_upper
-    switch: s_slingshot_upper
 
 
 ################################################################################
@@ -372,18 +361,18 @@ switches:
   #s_unused_64:
   #  number: 64
 
-  #s_65:
-  #  number: 65
-  #s_66:
-  #  number: 66
-  #s_67:
-  #  number: 67
-  #s_68:
-  #  number: 68
-  #s_69:
-  #  number: 69
-  #s_70:
-  #  number: 70
+  s_65_slingshot_left_spec:
+    number: 65
+  s_66_slingshot_right_spec:
+    number: 66
+  s_67_slingshot_upper_spec:
+    number: 67
+  s_68:
+    number: 68
+  s_69:
+    number: 69
+  s_70:
+    number: 70
 
 
 ################################################################################
@@ -399,7 +388,6 @@ coils:
     default_pulse_ms: 30
   c_gi_relay:
     number: 3
-    default_pulse_ms: 30
   c_threebank_left_reset:
     number: 4
     default_pulse_ms: 45
@@ -439,10 +427,13 @@ coils:
 
   c_slingshot_left:
     number: 17
+    default_pulse_ms: 30
   c_slingshot_right:
     number: 18
+    default_pulse_ms: 30
   c_slingshot_upper:
     number: 19
+    default_pulse_ms: 30
   c_miniball_kicker:
     number: 20
   c_magnasave_left:
@@ -454,6 +445,19 @@ coils:
     number: 23
   c_flipper_right:
     number: 24
+
+
+## autofire coils (things that fire immediately when switch is hit)
+autofire_coils:
+  slingshot_left:
+    coil: c_slingshot_left
+    switch: s_65_slingshot_left_spec
+  slingshot_right:
+    coil: c_slingshot_right
+    switch: s_66_slingshot_right_spec
+  slingshot_upper:
+    coil: c_slingshot_upper
+    switch: s_67_slingshot_upper_spec
 
 ################################################################################
 ## lights

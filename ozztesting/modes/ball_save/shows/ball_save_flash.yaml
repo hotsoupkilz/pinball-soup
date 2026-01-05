@@ -1,0 +1,8 @@
+#show_version=6
+
+- duration: 0.5
+  lights:
+    l_scoring_2x: ff
+- duration: 0.5
+  lights:
+    l_scoring_2x: 0
