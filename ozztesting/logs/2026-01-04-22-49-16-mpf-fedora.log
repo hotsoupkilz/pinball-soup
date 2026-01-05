@@ -1,0 +1,92 @@
+2026-01-04 22:49:16,798 : INFO : root : Loading config.
+2026-01-04 22:49:16,799 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2026-01-04 22:49:16,799 : INFO : ConfigProcessor : Loading config from cache: /tmp/e9e80b3d31c2f048a9e4343fcb95b46c.mpf_cache
+2026-01-04 22:49:16,818 : INFO : ConfigProcessor : Loading config from cache: /tmp/f7d5582424a408db7bee030fc21773b7.mpf_cache
+2026-01-04 22:49:16,818 : INFO : ConfigProcessor : Loading config from cache: /tmp/d57b2631db0d34c1aa3fa3e97463af7c.mpf_cache
+2026-01-04 22:49:16,818 : INFO : ConfigProcessor : Loading config from cache: /tmp/f7d5582424a408db7bee030fc21773b7.mpf_cache
+2026-01-04 22:49:16,818 : INFO : ConfigProcessor : Loading config from cache: /tmp/c658766bc4e430297273fe782ff8dc33.mpf_cache
+2026-01-04 22:49:16,819 : INFO : ConfigProcessor : Loading config from cache: /tmp/78cf4a87adef3e180b4d4190435da4ac.mpf_cache
+2026-01-04 22:49:16,819 : INFO : Machine : Mission Pinball Framework Core Engine v0.80.0.dev11
+2026-01-04 22:49:16,819 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'platform_integration_test': False, 'jsonlogging': False, 'logfile': 'logs/2026-01-04-22-49-16-mpf-fedora.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': 'smart_virtual', 'syslog_address': None, 'full_logfile_path': '/home/hotsoup/repos/pinball-soup/ozztesting/logs/2026-01-04-22-49-16-mpf-fedora.log'}
+2026-01-04 22:49:16,819 : INFO : Machine : MPF path: /home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf
+2026-01-04 22:49:16,819 : INFO : Machine : Machine path: /home/hotsoup/repos/pinball-soup/ozztesting
+2026-01-04 22:49:16,819 : INFO : Machine : Platform: linux
+2026-01-04 22:49:16,819 : INFO : Machine : Python executable location: /home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/bin/python
+2026-01-04 22:49:16,819 : INFO : Machine : Python version: 3.11.8 (64-bit)
+2026-01-04 22:49:16,820 : INFO : Machine : Initializing MPF...
+2026-01-04 22:49:16,840 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,844 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,845 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev11', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,845 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'Mission Pinball Framework v0.80.0.dev11, Config version:6, Show version: 6, BCP version:1.1', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,845 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.11.8', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,846 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-6.17.12-300.fc43.x86_64-x86_64-with-glibc2.42', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,846 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,846 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '6.17.12-300.fc43.x86_64', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,846 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#1 SMP PREEMPT_DYNAMIC Sat Dec 13 05:06:24 UTC 2025', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,846 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,846 : INFO : EventManager : Event: ======'machine_var_log_file_path'====== Args={'value': '/home/hotsoup/repos/pinball-soup/ozztesting/logs/2026-01-04-22-49-16-mpf-fedora.log', 'prev_value': None, 'change': True}
+2026-01-04 22:49:16,846 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2026-01-04 22:49:16,854 : ERROR : asyncio : Exception in callback EventManager._async_handler_done(<QueuedEvent>)(<Task finishe...our config.')>) at /home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/events.py:124
+handle: <Handle EventManager._async_handler_done(<QueuedEvent>)(<Task finishe...our config.')>) at /home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/events.py:124>
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.11.8/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/events.py", line 127, in _async_handler_done
+    future.result()
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/device_manager.py", line 88, in _load_device_modules
+    self.load_devices_config(validate=True)
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/device_manager.py", line 146, in load_devices_config
+    config[device_name] = collection[device_name].validate_and_parse_config(config[device_name], False)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/device.py", line 108, in validate_and_parse_config
+    self.machine.config_validator.validate_config(
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 164, in validate_config
+    return self._validate_config(config_spec, source, base_spec=base_spec, add_missing_keys=add_missing_keys,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 204, in _validate_config
+    processed_config[k] = self.validate_config_item(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 243, in validate_config_item
+    return self.validate_item(item, validation, validation_failure_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 699, in validate_item
+    return self.validator_list[validator](item, validation_failure_info=validation_failure_info, param=param)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 413, in _validate_type_machine
+    raise self.validation_error(item, validation_failure_info,
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ConfigValidator: Config validation error: Entry autofire_coils:slingshot_left:switch = "s_slingshot_left" is not valid. Device "s_slingshot_left" not found in "switches:" section in your config. Error Code: CFE-ConfigValidator-6 (https://missionpinball.org/logs)
+2026-01-04 22:49:16,856 : INFO : Machine : Starting the main run loop with active modes: []
+2026-01-04 22:49:16,857 : WARNING : Machine : Attract mode is not active, game will not be playable. Please check your attract mode configuration.
+2026-01-04 22:49:16,857 : INFO : Machine : Shutting down...
+2026-01-04 22:49:16,857 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2026-01-04 22:49:17,858 : ERROR : Machine : Runtime Exception
+Traceback (most recent call last):
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/machine.py", line 810, in _run_loop
+    raise self._exception['exception']
+  File "/home/hotsoup/.pyenv/versions/3.11.8/lib/python3.11/asyncio/events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/events.py", line 127, in _async_handler_done
+    future.result()
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/device_manager.py", line 88, in _load_device_modules
+    self.load_devices_config(validate=True)
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/device_manager.py", line 146, in load_devices_config
+    config[device_name] = collection[device_name].validate_and_parse_config(config[device_name], False)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/device.py", line 108, in validate_and_parse_config
+    self.machine.config_validator.validate_config(
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 164, in validate_config
+    return self._validate_config(config_spec, source, base_spec=base_spec, add_missing_keys=add_missing_keys,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 204, in _validate_config
+    processed_config[k] = self.validate_config_item(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 243, in validate_config_item
+    return self.validate_item(item, validation, validation_failure_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 699, in validate_item
+    return self.validator_list[validator](item, validation_failure_info=validation_failure_info, param=param)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hotsoup/.pyenv/versions/3.11.8/envs/ozzfest_3118/lib/python3.11/site-packages/mpf/core/config_validator.py", line 413, in _validate_type_machine
+    raise self.validation_error(item, validation_failure_info,
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ConfigValidator: Config validation error: Entry autofire_coils:slingshot_left:switch = "s_slingshot_left" is not valid. Device "s_slingshot_left" not found in "switches:" section in your config. Error Code: CFE-ConfigValidator-6 (https://missionpinball.org/logs)
+2026-01-04 22:49:17,860 : INFO : root : MPF run loop ended.

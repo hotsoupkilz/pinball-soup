@@ -1,0 +1,20 @@
+#config_version=6
+
+#modes/base/config/base.yaml
+
+
+mode:
+  start_events: ball_started
+  priority: 100
+
+slide_player:
+  mode_base_started: base
+
+
+#segment_display_player:
+#  # game start
+#  mode_base_started:
+#    segment_display_top:
+#      text: "player {current_player.player_num:d}: ball {current_player.ball:d}"
+#    segment_display_bottom:
+#      text: "{current_player.score:d}"

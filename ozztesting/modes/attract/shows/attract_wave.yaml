@@ -1,0 +1,187 @@
+#show_version=6
+
+# Ozzfest attract mode light show with layered waves/sweeps to imply motion.
+# Sections: intro shimmer, GI twinkles, sweeping magnet arrows, bagatelle ripple, fivebank chase, global fade.
+
+# Intro shimmer — staged on/off across magnet ladders.
+- duration: 1.0
+  lights:
+    l_magnasave_right_1: ff
+    l_magnasave_right_2: ff
+    l_magnasave_right_3: ff
+    l_magnasave_right_4: ff
+    l_magnasave_right_5: ff
+    l_magnasave_left_1: ff
+    l_magnasave_left_2: ff
+    l_magnasave_left_3: ff
+    l_magnasave_left_4: ff
+    l_magnasave_left_5: ff
+    l_multiball_timer: ff
+    l_match: ff
+
+# GI twinkles — toggling lamps for ambient shimmer.
+- duration: 0.2
+  lights:
+    l_magnasave_left_1: ff
+    l_magnasave_right_3: ff
+    l_letter_l: ff
+    l_letter_o: ff
+    l_bonus_1: ff
+    l_bonus_5: ff
+    l_bonus_9: ff
+    l_magnasave_right_5: ff
+- duration: 0.2
+  lights:
+    l_magnasave_left_2: ff
+    l_magnasave_right_2: ff
+    l_letter_r: ff
+    l_letter_d: ff
+    l_bonus_2: ff
+    l_bonus_6: ff
+    l_bonus_10: ff
+    l_magnasave_left_5: ff
+
+# Magnet sweep left-to-right (one segment lit at a time per side).
+- duration: 0.6
+  lights:
+    l_magnasave_right_1: 0
+    l_magnasave_right_2: ff
+    l_magnasave_right_3: ff
+    l_magnasave_right_4: ff
+    l_magnasave_right_5: ff
+    l_magnasave_left_1: ff
+    l_magnasave_left_2: ff
+    l_magnasave_left_3: ff
+    l_magnasave_left_4: ff
+    l_magnasave_left_5: ff
+    l_loop_spots_letter: ff
+    l_loop_spots_x_value: ff
+
+- duration: 0.6
+  lights:
+    l_magnasave_right_2: 0
+    l_magnasave_right_3: ff
+    l_magnasave_right_4: ff
+    l_magnasave_right_5: ff
+    l_magnasave_left_2: ff
+    l_magnasave_left_3: ff
+    l_magnasave_left_4: ff
+    l_magnasave_left_5: ff
+    l_loop_spots_letter: ff
+    l_loop_spots_x_value: ff
+
+- duration: 0.6
+  lights:
+    l_magnasave_right_3: 0
+    l_magnasave_right_4: ff
+    l_magnasave_right_5: ff
+    l_magnasave_left_3: ff
+    l_magnasave_left_4: ff
+    l_magnasave_left_5: ff
+    l_loop_spots_letter: ff
+    l_loop_spots_x_value: ff
+
+- duration: 0.6
+  lights:
+    l_magnasave_right_4: 0
+    l_magnasave_right_5: ff
+    l_magnasave_left_4: ff
+    l_magnasave_left_5: ff
+    l_loop_spots_letter: ff
+    l_loop_spots_x_value: ff
+
+- duration: 0.6
+  lights:
+    l_magnasave_right_5: 0
+    l_magnasave_left_5: ff
+    l_loop_spots_letter: ff
+    l_loop_spots_x_value: ff
+
+# Bagatelle ripple across LORD letters (2 rows).
+- duration: 0.5
+  lights:
+    l_letter_l: ff
+    l_letter_o: ff
+    l_letter_r: 0
+    l_letter_d: 0
+- duration: 0.5
+  lights:
+    l_letter_l: 0
+    l_letter_o: ff
+    l_letter_r: ff
+    l_letter_d: 0
+- duration: 0.5
+  lights:
+    l_letter_l: 0
+    l_letter_o: 0
+    l_letter_r: ff
+    l_letter_d: ff
+- duration: 0.5
+  lights:
+    l_letter_l: ff
+    l_letter_o: 0
+    l_letter_r: 0
+    l_letter_d: ff
+
+# Five-bank chase (left to right and back).
+- duration: 0.4
+  lights:
+    l_fivebank_arrow_left: ff
+    l_fivebank_arrow_midleft: ff
+    l_fivebank_arrow_mid: 0
+    l_fivebank_arrow_midright: 0
+    l_fivebank_arrow_5_right: 0
+- duration: 0.4
+  lights:
+    l_fivebank_arrow_left: 0
+    l_fivebank_arrow_midleft: ff
+    l_fivebank_arrow_mid: ff
+    l_fivebank_arrow_midright: 0
+    l_fivebank_arrow_5_right: 0
+- duration: 0.4
+  lights:
+    l_fivebank_arrow_left: 0
+    l_fivebank_arrow_midleft: 0
+    l_fivebank_arrow_mid: ff
+    l_fivebank_arrow_midright: ff
+    l_fivebank_arrow_5_right: 0
+- duration: 0.4
+  lights:
+    l_fivebank_arrow_left: 0
+    l_fivebank_arrow_midleft: 0
+    l_fivebank_arrow_mid: 0
+    l_fivebank_arrow_midright: ff
+    l_fivebank_arrow_5_right: ff
+- duration: 0.4
+  lights:
+    l_fivebank_arrow_left: ff
+    l_fivebank_arrow_midleft: ff
+    l_fivebank_arrow_mid: ff
+    l_fivebank_arrow_midright: ff
+    l_fivebank_arrow_5_right: ff
+
+# Global fade-out (hard off) to loop cleanly.
+- duration: 0.8
+  lights:
+    l_magnasave_right_1: 0
+    l_magnasave_right_2: 0
+    l_magnasave_right_3: 0
+    l_magnasave_right_4: 0
+    l_magnasave_right_5: 0
+    l_magnasave_left_1: 0
+    l_magnasave_left_2: 0
+    l_magnasave_left_3: 0
+    l_magnasave_left_4: 0
+    l_magnasave_left_5: 0
+    l_loop_spots_letter: 0
+    l_loop_spots_x_value: 0
+    l_letter_l: 0
+    l_letter_o: 0
+    l_letter_r: 0
+    l_letter_d: 0
+    l_fivebank_arrow_left: 0
+    l_fivebank_arrow_midleft: 0
+    l_fivebank_arrow_mid: 0
+    l_fivebank_arrow_midright: 0
+    l_fivebank_arrow_5_right: 0
+

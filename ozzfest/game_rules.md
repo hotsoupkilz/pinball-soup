@@ -62,7 +62,7 @@ This draft translates the initial requirements into actionable rules, scoring, a
 - Starting any band mode or closing the bagatelle window also ejects from the source popper to resume play.
 
 ## Jackpots and Multiball
-- Multiball skeleton: `jungle_multiball` (3-ball) starts on `multiball_jungle_start`.
+- Multiball skeleton: `jungle_multiball` (2-ball) starts on `multiball_jungle_start`.
 - Standard jackpot: 50,000 lit at start; super jackpot 150,000 lights after two jackpots; reset on multiball end.
 - Add-a-ball: completing fivebank during multiball awards +1 ball (once per multiball) and lights super jackpot.
 - Jackpot shots to assign later (recommend upper eject, turnaround lanes, and fivebank center shot).
@@ -92,3 +92,43 @@ This draft translates the initial requirements into actionable rules, scoring, a
 
 ## Logging and Audits (future)
 - Track: bands started/completed, magnasave tokens earned/spent, drain shields lit/used, LORD letters lit per ball, fivebank completes, multiball starts/jackpots.
+
+
+
+
+
+james notes:
+(pic 1 from 1/4/26)
+- upper playfield: flipper and slingshot. flipper on left (either mini or full?)
+- orbit up top with spinners (4 spinners that make an illusion)
+- drop target in front of each loop end
+- drum kit @ end of upper playfield. double drum that has drops balls down. lands in ball popper that moves to vuk for cross
+- cross activates once enough balls have been loaded
+- stepper motor/similar that lowers cross
+- lights hanging from stage
+
+pic 2 - side view upper third + upper playfield
+pic 3 - top view upper 3
+
+pic 4 - full playfield main playfield top
+pic 5 - threebank (left mid) and coffin captive ball
+- 
+
+
+shots:
+- 1 john wick left"t ramp is "sound tower shot"
+- 2 "stage access" shot is on left of playfield
+- 3 "crowd surf" shot is loopup ramp like jaws ramp and returns back to right inline via wire ramp
+
+- a - left of john wick ramp
+- b - b/w 1 & 2 shots
+- c - right of 3 shots
+- captive ball is between 2 & c shots
+
+shooter lane
+- sends ball out around back. has a "backstage access" shot like venom/funhouse
+- backstage access shot is subway that brings down to "amp shot" as skill shot
+
+
+modes
+- if you sleect ozzy, all other 

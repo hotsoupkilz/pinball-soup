@@ -5,5 +5,7 @@
 # ignore mpf logs
 /ozzy/logs/
 /ozzy/data/
+/ozzfest/logs/
+/ozzfest/data/
 /time_warped/logs/
 /time_warped/data/
