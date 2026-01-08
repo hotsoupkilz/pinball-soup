@@ -41,6 +41,17 @@ modes:
   - attract
   - base
   - ball_save
+  - carousel_band
+
+combo_switches:
+  combo_magnasave:
+    tag_1: magnasave_left
+    tag_2: magnasave_right
+    events_when_both: combo_magnasave_both
+
+event_player:
+  s_kickout_hole_upper_active:
+    - start_mode_carousel_band
 
 ################################################################################
 # playfield details
@@ -326,10 +337,10 @@ switches:
   #  number: 48
   s_magnasave_button_right:
     number: 49
-    tags: playfield_active
+    tags: magnasave_right
   s_magnasave_button_left:
     number: 50
-    tags: playfield_active
+    tags: magnasave_left
 
   # unused matrix positions (tech chart rows 1-8, columns 7-8)
   #s_unused_51:
@@ -433,7 +444,7 @@ coils:
     default_pulse_ms: 30
   c_slingshot_upper:
     number: 19
-    default_pulse_ms: 30
+    default_pulse_ms: 25
   c_miniball_kicker:
     number: 20
   c_magnasave_left:

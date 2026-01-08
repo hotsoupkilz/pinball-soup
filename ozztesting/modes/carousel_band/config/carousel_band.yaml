@@ -1,0 +1,150 @@
+#config_version=6
+
+mode:
+  start_events: ball_starting
+  stop_events: carousel_band_item_selected, ball_will_end
+  priority: 120
+  code: mpf.modes.carousel.code.carousel.Carousel
+
+mode_settings:
+  selectable_items:
+    - meatloaf
+    - dio
+    - zombie
+    - rivers
+    - ozzy
+  next_item_events: s_magnasave_button_right_active
+  previous_item_events: s_magnasave_button_left_active
+  select_item_events: combo_magnasave_both
+
+slide_player:
+  mode_carousel_band_started:
+    carousel_band_meatloaf:
+      action: play
+      priority: 120
+  carousel_item_highlighted{item=="dio"}:
+    carousel_band_meatloaf:
+      action: remove
+    carousel_band_zombie:
+      action: remove
+    carousel_band_rivers:
+      action: remove
+    carousel_band_ozzy:
+      action: remove
+    carousel_band_dio:
+      action: play
+      priority: 120
+  carousel_item_highlighted{item=="zombie"}:
+    carousel_band_meatloaf:
+      action: remove
+    carousel_band_dio:
+      action: remove
+    carousel_band_rivers:
+      action: remove
+    carousel_band_ozzy:
+      action: remove
+    carousel_band_zombie:
+      action: play
+      priority: 120
+  carousel_item_highlighted{item=="rivers"}:
+    carousel_band_meatloaf:
+      action: remove
+    carousel_band_dio:
+      action: remove
+    carousel_band_zombie:
+      action: remove
+    carousel_band_ozzy:
+      action: remove
+    carousel_band_rivers:
+      action: play
+      priority: 120
+  carousel_item_highlighted{item=="ozzy"}:
+    carousel_band_meatloaf:
+      action: remove
+    carousel_band_dio:
+      action: remove
+    carousel_band_zombie:
+      action: remove
+    carousel_band_rivers:
+      action: remove
+    carousel_band_ozzy:
+      action: play
+      priority: 120
+  carousel_item_highlighted{item=="meatloaf"}:
+    carousel_band_dio:
+      action: remove
+    carousel_band_zombie:
+      action: remove
+    carousel_band_rivers:
+      action: remove
+    carousel_band_ozzy:
+      action: remove
+    carousel_band_meatloaf:
+      action: play
+      priority: 120
+  carousel_band_item_selected:
+    carousel_band_meatloaf:
+      action: remove
+    carousel_band_dio:
+      action: remove
+    carousel_band_zombie:
+      action: remove
+    carousel_band_rivers:
+      action: remove
+    carousel_band_ozzy:
+      action: remove
+
+hardware_sound_player:
+  carousel_item_highlighted:
+    stop_track:
+      track: 1
+      action: stop
+  carousel_item_highlighted{item=="meatloaf"}:
+    "meatloaf_bat_out_of_hell.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+  carousel_item_highlighted{item=="dio"}:
+    "dio_holy_diver.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+  carousel_item_highlighted{item=="zombie"}:
+    "zombie_living_dead_girl.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+  carousel_item_highlighted{item=="rivers"}:
+    "rivers_dustman.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+  carousel_item_highlighted{item=="ozzy"}:
+    "MUSIC.SND":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+  carousel_band_item_selected:
+    stop_track:
+      track: 1
+      action: stop
+
+event_player:
+  carousel_band_item_selected{selected_item=="meatloaf"}:
+    - start_mode_meatloaf
+  carousel_band_item_selected{selected_item=="dio"}:
+    - start_mode_dio
+  carousel_band_item_selected{selected_item=="zombie"}:
+    - start_mode_zombie
+  carousel_band_item_selected{selected_item=="rivers"}:
+    - start_mode_rivers
+  carousel_band_item_selected{selected_item=="ozzy"}:
+    - start_mode_ozzy
+  carousel_band_item_selected:
+    - balldevice_bd_kickout_hole_upper_eject_ball
+

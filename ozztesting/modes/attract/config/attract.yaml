@@ -13,3 +13,16 @@ show_player:
     attract_wave:
       speed: 1
       loops: -1
+
+hardware_sound_player:
+  mode_attract_started:
+    "tenacious_the_metal.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+        no_cache: false
+  mode_attract_will_stop:
+    stop_track:
+      track: 1
+      action: stop
