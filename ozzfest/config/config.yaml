@@ -1,24 +1,19 @@
 #config_version=6
 
-###############################################################################
-# hardware configuration
-###############################################################################
+################################################################################
+# hardware
+################################################################################
 
 hardware:
-  platform: lisy  # APC hardware bridge uses MPF's lisy platform module
+  platform: lisy
 
 lisy:
   connection: serial
-  port: /dev/ttyACM0  # adjust once APC USB device path is finalized
+  port: /dev/ttyACM0
   baud: 115200
-  #debug: true
+  #debug: true #will make game run slowly
 
-# use APC sdcard (named CYCL) for hardware-hosted sounds
-hardware_sound_systems:
-  default:
-    label: APC
-
-# platform/hardware type (lisy/APC-specific)
+# platform/hardware type (lisy/APC-specific. necessary for coils to work properly)
 digital_outputs:
   game_over_relay:
     number: 25
@@ -26,143 +21,148 @@ digital_outputs:
     enable_events: ball_started
     disable_events: ball_will_end
 
-
-hardware_sound_player:
-  game_start:
-    "dio_holy_diver.snd":
-      track: 1
-      action: play_file
-      platform_options:
-        loop: true
-        no_cache: false
-
-
-#bcp:
-#  connections:
-#    gmc:
-#      type: mpf.core.bcp.bcp_socket_client.BCPClientSocket
-#      port: 5050
-#      type: mpf.core.bcp.bcp_socket_client.BCPClient
-
+# if running without physical hardware (ie mpf -X or mpf both -X)
 virtual_platform_start_active_switches:
-  - s_left_ball_trough
-  - s_right_ball_trough
+  - s_ball_trough_left
+  - s_ball_trough_right
+
+## hardware sounds
+# use APC sdcard for sounds
+hardware_sound_systems:
+  default:
+    label: APC
 
 ################################################################################
-## displays
+# game modes
 ################################################################################
 
-# segment displays
+# modes: anything that has a folder in modes/ should be listed here
+modes:
+  - attract
+  - base
+  - ball_save
+  - carousel_band
+
+event_player:
+  s_kickout_hole_upper_active:
+    - start_mode_carousel_band
+
+################################################################################
+# displays
+################################################################################
+
 segment_displays:
   info_display:
     number: 0
     platform: lisy
     size: 4
-    update_method: stack
+    #update_method: stack
     #integrated_commas: true
   player1_display:
     number: 1
     platform: lisy
     size: 7
-    update_method: stack
+    #update_method: stack
     #integrated_commas: true
   player2_display:
     number: 2
     platform: lisy
     size: 7
-    update_method: stack
+    #update_method: stack
     #integrated_commas: true
   player3_display:
     number: 3
     platform: lisy
     size: 7
-    update_method: stack
+    #update_method: stack
     #integrated_commas: true
   player4_display:
     number: 4
     platform: lisy
     size: 7
-    update_method: stack
+    #update_method: stack
     #integrated_commas: true
 
+
 segment_display_player:
-    # empty all displays on game start and setup info display
-    game_start:
-        info_display:
-            text: "{current_player.ball:d}"
-        player1_display:
-            text: ""
-        player2_display:
-            text: ""
-        player3_display:
-            text: ""
-        player4_display:
-            text: ""
 
-    # show score when adding players
-    player_added.1{num==1}:
-        player1_display:
-            text: "{players[0].score:d}"
-    player_added.2{num==2}:
-        player2_display:
-            text: "{players[1].score:d}"
-    player_added.3{num==3}:
-        player3_display:
-            text: "{players[2].score:d}"
-    player_added.4{num==4}:
-        player4_display:
-            text: "{players[3].score:d}"
+  # empty all displays on game start and setup info display
+  game_start:
+    info_display:
+      text: "{current_player.ball:d}"
+    player1_display:
+      text: ""
+    player2_display:
+      text: ""
+    player3_display:
+      text: ""
+    player4_display:
+      text: ""
 
-    # clear only info display after game
-    game_ended:
-        info_display:
-            text: ""
-    game_ended{machine.player1_score > 0}:
-        player1_display:
-            text: "{machine.player1_score:d}"
-    game_ended{machine.player2_score > 0}:
-        player2_display:
-            text: "{machine.player2_score:d}"
-    game_ended{machine.player3_score > 0}:
-        player3_display:
-            text: "{machine.player3_score:d}"
-    game_ended{machine.player4_score > 0}:
-        player4_display:
-            text: "{machine.player4_score:d}"
+  # show score when adding players
+  player_added.1{num==1}:
+    player1_display:
+      text: "{players[0].score:d}"
+  player_added.2{num==2}:
+    player2_display:
+      text: "{players[1].score:d}"
+  player_added.3{num==3}:
+    player3_display:
+      text: "{players[2].score:d}"
+  player_added.4{num==4}:
+    player4_display:
+      text: "{players[3].score:d}"
 
-    #flash display on player turn
-    player_turn_started.1{number==1}:
-        player1_display:
-            action: flash
-    player_turn_ended.2{number==1}:
-        player1_display:
-            action: no_flash
-    player_turn_started.3{number==2}:
-        player2_display:
-            action: flash
-    player_turn_ended.4{number==2}:
-        player2_display:
-            action: no_flash
-    player_turn_started.5{number==3}:
-        player3_display:
-            action: flash
-    player_turn_ended.6{number==3}:
-        player3_display:
-            action: no_flash
-    player_turn_started.7{number==4}:
-        player4_display:
-            action: flash
-    player_turn_ended.8{number==4}:
-        player4_display:
-            action: no_flash
+  # clear only info display after game
+  game_ended:
+    info_display:
+      text: ""
+  game_ended{machine.player1_score > 0}:
+    player1_display:
+      text: "{machine.player1_score:d}"
+  game_ended{machine.player2_score > 0}:
+    player2_display:
+      text: "{machine.player2_score:d}"
+  game_ended{machine.player3_score > 0}:
+    player3_display:
+      text: "{machine.player3_score:d}"
+  game_ended{machine.player4_score > 0}:
+    player4_display:
+      text: "{machine.player4_score:d}"
+
+  #flash display on player turn
+  player_turn_started.1{number==1}:
+    player1_display:
+      action: flash
+  player_turn_ended.2{number==1}:
+    player1_display:
+      action: no_flash
+  player_turn_started.3{number==2}:
+    player2_display:
+      action: flash
+  player_turn_ended.4{number==2}:
+    player2_display:
+      action: no_flash
+  player_turn_started.5{number==3}:
+    player3_display:
+      action: flash
+  player_turn_ended.6{number==3}:
+    player3_display:
+      action: no_flash
+  player_turn_started.7{number==4}:
+    player4_display:
+      action: flash
+  player_turn_ended.8{number==4}:
+    player4_display:
+      action: no_flash
 
 
-###############################################################################
-# core devices
-###############################################################################
+################################################################################
+## switches
+################################################################################
 
 switches:
-  # Williams Jungle Lord switch matrix (columns 1-8, rows 1-8) per tech chart
+
   s_plumb_bob_tilt:
     number: 1
     ignore_window_ms: 200
@@ -183,13 +183,13 @@ switches:
     number: 7
   s_high_score_reset:
     number: 8
-  s_right_ball_trough:
+  s_ball_trough_right:
     number: 9
-  s_left_ball_trough:
+  s_ball_trough_left:
     number: 10
-  s_unused_11:
-    number: 11
-  s_left_slingshot:
+  #s_unused_11:
+  #  number: 11
+  s_slingshot_left:
     number: 12
   s_rollover_l:
     number: 13
@@ -203,68 +203,68 @@ switches:
   s_rollover_d:
     number: 16
     tags: playfield_active
-  s_one_target:
+  s_target_1:
     number: 17
     tags: playfield_active
-  s_two_target:
+  s_target_2:
     number: 18
     tags: playfield_active
-  s_three_target:
+  s_target_3:
     number: 19
     tags: playfield_active
-  s_rollover_4:
+  s_inlane_rollover_4:
     number: 20
     tags: playfield_active
-  s_rollover_5:
+  s_inlane_rollover_5:
     number: 21
     tags: playfield_active
-  s_left_outlane:
+  s_outlane_left:
     number: 22
     tags: playfield_active
-  s_right_outlane:
+  s_outlane_right:
     number: 23
     tags: playfield_active
-  s_turnaround_lower_rollover:
+  s_turnaround_rollover_lower:
     number: 24
     tags: playfield_active
-  s_right_threebank_lower:
+  s_threebank_right_lower:
     number: 25
-  s_right_threebank_center:
+  s_threebank_right_mid:
     number: 26
-  s_right_threebank_upper:
+  s_threebank_right_upper:
     number: 27
-  s_right_slingshot:
+  s_slingshot_right:
     number: 28
-  s_left_threebank_lower:
+  s_threebank_left_lower:
     number: 29
-  s_left_threebank_center:
+  s_threebank_left_mid:
     number: 30
-  s_left_threebank_upper:
+  s_threebank_left_upper:
     number: 31
-  s_turnaround_upper_rollover:
+  s_turnaround_rollover_upper:
     number: 32
     tags: playfield_active
-  s_fivebank_drop_left:
+  s_fivebank_left:
     number: 33
-  s_fivebank_drop_left_mid:
+  s_fivebank_left_mid:
     number: 34
-  s_fivebank_drop_center:
+  s_fivebank_center:
     number: 35
-  s_fivebank_drop_right_mid:
+  s_fivebank_right_mid:
     number: 36
-  s_fivebank_drop_right:
+  s_fivebank_right:
     number: 37
-  s_upper_ball_popper:
+  s_kickout_hole_upper:
     number: 38
-  s_lower_ball_popper:
+  s_kickout_hole_lower:
     number: 39
-  s_upper_slingshot:
+  s_slingshot_upper:
     number: 40
   s_playfield_tilt:
     number: 41
   s_outhole:
     number: 42
-  s_shooter_lane:
+  s_plunger:
     number: 43
   s_playfield_entry_gate:
     number: 44
@@ -278,541 +278,389 @@ switches:
   s_right_standup:
     number: 47
     tags: playfield_active
-  s_unused_48:
-    number: 48
-  s_right_magnet_button:
+  #s_unused_48:
+  #  number: 48
+  s_magnasave_button_right:
     number: 49
-    tags: playfield_active
-  s_left_magnet_button:
+    tags: magnasave_right
+  s_magnasave_button_left:
     number: 50
-    tags: playfield_active
-  # unused matrix positions (tech chart rows 1-8, columns 7-8)
-  s_unused_51:
-    number: 51
-  s_unused_52:
-    number: 52
-  s_unused_53:
-    number: 53
-  s_unused_54:
-    number: 54
-  s_unused_55:
-    number: 55
-  s_unused_56:
-    number: 56
-  s_unused_57:
-    number: 57
-  s_unused_58:
-    number: 58
-  s_unused_59:
-    number: 59
-  s_unused_60:
-    number: 60
-  s_unused_61:
-    number: 61
-  s_unused_62:
-    number: 62
-  s_unused_63:
-    number: 63
-  s_unused_64:
-    number: 64
+    tags: magnasave_left
 
-  #special switches (williams used spec switches not on matrix. APC uses #65-70 for these)
-  #s_spec_65:
-  #  number: 65
-  #s_spec_66:
-  #  number: 66
-  #s_spec_67:
-  #  number: 67
-  #s_spec_68:
-  #  number: 68
-  #s_spec_69:
-  #  number: 69
-  #s_spec_70:
-  #  number: 70
+  # unused matrix positions (tech chart rows 1-8, columns 7-8)
+  #s_unused_51:
+  #  number: 51
+  #s_unused_52:
+  #  number: 52
+  #s_unused_53:
+  #  number: 53
+  #s_unused_54:
+  #  number: 54
+  #s_unused_55:
+  #  number: 55
+  #s_unused_56:
+  #  number: 56
+  #s_unused_57:
+  #  number: 57
+  #s_unused_58:
+  #  number: 58
+  #s_unused_59:
+  #  number: 59
+  #s_unused_60:
+  #  number: 60
+  #s_unused_61:
+  #  number: 61
+  #s_unused_62:
+  #  number: 62
+  #s_unused_63:
+  #  number: 63
+  #s_unused_64:
+  #  number: 64
+
+  # williams special switches not defined in matrix (APC uses 65-70 for these)
+  s_65_slingshot_left_spec:
+    number: 65
+  s_66_slingshot_right_spec:
+    number: 66
+  s_67_slingshot_upper_spec:
+    number: 67
+  s_68:
+    number: 68
+  s_69:
+    number: 69
+  s_70:
+    number: 70
+
+combo_switches:
+  combo_magnasave:
+    tag_1: magnasave_left
+    tag_2: magnasave_right
+    events_when_both: combo_magnasave_both
+
+
+################################################################################
+## coils
+################################################################################
 
 coils:
-  # Williams System 7 Jungle Lord solenoids (Tech Chart functions for naming alignment)
   c_outhole_kicker:
     number: 1
     default_pulse_ms: 30
-    #label: "Sol 1 / Q15 — Outhole (Gry-Brn; 2J11-4 / 8P3-1 / 8P6-17)"
-  c_ball_release:
+  c_trough_release:
     number: 2
     default_pulse_ms: 30
-    #label: "Sol 2 / Q17 — Ball Release (Gry-Red; 2J11-5 / 8P3-2 / 8P6-18)"
   c_gi_relay:
     number: 3
-    default_pulse_ms: 30
-    #label: "Sol 3 / Q19 — General Illumination Relay (Gry-Orn; 2J11-7 / 3P7-1)"
-  c_left_threebank_reset:
+  c_threebank_left_reset:
     number: 4
     default_pulse_ms: 45
-    #label: "Sol 4 / Q21 — Left 3-Bank Reset (Gry-Yel; 2J11-8 / 8P3-4 / 8P6-20)"
-  c_right_threebank_reset:
+  c_threebank_right_reset:
     number: 5
     default_pulse_ms: 45
-    #label: "Sol 5 / Q23 — Right 3-Bank Reset (Gry-Grn; 2J11-9 / 8P3-5 / 8P6-21)"
   c_buzzer:
     number: 6
     default_pulse_ms: 30
-    #label: "Sol 6 / Q25 — Buzzer (Gry-Blu; 2J11-3 / 8P3-6 / 8P6-22)"
-  c_lower_ball_popper:
+  c_kickout_hole_lower:
     number: 7
     default_pulse_ms: 45
-    #label: "Sol 7 / Q27 — Lower Ball Popper (Gry-Vio; 2J11-2 / 8P3-7)"
-  c_upper_ball_popper:
+  c_kickout_hole_upper:
     number: 8
     default_pulse_ms: 45
-    #label: "Sol 8 / Q29 — Upper Ball Popper (Gry-Blk; 2J11-1 / 8P3-8)"
   c_fivebank_reset_left:
     number: 9
     default_pulse_ms: 50
-    #label: "Sol 9 / Q31 — 5-Bank #1 (Left) Reset (Brn-Blk; 2J9-9 / 8P3-9)"
   c_fivebank_reset_midleft:
     number: 10
     default_pulse_ms: 50
-    #label: "Sol 10 / Q33 — 5-Bank #2 Reset (Brn-Red; 2J9-7 / 8P3-10)"
   c_fivebank_reset_center:
     number: 11
     default_pulse_ms: 50
-    #label: "Sol 11 / Q35 — 5-Bank #3 Reset (Brn-Orn; 2J9-1 / 8P3-11)"
   c_fivebank_reset_midright:
     number: 12
     default_pulse_ms: 50
-    #label: "Sol 12 / Q37 — 5-Bank #4 Reset (Brn-Yel; 2J9-2 / 8P3-12)"
   c_fivebank_reset_right:
     number: 13
     default_pulse_ms: 50
-    #label: "Sol 13 / Q39 — 5-Bank #5 (Right) Reset (Brn-Grn; 2J9-3 / 8P3-13)"
   c_fivebank_release:
     number: 14
-    default_pulse_ms: 45
-    #label: "Sol 14 / Q41 — 5-Bank Drop Target Release (Brn-Blu; 2J9-4 / 8P3-14)"
   c_bell:
     number: 15
-    default_pulse_ms: 30
-    #label: "Sol 15 / Q43 — Bell (Brn-Vio; 2J9-5 / 7P1-17)"
   c_coin_lockout:
     number: 16
-    default_pulse_ms: 30
-    #label: "Sol 16 / Q45 — Coin Lockout (Brn-Gry; 2J9-6 / 7P1-18 / 7P2-4)"
-  c_left_slingshot:
+
+  c_slingshot_left:
     number: 17
-    default_pulse_ms: 35
-    #label: "Sol 17 / Q47 — Left Slingshot (Blu-Brn; 2J12-7 / 8P3-17 / 8P6-11)"
-  c_right_slingshot:
+    default_pulse_ms: 30
+  c_slingshot_right:
     number: 18
-    default_pulse_ms: 35
-    #label: "Sol 18 / Q49 — Right Slingshot (Blu-Red; 2J12-4 / 8P3-18 / 8P6-12)"
-  c_upper_slingshot:
+    default_pulse_ms: 30
+  c_slingshot_upper:
     number: 19
-    default_pulse_ms: 35
-    #label: "Sol 19 / Q51 — Upper Slingshot (Blu-Orn; 2J12-3 / 8P3-19)"
+    default_pulse_ms: 25
   c_miniball_kicker:
     number: 20
-    default_pulse_ms: 45
-    #label: "Sol 20 / Q53 — Mini-Ball Kicker (Blu-Yel; 2J12-6 / 8P3-20)"
-  c_left_magnet_relay:
+  c_magnasave_left:
     number: 21
-    default_pulse_ms: 60
-    #label: "Sol 21 / Q55 — Left Magnet Relay (8L25)"
-    #allow_enable: true  # TODO: tune hold power once hardware is online
-  c_right_magnet_relay:
+  c_magnasave_right:
     number: 22
-    default_pulse_ms: 60
-    #label: "Sol 22 / Q57 — Right Magnet Relay (8L28)"
-    #allow_enable: true  # TODO: tune hold power once hardware is online
 
-  c_right_flipper:
+  c_flipper_left:
     number: 23
-  c_left_flipper:
+  c_flipper_right:
     number: 24
-  c_upper_right_flipper:
-    number: 25
-  #c_upper_left_flipper:
-  #  number: 26
-    
+
+
+## autofire coils (things that fire immediately when switch is hit)
+autofire_coils:
+  slingshot_left:
+    coil: c_slingshot_left
+    switch: s_65_slingshot_left_spec
+  slingshot_right:
+    coil: c_slingshot_right
+    switch: s_66_slingshot_right_spec
+  slingshot_upper:
+    coil: c_slingshot_upper
+    switch: s_67_slingshot_upper_spec
+
+################################################################################
+## lights
+################################################################################
+
 lights:
   # Williams Jungle Lord lamp matrix (columns 1-8, rows 1-8) per Williams Jungle Lord Tech Chart
   l_shoot_again_backbox:
     number: 1
-    #label: 'Shoot Again (Backbox)'
   l_ball_in_play:
     number: 2
-    #label: 'Ball In Play'
   l_tilt:
     number: 3
-    #label: 'Tilt'
   l_game_over:
     number: 4
-    #label: 'Game Over'
   l_match:
     number: 5
-    #label: 'Match'
   l_high_score:
     number: 6
-    #label: 'High Score'
   l_multiball_timer:
     number: 7
-    #label: 'Multi-Ball Timer'
-  l_right_magnet_1_bottom:
+  l_magnasave_right_1:
     number: 8
-    #label: 'Right Magnet Lamp #1 (Bottom)'
-  l_right_magnet_2:
+  l_magnasave_right_2:
     number: 9
-    #label: 'Right Magnet Lamp #2'
-  l_right_magnet_3:
+  l_magnasave_right_3:
     number: 10
-    #label: 'Right Magnet Lamp #3'
-  l_right_magnet_4:
+  l_magnasave_right_4:
     number: 11
-    #label: 'Right Magnet Lamp #4'
-  l_right_magnet_5_top:
+  l_magnasave_right_5:
     number: 12
-    #label: 'Right Magnet Lamp #5 (Top)'
   l_letter_l:
     number: 13
-    #label: 'Letter L'
   l_letter_o:
     number: 14
-    #label: 'Letter O'
   l_letter_r:
     number: 15
-    #label: 'Letter R'
   l_letter_d:
     number: 16
-    #label: 'Letter D'
   l_target_1:
     number: 17
-    #label: 'Target 1'
   l_target_2:
     number: 18
-    #label: 'Target 2'
   l_target_3:
     number: 19
-    #label: 'Target 3'
   l_rollover_4:
     number: 20
-    #label: 'Rollover 4'
   l_rollover_5:
     number: 21
-    #label: 'Rollover 5'
-  l_left_drain_shield:
+  l_drain_shield_left:
     number: 22
-    #label: 'Left Drain Shield'
-  l_right_drain_shield:
+  l_drain_shield_right:
     number: 23
-    #label: 'Right Drain Shield'
   l_minifield_illumination_24:
     number: 24
-    #label: 'Mini-field Illumination (2 lamps)'
   l_right_threebank:
     number: 25
-    #label: 'Right 3-Bank'
   l_scoring_2x:
     number: 26
-    #label: '2X Scoring'
   l_keep_shooting_playfield:
     number: 27
-    #label: 'Keep Shooting (Playfield)'
   l_minifield_special:
     number: 28
-    #label: 'Mini-field Special'
   l_left_threebank:
     number: 29
-    #label: 'Left 3-Bank'
   l_loop_spots_letter:
     number: 30
-    #label: 'Loop Spots Letter'
   l_loop_spots_x_value:
     number: 31
-    #label: 'Loop Spots X-Value'
   l_minifield_illumination_32:
     number: 32
-    #label: 'Mini-field Illumination'
-  l_fivebank_arrow_1_left:
+  l_fivebank_arrow_left:
     number: 33
-    #label: '5-Bank #1 Arrow (Left)'
-  l_fivebank_arrow_2:
+  l_fivebank_arrow_midleft:
     number: 34
-    #label: '5-Bank #2 Arrow'
-  l_fivebank_arrow_3:
+  l_fivebank_arrow_mid:
     number: 35
-    #label: '5-Bank #3 Arrow'
-  l_fivebank_arrow_4:
+  l_fivebank_arrow_midright:
     number: 36
-    #label: '5-Bank #4 Arrow'
   l_fivebank_arrow_5_right:
     number: 37
-    #label: '5-Bank #5 Arrow (Right)'
   l_minifield_illumination_38:
     number: 38
-    #label: 'Mini-field Illumination'
-  l_left_magnet_1_bottom:
+  l_magnasave_left_1:
     number: 39
-    #label: 'Left Magnet Lamp #1 (Bottom)'
-  l_left_magnet_2:
+  l_magnasave_left_2:
     number: 40
-    #label: 'Left Magnet Lamp #2'
-  l_left_magnet_3:
+  l_magnasave_left_3:
     number: 41
-    #label: 'Left Magnet Lamp #3'
-  l_left_magnet_4:
+  l_magnasave_left_4:
     number: 42
-    #label: 'Left Magnet Lamp #4'
-  l_left_magnet_5_top:
+  l_magnasave_left_5:
     number: 43
-    #label: 'Left Magnet Lamp #5 (Top)'
   l_extra_kick_when_lit:
     number: 44
-    #label: 'Extra Kick When Lit'
   l_lock_lamps_pair:
     number: 45
-    #label: 'Lock Lamps (2 lamps)'
   l_double_trouble:
     number: 46
-    #label: 'Double-Trouble'
   l_minifield_illumination_47:
     number: 47
-    #label: 'Mini-field Illumination'
   l_minifield_illumination_48:
     number: 48
-    #label: 'Mini-field Illumination'
   l_bonus_1:
     number: 49
-    #label: '"1" Bonus'
   l_bonus_2:
     number: 50
-    #label: '"2" Bonus'
   l_bonus_3:
     number: 51
-    #label: '"3" Bonus'
   l_bonus_4:
     number: 52
-    #label: '"4" Bonus'
   l_bonus_5:
     number: 53
-    #label: '"5" Bonus'
   l_bonus_6:
     number: 54
-    #label: '"6" Bonus'
   l_bonus_7:
     number: 55
-    #label: '"7" Bonus'
   l_bonus_8:
     number: 56
-    #label: '"8" Bonus'
   l_bonus_9:
     number: 57
-    #label: '"9" Bonus'
   l_bonus_10:
     number: 58
-    #label: '"10" Bonus'
   l_bonus_20:
     number: 59
-    #label: '"20" Bonus'
   l_bonus_30:
     number: 60
-    #label: '"30" Bonus'
   l_bonus_multiplier_2x:
     number: 61
-    #label: 'Bonus Multiplier 2X'
   l_bonus_multiplier_3x:
     number: 62
-    #label: 'Bonus Multiplier 3X'
   l_bonus_multiplier_5x:
     number: 63
-    #label: 'Bonus Multiplier 5X'
   l_bonus_multiplier_10x:
     number: 64
-    #label: 'Bonus Multiplier 10X'
-
-###############################################################################
-# mode loading (placeholder until Step 4)
-###############################################################################
-
-modes:
-  - attract
-  - base
-  #- tilt
-  #- ball_save
-  #- bonus
-  #- multiball_core
-  #- dio
-  #- meatloaf
-  #- ozzy
-  #- rob_zombie
-  #- rivers
-  #- black_sabbath
 
 
 ################################################################################
-# playfield details/devices
+# playfield details
 ################################################################################
 
-playfields:
-  playfield:
-    default_source_device: bd_shooter_lane
-    tags: default
+# ball devices
+# (anything that holds & releases a ball, including the playfield which "holds
+# a ball". trough, the plunger lane, VUKs, poppers, playfield locks, etc.)
 
 ball_devices:
-  bd_shooter_lane:
-    ball_switches: s_shooter_lane
-    mechanical_eject: true
-    eject_timeouts: 3s
 
-  bd_trough:
-    ball_switches:
-      - s_left_ball_trough
-      - s_right_ball_trough
-    eject_coil: c_ball_release
-    tags: home, trough
-    eject_timeouts: 3s
-    eject_targets: bd_shooter_lane
-
-  bd_outhole:
+  # outhole/drain
+  bd_drain:
     ball_switches: s_outhole
     eject_coil: c_outhole_kicker
     eject_targets: bd_trough
     tags: drain
 
-  bd_upper_ball_popper:
-    ball_switches: s_upper_ball_popper
-    eject_coil: c_upper_ball_popper
+  # trough config for 2 ball machine
+  bd_trough:
+    ball_switches: s_ball_trough_right, s_ball_trough_left
+    eject_coil: c_trough_release
+    eject_targets: bd_plunger_lane
+    eject_timeouts: 3s
+    tags: home, trough
+
+  # plunger config for manual plunge
+  bd_plunger_lane:
+    ball_switches: s_plunger
+    eject_timeouts: 3s
+    mechanical_eject: true
+
+  bd_kickout_hole_upper:
+    ball_switches: s_kickout_hole_upper
+    eject_coil: c_kickout_hole_upper
     #eject_timeouts: 3s
-  bd_lower_ball_popper:
-    ball_switches: s_lower_ball_popper
-    eject_coil: c_lower_ball_popper
+  bd_kickout_hole_lower:
+    ball_switches: s_kickout_hole_lower
+    eject_coil: c_kickout_hole_lower
     #eject_timeouts: 3s
+
 
 ## drop targets
 drop_targets:
-  drop_right_threebank_lower:
-    switch: s_right_threebank_lower
-  drop_right_threebank_center:
-    switch: s_right_threebank_center
-  drop_right_threebank_upper:
-    switch: s_right_threebank_upper
-
   drop_left_threebank_lower:
-    switch: s_left_threebank_lower
-  drop_left_threebank_center:
-    switch: s_left_threebank_center
+    switch: s_threebank_left_lower
+  drop_left_threebank_mid:
+    switch: s_threebank_left_mid
   drop_left_threebank_upper:
-    switch: s_left_threebank_upper
-
+    switch: s_threebank_left_upper
+  drop_right_threebank_lower:
+    switch: s_threebank_right_lower
+  drop_right_threebank_mid:
+    switch: s_threebank_right_mid
+  drop_right_threebank_upper:
+    switch: s_threebank_right_upper
   drop_fivebank_left:
-    switch: s_fivebank_drop_left
+    switch: s_fivebank_left
     reset_coil: c_fivebank_reset_left
-  drop_fivebank_left_mid:
-    switch: s_fivebank_drop_left_mid
+  drop_fivebank_midleft:
+    switch: s_fivebank_left_mid
     reset_coil: c_fivebank_reset_midleft
   drop_fivebank_center:
-    switch: s_fivebank_drop_center
+    switch: s_fivebank_center
     reset_coil: c_fivebank_reset_center
-  drop_fivebank_right_mid:
-    switch: s_fivebank_drop_right_mid
+  drop_fivebank_midright:
+    switch: s_fivebank_right_mid
     reset_coil: c_fivebank_reset_midright
   drop_fivebank_right:
-    switch: s_fivebank_drop_right
+    switch: s_fivebank_right
     reset_coil: c_fivebank_reset_right
 
 drop_target_banks:
-  right_threebank:
-    drop_targets: drop_right_threebank_lower, drop_right_threebank_center, drop_right_threebank_upper
-    reset_coils: c_right_threebank_reset
-    reset_on_complete: 1s
   left_threebank:
-    drop_targets: drop_left_threebank_lower, drop_left_threebank_center, drop_left_threebank_upper
-    reset_coils: c_left_threebank_reset
+    drop_targets:
+      - drop_left_threebank_lower
+      - drop_left_threebank_mid
+      - drop_left_threebank_upper
+    reset_coils: c_threebank_left_reset
     reset_on_complete: 1s
-  #fivebank_inline:
-  #  drop_targets: drop_fivebank_left, drop_fivebank_left_mid, drop_fivebank_center, drop_fivebank_right_mid, drop_fivebank_right
-  #  reset_on_complete: 1s
+  right_threebank:
+    drop_targets:
+      - drop_right_threebank_lower
+      - drop_right_threebank_mid
+      - drop_right_threebank_upper
+    reset_coils: c_threebank_right_reset
+    reset_on_complete: 1s
+  fivebank:
+    drop_targets:
+      - drop_fivebank_left
+      - drop_fivebank_midleft
+      - drop_fivebank_center
+      - drop_fivebank_midright
+      - drop_fivebank_right
+    reset_coils: 
+      - c_fivebank_reset_left
+      - c_fivebank_reset_midleft
+      - c_fivebank_reset_center
+      - c_fivebank_reset_midright
+      - c_fivebank_reset_right
+    reset_on_complete: 2s
 
-## autofire coils (things that fire immediately when switch is hit)
-autofire_coils:
-  slingshot_left:
-    coil: c_left_slingshot
-    switch: s_left_slingshot
-  slingshot_right:
-    coil: c_right_slingshot
-    switch: s_right_slingshot
-  slingshot_upper:
-    coil: c_upper_slingshot
-    switch: s_upper_slingshot
 
-###############################################################################
-# player variables (baseline)
-###############################################################################
-
-player_vars:
-  score_multiplier:
-    initial_value: 1
-    value_type: int
-  bonus_multiplier:
-    initial_value: 1
-    value_type: int
-  magnet_save_left_tokens:
-    initial_value: 0
-    value_type: int
-  magnet_save_right_tokens:
-    initial_value: 0
-    value_type: int
-  drain_shield_left_active:
-    initial_value: 0
-    value_type: int
-  drain_shield_right_active:
-    initial_value: 0
-    value_type: int
-  band_current:
-    initial_value: none
-    value_type: str
-  bands_completed:
-    initial_value: 0
-    value_type: int
-  bagatelle_ready:
-    initial_value: 0
-    value_type: int
-  bonus_targets:
-    initial_value: 0
-    value_type: int
-  bonus_loops:
-    initial_value: 0
-    value_type: int
-  bonus_lord_letters:
-    initial_value: 0
-    value_type: int
-  lord_letters_lit:
-    initial_value: 0
-    value_type: int
-  lord_letters_complete:
-    initial_value: 0
-    value_type: int
-  bagatelle_active:
-    initial_value: 0
-    value_type: int
-  bagatelle_ball_locked:
-    initial_value: 0
-    value_type: int
-  bagatelle_source_popper:
-    initial_value: none
-    value_type: str
-  band_progress_index:
-    initial_value: 0
-    value_type: int
-  jackpot_lit:
-    initial_value: 0
-    value_type: int
-  super_jackpot_lit:
-    initial_value: 0
-    value_type: int
-  jackpot_hits:
-    initial_value: 0
-    value_type: int
-  band_hurryup_active:
-    initial_value: 0
-    value_type: int
-  band_hurryup_value:
-    initial_value: 0
-    value_type: int
+playfields:
+  playfield:
+    default_source_device: bd_plunger_lane
+    tags: default

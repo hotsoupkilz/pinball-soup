@@ -1,4 +1,4 @@
-# Ozztesting Session Context
+# Ozzfest Session Context
 
 ## Quick Reference
 - **Virtualenv**: `pyenv activate ozzfest_3118` (Python 3.11.8, MPF 0.80.0.dev11)
@@ -16,10 +16,13 @@
 - **APC (Arduino Pinball Controller)**: ~/repos/APC
 
 ## This Machine
-- pinball-soup repo contains directories that each contain code to run a physical pinball machine using the mission pinball framework. Each can use different hardware configurations (FAST, arduino pinball controller, etc.)
-- this session is focused on the ozztesting machine directory. changes in other directories are not desired unless specifically noted
+- ~/repos/pinball-soup repo contains directories that each contain code to run a physical pinball machine using the mission pinball framework. Each can use different hardware configurations (FAST, arduino pinball controller, etc.)
+- ~/repos/mpf contains source code for mission pinball framework and should be used for context
+- ~/repos/mpf-gmc contains source code for godot media controller for mpf
+- ~/repos/mpf-docs contains source documentationa and examples for mpf
+- this session is focused on the ozzfest machine directory. changes in other directories are not desired unless specifically noted
 - Physical machine: Jungle Lord (Williams System 3-11c) via APC board
-- 2 pinballs installed, plus mini bagatelle playfield with separate small ball
+- 2 pinballs installed, plus mini bagatelle playfield with separate mini ball that gets launced across one of 4 LORD switches using bagatelle launch solenoid. this bagatelle playfield is isolated from main playfield - it's ball will never be in main playfield outhole/trough/plunger lane
 
 ## Key Implementation Notes
 - mpf version 0.8X uses mpf-gmc (Godot media controller), NOT mpf-mc
@@ -52,8 +55,8 @@
 
 **GMC Version Notes**:
 - ozzy project uses GMC 0.1.5 (expects `item_highlighted` event)
-- ozztesting uses GMC 0.1.6 (expects `carousel_item_highlighted` event)
-- MPF 0.80.0.dev11 posts `carousel_item_highlighted` - matches ozztesting GMC
+- ozzfest uses GMC 0.1.6 (expects `carousel_item_highlighted` event)
+- MPF 0.80.0.dev11 posts `carousel_item_highlighted` - matches ozzfest GMC
 
 ## Game Rules
 - See [game_rules.md](game_rules.md) for full gameplay rules

@@ -1,134 +1,54 @@
 # Ozzfest Gameplay Rules Proposal (Draft)
+- this game is a fan project that will be used on a single machine at home. It is considered a "homebrew" and as such does not require obtaining licensing/copywrights or similar. Songs, images, fonts, graphics, videos etc. can be used without restriction
+- pinball-soup contains folders of independent pinball machines using various hardware types for each (machines can use Arduino Pinball Controller, FAST, etc.)
+- this file is focused on building the Ozzfest machine
 
-This draft translates the initial requirements into actionable rules, scoring, and progression. Values are suggested starting points and should be tuned during playtesting.
+## Game Overview:
+- Pinball player(s) are trying to progress through bands at Ozzfest to get to Black Sabbath Wizard Mode.
+- If player does not select Ozzy Osborne at beginning of game, player must complete all other band modes before being able to play Ozzy Osborne band mode.
+- If player selects Ozzy as band when game starts, all other band modes should show as "completed". This allows player to skip progression through other bands.
+- If all band modes are completed, "Black Sabbath Wizard Mode" begins when player lands a ball in either opper or lower kickout hole.
 
-## Core Scoring
-- Sling hits: 250
-- Standups/targets (non-mode): 500
-- Rollover lanes: 750
-- Turnaround lanes (upper/lower): 2,000
-- Outlane inlane returns: 250 (no bonus if shielded)
-- Pop bumpers (if added later): 300
-- Upper/lower popper entries: 1,500 (also tags the source for bagatelle/band advance)
+- Carousel selection: implemented and verified (highlights, switching, selection, audio/slide integration)
 
-## Band Mode Shot Values (consistent across bands)
-- Lit LORD letters during any band mode: +2,500 on top of base (total ~5,000); Rivers focuses on rollovers so its LORD hits pay +4,000 instead (total ~6,500).
-- Dio focus: turnaround loops +3,000 on top of base (total ~5,000).
-- Meatloaf focus: any threebank target +3,000 and threebank completion +2,000 (stacked on base values).
-- Ozzy focus: magnet activations +3,000 on top of the base magnet award (net ~8,000).
-- Rob Zombie focus: fivebank targets +1,000 each (base 500) and fivebank completion +5,000 (base 10,000).
-- Black Sabbath remains to be defined separately; use above values as the baseline feel.
+## context for understanding software & hardware used for this game
+- python virtualenv ozzy_3118 with python 3.11.8 has been built for running the software layer of the game. all mpf commands should be run in this virtualenv.
 
-## Bonus Table (per ball end)
-- Target completions: 1,000 each
-- Loop/turnaround shots: 2,000 each
-- Threebank completions (any side): 5,000 each
-- Fivebank single drop: 500 each; full fivebank sweep: +10,000
-- LORD letters lit: 2,500 each
-- Bagatelle completion (mini-ball lands on unlit letter): +5,000 and lights that letter
-- Multiplier: 2x/3x/5x/10x from bonus multiplier lamps (61–64). Cap total bonus at 250,000 for early tuning.
+- godot editor 4.4.1 has been downloaded and gmc plugin has been activated using steps defined in ~/repos/mpf-docs/docs/gmc/installation.md. The mpf-gmc repo was cloned to ~/repos/mpf-gmc and the contents of ~/repos/mpf-gmc/addons/mpf-gmc have been copied into ~/repos/pinball-soup/Ozzfest
 
-## Band Selection and Progression
-- Bands: Dio, Meatloaf, Ozzy, Rob Zombie, Rivers of Nihil; Black Sabbath is wizard mode.
-- Base mode auto-requests a band on start (`band_progression_request`) and when no band is running the upper popper triggers the same request; the next band starts based on `band_progress_index` with no player choice needed.
-- Mode complete condition: all LORD letters lit (either via rollover switches or completing any threebank within 10s). Completing both threebanks within the 10s windows lights all LORD letters immediately.
-- Completing a band: award 50,000 base + 10,000 per previously completed band; increment `bands_completed` and `band_progress_index`; clear `band_current`, then auto-request the next band. Upper popper falls back to bagatelle when a band is already running.
-- Black Sabbath (wizard): starts when `bands_completed >= 5` and `band_progression_request` fires; baseline award 150,000 plus progressive jackpots (see jackpots).
-- Band completion hurry-up: when a band is finished, light a 25,000 hurry-up at the upper popper for 10s; collecting it pauses band selection until taken or expired.
+- mpf (mission pinball framework): software
+    - mpf source code has been cloned to /home/hotsoup/repos/mpf
+    - mpf-gmc source code has been cloned to /home/hotsoup/repos/mpf-gmc
+    - mpf source documentation & code examples has been cloned to /home/hotsoup/repos/mpf-docs
 
-## High Score Target
-- Seed the initial high score at 2,000,000; tune difficulty upward after playtesting. A full five-band run with solid focus-shot play should approach but not trivialize this number.
-
-## LORD Lighting Logic
-- Each letter is a rollover switch; alternatively, completing a threebank within 10s lights all letters on that bank’s side.
-- Timer: start 10s on first target drop of a threebank; if timer expires, bank resets; if bank completes before expiry, light all LORD letters and award 5,000.
-- Bagatelle (mini-ball kicker) can also light letters: lower eject hole enables bagatelle after 3s delay; upper eject hole enables band select if mode complete, otherwise also bagatelle.
-
-## Magnasave Tokens
-- Dropping a single target in a threebank grants 1 magnasave token for that side (max 5 tokens side). Stored in `magnet_save_left_tokens` / `_right_tokens`.
-- Activation: holding left/right magnet button consumes 1 token and holds magnet for up to 3s; releasing early refunds remaining time? (TBD; start with consume-on-press behavior).
-- Shots during active magnet do not grant extra tokens.
-
-## Drain Shield Logic
-- Sequence: roll over switch 24 then 25 within 1s -> activate drain shield for current side, stored in `drain_shield_left_active` / `_right_active` (value 1 when lit).
-- Side flips when a slingshot fires; lamps 22/23 indicate side. Active shield saves the next outlane hit on that side by auto-launching from trough.
-- Second activation in same ball lights both shields (both lamps) for one save each.
-
-## Bagatelle Mini-Game
-- Entry: lower popper always starts bagatelle; upper popper starts bagatelle only when a band is already running (otherwise it advances to the next band).
-- On start, `bagatelle_active` and `bagatelle_ball_locked` set to 1 and the source popper is recorded (upper/lower). A 3s timer runs for a 10,000 award; a 12s window auto-ejects from the source popper if nothing else ends it.
-- LORD rollover hits while bagatelle is active and the ball is “locked” score 750 and clear the lock flag; lit LORD letters score 2,500, add to bonus/LORD counts, and immediately eject from the source popper.
-- If all LORD letters are already complete during bagatelle, the next letter hit triggers a random reward of 15,000 plus 1 magnasave token to a side (respecting the 5-token cap) and ejects the ball.
-- Starting any band mode or closing the bagatelle window also ejects from the source popper to resume play.
-
-## Jackpots and Multiball
-- Multiball skeleton: `jungle_multiball` (2-ball) starts on `multiball_jungle_start`.
-- Standard jackpot: 50,000 lit at start; super jackpot 150,000 lights after two jackpots; reset on multiball end.
-- Add-a-ball: completing fivebank during multiball awards +1 ball (once per multiball) and lights super jackpot.
-- Jackpot shots to assign later (recommend upper eject, turnaround lanes, and fivebank center shot).
-
-## Band Mode Scoring Suggestions
-- Base shot value while mode running: 5,000.
-- LORD letter lights during band mode: 7,500 each.
-- Completing LORD (finishing band): see completion award above and light an add-on hurry-up: 25,000 counting down over 10s at upper eject.
-- Per-mode flavor (to be detailed later):
-  - Dio: favors loop/turnaround shots; turnaround value +1,000 during mode.
-  - Meatloaf: favors threebank hits; each threebank drop +1,000 stacking.
-  - Ozzy: favors magnets; consuming a magnasave during mode awards 5,000.
-  - Rob Zombie: favors fivebank; completing fivebank adds +10,000 bonus and +1x to fivebank completion value for remainder of mode.
-  - Rivers: favors rollovers; rollover lanes +2,000 and extend LORD timer to 12s.
-  - Black Sabbath: wizard; every major shot 15,000, jackpots doubled, LORD timer 8s with instant relight on threebank complete.
-
-## Bonus Multipliers
-- Lamps 61–64 represent 2x/3x/5x/10x bonus. Advance multiplier via fivebank completions (one step per completion). Cap at 10x.
-
-## Ball Save and Kickbacks
-- Ball save active 20s at ball start (already configured); drain during save returns ball with no bonus loss.
-- Drain Shield behaves like a one-time kickback per side as defined above.
-
-## Base Mode Interactions
-- Attract -> band select -> base mode runs concurrently with band mode.
-- Base mode owns generic scoring and relays completed bands to Black Sabbath gate.
-
-## Logging and Audits (future)
-- Track: bands started/completed, magnasave tokens earned/spent, drain shields lit/used, LORD letters lit per ball, fivebank completes, multiball starts/jackpots.
+- APC (Arduino Pinball Controller): board that uses lisy protocol to run pinmame on Williams 3-11c pinball machines. Also supports mpf for writing new game software for these machines
+    - APC source code has been cloned to /home/hotsoup/repos/APC
 
 
+- This game is currently running on Jungle Lord physical pinball machine via mpf software and APC board.
+
+- Jungle Lord has 2 pinballs installed, and a separated "mini bagatelle playfield" on the upper playfield. This mini playfield has a kicker to launch a small ball that will roll over one of the LORD switches with each kick.
+
+## MPF/GMC testing context
+- ensure virtualenv ozzfest_3118 is active in terminal
+- before completing steps in any implementation plan, run command `mpf -vtX` in machine folder to verify successful startup when not connected to the physical pinball machine. when connected, the command should be mpf both -vt. connection to physical machine exists if port is connected to /dev/ttyACM0. once verified. machine can be stopped with command CTRL+C
+- if connected to physical machine (/dev/ttyACM0 exists), run command `mpf -vt` and verify successful startup before completing step. once verified. machine can be stopped with command CTRL+C.
 
 
-
-james notes:
-(pic 1 from 1/4/26)
-- upper playfield: flipper and slingshot. flipper on left (either mini or full?)
-- orbit up top with spinners (4 spinners that make an illusion)
-- drop target in front of each loop end
-- drum kit @ end of upper playfield. double drum that has drops balls down. lands in ball popper that moves to vuk for cross
-- cross activates once enough balls have been loaded
-- stepper motor/similar that lowers cross
-- lights hanging from stage
-
-pic 2 - side view upper third + upper playfield
-pic 3 - top view upper 3
-
-pic 4 - full playfield main playfield top
-pic 5 - threebank (left mid) and coffin captive ball
-- 
+# Ozzfest Gameplay Rules Overview (Draft)
+Bands
+- Meatloaf
+- Dio
+- Rob Zombie
+- Rivers of Nihil
+- Ozzy Osbourne
+- Black Sabbath
 
 
-shots:
-- 1 john wick left"t ramp is "sound tower shot"
-- 2 "stage access" shot is on left of playfield
-- 3 "crowd surf" shot is loopup ramp like jaws ramp and returns back to right inline via wire ramp
-
-- a - left of john wick ramp
-- b - b/w 1 & 2 shots
-- c - right of 3 shots
-- captive ball is between 2 & c shots
-
-shooter lane
-- sends ball out around back. has a "backstage access" shot like venom/funhouse
-- backstage access shot is subway that brings down to "amp shot" as skill shot
-
-
-modes
-- if you sleect ozzy, all other 
+Band Carousel Selection (Status: Implemented)
+- Implementation notes: carousel highlights, left/right switching, and "both" selection have been verified. Audio and slide/video highlight integration are functioning during carousel rotation.
+- At game start, player selects a band from the carousel using the cabinet magnasave buttons: left/right to move the highlight, pressing both selects the highlighted band and starts that band's mode. MPF's combo switch event is used for the "both" selection when magnasave switches are configured in `config/config.yaml`.
+- Selecting a band immediately begins that band's mode.
+- Each band remains a separate mode with its own shot tasks and completion tracking.
+- Black Sabbath remains Wizard Mode and is not selectable from the carousel.
+- Re-entry behavior: when no band mode is running and a ball is captured in the upper kickout, the machine starts/opens the carousel and holds the ball until the player selects a new band via the carousel.

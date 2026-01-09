@@ -1,8 +1,0 @@
-#config_version=6
-
-mode:
-  start_events: start_black_sabbath_mode
-  stop_events: stop_black_sabbath_mode, black_sabbath_mode_completed
-  priority: 320
-
-# Placeholder: wizard-mode specifics to be added when defined.
