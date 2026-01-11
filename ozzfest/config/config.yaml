@@ -42,10 +42,45 @@ modes:
   - base
   - ball_save
   - carousel_band
+  - meatloaf
+  - dio
+  - zombie
+  - rivers
+  - ozzy
 
 event_player:
   s_kickout_hole_upper_active:
     - start_mode_carousel_band
+
+################################################################################
+# player variables for game progression
+################################################################################
+
+player_vars:
+  bands_completed:
+    value_type: int
+    initial_value: 0
+  meatloaf_completed:
+    value_type: int
+    initial_value: 0
+  dio_completed:
+    value_type: int
+    initial_value: 0
+  zombie_completed:
+    value_type: int
+    initial_value: 0
+  rivers_completed:
+    value_type: int
+    initial_value: 0
+  ozzy_completed:
+    value_type: int
+    initial_value: 0
+  selected_ozzy_first:
+    value_type: int
+    initial_value: 0
+  wizard_qualified:
+    value_type: int
+    initial_value: 0
 
 ################################################################################
 # displays

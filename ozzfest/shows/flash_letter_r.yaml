@@ -1,0 +1,8 @@
+#show_version=6
+# Flashes l_letter_r at 2Hz (on 0.25s, off 0.25s)
+- duration: 0.25
+  lights:
+    l_letter_r: ff
+- duration: 0.25
+  lights:
+    l_letter_r: 00

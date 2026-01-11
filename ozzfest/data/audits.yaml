@@ -1,31 +1,42 @@
 events:
-  game_ended: 4
-  game_started: 25
+  game_ended: 8
+  game_started: 44
 missing_switches:
   s_65: 1
   s_65_slingshot_right_spec: 1
   s_66_slingshot_left_spec: 1
-  s_68: 22
-  s_69: 22
-  s_70: 22
-  s_ball_roll_tilt: 25
-  s_coin_chute_center: 25
-  s_coin_chute_left: 25
-  s_coin_chute_right: 25
-  s_high_score_reset: 25
-  s_inlane_rollover_5: 18
-  s_kickout_hole_upper: 1
-  s_outlane_left: 2
-  s_playfield_tilt: 25
-  s_plumb_bob_tilt: 25
-  s_right_standup: 18
-  s_rollover_d: 25
-  s_rollover_l: 25
-  s_rollover_o: 25
-  s_rollover_r: 25
-  s_slam_tilt: 25
-  s_start_button: 2
-  s_target_1: 1
+  s_68: 41
+  s_69: 41
+  s_70: 41
+  s_ball_roll_tilt: 44
+  s_coin_chute_center: 44
+  s_coin_chute_left: 44
+  s_coin_chute_right: 44
+  s_fivebank_center: 1
+  s_fivebank_left: 1
+  s_fivebank_right: 4
+  s_high_score_reset: 44
+  s_inlane_rollover_5: 2
+  s_kickout_hole_lower: 3
+  s_kickout_hole_upper: 7
+  s_outlane_left: 7
+  s_playfield_tilt: 44
+  s_plumb_bob_tilt: 44
+  s_right_standup: 37
+  s_rollover_d: 44
+  s_rollover_l: 44
+  s_rollover_o: 44
+  s_rollover_r: 44
+  s_slam_tilt: 44
+  s_slingshot_upper: 3
+  s_start_button: 21
+  s_target_1: 3
+  s_target_2: 1
+  s_threebank_left_upper: 2
+  s_threebank_right_lower: 1
+  s_threebank_right_mid: 1
+  s_threebank_right_upper: 1
+  s_upper_left_standup: 1
 player:
   score:
     average: 0
@@ -34,64 +45,68 @@ player:
     - 0
     - 0
     - 0
-    total: 4
+    - 0
+    - 0
+    - 0
+    - 0
+    total: 8
 switches:
   s_65: 5
-  s_65_slingshot_left_spec: 22
+  s_65_slingshot_left_spec: 69
   s_65_slingshot_right_spec: 3
   s_66: 7
   s_66_slingshot_left_spec: 2
-  s_66_slingshot_right_spec: 19
+  s_66_slingshot_right_spec: 70
   s_67: 11
-  s_67_slingshot_upper_spec: 17
+  s_67_slingshot_upper_spec: 48
   s_68: 0
   s_69: 0
   s_70: 0
   s_ball_roll_tilt: 0
-  s_ball_trough_left: 62
-  s_ball_trough_right: 70
+  s_ball_trough_left: 114
+  s_ball_trough_right: 129
   s_coin_chute_center: 0
   s_coin_chute_left: 0
   s_coin_chute_right: 0
-  s_fivebank_center: 4
-  s_fivebank_left: 3
-  s_fivebank_left_mid: 2
-  s_fivebank_right: 5
-  s_fivebank_right_mid: 4
+  s_fivebank_center: 38
+  s_fivebank_left: 27
+  s_fivebank_left_mid: 30
+  s_fivebank_right: 32
+  s_fivebank_right_mid: 62
   s_high_score_reset: 0
-  s_inlane_rollover_4: 9
-  s_inlane_rollover_5: 15
-  s_kickout_hole_lower: 36
-  s_kickout_hole_upper: 8
-  s_left_standup: 15
-  s_magnasave_button_left: 73
-  s_magnasave_button_right: 139
-  s_outhole: 82
-  s_outlane_left: 58
-  s_outlane_right: 9
-  s_playfield_entry_gate: 98
+  s_inlane_rollover_4: 35
+  s_inlane_rollover_5: 25
+  s_kickout_hole_lower: 61
+  s_kickout_hole_upper: 23
+  s_left_standup: 40
+  s_magnasave_button_left: 157
+  s_magnasave_button_right: 251
+  s_outhole: 156
+  s_outlane_left: 65
+  s_outlane_right: 17
+  s_playfield_entry_gate: 169
   s_playfield_tilt: 0
   s_plumb_bob_tilt: 0
-  s_plunger: 156
+  s_plunger: 285
   s_right_standup: 1
   s_rollover_d: 0
   s_rollover_l: 0
   s_rollover_o: 0
   s_rollover_r: 0
   s_slam_tilt: 0
-  s_slingshot_left: 38
-  s_slingshot_right: 42
-  s_slingshot_upper: 1
+  s_slingshot_left: 110
+  s_slingshot_right: 144
+  s_slingshot_upper: 4
   s_start_button: 1
-  s_target_1: 56
-  s_target_2: 95
-  s_target_3: 10
-  s_threebank_left_lower: 4
-  s_threebank_left_mid: 3
-  s_threebank_left_upper: 5
-  s_threebank_right_lower: 26
-  s_threebank_right_mid: 3
-  s_threebank_right_upper: 1
-  s_turnaround_rollover_lower: 12
-  s_turnaround_rollover_upper: 7
-  s_upper_left_standup: 10
+  s_target_1: 120
+  s_target_2: 191
+  s_target_3: 38
+  s_threebank_left_lower: 31
+  s_threebank_left_mid: 16
+  s_threebank_left_upper: 16
+  s_threebank_right_lower: 112
+  s_threebank_right_mid: 13
+  s_threebank_right_upper: 11
+  s_turnaround_rollover_lower: 27
+  s_turnaround_rollover_upper: 25
+  s_upper_left_standup: 24

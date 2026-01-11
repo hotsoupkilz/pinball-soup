@@ -15,7 +15,7 @@ mode_settings:
     - ozzy
   next_item_events: s_magnasave_button_right_active
   previous_item_events: s_magnasave_button_left_active
-  select_item_events: combo_magnasave_both
+  select_item_events: combo_magnasave_both, s_playfield_entry_gate_active
 
 slide_player:
   mode_carousel_band_started:
@@ -95,10 +95,7 @@ slide_player:
       action: remove
 
 hardware_sound_player:
-  carousel_item_highlighted:
-    stop_track:
-      track: 1
-      action: stop
+  # No explicit stop needed - play_file on same track automatically replaces current playback
   carousel_item_highlighted{item=="meatloaf"}:
     "meatloaf_bat_out_of_hell.snd":
       track: 1
@@ -124,15 +121,47 @@ hardware_sound_player:
       platform_options:
         loop: true
   carousel_item_highlighted{item=="ozzy"}:
-    "MUSIC.SND":
+    "tenacious_the_metal.snd":
       track: 1
       action: play_file
       platform_options:
         loop: true
+  # No stop on selection - band mode will take over track 1 with its own play_file
+
+show_player:
+  carousel_item_highlighted{item=="meatloaf"}:
+    flash_letter_l:
+      key: carousel_meatloaf_flash
+      speed: 1
+      loops: -1
+  carousel_item_highlighted{item!="meatloaf"}:
+    carousel_meatloaf_flash: stop
+  carousel_item_highlighted{item=="dio"}:
+    flash_letter_o:
+      key: carousel_dio_flash
+      speed: 1
+      loops: -1
+  carousel_item_highlighted{item!="dio"}:
+    carousel_dio_flash: stop
+  carousel_item_highlighted{item=="zombie"}:
+    flash_letter_r:
+      key: carousel_zombie_flash
+      speed: 1
+      loops: -1
+  carousel_item_highlighted{item!="zombie"}:
+    carousel_zombie_flash: stop
+  carousel_item_highlighted{item=="rivers"}:
+    flash_letter_d:
+      key: carousel_rivers_flash
+      speed: 1
+      loops: -1
+  carousel_item_highlighted{item!="rivers"}:
+    carousel_rivers_flash: stop
   carousel_band_item_selected:
-    stop_track:
-      track: 1
-      action: stop
+    carousel_meatloaf_flash: stop
+    carousel_dio_flash: stop
+    carousel_zombie_flash: stop
+    carousel_rivers_flash: stop
 
 event_player:
   carousel_band_item_selected{selected_item=="meatloaf"}:

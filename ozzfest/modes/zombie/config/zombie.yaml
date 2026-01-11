@@ -1,0 +1,99 @@
+#config_version=6
+
+# Rob Zombie Mode - "Living Dead Girl"
+# Theme: green/orange, horror imagery
+# Task: Hit 20 switches (kickout holes, playfield_active switches, or drop targets)
+# Duration: Until all tasks complete (no timer)
+# Progress persists across ball drains
+
+mode:
+  start_events: start_mode_zombie
+  stop_events: zombie_complete, ball_will_end
+  priority: 150
+
+# Counter to track switch hits - persists across balls
+counters:
+  zombie_progress:
+    starting_count: 0
+    count_complete_value: 20
+    count_events: zombie_switch_hit
+    events_when_complete: zombie_complete
+    persist_state: true
+    enable_events: mode_zombie_started
+    disable_events: zombie_complete
+
+# Use event_player to count any valid switch hit
+event_player:
+  # Kickout holes
+  s_kickout_hole_upper_active: zombie_switch_hit
+  s_kickout_hole_lower_active: zombie_switch_hit
+  # Playfield active switches (rollovers, standups, inlanes, outlanes, etc.)
+  s_target_1_active: zombie_switch_hit
+  s_target_2_active: zombie_switch_hit
+  s_target_3_active: zombie_switch_hit
+  s_inlane_rollover_4_active: zombie_switch_hit
+  s_inlane_rollover_5_active: zombie_switch_hit
+  s_outlane_left_active: zombie_switch_hit
+  s_outlane_right_active: zombie_switch_hit
+  s_turnaround_rollover_lower_active: zombie_switch_hit
+  s_turnaround_rollover_upper_active: zombie_switch_hit
+  s_upper_left_standup_active: zombie_switch_hit
+  s_left_standup_active: zombie_switch_hit
+  s_right_standup_active: zombie_switch_hit
+  s_playfield_entry_gate_active: zombie_switch_hit
+  # Drop targets (3-banks and 5-bank)
+  s_threebank_left_lower_active: zombie_switch_hit
+  s_threebank_left_mid_active: zombie_switch_hit
+  s_threebank_left_upper_active: zombie_switch_hit
+  s_threebank_right_lower_active: zombie_switch_hit
+  s_threebank_right_mid_active: zombie_switch_hit
+  s_threebank_right_upper_active: zombie_switch_hit
+  s_fivebank_left_active: zombie_switch_hit
+  s_fivebank_left_mid_active: zombie_switch_hit
+  s_fivebank_center_active: zombie_switch_hit
+  s_fivebank_right_mid_active: zombie_switch_hit
+  s_fivebank_right_active: zombie_switch_hit
+
+variable_player:
+  zombie_switch_hit:
+    score: 5000
+  zombie_complete:
+    score: 100000
+    zombie_completed:
+      int: 1
+      action: set
+    bands_completed:
+      int: 1
+      action: add
+
+hardware_sound_player:
+  mode_zombie_started:
+    "zombie_living_dead_girl.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+
+# R light flashes 2x/sec during mode, stays on solid when complete
+show_player:
+  mode_zombie_started:
+    flash_letter_r:
+      key: zombie_flash
+      speed: 1
+      loops: -1
+  zombie_complete:
+    zombie_flash: stop
+  mode_zombie_stopped:
+    zombie_flash: stop
+
+light_player:
+  zombie_complete:
+    l_letter_r: ff
+
+slide_player:
+  mode_zombie_started:
+    zombie_mode:
+      priority: 150
+  mode_zombie_stopped:
+    zombie_mode:
+      action: remove

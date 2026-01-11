@@ -1,7 +1,5 @@
 #show_version=6
 
-# Ozzfest attract mode light show with layered waves/sweeps to imply motion.
-# Sections: intro shimmer, GI twinkles, sweeping magnet arrows, bagatelle ripple, fivebank chase, global fade.
 
 # Intro shimmer — staged on/off across magnet ladders.
 - duration: 1.0

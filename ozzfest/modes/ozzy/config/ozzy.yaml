@@ -1,0 +1,107 @@
+#config_version=6
+
+# Ozzy Mode - "Crazy Train"
+# Theme: purple/black, bat imagery
+# Task: Hit 20 switches (kickout holes, playfield_active switches, or drop targets)
+# Duration: Until all tasks complete (no timer)
+# Progress persists across ball drains
+# Special: If selected as first band, marks all other bands as "completed"
+
+mode:
+  start_events: start_mode_ozzy
+  stop_events: ozzy_complete, ball_will_end
+  priority: 150
+
+# Counter to track switch hits - persists across balls
+counters:
+  ozzy_progress:
+    starting_count: 0
+    count_complete_value: 20
+    count_events: ozzy_switch_hit
+    events_when_complete: ozzy_complete
+    persist_state: true
+    enable_events: mode_ozzy_started
+    disable_events: ozzy_complete
+
+# Use event_player to count any valid switch hit
+event_player:
+  # Kickout holes
+  s_kickout_hole_upper_active: ozzy_switch_hit
+  s_kickout_hole_lower_active: ozzy_switch_hit
+  # Playfield active switches (rollovers, standups, inlanes, outlanes, etc.)
+  s_target_1_active: ozzy_switch_hit
+  s_target_2_active: ozzy_switch_hit
+  s_target_3_active: ozzy_switch_hit
+  s_inlane_rollover_4_active: ozzy_switch_hit
+  s_inlane_rollover_5_active: ozzy_switch_hit
+  s_outlane_left_active: ozzy_switch_hit
+  s_outlane_right_active: ozzy_switch_hit
+  s_turnaround_rollover_lower_active: ozzy_switch_hit
+  s_turnaround_rollover_upper_active: ozzy_switch_hit
+  s_upper_left_standup_active: ozzy_switch_hit
+  s_left_standup_active: ozzy_switch_hit
+  s_right_standup_active: ozzy_switch_hit
+  s_playfield_entry_gate_active: ozzy_switch_hit
+  # Drop targets (3-banks and 5-bank)
+  s_threebank_left_lower_active: ozzy_switch_hit
+  s_threebank_left_mid_active: ozzy_switch_hit
+  s_threebank_left_upper_active: ozzy_switch_hit
+  s_threebank_right_lower_active: ozzy_switch_hit
+  s_threebank_right_mid_active: ozzy_switch_hit
+  s_threebank_right_upper_active: ozzy_switch_hit
+  s_fivebank_left_active: ozzy_switch_hit
+  s_fivebank_left_mid_active: ozzy_switch_hit
+  s_fivebank_center_active: ozzy_switch_hit
+  s_fivebank_right_mid_active: ozzy_switch_hit
+  s_fivebank_right_active: ozzy_switch_hit
+  # Check for Ozzy-first special logic on mode start
+  # If bands_completed == 0, this is first band selected - mark all others complete
+  mode_ozzy_started{current_player.bands_completed==0}: ozzy_selected_first
+
+variable_player:
+  ozzy_switch_hit:
+    score: 5000
+  ozzy_complete:
+    score: 100000
+    ozzy_completed:
+      int: 1
+      action: set
+    bands_completed:
+      int: 1
+      action: add
+  # Ozzy-first special: mark all other bands as completed
+  ozzy_selected_first:
+    selected_ozzy_first:
+      int: 1
+      action: set
+    meatloaf_completed:
+      int: 1
+      action: set
+    dio_completed:
+      int: 1
+      action: set
+    zombie_completed:
+      int: 1
+      action: set
+    rivers_completed:
+      int: 1
+      action: set
+    bands_completed:
+      int: 4
+      action: add
+
+hardware_sound_player:
+  mode_ozzy_started:
+    "tenacious_the_metal.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+
+slide_player:
+  mode_ozzy_started:
+    ozzy_mode:
+      priority: 150
+  mode_ozzy_stopped:
+    ozzy_mode:
+      action: remove

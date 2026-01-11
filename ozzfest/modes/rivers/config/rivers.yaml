@@ -1,0 +1,99 @@
+#config_version=6
+
+# Rivers of Nihil Mode - "The Silent Life"
+# Theme: dark teal/black, cosmic imagery
+# Task: Hit 20 switches (kickout holes, playfield_active switches, or drop targets)
+# Duration: Until all tasks complete (no timer)
+# Progress persists across ball drains
+
+mode:
+  start_events: start_mode_rivers
+  stop_events: rivers_complete, ball_will_end
+  priority: 150
+
+# Counter to track switch hits - persists across balls
+counters:
+  rivers_progress:
+    starting_count: 0
+    count_complete_value: 20
+    count_events: rivers_switch_hit
+    events_when_complete: rivers_complete
+    persist_state: true
+    enable_events: mode_rivers_started
+    disable_events: rivers_complete
+
+# Use event_player to count any valid switch hit
+event_player:
+  # Kickout holes
+  s_kickout_hole_upper_active: rivers_switch_hit
+  s_kickout_hole_lower_active: rivers_switch_hit
+  # Playfield active switches (rollovers, standups, inlanes, outlanes, etc.)
+  s_target_1_active: rivers_switch_hit
+  s_target_2_active: rivers_switch_hit
+  s_target_3_active: rivers_switch_hit
+  s_inlane_rollover_4_active: rivers_switch_hit
+  s_inlane_rollover_5_active: rivers_switch_hit
+  s_outlane_left_active: rivers_switch_hit
+  s_outlane_right_active: rivers_switch_hit
+  s_turnaround_rollover_lower_active: rivers_switch_hit
+  s_turnaround_rollover_upper_active: rivers_switch_hit
+  s_upper_left_standup_active: rivers_switch_hit
+  s_left_standup_active: rivers_switch_hit
+  s_right_standup_active: rivers_switch_hit
+  s_playfield_entry_gate_active: rivers_switch_hit
+  # Drop targets (3-banks and 5-bank)
+  s_threebank_left_lower_active: rivers_switch_hit
+  s_threebank_left_mid_active: rivers_switch_hit
+  s_threebank_left_upper_active: rivers_switch_hit
+  s_threebank_right_lower_active: rivers_switch_hit
+  s_threebank_right_mid_active: rivers_switch_hit
+  s_threebank_right_upper_active: rivers_switch_hit
+  s_fivebank_left_active: rivers_switch_hit
+  s_fivebank_left_mid_active: rivers_switch_hit
+  s_fivebank_center_active: rivers_switch_hit
+  s_fivebank_right_mid_active: rivers_switch_hit
+  s_fivebank_right_active: rivers_switch_hit
+
+variable_player:
+  rivers_switch_hit:
+    score: 5000
+  rivers_complete:
+    score: 100000
+    rivers_completed:
+      int: 1
+      action: set
+    bands_completed:
+      int: 1
+      action: add
+
+hardware_sound_player:
+  mode_rivers_started:
+    "rivers_dustman.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+
+# D light flashes 2x/sec during mode, stays on solid when complete
+show_player:
+  mode_rivers_started:
+    flash_letter_d:
+      key: rivers_flash
+      speed: 1
+      loops: -1
+  rivers_complete:
+    rivers_flash: stop
+  mode_rivers_stopped:
+    rivers_flash: stop
+
+light_player:
+  rivers_complete:
+    l_letter_d: ff
+
+slide_player:
+  mode_rivers_started:
+    rivers_mode:
+      priority: 150
+  mode_rivers_stopped:
+    rivers_mode:
+      action: remove

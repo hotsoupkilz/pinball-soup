@@ -1,0 +1,99 @@
+#config_version=6
+
+# Meatloaf Mode - "Bat Out of Hell"
+# Theme: dark red, bat imagery
+# Task: Hit 20 switches (kickout holes, playfield_active switches, or drop targets)
+# Duration: Until all tasks complete (no timer)
+# Progress persists across ball drains
+
+mode:
+  start_events: start_mode_meatloaf
+  stop_events: meatloaf_complete
+  priority: 150
+
+# L light flashes 2x/sec during mode, stays on solid when complete
+show_player:
+  mode_meatloaf_started:
+    flash_letter_l:
+      key: meatloaf_flash
+      speed: 1
+      loops: -1
+  meatloaf_complete:
+    meatloaf_flash: stop
+  mode_meatloaf_stopped:
+    meatloaf_flash: stop
+
+light_player:
+  meatloaf_complete:
+    l_letter_l: ff
+
+slide_player:
+  mode_meatloaf_started:
+    meatloaf_mode:
+      priority: 150
+  mode_meatloaf_stopped:
+    meatloaf_mode:
+      action: remove
+
+# Counter to track switch hits - persists across balls
+counters:
+  meatloaf_progress:
+    starting_count: 0
+    count_complete_value: 20
+    count_events: meatloaf_switch_hit
+    events_when_complete: meatloaf_complete
+    persist_state: true
+    enable_events: mode_meatloaf_started
+    disable_events: meatloaf_complete
+
+# Use event_player to count any valid switch hit
+event_player:
+  # Kickout holes
+  s_kickout_hole_upper_active: meatloaf_switch_hit
+  s_kickout_hole_lower_active: meatloaf_switch_hit
+  # Playfield active switches (rollovers, standups, inlanes, outlanes, etc.)
+  s_target_1_active: meatloaf_switch_hit
+  s_target_2_active: meatloaf_switch_hit
+  s_target_3_active: meatloaf_switch_hit
+  s_inlane_rollover_4_active: meatloaf_switch_hit
+  s_inlane_rollover_5_active: meatloaf_switch_hit
+  s_outlane_left_active: meatloaf_switch_hit
+  s_outlane_right_active: meatloaf_switch_hit
+  s_turnaround_rollover_lower_active: meatloaf_switch_hit
+  s_turnaround_rollover_upper_active: meatloaf_switch_hit
+  s_upper_left_standup_active: meatloaf_switch_hit
+  s_left_standup_active: meatloaf_switch_hit
+  s_right_standup_active: meatloaf_switch_hit
+  s_playfield_entry_gate_active: meatloaf_switch_hit
+  # Drop targets (3-banks and 5-bank)
+  s_threebank_left_lower_active: meatloaf_switch_hit
+  s_threebank_left_mid_active: meatloaf_switch_hit
+  s_threebank_left_upper_active: meatloaf_switch_hit
+  s_threebank_right_lower_active: meatloaf_switch_hit
+  s_threebank_right_mid_active: meatloaf_switch_hit
+  s_threebank_right_upper_active: meatloaf_switch_hit
+  s_fivebank_left_active: meatloaf_switch_hit
+  s_fivebank_left_mid_active: meatloaf_switch_hit
+  s_fivebank_center_active: meatloaf_switch_hit
+  s_fivebank_right_mid_active: meatloaf_switch_hit
+  s_fivebank_right_active: meatloaf_switch_hit
+
+variable_player:
+  meatloaf_switch_hit:
+    score: 5000
+  meatloaf_complete:
+    score: 100000
+    meatloaf_completed:
+      int: 1
+      action: set
+    bands_completed:
+      int: 1
+      action: add
+
+hardware_sound_player:
+  mode_meatloaf_started:
+    "meatloaf_bat_out_of_hell.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
