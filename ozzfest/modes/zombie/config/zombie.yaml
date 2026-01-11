@@ -27,6 +27,15 @@ event_player:
   # Kickout holes
   s_kickout_hole_upper_active: zombie_switch_hit
   s_kickout_hole_lower_active: zombie_switch_hit
+  # Slingshots
+  s_slingshot_left_active: zombie_switch_hit
+  s_slingshot_right_active: zombie_switch_hit
+  s_slingshot_upper_active: zombie_switch_hit
+  # L-O-R-D rollovers
+  s_rollover_l_active: zombie_switch_hit
+  s_rollover_o_active: zombie_switch_hit
+  s_rollover_r_active: zombie_switch_hit
+  s_rollover_d_active: zombie_switch_hit
   # Playfield active switches (rollovers, standups, inlanes, outlanes, etc.)
   s_target_1_active: zombie_switch_hit
   s_target_2_active: zombie_switch_hit
@@ -56,7 +65,7 @@ event_player:
 
 variable_player:
   zombie_switch_hit:
-    score: 5000
+    score: 5
   zombie_complete:
     score: 100000
     zombie_completed:

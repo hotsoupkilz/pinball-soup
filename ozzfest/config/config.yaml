@@ -13,14 +13,6 @@ lisy:
   baud: 115200
   #debug: true #will make game run slowly
 
-# platform/hardware type (lisy/APC-specific. necessary for coils to work properly)
-digital_outputs:
-  game_over_relay:
-    number: 25
-    type: driver
-    enable_events: ball_started
-    disable_events: ball_will_end
-
 # if running without physical hardware (ie mpf -X or mpf both -X)
 virtual_platform_start_active_switches:
   - s_ball_trough_left
@@ -91,81 +83,95 @@ segment_displays:
     number: 0
     platform: lisy
     size: 4
-    #update_method: stack
-    #integrated_commas: true
+    update_method: replace
   player1_display:
     number: 1
     platform: lisy
     size: 7
-    #update_method: stack
-    #integrated_commas: true
+    update_method: replace
   player2_display:
     number: 2
     platform: lisy
     size: 7
-    #update_method: stack
-    #integrated_commas: true
+    update_method: replace
   player3_display:
     number: 3
     platform: lisy
     size: 7
-    #update_method: stack
-    #integrated_commas: true
+    update_method: replace
   player4_display:
     number: 4
     platform: lisy
     size: 7
-    #update_method: stack
-    #integrated_commas: true
+    update_method: replace
 
 
 segment_display_player:
-
-  # empty all displays on game start and setup info display
-  game_start:
-    info_display:
-      text: "{current_player.ball:d}"
+  # blank all displays on machine init (before any game)
+  init_done:
     player1_display:
-      text: ""
+      text: " "
     player2_display:
-      text: ""
+      text: " "
     player3_display:
-      text: ""
+      text: " "
     player4_display:
-      text: ""
+      text: " "
+    info_display:
+      text: " "
 
-  # show score when adding players
-  player_added.1{num==1}:
+  # blank all displays on game start
+  game_started:
+    player1_display:
+      text: " "
+    player2_display:
+      text: " "
+    player3_display:
+      text: " "
+    player4_display:
+      text: " "
+    info_display:
+      text: " "
+
+  # update info display with player and ball number when ball starts
+  ball_started:
+    info_display:
+      text: "{current_player.number:02d}{current_player.ball:02d}"
+
+  # update score displays when scores change
+  player_score{player_num==1}:
     player1_display:
       text: "{players[0].score:d}"
-  player_added.2{num==2}:
+  player_score{player_num==2}:
     player2_display:
       text: "{players[1].score:d}"
-  player_added.3{num==3}:
+  player_score{player_num==3}:
     player3_display:
       text: "{players[2].score:d}"
-  player_added.4{num==4}:
+  player_score{player_num==4}:
     player4_display:
       text: "{players[3].score:d}"
 
-  # clear only info display after game
+  # show 0 score when adding players (player 1 gets 0 from first player_score event)
+  player_added{num==1}:
+    player1_display:
+      text: "0"
+  player_added{num==2}:
+    player2_display:
+      text: "0"
+  player_added{num==3}:
+    player3_display:
+      text: "0"
+  player_added{num==4}:
+    player4_display:
+      text: "0"
+
+  # clear info display after game
   game_ended:
     info_display:
-      text: ""
-  game_ended{machine.player1_score > 0}:
-    player1_display:
-      text: "{machine.player1_score:d}"
-  game_ended{machine.player2_score > 0}:
-    player2_display:
-      text: "{machine.player2_score:d}"
-  game_ended{machine.player3_score > 0}:
-    player3_display:
-      text: "{machine.player3_score:d}"
-  game_ended{machine.player4_score > 0}:
-    player4_display:
-      text: "{machine.player4_score:d}"
+      text: " "
 
-  #flash display on player turn
+  # flash display on player turn
   player_turn_started.1{number==1}:
     player1_display:
       action: flash
@@ -191,6 +197,13 @@ segment_display_player:
     player4_display:
       action: no_flash
 
+# platform/hardware type (lisy/APC-specific. seemingly-necessary for coils to work properly)
+digital_outputs:
+  game_over_relay:
+    number: 25
+    type: driver
+    enable_events: ball_started
+    disable_events: ball_will_end
 
 ################################################################################
 ## switches

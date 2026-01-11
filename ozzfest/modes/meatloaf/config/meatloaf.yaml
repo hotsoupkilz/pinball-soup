@@ -51,6 +51,15 @@ event_player:
   # Kickout holes
   s_kickout_hole_upper_active: meatloaf_switch_hit
   s_kickout_hole_lower_active: meatloaf_switch_hit
+  # Slingshots
+  s_slingshot_left_active: meatloaf_switch_hit
+  s_slingshot_right_active: meatloaf_switch_hit
+  s_slingshot_upper_active: meatloaf_switch_hit
+  # L-O-R-D rollovers
+  s_rollover_l_active: meatloaf_switch_hit
+  s_rollover_o_active: meatloaf_switch_hit
+  s_rollover_r_active: meatloaf_switch_hit
+  s_rollover_d_active: meatloaf_switch_hit
   # Playfield active switches (rollovers, standups, inlanes, outlanes, etc.)
   s_target_1_active: meatloaf_switch_hit
   s_target_2_active: meatloaf_switch_hit
@@ -80,7 +89,7 @@ event_player:
 
 variable_player:
   meatloaf_switch_hit:
-    score: 5000
+    score: 5
   meatloaf_complete:
     score: 100000
     meatloaf_completed:
