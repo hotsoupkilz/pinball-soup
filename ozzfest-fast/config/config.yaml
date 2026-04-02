@@ -1,0 +1,200 @@
+#config_version=6
+
+################################################################################
+# hardware
+################################################################################
+
+hardware:
+  platform: fast
+
+fast:
+  net:
+    controller: neuron
+    io_loop:
+      cab_io:
+        model: FP-I/O-0024
+        order: 1
+      lower_third_3208:
+        model: FP-I/O-3208
+        order: 2
+    port: auto  #/dev/ttyACM0 #FAST ports auto-detected by default, can override  
+    #baud: 921600
+    watchdog: 1s
+    default_quick_debounce_open: 2ms
+    default_quick_debounce_close: 2ms
+    default_normal_debounce_open: 4ms
+    default_normal_debounce_close: 4ms
+
+  exp:
+    boards:
+      neuron:
+        model: FP-EXP-2000
+    port: auto
+    baud: 921600
+
+
+# Simulate ball in trough for virtual testing (mpf -x)
+virtual_platform_start_active_switches:
+  - s_outhole
+
+################################################################################
+# game modes
+################################################################################
+
+# modes: anything that has a folder in modes/ should be listed here
+modes:
+  - attract
+  - base
+
+################################################################################
+# switches
+################################################################################
+
+switches:
+  # 3208 J8 (pins 0-7)
+  s_outhole:
+    number: lower_third_3208-0
+  s_shooter_lane:
+    number: lower_third_3208-1
+    type: NC
+  s_right_outlane:
+    number: lower_third_3208-2
+    type: NC
+    tags: playfield_active
+  s_right_inlane:
+    number: lower_third_3208-3
+    type: NC
+    tags: playfield_active
+  s_right_sling:
+    number: lower_third_3208-4
+    debounce: quick
+  s_right_flipper_eos:
+    number: lower_third_3208-5
+    type: NC
+  s_left_flipper_eos:
+    number: lower_third_3208-6
+    type: NC
+  s_left_sling:
+    number: lower_third_3208-7
+    debounce: quick
+
+
+  # 3208 J3 (pins 8-15)
+  s_left_inlane:
+    number: lower_third_3208-8
+    type: NC
+    tags: playfield_active
+  s_left_outlane:
+    number: lower_third_3208-9
+    type: NC
+    tags: playfield_active
+
+  # Cabinet I/O J10 (pins 16-23)
+  s_start_button:
+    number: cab_io-18
+    tags: start
+  s_left_flipper_button:
+    number: cab_io-19
+  # s_coin_door:          # PLACEHOLDER — cab-16 (not wired)
+  # s_tilt_bob:           # PLACEHOLDER — cab-17 (not wired)
+
+  # Cabinet I/O J1 (pins 8-15)
+  s_right_flipper_button:
+    number: cab_io-8
+
+################################################################################
+## coils
+################################################################################
+
+coils:
+  c_outhole_kicker:
+    number: lower_third_3208-0
+    default_pulse_ms: 25
+  # c_autolaunch:         # PLACEHOLDER — lower_third_3208-1 (not wired)
+  c_right_flipper_main:
+    number: lower_third_3208-2
+    default_pulse_ms: 10
+  c_right_flipper_hold:
+    number: lower_third_3208-3
+    allow_enable: true
+  c_left_flipper_main:
+    number: lower_third_3208-4
+    default_pulse_ms: 10
+  c_left_flipper_hold:
+    number: lower_third_3208-5
+    allow_enable: true
+  c_right_sling:
+    number: lower_third_3208-6
+    default_pulse_ms: 15
+    platform_settings:
+      recycle_ms: 30
+  c_left_sling:
+    number: lower_third_3208-7
+    default_pulse_ms: 15
+    platform_settings:
+      recycle_ms: 30
+
+flippers:
+  right_flipper:
+    main_coil: c_right_flipper_main
+    hold_coil: c_right_flipper_hold
+    activation_switch: s_right_flipper_button
+    # eos_switch: s_right_flipper_eos   # DIAGNOSTIC: disabled to test without EOS
+    # use_eos: true                      # DIAGNOSTIC: disabled to test without EOS
+  left_flipper:
+    main_coil: c_left_flipper_main
+    hold_coil: c_left_flipper_hold
+    activation_switch: s_left_flipper_button
+    # eos_switch: s_left_flipper_eos    # DIAGNOSTIC: disabled to test without EOS
+    # use_eos: true                      # DIAGNOSTIC: disabled to test without EOS
+
+autofire_coils:
+  right_sling:
+    coil: c_right_sling
+    switch: s_right_sling
+  left_sling:
+    coil: c_left_sling
+    switch: s_left_sling
+
+################################################################################
+## lights
+################################################################################
+
+lights:
+  l_start_button:
+    number: 5
+    #subtype: led
+
+light_player:
+  machine_reset_phase_3:
+    l_start_button: on
+
+################################################################################
+# playfield details
+################################################################################
+# ball devices
+# (anything that holds & releases a ball, including the playfield which "holds
+# a ball". trough, the plunger lane, VUKs, poppers, playfield locks, etc.)
+
+
+ball_devices:
+  bd_drain:
+    ball_switches: s_outhole
+    eject_coil: c_outhole_kicker
+    eject_targets: bd_shooter_lane
+    tags: drain, home, trough
+    eject_timeouts: 3s
+
+  bd_shooter_lane:
+    ball_switches: s_shooter_lane
+    mechanical_eject: true
+    eject_timeouts: 5s
+
+
+playfields:
+  playfield:
+    default_source_device: bd_shooter_lane
+    tags: default
+
+game:
+  balls_per_game: 3

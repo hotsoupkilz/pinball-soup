@@ -23,10 +23,6 @@ show_player:
   mode_meatloaf_stopped:
     meatloaf_flash: stop
 
-light_player:
-  meatloaf_complete:
-    l_letter_l: ff
-
 slide_player:
   mode_meatloaf_started:
     meatloaf_mode:

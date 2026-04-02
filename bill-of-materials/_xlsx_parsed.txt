@@ -1,0 +1,92 @@
+=== SHEET: bom (90 rows x 14 cols) ===
+													
+	Bill of Materials				=CONCATENATE(COUNTIF($B$5:$B$90,TRUE), "/", COUNTA($F$5:$F$90), " orders completed  ")								
+													
+	Ordered	group	subgroup	product combo	part/product	qty needed	qty incl.	unit price	total price	order company	product url	product notes	usage docs
+	False	boards & wiring	PC	SBC	SBC	1.0						raspi for things without graphics. otherwise SBC	
+	False	boards & wiring	boards	FAST Neuron Starter Bundle	Neuron Controller	1.0	1.0		569.0	FAST	https://shop.fastpinball.com/product/fast-neuron-starter-bundle/53?cs=true&cst=custom		
+	False	boards & wiring	boards	FAST Neuron Starter Bundle	Power Filter Board	1.0	1.0			FAST	https://shop.fastpinball.com/product/fast-neuron-starter-bundle/53?cs=true&cst=custom		
+	False	boards & wiring	boards	FAST Neuron Starter Bundle	Expansion Board		1.0			FAST	https://shop.fastpinball.com/product/fast-neuron-starter-bundle/53?cs=true&cst=custom	choose one for 256 LEDs, or 128 LEDs + 4 servos)	
+	False	boards & wiring	boards	FAST Neuron Starter Bundle	Playfield I/O 3208		1.0			FAST	https://shop.fastpinball.com/product/fast-neuron-starter-bundle/53?cs=true&cst=custom		
+	False	boards & wiring	boards	FAST Neuron Starter Bundle	Playfield Interchange Board	1.0	1.0			FAST	https://shop.fastpinball.com/product/fast-neuron-starter-bundle/53?cs=true&cst=custom	on playfield, connects playfield to backbox	
+	False	boards & wiring	power supply	FAST Neuron Starter Bundle	optional:  add Power Supplies   Mean Well RSP-500-48 (48V, 10.5A) & Mean Well LRS-150-12 (12V, 12.5A)	2.0	2.0		150.0	FAST	https://shop.fastpinball.com/product/fast-neuron-starter-bundle/53?cs=true&cst=custom	can optionally be added to FAST neuron startle bundle. includes all PSUs required for machine	
+	False	boards & wiring	connectors	FAST Neuron Starter Bundle	optional:  add connectors+pins				29.0	FAST	https://shop.fastpinball.com/product/fast-neuron-starter-bundle/53?cs=true&cst=custom	can optionally be added to FAST neuron startle bundle	
+	False	boards & wiring	boards		FAST Audio Interface Board	1.0	1.0		99.0	FAST	https://shop.fastpinball.com/product/fp-aud-0100/57?cs=true&cst=custom		
+	False	boards & wiring	boards		FAST Cabinet I/O Board	1.0	1.0		159.0	FAST	https://shop.fastpinball.com/product/fp-io-0024/56?cs=true&cst=custom	used for cabinet switches (start, flippers, others)	
+	False	boards & wiring	wiring		rj45 network cable							used for connecting FAST boards to each other	
+	False	boards & wiring	cabinet wiring		16ga stranded wire (white)							for wiring from AC line to power boxes	https://fastpinball.com/wiring/neuron/ac-line-input/#your-machines-power-box
+	False	boards & wiring	cabinet wiring		16ga stranded wire (black)							for wiring from AC line to power boxes	https://fastpinball.com/wiring/neuron/ac-line-input/#your-machines-power-box
+	False	boards & wiring	cabinet wiring		16ga stranded wire (green)							for wiring from AC line to power boxes	https://fastpinball.com/wiring/neuron/ac-line-input/#your-machines-power-box
+	False	boards & wiring	connectors		fork crimp connector terminals (16ga)	16.0		1.05	=I19*G19		https://www.mouser.com/c/connectors/terminals/?product=Fork%20Terminal&wire%20gauge%20max=16%20AWG	3 on ac in, 2 on line fuse, 2 on switch, 3 or 6 on 48V PSU, 3 on 12v psu	https://fastpinball.com/wiring/neuron/ac-line-input/#your-machines-power-box
+	False	boards & wiring	cabinet power		IEC line input receptacle + EMI filter							dont use emi filter if trying to make compliant. but FAST says okay for home use	https://fastpinball.com/wiring/neuron/ac-line-input/#ac-line-fuse
+	False	boards & wiring	cabinet power		Fuse holder (5x20mm)						https://www.mouser.com/c/?for%20use%20with=Fuse%20Holders%2C%20No.%20821%205%20x%2020%20mm		https://fastpinball.com/wiring/neuron/ac-line-input/#ac-line-fuse
+	False	boards & wiring	cabinet power		8A Fuse	1.0						AC line fuse	https://fastpinball.com/wiring/neuron/ac-line-input/#ac-line-fuse
+	False	boards & wiring	cabinet power		SPDT switch (AC Power)								https://fastpinball.com/wiring/neuron/ac-line-input/#ac-power-switch
+	False	boards & wiring	cabinet power		Power cord								
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+	False												
+													
+

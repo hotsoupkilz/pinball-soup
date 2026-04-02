@@ -39,10 +39,37 @@ modes:
   - zombie
   - rivers
   - ozzy
+  - black_sabbath
 
 event_player:
-  s_kickout_hole_upper_active:
+  # Start carousel when ball is captured in upper kickout hole
+  # Only if: no band mode is running AND wizard not qualified
+  s_kickout_hole_upper_active{mode.meatloaf.active==False and mode.dio.active==False and mode.zombie.active==False and mode.rivers.active==False and mode.ozzy.active==False and current_player.wizard_qualified==0}:
     - start_mode_carousel_band
+
+  # Start wizard mode when qualified and ball captured in either kickout hole
+  s_kickout_hole_upper_active{current_player.wizard_qualified==1}:
+    - start_mode_black_sabbath
+  s_kickout_hole_lower_active{current_player.wizard_qualified==1}:
+    - start_mode_black_sabbath
+
+  # Check for wizard qualification when any band completes
+  # Wizard qualified when: all 5 bands done OR (ozzy first AND ozzy complete)
+  meatloaf_complete{current_player.bands_completed>=4}: set_wizard_qualified
+  dio_complete{current_player.bands_completed>=4}: set_wizard_qualified
+  zombie_complete{current_player.bands_completed>=4}: set_wizard_qualified
+  rivers_complete{current_player.bands_completed>=4}: set_wizard_qualified
+  ozzy_complete{current_player.bands_completed>=4}: set_wizard_qualified
+  ozzy_complete{current_player.selected_ozzy_first==1}: set_wizard_qualified
+
+################################################################################
+# Shows
+################################################################################
+
+show_player:
+  machine_reset_phase_3:
+    gi_on:
+      loops: -1
 
 ################################################################################
 # player variables for game progression
@@ -197,7 +224,7 @@ segment_display_player:
     player4_display:
       action: no_flash
 
-# platform/hardware type (lisy/APC-specific. seemingly-necessary for coils to work properly)
+# platform/hardware type (lisy/APC-specific. necessary for coils/gi to work properly)
 digital_outputs:
   game_over_relay:
     number: 25
@@ -399,6 +426,7 @@ coils:
     default_pulse_ms: 30
   c_gi_relay:
     number: 3
+    allow_enable: true
   c_threebank_left_reset:
     number: 4
     default_pulse_ms: 45
@@ -604,6 +632,14 @@ lights:
     number: 63
   l_bonus_multiplier_10x:
     number: 64
+  
+  #coils-as-lights (done by Williams in various Systems)
+  l_gi_relay:
+    number: c_gi_relay
+    platform: drivers
+    #subtype: gi
+
+  
 
 
 ################################################################################

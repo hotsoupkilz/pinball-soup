@@ -1,0 +1,14 @@
+#show_version=6
+# Wizard mode - flash all L-O-R-D lights together
+- duration: 0.25
+  lights:
+    l_letter_l: ff
+    l_letter_o: ff
+    l_letter_r: ff
+    l_letter_d: ff
+- duration: 0.25
+  lights:
+    l_letter_l: 0
+    l_letter_o: 0
+    l_letter_r: 0
+    l_letter_d: 0

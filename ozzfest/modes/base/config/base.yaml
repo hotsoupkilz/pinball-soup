@@ -14,3 +14,20 @@ slide_player:
 variable_player:
   sw_playfield_active:
     score: 5
+  # Set wizard_qualified when triggered by event_player in main config
+  set_wizard_qualified:
+    wizard_qualified:
+      int: 1
+      action: set
+
+# Band completion lights - stay on solid when a band is completed
+# These must be in base mode (not band modes) because band modes stop on complete
+light_player:
+  meatloaf_complete:
+    l_letter_l: ff
+  dio_complete:
+    l_letter_o: ff
+  zombie_complete:
+    l_letter_r: ff
+  rivers_complete:
+    l_letter_d: ff

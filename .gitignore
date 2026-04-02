@@ -2,12 +2,22 @@
 /time_warped/.godot/
 /time_warped/android/
 
-# ignore mpf logs
+# MPF runtime data
 /ozzy/logs/
 /ozzy/data/
 /ozzfest/logs/
 /ozzfest/data/
-/ozzfest/implement*
-/ozzfest/game_rules.md
+/ozzfest-fast/logs/
+/ozzfest-fast/data/
 /time_warped/logs/
 /time_warped/data/
+
+# AI workflow artifacts
+.instructions.md
+context.md
+implementation_plan.md
+white_wood_ozzfest_layout.md
+/ozzfest/implement*
+/ozzfest/game_rules.md
+/ozzfest/research/
+/ozzfest-fast/tools/

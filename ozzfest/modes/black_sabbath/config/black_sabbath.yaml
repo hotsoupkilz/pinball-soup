@@ -1,0 +1,89 @@
+#config_version=6
+
+# Black Sabbath Wizard Mode - "Iron Man" / "Paranoid"
+# Theme: Ultimate heavy metal - fire, dark imagery, all lights active
+# Trigger: All 5 bands completed OR Ozzy completed as first band
+# Duration: Until ball ends
+# Priority: 200 (highest - overrides all other modes)
+
+mode:
+  start_events: start_mode_black_sabbath
+  stop_events: ball_will_end
+  priority: 200
+
+# All L-O-R-D lights flash rapidly during wizard mode
+show_player:
+  mode_black_sabbath_started:
+    flash_lord_all:
+      key: wizard_flash
+      speed: 2
+      loops: -1
+  mode_black_sabbath_stopped:
+    wizard_flash: stop
+
+slide_player:
+  mode_black_sabbath_started:
+    black_sabbath_mode:
+      priority: 200
+  mode_black_sabbath_stopped:
+    black_sabbath_mode:
+      action: remove
+
+# All switches score big during wizard mode
+event_player:
+  # Kickout holes
+  s_kickout_hole_upper_active: wizard_switch_hit
+  s_kickout_hole_lower_active: wizard_switch_hit
+  # Slingshots
+  s_slingshot_left_active: wizard_switch_hit
+  s_slingshot_right_active: wizard_switch_hit
+  s_slingshot_upper_active: wizard_switch_hit
+  # L-O-R-D rollovers
+  s_rollover_l_active: wizard_switch_hit
+  s_rollover_o_active: wizard_switch_hit
+  s_rollover_r_active: wizard_switch_hit
+  s_rollover_d_active: wizard_switch_hit
+  # Playfield active switches
+  s_target_1_active: wizard_switch_hit
+  s_target_2_active: wizard_switch_hit
+  s_target_3_active: wizard_switch_hit
+  s_inlane_rollover_4_active: wizard_switch_hit
+  s_inlane_rollover_5_active: wizard_switch_hit
+  s_outlane_left_active: wizard_switch_hit
+  s_outlane_right_active: wizard_switch_hit
+  s_turnaround_rollover_lower_active: wizard_switch_hit
+  s_turnaround_rollover_upper_active: wizard_switch_hit
+  s_upper_left_standup_active: wizard_switch_hit
+  s_left_standup_active: wizard_switch_hit
+  s_right_standup_active: wizard_switch_hit
+  s_playfield_entry_gate_active: wizard_switch_hit
+  # Drop targets
+  s_threebank_left_lower_active: wizard_switch_hit
+  s_threebank_left_mid_active: wizard_switch_hit
+  s_threebank_left_upper_active: wizard_switch_hit
+  s_threebank_right_lower_active: wizard_switch_hit
+  s_threebank_right_mid_active: wizard_switch_hit
+  s_threebank_right_upper_active: wizard_switch_hit
+  s_fivebank_left_active: wizard_switch_hit
+  s_fivebank_left_mid_active: wizard_switch_hit
+  s_fivebank_center_active: wizard_switch_hit
+  s_fivebank_right_mid_active: wizard_switch_hit
+  s_fivebank_right_active: wizard_switch_hit
+
+variable_player:
+  wizard_switch_hit:
+    score: 10000
+  mode_black_sabbath_started:
+    score: 1000000
+
+hardware_sound_player:
+  mode_black_sabbath_started:
+    "black_sabbath_iron_man.snd":
+      track: 1
+      action: play_file
+      platform_options:
+        loop: true
+  mode_black_sabbath_stopped:
+    stop_track:
+      track: 1
+      action: stop

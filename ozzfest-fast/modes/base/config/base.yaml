@@ -1,0 +1,7 @@
+#config_version=6
+
+#modes/base/config/base.yaml
+
+mode:
+  start_events: ball_started
+  priority: 100

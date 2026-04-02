@@ -95,10 +95,6 @@ show_player:
   mode_zombie_stopped:
     zombie_flash: stop
 
-light_player:
-  zombie_complete:
-    l_letter_r: ff
-
 slide_player:
   mode_zombie_started:
     zombie_mode:

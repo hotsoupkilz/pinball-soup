@@ -1,52 +1,38 @@
 events:
-  game_ended: 11
-  game_started: 62
+  game_ended: 13
+  game_started: 73
 missing_switches:
   s_65: 1
-  s_65_slingshot_left_spec: 5
   s_65_slingshot_right_spec: 1
   s_66_slingshot_left_spec: 1
-  s_66_slingshot_right_spec: 3
-  s_68: 59
-  s_69: 59
-  s_70: 59
-  s_ball_roll_tilt: 62
-  s_coin_chute_center: 62
-  s_coin_chute_left: 62
-  s_coin_chute_right: 62
-  s_high_score_reset: 62
-  s_inlane_rollover_4: 9
-  s_inlane_rollover_5: 7
-  s_left_standup: 5
-  s_magnasave_button_left: 4
-  s_outlane_left: 10
-  s_playfield_tilt: 62
-  s_plumb_bob_tilt: 62
-  s_right_standup: 3
-  s_rollover_d: 62
-  s_rollover_l: 62
-  s_rollover_o: 62
-  s_rollover_r: 9
-  s_slam_tilt: 62
-  s_slingshot_left: 5
-  s_slingshot_right: 3
-  s_slingshot_upper: 13
-  s_start_button: 8
-  s_target_2: 5
-  s_target_3: 5
-  s_threebank_left_lower: 3
-  s_threebank_left_mid: 8
-  s_threebank_left_upper: 5
-  s_threebank_right_lower: 5
-  s_threebank_right_mid: 3
-  s_threebank_right_upper: 8
-  s_turnaround_rollover_lower: 1
-  s_turnaround_rollover_upper: 1
+  s_68: 70
+  s_69: 70
+  s_70: 70
+  s_ball_roll_tilt: 73
+  s_coin_chute_center: 73
+  s_coin_chute_left: 73
+  s_coin_chute_right: 73
+  s_high_score_reset: 73
+  s_kickout_hole_upper: 1
+  s_playfield_tilt: 73
+  s_plumb_bob_tilt: 73
+  s_right_standup: 14
+  s_rollover_d: 73
+  s_rollover_l: 73
+  s_rollover_o: 73
+  s_rollover_r: 20
+  s_slam_tilt: 73
+  s_slingshot_upper: 2
+  s_start_button: 19
+  s_target_2: 1
+  s_threebank_right_lower: 10
 player:
   score:
-    average: 45
+    average: 93
     top:
     - 495
+    - 430
+    - 295
     - 0
     - 0
     - 0
@@ -54,66 +40,64 @@ player:
     - 0
     - 0
     - 0
-    - 0
-    - 0
-    total: 11
+    total: 13
 switches:
   s_65: 5
-  s_65_slingshot_left_spec: 126
+  s_65_slingshot_left_spec: 143
   s_65_slingshot_right_spec: 3
   s_66: 7
   s_66_slingshot_left_spec: 2
-  s_66_slingshot_right_spec: 124
+  s_66_slingshot_right_spec: 135
   s_67: 11
-  s_67_slingshot_upper_spec: 75
+  s_67_slingshot_upper_spec: 86
   s_68: 0
   s_69: 0
   s_70: 0
   s_ball_roll_tilt: 0
-  s_ball_trough_left: 165
-  s_ball_trough_right: 181
+  s_ball_trough_left: 186
+  s_ball_trough_right: 209
   s_coin_chute_center: 0
   s_coin_chute_left: 0
   s_coin_chute_right: 0
-  s_fivebank_center: 65
-  s_fivebank_left: 42
-  s_fivebank_left_mid: 57
-  s_fivebank_right: 51
-  s_fivebank_right_mid: 101
+  s_fivebank_center: 76
+  s_fivebank_left: 47
+  s_fivebank_left_mid: 67
+  s_fivebank_right: 58
+  s_fivebank_right_mid: 117
   s_high_score_reset: 0
-  s_inlane_rollover_4: 80
-  s_inlane_rollover_5: 37
-  s_kickout_hole_lower: 84
-  s_kickout_hole_upper: 39
-  s_left_standup: 91
-  s_magnasave_button_left: 185
-  s_magnasave_button_right: 327
-  s_outhole: 218
-  s_outlane_left: 66
-  s_outlane_right: 22
-  s_playfield_entry_gate: 244
+  s_inlane_rollover_4: 212
+  s_inlane_rollover_5: 38
+  s_kickout_hole_lower: 121
+  s_kickout_hole_upper: 45
+  s_left_standup: 105
+  s_magnasave_button_left: 202
+  s_magnasave_button_right: 354
+  s_outhole: 251
+  s_outlane_left: 69
+  s_outlane_right: 24
+  s_playfield_entry_gate: 257
   s_playfield_tilt: 0
   s_plumb_bob_tilt: 0
-  s_plunger: 400
+  s_plunger: 452
   s_right_standup: 4
   s_rollover_d: 0
   s_rollover_l: 0
   s_rollover_o: 0
   s_rollover_r: 1
   s_slam_tilt: 0
-  s_slingshot_left: 209
-  s_slingshot_right: 263
-  s_slingshot_upper: 5
+  s_slingshot_left: 223
+  s_slingshot_right: 288
+  s_slingshot_upper: 9
   s_start_button: 6
-  s_target_1: 187
-  s_target_2: 511
-  s_target_3: 74
-  s_threebank_left_lower: 48
-  s_threebank_left_mid: 29
-  s_threebank_left_upper: 27
-  s_threebank_right_lower: 234
-  s_threebank_right_mid: 21
-  s_threebank_right_upper: 24
-  s_turnaround_rollover_lower: 45
-  s_turnaround_rollover_upper: 52
-  s_upper_left_standup: 33
+  s_target_1: 236
+  s_target_2: 555
+  s_target_3: 78
+  s_threebank_left_lower: 55
+  s_threebank_left_mid: 32
+  s_threebank_left_upper: 30
+  s_threebank_right_lower: 236
+  s_threebank_right_mid: 25
+  s_threebank_right_upper: 28
+  s_turnaround_rollover_lower: 54
+  s_turnaround_rollover_upper: 64
+  s_upper_left_standup: 43

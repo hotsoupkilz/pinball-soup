@@ -95,10 +95,6 @@ show_player:
   mode_dio_stopped:
     dio_flash: stop
 
-light_player:
-  dio_complete:
-    l_letter_o: ff
-
 slide_player:
   mode_dio_started:
     dio_mode:

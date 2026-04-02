@@ -95,10 +95,6 @@ show_player:
   mode_rivers_stopped:
     rivers_flash: stop
 
-light_player:
-  rivers_complete:
-    l_letter_d: ff
-
 slide_player:
   mode_rivers_started:
     rivers_mode:
